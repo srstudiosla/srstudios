@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
+    <style>
+        /* --- BRAND PALETTE & CSS VARIABLES --- */
+        :root {
+            --bg-color: #0B1914;       /* Deep Forest Green */
+            --surface-color: #12261E;  /* Slightly lighter green for structural cards */
+            --text-primary: #FFFFFF;   /* Crisp White */
+            --text-secondary: #A3B899; /* Muted Sage Green */
+            --accent-cream: #F5EBE6;   /* Premium Warm Cream */
+            --border-color: #1D3D32;   /* Subtle structural borders */
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* --- GLOBAL STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- LAYOUT CONTAINERS --- */
+        header, main, footer {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* --- HEADER SECTION --- */
+        header {
+            padding: 4rem 0 3rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-cream);
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* --- MAIN CONTENT & PRESENTATION --- */
+        main {
+            padding: 4rem 0;
+        }
+
+        .intro-text {
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        .intro-text h1 {
+            font-size: 2.25rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .intro-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* --- RESPONSIVE CANVA CONTAINER --- */
+        .deck-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            margin-bottom: 6rem;
+        }
+
+        .deck-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- PREMIUM CONTACT SECTION --- */
+        .contact-section {
+            border-top: 1px solid var(--border-color);
+            padding-top: 5rem;
+            margin-bottom: 6rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--accent-cream);
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* --- BUTTON STYLING --- */
+        .btn-submit {
+            background-color: var(--accent-cream);
+            color: var(--bg-color);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+            margin-top: 1rem;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER SECTION --- */
+        footer {
+            padding: 2rem 0 4rem 0;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            body { padding: 0 1.25rem; }
+            header { padding: 2.5rem 0 2rem 0; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .intro-text h1 { font-size: 1.75rem; }
+            .contact-section { padding-top: 3.5rem; }
+            footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">SR Studios</div>
+        <div class="tagline">Asynchronous Growth Systems</div>
+    </header>
+
+    <!-- MAIN PORTAL -->
+    <main>
+        <section class="intro-text">
+            <h1>Marketing Solutions & Client Retainers</h1>
+            <p>Review our core capabilities, scope allocations, and three-tier service structure below.</p>
+        </section>
+
+        <!-- CANVA EMBED CONTAINER -->
+        <section class="deck-container">
+            <iframe loading="lazy" src="https://www.canva.com/design/DAHKidzRVaI/u-P-BBbjlx6OZPWrNO8Djw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+        </section>
+
+        <!-- SECURE INTAKE PORTAL SECTION -->
+        <section class="contact-section">
+            <h2>Initiate Partnership</h2>
+            <p>Click below to submit your project parameters through our secure client intake portal.</p>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFd1PtcieDBPfE9xbHD_1BcIEadDynCIWyyRBQm7P10HgJcw/viewform?usp=header" target="_blank" class="btn-submit">
+                Open Client Intake Form
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
+        <div>Fully Remote • Asynchronous Operations</div>
+    </footer>
+
+</body>
+</html>
