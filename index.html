@@ -253,6 +253,92 @@
             pointer-events: none; /* Allows clicks to pass through if you ever change native controls */
         }
 
+        /* --- HOMEPAGE THREE-PANEL SERVICES GRID --- */
+        .home-services-grid-wrapper {
+            width: 100vw;
+            background-color: var(--bg-color);
+            padding: 6rem 2rem;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .home-services-grid {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .home-service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .home-service-image-slot {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .home-service-card:hover .home-service-image-slot {
+            border-color: var(--accent-header);
+        }
+
+        .home-service-image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.85;
+            transition: transform 0.5s ease;
+        }
+
+        .home-service-card:hover .home-service-image-slot img {
+            transform: scale(1.03);
+        }
+
+        .home-service-title {
+            font-family: var(--font-sub-headers);
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            letter-spacing: 0.04em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+        
+        .home-service-card h1.home-service-title { font-size: clamp(1.5rem, 3.2vw, 2rem); }
+        .home-service-card h2.home-service-title { font-size: clamp(1.5rem, 3.2vw, 2rem); }
+        .home-service-card h3.home-service-title { font-size: clamp(1.5rem, 3.2vw, 2rem); }
+
+        .home-service-cta {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            text-transform: lowercase;
+            font-style: italic;
+        }
+
+        .home-service-card:hover .home-service-cta {
+            color: var(--accent-header);
+            border-bottom-color: var(--accent-header);
+            padding-left: 4px;
+        }
+
         /* --- SERVICES PAGE LAYOUT --- */
         .services-wrapper {
             display: flex;
@@ -608,6 +694,7 @@
             .home-hero { min-height: 60vh; padding: 4rem 1.5rem; background-attachment: scroll; } /* Disables fixed scroll on mobile devices for performance */
             .full-bleed-video-showcase video { height: 350px; } /* Ensures matching balance on mobile screens */
             .brand-title-single { font-size: clamp(2.5rem, 9.5vw, 4.5rem); }
+            .home-services-grid { grid-template-columns: 100%; gap: 3.5rem; }
             .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
             .services-body { padding-left: 0; border-left: none; }
             .architect-row-left, .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
@@ -669,6 +756,40 @@
                     Your modern browser does not support inline video backgrounds.
                 </video>
                 <div class="video-vignette-overlay"></div>
+            </section>
+
+            <!-- PART C: THREE-PANEL HOVER LINKS TO SERVICES -->
+            <section class="home-services-grid-wrapper">
+                <div class="home-services-grid">
+                    
+                    <!-- Column 1: Brand Strategy -->
+                    <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
+                        <div class="home-service-image-slot">
+                            <img src="home_brand_strat.png" alt="Brand Strategy Pipeline Showcase">
+                        </div>
+                        <h1 class="home-service-title">brand strategy</h1>
+                        <a href="#" class="home-service-cta">let's talk strat</a>
+                    </div>
+
+                    <!-- Column 2: Content & Messaging -->
+                    <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
+                        <div class="home-service-image-slot">
+                            <img src="home_content_messaging.png" alt="Content and Messaging Architecture">
+                        </div>
+                        <h2 class="home-service-title">content & messaging</h2>
+                        <a href="#" class="home-service-cta">lets chat:</a>
+                    </div>
+
+                    <!-- Column 3: High-End Production -->
+                    <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
+                        <div class="home-service-image-slot">
+                            <img src="home_production.png" alt="High End Production and Creative Framing">
+                        </div>
+                        <h3 class="home-service-title">high-end production</h3>
+                        <a href="#" class="home-service-cta">we got production covered</a>
+                    </div>
+
+                </div>
             </section>
 
         </div>
@@ -880,7 +1001,7 @@
             const panels = document.querySelectorAll('.tab-panel');
             panels.forEach(panel => panel.classList.remove('active'));
 
-            // Sync top carousel AND video showreel dependencies to only load/run on the direct Home state
+            // Sync full-width structural blocks to only display on active home sequence
             const topCarousel = document.querySelector('.full-bleed-carousel-outer');
             if (tabId === 'tab-home') {
                 topCarousel.style.display = 'block';
@@ -888,9 +1009,11 @@
                 topCarousel.style.display = 'none';
             }
 
-            if(event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('btn-primary')) {
-                document.querySelector(`[onclick*='${tabId}']`).classList.add('active');
-            } else {
+            // Route CTA actions smoothly back to parent header configurations
+            if(event && (event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('home-service-card') || event.currentTarget.classList.contains('btn-primary'))) {
+                const targetNavBtn = document.querySelector(`[onclick*='${tabId}']`);
+                if(targetNavBtn) targetNavBtn.classList.add('active');
+            } else if (event) {
                 event.currentTarget.classList.add('active');
             }
             
