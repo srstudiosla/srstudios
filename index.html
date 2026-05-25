@@ -30,7 +30,7 @@
             
             /* Typography Systems */
             --font-body: 'Noto Serif', Georgia, 'Times New Roman', serif;
-            --font-home-hero: 'Oswald', -apple-system, sans-serif; /* Reverted back to Oswald */
+            --font-home-hero: 'Oswald', -apple-system, sans-serif;
             --font-sub-headers: 'Oswald', -apple-system, sans-serif;
             --font-signature: 'Ballet', cursive;
         }
@@ -60,12 +60,12 @@
             max-width: 1000px;
         }
 
-        /* --- STRAWBERRY MATCHA NAVIGATION HEADER --- */
+        /* --- STRAWBERRY MATCHA NAVIGATION HEADER (HEIGHT ENHANCED BY 30%) --- */
         header {
             width: 100%;
             max-width: 100%;
             background-color: var(--accent-header);
-            padding: 0.75rem 1rem;
+            padding: 1rem 1rem; /* Padding adjusted to physically scale height weight by 30% */
             display: flex;
             justify-content: center;
             position: sticky;
@@ -95,9 +95,9 @@
             background: transparent;
             border: none;
             color: var(--bg-color);
-            padding: 0.4rem 0.6rem;
+            padding: 0.5rem 0.6rem; /* Interior breathing room slightly raised */
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700; /* Structural font weight emboldened to emphasize panel presence */
             text-transform: uppercase;
             letter-spacing: 0.08em;
             cursor: pointer;
@@ -113,7 +113,32 @@
             color: var(--bg-color);
             opacity: 1;
             border-bottom: 2px solid var(--bg-color);
-            font-weight: 800;
+            font-weight: 900;
+        }
+
+        /* --- NATIVE HERO ROTATING CAROUSEL BANNER SYSTEM --- */
+        .carousel-window {
+            width: 100%;
+            max-width: 1000px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 300%; /* Sized cleanly for the 3 distinct banners */
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Ultra premium fluid snap motion */
+        }
+
+        .carousel-track img {
+            width: 33.3333%; /* Each image occupies precisely one card container block */
+            height: auto;
+            object-fit: cover;
+            display: block;
         }
 
         /* --- TAB CONTENT PANELS --- */
@@ -150,7 +175,7 @@
             justify-content: center;
             text-align: center;
             flex-grow: 1;
-            min-height: 70vh;
+            min-height: 55vh; /* Balanced perfectly alongside the new landscape banner system */
             padding: 4rem 2rem;
             border-radius: 4px;
             background: linear-gradient(rgba(11, 25, 20, 0.75), rgba(11, 25, 20, 0.75)), url('srhomepage.png') no-repeat center center;
@@ -176,7 +201,7 @@
             font-weight: 400;
             text-transform: uppercase;
             color: var(--text-primary);
-            letter-spacing: 0.05em; /* Optimized spacing for Oswald */
+            letter-spacing: 0.05em;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             text-align: center;
@@ -562,7 +587,7 @@
 </head>
 <body>
 
-    <!-- PORTAL HEADER (TUMBLEWEED STRAWBERRY MATCHA ACCENT) -->
+    <!-- PORTAL HEADER (HEIGHT WEIGHT EXTENDED BY 30%) -->
     <header>
         <div class="nav-container">
             <nav class="nav-tabs">
@@ -579,11 +604,20 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED -->
+        <!-- TAB 1: GET STARTED (INCORPORATING THE AUTOMATED CAROUSEL) -->
         <div id="tab-home" class="tab-panel active">
+            
+            <!-- AUTOMATED ROTATING BANNER WINDOW -->
+            <div class="carousel-window">
+                <div class="carousel-track">
+                    <img src="banner1.png" alt="SR Studios Featured Strategy Asset One">
+                    <img src="banner2.png" alt="SR Studios Featured Strategy Asset Two">
+                    <img src="banner3.png" alt="SR Studios Featured Strategy Asset Three">
+                </div>
+            </div>
+
             <section class="home-hero">
                 <div class="hero-branding-block">
-                    <!-- Changed typography variable source mapping back to Oswald -->
                     <h1 class="brand-title-single">SR STUDIOS</h1>
                     <h2 class="hero-sub-header">Digital Marketing Agency</h2>
                 </div>
@@ -788,10 +822,10 @@
     <!-- GLOBAL SITE FOOTER -->
     <footer>
         <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-        <div>Hollywood, California</div>
+        <div>Los Angeles, California</div>
     </footer>
 
-    <!-- INTERACTION LOGIC -->
+    <!-- INTERACTION LOGIC (INCLUDING NEW CAROUSEL AUTO-SLIDER TICKER) -->
     <script>
         function switchTab(event, tabId) {
             const buttons = document.querySelectorAll('.tab-btn');
@@ -808,6 +842,19 @@
             
             document.getElementById(tabId).classList.add('active');
             window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // CAROUSEL TIMER TRACKING ENGINE
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const carouselTrack = document.querySelector('.carousel-track');
+
+        if (carouselTrack) {
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                // Slides translate smoothly by exactly 1/3 splits of the 300% total track wrapper width
+                carouselTrack.style.transform = `translateX(-${currentSlide * 33.3333}%)`;
+            }, 5000); // Transitions automatically on a clean 5-second interval loop
         }
     </script>
 
