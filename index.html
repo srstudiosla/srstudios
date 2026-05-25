@@ -25,7 +25,7 @@
             --surface-color: #12261E;  /* Structural card background */
             --text-primary: #EED5B9;   /* Dutch White (Soft, creamy premium font color) */
             --text-secondary: #BFC08E; /* Sage Green Accent (Muted, warm matcha tone) */
-            --accent-header: #EAA093;  /* Tumbleweed (Muted strawberry header tone) */
+            --accent-header: #EAA093;  /* Tumbleweed (Muted strawberry header/footer tone) */
             --border-color: #1D3D32;   /* Subtle structural borders */
             
             /* Typography Systems */
@@ -53,10 +53,11 @@
             align-items: center;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         /* Nav, Main Content blocks remain constrained to maintain editorial layout grids */
-        .nav-container, main, footer {
+        .nav-container, main, .footer-container {
             width: 100%;
             max-width: 1000px;
         }
@@ -180,18 +181,18 @@
             justify-content: center;
             text-align: center;
             width: 100vw; 
-            min-height: calc(100vh - 58px); /* Subtracts the sticky header height to fit beautifully */
+            min-height: calc(100vh - 58px); /* Subtracts sticky header height */
             padding: 4rem 2rem;
             background: linear-gradient(rgba(11, 25, 20, 0.5), rgba(11, 25, 20, 0.65)), url('srhomepage.png') no-repeat center center;
             background-size: cover;
-            background-attachment: fixed; /* Parallax effect for premium desktop scrolling */
+            background-attachment: fixed; /* Parallax effect for desktop */
             box-shadow: inset 0 0 150px rgba(0,0,0,0.7);
             overflow: hidden;
         }
 
         .hero-branding-block {
             width: 100%;
-            max-width: 1000px; /* Keeps the text container bound cleanly for absolute readability */
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -237,12 +238,11 @@
 
         .full-bleed-video-showcase video {
             width: 100%;
-            height: clamp(500px, 45vh, 700px); /* Mirrors the exact scaling system of the carousel image banner */
+            height: clamp(500px, 45vh, 700px);
             object-fit: cover;
             display: block;
         }
 
-        /* Optional high-end styling element to match your layout branding */
         .video-vignette-overlay {
             position: absolute;
             top: 0;
@@ -250,7 +250,7 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, transparent 40%, rgba(11, 25, 20, 0.4) 100%);
-            pointer-events: none; /* Allows clicks to pass through if you ever change native controls */
+            pointer-events: none;
         }
 
         /* --- HOMEPAGE THREE-PANEL SERVICES GRID --- */
@@ -337,6 +337,44 @@
             color: var(--accent-header);
             border-bottom-color: var(--accent-header);
             padding-left: 4px;
+        }
+
+        /* --- NEW: HOMEPAGE FULL-BLEED BRAND ARCHITECT BLOCK --- */
+        .home-architect-promo {
+            width: 100vw;
+            height: clamp(500px, 45vh, 700px); /* Explicitly matches the size of the 3-panel component wrappers */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(11, 25, 20, 0.6), rgba(11, 25, 20, 0.75)), url('home_brand_architect_promo.png') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed; /* Parallax logic consistency */
+            border-top: 1px solid var(--border-color);
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
+        }
+
+        .home-architect-promo h1 {
+            font-family: var(--font-home-hero); /* Inherits the massive header look used in the main hero title */
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .home-architect-promo p {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
         /* --- SERVICES PAGE LAYOUT --- */
@@ -475,7 +513,7 @@
         .story-signature {
             font-family: var(--font-signature);
             font-size: clamp(3rem, 6vw, 4.5rem);
-            color: var(--accent-header);
+            color: var(--bg-color); /* Updated to keep high contrast against strawberry block background */
             margin-top: 2rem;
             line-height: 1;
             user-select: none;
@@ -630,6 +668,16 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
 
+        /* Dark-inverted button variant for callouts directly sitting on top of light-pink structures */
+        .btn-dark-invert {
+            background-color: var(--bg-color);
+            color: var(--accent-header);
+        }
+        .btn-dark-invert:hover {
+            background-color: var(--surface-color);
+            color: var(--text-primary);
+        }
+
         /* --- GLOBAL HEADERS --- */
         .section-header-block {
             padding: 4rem 0 2rem 0;
@@ -660,17 +708,28 @@
         .contact-wrapper h2 { font-family: var(--font-sub-headers); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text-primary); }
         .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
 
-        /* --- FOOTER --- */
+        /* --- UPDATED: FULL-BLEED HOVER SOLID PINK FOOTER --- */
         footer {
-            width: 100%;
-            padding: 2rem;
+            width: 100vw;
+            background-color: var(--accent-header); /* Solid strawberry pink block fill */
+            padding: 2rem 0;
             margin-top: auto;
-            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.8rem;
-            color: var(--text-secondary);
+            font-weight: 700;
+            color: var(--bg-color); /* Inverted font color to stand out cleanly against pink */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 0 2rem;
         }
 
         /* --- RESPONSIVE MEDIA --- */
@@ -679,29 +738,26 @@
                 grid-template-columns: 100%;
                 gap: 2rem;
             }
-            .retainer-card {
-                padding: 2.5rem 1.75rem;
-            }
-            .retainer-tier-name {
-                white-space: normal;
-            }
+            .retainer-card { padding: 2.5rem 1.75rem; }
+            .retainer-tier-name { white-space: normal; }
         }
 
         @media (max-width: 768px) {
             .nav-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
             .tab-btn { padding: 0.4rem 0.5rem; }
             .carousel-track img { height: 350px; } 
-            .home-hero { min-height: 60vh; padding: 4rem 1.5rem; background-attachment: scroll; } /* Disables fixed scroll on mobile devices for performance */
-            .full-bleed-video-showcase video { height: 350px; } /* Ensures matching balance on mobile screens */
+            .home-hero { min-height: 60vh; padding: 4rem 1.5rem; background-attachment: scroll; } 
+            .full-bleed-video-showcase video { height: 350px; } 
             .brand-title-single { font-size: clamp(2.5rem, 9.5vw, 4.5rem); }
             .home-services-grid { grid-template-columns: 100%; gap: 3.5rem; }
+            .home-architect-promo { height: auto; padding: 5rem 1.5rem; background-attachment: scroll; }
             .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
             .services-body { padding-left: 0; border-left: none; }
             .architect-row-left, .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
             .architect-row-right .architect-image-wrapper { grid-row: 2; }
             .story-container { grid-template-columns: 100%; gap: 3rem; }
             .story-image-side { grid-row: 1; }
-            footer { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1.25rem; }
+            .footer-container { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.25rem; }
         }
     </style>
 </head>
@@ -721,7 +777,7 @@
         </div>
     </header>
 
-    <!-- SECTION 1: EXPANDED HIGH-IMPACT FULL BLEED CAROUSEL SLIDER -->
+    <!-- SECTION 1: ROTATING CAROUSEL BANNER SYSTEM -->
     <div class="full-bleed-carousel-outer">
         <div class="carousel-window">
             <div class="carousel-track">
@@ -735,10 +791,10 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (BREAKING OUTSIDE TO TRUE FULL BLEED WINDOW) -->
+        <!-- TAB 1: GET STARTED (HOMEPAGE SEQUENCE) -->
         <div id="tab-home" class="tab-panel active">
             
-            <!-- PART A: IMAGE WITH TEXT OVERLAY -->
+            <!-- PART A: HERO CONTENT BACKDROP -->
             <section class="home-hero">
                 <div class="hero-branding-block">
                     <h1 class="brand-title-single">SR STUDIOS</h1>
@@ -758,7 +814,7 @@
                 <div class="video-vignette-overlay"></div>
             </section>
 
-            <!-- PART C: THREE-PANEL HOVER LINKS TO SERVICES -->
+            <!-- PART C: THREE-PANEL QUICK HOVER SERVICES GRID -->
             <section class="home-services-grid-wrapper">
                 <div class="home-services-grid">
                     
@@ -790,6 +846,15 @@
                     </div>
 
                 </div>
+            </section>
+
+            <!-- PART D: FULL-BLEED BRAND ARCHITECT PROMO CALLOUT -->
+            <section class="home-architect-promo">
+                <h1>Just Getting Started</h1>
+                <p>learn more about our brand architect program</p>
+                <a href="#" onclick="document.querySelector('[onclick*=\'tab-brand\']').click(); return false;" class="btn-primary">
+                    learn more
+                </a>
             </section>
 
         </div>
@@ -986,14 +1051,16 @@
 
     </main>
 
-    <!-- GLOBAL SITE FOOTER -->
+    <!-- GLOBAL FULL-BLEED SITE FOOTER -->
     <footer>
-        <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-        <div>Los Angeles, California</div>
+        <div class="footer-container">
+            <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
+            <div>Los Angeles, California</div>
+        </div>
     </footer>
 
     <!-- INTERACTION LOGIC -->
-    <script>
+    <script {is_final_version="true"}>
         function switchTab(event, tabId) {
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
@@ -1001,7 +1068,7 @@
             const panels = document.querySelectorAll('.tab-panel');
             panels.forEach(panel => panel.classList.remove('active'));
 
-            // Sync full-width structural blocks to only display on active home sequence
+            // Sync full-width top structural block visibility based on tab layout rules
             const topCarousel = document.querySelector('.full-bleed-carousel-outer');
             if (tabId === 'tab-home') {
                 topCarousel.style.display = 'block';
@@ -1009,7 +1076,7 @@
                 topCarousel.style.display = 'none';
             }
 
-            // Route CTA actions smoothly back to parent header configurations
+            // Route standard cross-component inner clicks cleanly back to active head styling
             if(event && (event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('home-service-card') || event.currentTarget.classList.contains('btn-primary'))) {
                 const targetNavBtn = document.querySelector(`[onclick*='${tabId}']`);
                 if(targetNavBtn) targetNavBtn.classList.add('active');
@@ -1021,7 +1088,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // CAROUSEL TIMER TRACKING ENGINE
+        // CAROUSEL TIMER ENGINE
         let currentSlide = 0;
         const totalSlides = 3;
         const carouselTrack = document.querySelector('.carousel-track');
