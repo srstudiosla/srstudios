@@ -146,10 +146,9 @@
             background-size: cover;
             width: 100%;
             box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
-            overflow: hidden; /* Safeguards layout overflow */
+            overflow: hidden;
         }
 
-        /* Unified block container to manage absolute centered alignments */
         .hero-branding-block {
             width: 100%;
             max-width: 100%;
@@ -160,10 +159,8 @@
             margin: 0 auto;
         }
 
-        /* --- AMBERFALL TYPOGRAPHY (SCALED & INLINE EMBEDDED CENTERING) --- */
         .brand-title-single {
             font-family: 'Amberfall', 'Ballet', 'Georgia', 'Times New Roman', serif;
-            /* Slightly scaled down to prevent clipping and force container compliance */
             font-size: clamp(3.5rem, 11vw, 8.5rem); 
             font-weight: 400;
             color: var(--accent-cream);
@@ -283,6 +280,89 @@
         }
         .architect-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; }
 
+        /* --- THREE-PANEL RETAINER GRID SYSTEM --- */
+        .retainer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .retainer-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .retainer-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--text-secondary);
+        }
+
+        .retainer-card-top {
+            width: 100%;
+        }
+
+        .retainer-tier-name {
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-cream);
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .retainer-bullets {
+            list-style-type: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .retainer-bullets li {
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        /* Minimal clean custom dash bullet */
+        .retainer-bullets li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-secondary);
+        }
+
+        .retainer-price {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 0.02em;
+        }
+
+        .retainer-price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-top: 0.25rem;
+        }
+
         /* --- BUTTONS --- */
         .btn-primary {
             background-color: var(--accent-cream);
@@ -344,6 +424,16 @@
         }
 
         /* --- RESPONSIVE MEDIA --- */
+        @media (max-width: 900px) {
+            .retainer-grid {
+                grid-template-columns: 100%;
+                gap: 2rem;
+            }
+            .retainer-card {
+                padding: 2.5rem 1.75rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
             .tab-btn { padding: 0.4rem 0.5rem; }
@@ -376,7 +466,7 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (CENTERED HOMEPAGE) -->
+        <!-- TAB 1: GET STARTED -->
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
                 <div class="hero-branding-block">
@@ -448,11 +538,66 @@
             </div>
         </div>
 
-        <!-- TAB 4: PARTNERSHIP RETAINERS -->
+        <!-- TAB 4: PARTNERSHIP RETAINERS (THREE-PANEL SYSTEM) -->
         <div id="tab-retainers" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Sustained Growth Management</div>
                 <h1 class="section-title">Partnership Retainers</h1>
+            </div>
+
+            <div class="retainer-grid">
+                
+                <!-- Tier 1: Foundational -->
+                <div class="retainer-card">
+                    <div class="retainer-card-top">
+                        <h2 class="retainer-tier-name">Foundational</h2>
+                        <ul class="retainer-bullets">
+                            <li>Search Engine PPC: full management of Google and Pinterest ad platforms with 1-2 new campaigns weekly</li>
+                            <li>Email Retention: 1-2 weekly newsletters & custom audience segmentation</li>
+                            <li>Reporting: weekly ROAS tracking and revenue attribution report</li>
+                            <li>+1 monthly wishlist from client including all marketing "wants" and priorities for that month</li>
+                        </ul>
+                    </div>
+                    <div class="retainer-price">
+                        $2,800
+                        <span>per month</span>
+                    </div>
+                </div>
+
+                <!-- Tier 2: Omnichannel Pro -->
+                <div class="retainer-card">
+                    <div class="retainer-card-top">
+                        <h2 class="retainer-tier-name">Omnichannel Pro</h2>
+                        <ul class="retainer-bullets">
+                            <li>Everything in Foundational included (full paid search and email retention management)</li>
+                            <li>Social Media: asynchronous content scheduling, 2-3 reels weekly (all channels), 2-3 carousels weekly (all channels)</li>
+                            <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
+                            <li>Bi-weekly social media updates via loom and email</li>
+                        </ul>
+                    </div>
+                    <div class="retainer-price">
+                        $3,600
+                        <span>per month</span>
+                    </div>
+                </div>
+
+                <!-- Tier 3: Full-Suite Pro -->
+                <div class="retainer-card">
+                    <div class="retainer-card-top">
+                        <h2 class="retainer-tier-name">Full-Suite Pro</h2>
+                        <ul class="retainer-bullets">
+                            <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
+                            <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
+                            <li>4-5 new ad creative variations weekly</li>
+                            <li>Weekly asynchronous updates and meeting blocks</li>
+                        </ul>
+                    </div>
+                    <div class="retainer-price">
+                        $4,200
+                        <span>per month</span>
+                    </div>
+                </div>
+
             </div>
         </div>
 
