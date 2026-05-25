@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
-    
-    <!-- EMBEDDING BALLET FONT SYSTEM FROM GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
-
     <style>
+        /* --- CUSTOM FONT INTEGRATION TEMPLATE --- 
+           If you have the Amberfall web font files (.woff2/.woff), 
+           uncomment this block and update the paths to activate it globally:
+        
+        @font-face {
+            font-family: 'Amberfall';
+            src: url('fonts/Amberfall.woff2') format('woff2'),
+                 url('fonts/Amberfall.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        ------------------------------------------ */
+
         /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
-            --bg-color: #0B1914;       /* Deep Forest Green */
+            --bg-color: #0B1914;       /* Deep Forest Green (Global background) */
             --surface-color: #12261E;  /* Structural card background */
             --text-primary: #FFFFFF;   /* Crisp White */
             --text-secondary: #A3B899; /* Muted Sage Green */
@@ -132,36 +139,39 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- HOMEPAGE SPECIFIC LAYOUT --- */
+        /* --- HOMEPAGE SPECIFIC LAYOUT WITH BACKGROUND IMAGE --- */
         .home-hero {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 10rem 0 6rem 0;
+            justify-content: center;
+            padding: 12rem 2rem;
+            border-radius: 4px;
+            
+            /* Background image asset configuration with linear dark overlay for maximum contrast */
+            background: linear-gradient(rgba(11, 25, 20, 0.75), rgba(11, 25, 20, 0.75)), url('srhomepage.png') no-repeat center center;
+            background-size: cover;
+            width: 100%;
+            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
         }
 
-        /* --- TYPOGRAPHY REVISIONS (UNIFIED BALLET SCRIPT) --- */
-        .brand-header-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3.5rem;
+        /* --- AMBERFALL TYPOGRAPHY REVISIONS (SINGLE LINE & 20% SMALLER) --- */
+        .brand-title-single {
+            font-family: 'Amberfall', 'Ballet', 'Georgia', 'Times New Roman', serif;
+            /* Scaled exactly 20% smaller from previous base to keep it cleanly bound to one line */
+            font-size: clamp(4.5rem, 14vw, 11rem); 
+            font-weight: 400;
+            color: var(--accent-cream);
+            letter-spacing: 0.02em;
+            line-height: 1;
+            margin-bottom: 2.5rem;
+            white-space: nowrap; /* Forces text to sit permanently on the same line */
             width: 100%;
         }
 
-        /* Scaled 3x larger using the modern Ballet script configuration */
-        .brand-sr, .brand-studios {
-            font-family: 'Ballet', cursive;
-            font-size: clamp(9rem, 27vw, 18rem); 
-            font-weight: 400;
-            color: var(--accent-cream);
-            line-height: 0.8;
-        }
-
         .hero-sub-header {
-            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.75rem);
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.15em;
@@ -337,7 +347,8 @@
                 padding-bottom: 2px;
             }
             .tab-btn { padding: 0.4rem 0.5rem; }
-            .home-hero { padding: 6rem 0 4rem 0; }
+            .home-hero { padding: 6rem 1rem; }
+            .brand-title-single { font-size: clamp(3rem, 10vw, 6rem); }
             .services-row {
                 grid-template-columns: 100%;
                 gap: 1rem;
@@ -370,13 +381,10 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE) -->
+        <!-- TAB 1: GET STARTED (HOMEPAGE WITH HERO IMAGE BACKGROUND) -->
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
-                <div class="brand-header-group">
-                    <span class="brand-sr">SR</span>
-                    <span class="brand-studios">Studios</span>
-                </div>
+                <h1 class="brand-title-single">SR STUDIOS</h1>
                 <h2 class="hero-sub-header">Digital Marketing Agency</h2>
                 
                 <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
