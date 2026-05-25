@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
+    
+    <!-- EMBEDDING BALLET FONT SYSTEM FROM GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap" rel="stylesheet">
+
     <style>
         /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
@@ -135,7 +141,7 @@
             padding: 10rem 0 6rem 0;
         }
 
-        /* --- TYPOGRAPHY REVISIONS (UNIFIED 3X CONDENSED SERIF) --- */
+        /* --- TYPOGRAPHY REVISIONS (UNIFIED BALLET SCRIPT) --- */
         .brand-header-group {
             display: flex;
             flex-direction: column;
@@ -145,16 +151,13 @@
             width: 100%;
         }
 
-        /* Both elements unified to use the same font and scaled 3x larger than the previous layout */
+        /* Scaled 3x larger using the modern Ballet script configuration */
         .brand-sr, .brand-studios {
-            font-family: "Flatory Serif Condensed", "Didot LT Std Condensed", "Bodoni MT Condensed", "Times New Roman Condensed", serif;
+            font-family: 'Ballet', cursive;
             font-size: clamp(9rem, 27vw, 18rem); 
-            font-stretch: condensed;
-            text-transform: uppercase;
             font-weight: 400;
             color: var(--accent-cream);
-            letter-spacing: 0.12em;
-            line-height: 0.9;
+            line-height: 0.8;
         }
 
         .hero-sub-header {
@@ -166,7 +169,55 @@
             margin-bottom: 4rem;
         }
 
-        /* --- NATIVE CARD GRID SYSTEM (FOR SUBPAGES) --- */
+        /* --- SERVICES PAGE ASYMMETRICAL LAYOUT --- */
+        .services-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            padding: 4rem 0;
+        }
+
+        .services-row {
+            display: grid;
+            grid-template-columns: 35% 65%;
+            gap: 2rem;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 4rem;
+        }
+
+        .services-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .services-title {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--accent-cream);
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+        }
+
+        .services-body {
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.7;
+            padding-left: 2.5rem;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .services-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .services-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- NATIVE CARD GRID SYSTEM (FOR OTHER PLUG PAGES) --- */
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -267,10 +318,10 @@
         /* --- FOOTER (ZERO CUSHION STRUCTURE) --- */
         footer {
             width: 100%;
-            max-width: 100%; /* Spans full page edge */
-            padding: 2rem;   /* Cleans container alignment interior */
+            max-width: 100%;
+            padding: 2rem;
             margin-top: auto;
-            border-top: 1px solid var(--border-color); /* Zero vertical cushion line */
+            border-top: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -287,6 +338,15 @@
             }
             .tab-btn { padding: 0.4rem 0.5rem; }
             .home-hero { padding: 6rem 0 4rem 0; }
+            .services-row {
+                grid-template-columns: 100%;
+                gap: 1rem;
+                padding-bottom: 2.5rem;
+            }
+            .services-body {
+                padding-left: 0;
+                border-left: none;
+            }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1.25rem; }
         }
     </style>
@@ -325,26 +385,38 @@
             </section>
         </div>
 
-        <!-- TAB 2: SERVICES -->
+        <!-- TAB 2: SERVICES (SPLIT INDENTED STRUCTURE) -->
         <div id="tab-services" class="tab-panel">
-            <div class="section-header-block">
-                <div class="section-tagline">Core Ecosystem Allocations</div>
-                <h1 class="section-title">Our Services</h1>
-            </div>
-            
-            <div class="content-grid">
-                <div class="native-card">
-                    <div class="card-title">Tier I Strategy</div>
-                    <div class="card-text">Drop your Tier 1 package description and pricing structure guidelines here.</div>
+            <div class="services-wrapper">
+                
+                <!-- Row 1: Brand Strategy -->
+                <div class="services-row">
+                    <h1 class="services-title">Brand Strategy</h1>
+                    <div class="services-body">
+                        <p>Your brand is your most valuable asset. It is the core identity that dictates how the market perceives your value. We help private clients define exactly who they are, what they stand for, and how they win.</p>
+                        <p>From deep-dive brand strategy and premium visual identity to tone of voice and comprehensive brand guidelines, we build a cohesive, high-end system. Whether we are architecting a brand from scratch or executing a precision rebrand, we ensure your business is unforgettable, authoritative, and positioned for scale.</p>
+                    </div>
                 </div>
-                <div class="native-card">
-                    <div class="card-title">Tier II Scaling</div>
-                    <div class="card-text">Drop your Tier 2 package description and pricing structure guidelines here.</div>
+
+                <!-- Row 2: Content & Messaging -->
+                <div class="services-row">
+                    <h2 class="services-title">Content & Messaging</h2>
+                    <div class="services-body">
+                        <p>High-performing content does more than just fill a feed, it captures attention, builds deep consumer trust, and converts audience attention into predictable revenue.</p>
+                        <p>We engineer data-driven content tailored specifically to your growth goals. From conversion-focused copywriting and high-impact social assets to behavioral email campaigns and authority-building editorial content, every piece we produce serves a distinct purpose. Consistent. On-Brand. Architected for ROI.</p>
+                    </div>
                 </div>
-                <div class="native-card">
-                    <div class="card-title">Tier III Enterprise</div>
-                    <div class="card-text">Drop your Tier 3 package description and pricing structure guidelines here.</div>
+
+                <!-- Row 3: High-End Production -->
+                <div class="services-row">
+                    <h3 class="services-title">High-End Production</h3>
+                    <div class="services-body">
+                        <p>In a crowded digital landscape, premium visuals are the first thing your audience notices and the metric they judge your quality by.</p>
+                        <p>We produce world-class photo and video content designed to tell your brand story with maximum impact.</p>
+                        <p>From cinematic brand videos and high-converting Reels/TikToks to bespoke product and lifestyle photography, we handle the entire pipeline from pre-production to final asset delivery. Every single frame is crafted with commercial intention.</p>
+                    </div>
                 </div>
+
             </div>
         </div>
 
