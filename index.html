@@ -115,12 +115,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- PREMIUM IMAGE WRAPPER --- */
+        /* --- IMAGE CONTAINERS --- */
         .img-container {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 2rem; /* Creates a clean gap when multiple images stack */
+            gap: 2rem; 
             margin-bottom: 2rem;
         }
 
@@ -131,6 +131,21 @@
             border: 1px solid var(--border-color);
             border-radius: 4px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- SPECIFIC UNPADDED FLUSH HOME STYLING --- */
+        .img-container-flush {
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .img-container-flush img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
@@ -222,14 +237,14 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE) -->
+        <!-- TAB 1: GET STARTED (HOMEPAGE - COMPLETELY FLUSH) -->
         <div id="tab-home" class="tab-panel active">
-            <div class="img-container">
+            <div class="img-container-flush">
                 <img src="homepage.png" alt="SR Studios Home Overview">
             </div>
         </div>
 
-        <!-- TAB 2: SERVICES (3 PAGES STACKED VERTICALLY) -->
+        <!-- TAB 2: SERVICES -->
         <div id="tab-services" class="tab-panel">
             <div class="img-container">
                 <img src="services1.png" alt="Core Services Tier 1">
@@ -238,7 +253,7 @@
             </div>
         </div>
 
-        <!-- TAB 3: BRAND ARCHITECT PROGRAM (2 PAGES STACKED VERTICALLY) -->
+        <!-- TAB 3: BRAND ARCHITECT PROGRAM -->
         <div id="tab-brand" class="tab-panel">
             <div class="img-container">
                 <img src="brand1.png" alt="Brand Architect Program Part 1">
