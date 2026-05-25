@@ -30,7 +30,7 @@
             
             /* Typography Systems */
             --font-body: 'Noto Serif', Georgia, 'Times New Roman', serif;
-            --font-home-hero: 'Amberfall', 'Ballet', 'Georgia', serif;
+            --font-home-hero: 'Oswald', -apple-system, sans-serif; /* Reverted back to Oswald */
             --font-sub-headers: 'Oswald', -apple-system, sans-serif;
             --font-signature: 'Ballet', cursive;
         }
@@ -174,8 +174,9 @@
             font-family: var(--font-home-hero);
             font-size: clamp(3.5rem, 11vw, 8.5rem); 
             font-weight: 400;
+            text-transform: uppercase;
             color: var(--text-primary);
-            letter-spacing: 0.02em;
+            letter-spacing: 0.05em; /* Optimized spacing for Oswald */
             line-height: 1.1;
             margin-bottom: 1.5rem;
             text-align: center;
@@ -289,10 +290,8 @@
         .architect-body-content p { margin-bottom: 1.5rem; }
         .architect-body-content p:last-child { margin-bottom: 0; }
         
-        .architect-body-content .cta-highlight {
-            color: var(--text-primary);
-            font-weight: 600;
-            margin-top: 2rem;
+        .architect-body-content .cta-wrapper-inline {
+            margin-top: 2.5rem;
         }
 
         .architect-image-wrapper {
@@ -479,6 +478,7 @@
             text-decoration: none;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            text-align: center;
         }
 
         .btn-primary:hover {
@@ -583,6 +583,7 @@
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
                 <div class="hero-branding-block">
+                    <!-- Changed typography variable source mapping back to Oswald -->
                     <h1 class="brand-title-single">SR STUDIOS</h1>
                     <h2 class="hero-sub-header">Digital Marketing Agency</h2>
                 </div>
@@ -632,7 +633,11 @@
                             <p>Before scaling acquisition engines, driving paid search traffic, or launching complex email funnels, you must first design a visual framework engineered to win modern customer trust.</p>
                             <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
                             <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
-                            <p class="cta-highlight">Reach out to book a Brand Architect Consultation today.</p>
+                            <div class="cta-wrapper-inline">
+                                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
+                                    Reach out to book a Brand Architect Consultation today.
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="architect-image-wrapper">
@@ -742,7 +747,7 @@
             </div>
         </div>
 
-        <!-- TAB 5: OUR STORY (UPDATED WITH BRAND NEW SPLIT SYSTEM & SIGNATURE) -->
+        <!-- TAB 5: OUR STORY -->
         <div id="tab-story" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">The Blueprint Behind the Studio</div>
@@ -750,17 +755,14 @@
             </div>
 
             <div class="story-container">
-                <!-- Text Area (Left Half) -->
                 <div class="story-content-side">
                     <div class="story-body">
                         <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
                         <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
                     </div>
-                    <!-- Large handwritten-style Ballet sign-off -->
                     <div class="story-signature">S.Ryan</div>
                 </div>
 
-                <!-- Image Area (Right Half) -->
                 <div class="story-image-side">
                     <div class="founder-image-slot">
                         <img src="founder.png" alt="S. Ryan, Founder of SR Studios">
@@ -786,7 +788,7 @@
     <!-- GLOBAL SITE FOOTER -->
     <footer>
         <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-        <div>Los Angeles, California</div>
+        <div>Hollywood, California</div>
     </footer>
 
     <!-- INTERACTION LOGIC -->
@@ -798,7 +800,7 @@
             const panels = document.querySelectorAll('.tab-panel');
             panels.forEach(panel => panel.classList.remove('active'));
 
-            if(event.currentTarget.tagName === 'A') {
+            if(event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('btn-primary')) {
                 document.querySelector(`[onclick*='${tabId}']`).classList.add('active');
             } else {
                 event.currentTarget.classList.add('active');
