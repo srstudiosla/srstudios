@@ -101,13 +101,13 @@
         }
 
         .tab-panel {
-            display: none; /* Hidden by default */
+            display: none; 
             width: 100%;
             animation: fadeIn 0.4s ease forwards;
         }
 
         .tab-panel.active {
-            display: block; /* Shown only when tab active */
+            display: block; 
         }
 
         @keyframes fadeIn {
@@ -115,37 +115,69 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- IMAGE CONTAINERS --- */
-        .img-container {
-            width: 100%;
+        /* --- NATIVE HERO CONTENT SECTION (HOME) --- */
+        .hero-section {
             display: flex;
             flex-direction: column;
-            gap: 2rem; 
-            margin-bottom: 2rem;
+            align-items: flex-start;
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .img-container img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .hero-tagline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--accent-cream);
+            margin-bottom: 2rem;
+            max-width: 750px;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        /* --- NATIVE CARD GRID SYSTEM --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .native-card {
+            background-color: var(--surface-color);
             border: 1px solid var(--border-color);
+            padding: 2.5rem;
             border-radius: 4px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s ease;
         }
 
-        /* --- SPECIFIC UNPADDED FLUSH HOME STYLING --- */
-        .img-container-flush {
-            width: 100%;
-            margin-bottom: 2rem;
+        .native-card:hover {
+            border-color: var(--text-secondary);
         }
 
-        .img-container-flush img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
+        .card-title {
+            font-size: 1.25rem;
+            color: var(--accent-cream);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
@@ -172,8 +204,8 @@
             font-size: 1.05rem;
         }
 
-        /* --- DIRECT EMAIL ACTION BUTTON --- */
-        .btn-email-direct {
+        /* --- DIRECT ACTION BUTTONS --- */
+        .btn-primary {
             background-color: var(--accent-cream);
             color: var(--bg-color);
             border: none;
@@ -190,10 +222,9 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-email-direct:hover {
+        .btn-primary:hover {
             background-color: var(--text-primary);
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
         /* --- FOOTER --- */
@@ -214,6 +245,7 @@
             header { padding: 2rem 0; }
             .nav-tabs { gap: 0.5rem; }
             .tab-btn { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
+            .hero-title { font-size: 2.2rem; }
             .contact-wrapper h2 { font-size: 1.75rem; }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
         }
@@ -237,42 +269,87 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE - COMPLETELY FLUSH) -->
+        <!-- TAB 1: GET STARTED (HOMEPAGE - NATIVELY CODED) -->
         <div id="tab-home" class="tab-panel active">
-            <div class="img-container-flush">
-                <img src="homepage.png" alt="SR Studios Home Overview">
+            <section class="hero-section">
+                <div class="hero-tagline">E-Commerce & Digital Architecture</div>
+                <h1 class="hero-title">We engineer digital storefronts that convert focus into revenue.</h1>
+                <p class="hero-description">Stop losing high-intent traffic to friction. We design immersive brand frameworks and scale infrastructure built to perform.</p>
+                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">Explore Infrastructure</a>
+            </section>
+
+            <div class="content-grid">
+                <div class="native-card">
+                    <div class="card-title">01 / Structural Optimization</div>
+                    <div class="card-text">Eliminating funnel drops by rebuilding key landing frameworks natively for performance.</div>
+                </div>
+                <div class="native-card">
+                    <div class="card-title">02 / Growth Architectures</div>
+                    <div class="card-text">Designing premium retention paths and paid channels tuned to high-value consumer targets.</div>
+                </div>
             </div>
         </div>
 
-        <!-- TAB 2: SERVICES -->
+        <!-- TAB 2: SERVICES (READY FOR COPYWRITING) -->
         <div id="tab-services" class="tab-panel">
-            <div class="img-container">
-                <img src="services1.png" alt="Core Services Tier 1">
-                <img src="services2.png" alt="Core Services Tier 2">
-                <img src="services3.png" alt="Core Services Tier 3">
+            <section class="hero-section">
+                <div class="hero-tagline">Core Ecosystem Allocations</div>
+                <h1 class="hero-title">Our Services</h1>
+                <p class="hero-description">Tailored operations to optimize visual assets and maximize customer conversion parameters.</p>
+            </section>
+            
+            <div class="content-grid">
+                <div class="native-card">
+                    <div class="card-title">Tier I Strategy</div>
+                    <div class="card-text">Drop your Tier 1 package description and pricing structure guidelines here.</div>
+                </div>
+                <div class="native-card">
+                    <div class="card-title">Tier II Scaling</div>
+                    <div class="card-text">Drop your Tier 2 package description and pricing structure guidelines here.</div>
+                </div>
+                <div class="native-card">
+                    <div class="card-title">Tier III Enterprise</div>
+                    <div class="card-text">Drop your Tier 3 package description and pricing structure guidelines here.</div>
+                </div>
             </div>
         </div>
 
         <!-- TAB 3: BRAND ARCHITECT PROGRAM -->
         <div id="tab-brand" class="tab-panel">
-            <div class="img-container">
-                <img src="brand1.png" alt="Brand Architect Program Part 1">
-                <img src="brand2.png" alt="Brand Architect Program Part 2">
+            <section class="hero-section">
+                <div class="hero-tagline">Accelerated Asset Development</div>
+                <h1 class="hero-title">The Brand Architect Program</h1>
+                <p class="hero-description">A multi-phase integration blueprint designed to craft high-converting creative structures from scratch.</p>
+            </section>
+            
+            <div class="content-grid">
+                <div class="native-card">
+                    <div class="card-title">Phase I: Identity Creation</div>
+                    <div class="card-text">Detail the initial brand style sheets, layout rules, and asset mapping workflows here.</div>
+                </div>
+                <div class="native-card">
+                    <div class="card-title">Phase II: Execution</div>
+                    <div class="card-text">Detail the active buildout, storefront testing, and deployment schedules here.</div>
+                </div>
             </div>
         </div>
 
         <!-- TAB 4: PARTNERSHIP RETAINERS -->
         <div id="tab-retainers" class="tab-panel">
-            <div class="img-container">
-                <img src="retainers.png" alt="Strategic Partnership Retainers">
-            </div>
+            <section class="hero-section">
+                <div class="hero-tagline">Sustained Growth Management</div>
+                <h1 class="hero-title">Partnership Retainers</h1>
+                <p class="hero-description">Long-term alignment models built to act as your internal strategic growth and engineering arm.</p>
+            </section>
         </div>
 
         <!-- TAB 5: OUR STORY -->
         <div id="tab-story" class="tab-panel">
-            <div class="img-container">
-                <img src="about.png" alt="Our Story & Background">
-            </div>
+            <section class="hero-section">
+                <div class="hero-tagline">The Blueprint Behind the Studio</div>
+                <h1 class="hero-title">Our Story</h1>
+                <p class="hero-description">We bridge the gap between creative visual execution and rigorous quantitative conversion performance metrics.</p>
+            </section>
         </div>
 
         <!-- TAB 6: CONTACT ARCHITECTURE -->
@@ -281,7 +358,7 @@
                 <h2>Initiate Partnership</h2>
                 <p>Click below to launch a direct, secure communication thread with our execution team. Please include your current metrics and preferred retainer tier parameter targets.</p>
                 
-                <a href="mailto:strategy@srstudiosla.com?subject=Retainer%20Brief%20-%20SR%20Studios" class="btn-email-direct">
+                <a href="mailto:strategy@srstudiosla.com?subject=Retainer%20Brief%20-%20SR%20Studios" class="btn-primary">
                     Book Brand Consultation
                 </a>
             </div>
@@ -298,19 +375,20 @@
     <!-- INTERACTION LOGIC (LIGHTWEIGHT JAVASCRIPT) -->
     <script>
         function switchTab(event, tabId) {
-            // Remove active status from all structural tab buttons
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Remove active status from all layout panels
             const panels = document.querySelectorAll('.tab-panel');
             panels.forEach(panel => panel.classList.remove('active'));
 
-            // Instantiate active status to clicked target
-            event.currentTarget.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
+            // Look up corresponding navigation element if triggered from inside hero button
+            if(event.currentTarget.tagName === 'A') {
+                document.querySelector(`[onclick*='${tabId}']`).classList.add('active');
+            } else {
+                event.currentTarget.classList.add('active');
+            }
             
-            // Auto-scrolls window back to the top when switching sections
+            document.getElementById(tabId).classList.add('active');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
