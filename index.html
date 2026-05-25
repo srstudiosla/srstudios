@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
-    <!-- Importing Noto Serif and Oswald from Google Fonts -->
+    <!-- Importing Noto Serif, Oswald, and Ballet from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     
     <style>
         /* --- CUSTOM FONT INTEGRATION TEMPLATE --- */
@@ -32,6 +32,7 @@
             --font-body: 'Noto Serif', Georgia, 'Times New Roman', serif;
             --font-home-hero: 'Amberfall', 'Ballet', 'Georgia', serif;
             --font-sub-headers: 'Oswald', -apple-system, sans-serif;
+            --font-signature: 'Ballet', cursive;
         }
 
         /* --- GLOBAL RESET & LAYOUT --- */
@@ -141,7 +142,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- TRULY CENTERED HOMEPAGE HERO (RETAINS CELEBRATED AMBERFALL) --- */
+        /* --- TRULY CENTERED HOMEPAGE HERO --- */
         .home-hero {
             display: flex;
             flex-direction: column;
@@ -194,7 +195,7 @@
             width: 100%;
         }
 
-        /* --- SERVICES PAGE LAYOUT (OSWALD SUB-PAGE HEADERS) --- */
+        /* --- SERVICES PAGE LAYOUT --- */
         .services-wrapper {
             display: flex;
             flex-direction: column;
@@ -304,6 +305,74 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         .architect-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; }
+
+        /* --- THE STORY SPLIT SCREEN INTERFACE --- */
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+            padding: 2rem 0 4rem 0;
+        }
+
+        .story-content-side {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-body {
+            color: var(--text-secondary);
+            font-size: clamp(1rem, 2.2vw, 1.15rem);
+            line-height: 1.8;
+        }
+
+        .story-body p {
+            margin-bottom: 1.75rem;
+        }
+
+        .story-signature {
+            font-family: var(--font-signature);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--accent-header);
+            margin-top: 2rem;
+            line-height: 1;
+            user-select: none;
+        }
+
+        .story-image-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .founder-image-slot {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.25rem;
+        }
+
+        .founder-image-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.85;
+        }
+
+        .founder-caption {
+            font-family: var(--font-sub-headers);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-secondary);
+            text-align: center;
+        }
 
         /* --- THREE-PANEL RETAINER GRID SYSTEM --- */
         .retainer-grid {
@@ -485,6 +554,8 @@
             .services-body { padding-left: 0; border-left: none; }
             .architect-row-left, .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
             .architect-row-right .architect-image-wrapper { grid-row: 2; }
+            .story-container { grid-template-columns: 100%; gap: 3rem; }
+            .story-image-side { grid-row: 1; }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1.25rem; }
         }
     </style>
@@ -508,7 +579,7 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE RETAINS ORIGINAL EDITORIAL SERIF IDENTITY) -->
+        <!-- TAB 1: GET STARTED -->
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
                 <div class="hero-branding-block">
@@ -521,7 +592,7 @@
             </section>
         </div>
 
-        <!-- TAB 2: SERVICES (SUB-PAGE UPDATED TO OSWALD) -->
+        <!-- TAB 2: SERVICES -->
         <div id="tab-services" class="tab-panel">
             <div class="services-wrapper">
                 <div class="services-row">
@@ -546,7 +617,7 @@
             </div>
         </div>
 
-        <!-- TAB 3: BRAND ARCHITECT PROGRAM (SUB-PAGE UPDATED TO OSWALD) -->
+        <!-- TAB 3: BRAND ARCHITECT PROGRAM -->
         <div id="tab-brand" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Accelerated Asset Development</div>
@@ -554,7 +625,6 @@
             </div>
             
             <div class="architect-container">
-                <!-- Strategic Philosophy Section -->
                 <div class="architect-row-left">
                     <div class="architect-text-block">
                         <h1 class="arch-heading">The Strategic Blueprint</h1>
@@ -570,15 +640,11 @@
                     </div>
                 </div>
 
-                <!-- Global Heading for Program Deliverables -->
                 <div class="section-header-block" style="padding: 2rem 0 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
                     <h1 class="section-title" style="font-size: 2.2rem;">Program Deliverables</h1>
                 </div>
 
-                <!-- Deliverables Stacking System (Three Aligned Image/Text Pairs) -->
                 <div class="deliverables-stack">
-                    
-                    <!-- Deliverable 1: Color & Typography -->
                     <div class="architect-row-right">
                         <div class="architect-image-wrapper">
                             <img src="srarch_typography.png" alt="Bespoke Color Schemes & Typography Systems">
@@ -591,7 +657,6 @@
                         </div>
                     </div>
 
-                    <!-- Deliverable 2: Logo Architecture -->
                     <div class="architect-row-right">
                         <div class="architect-image-wrapper">
                             <img src="srarch_logo.png" alt="Minimalist Logo Architectures & Mark Assets">
@@ -604,7 +669,6 @@
                         </div>
                     </div>
 
-                    <!-- Deliverable 3: Ad Creative Guidelines -->
                     <div class="architect-row-right">
                         <div class="architect-image-wrapper">
                             <img src="srarch_advertising.png" alt="Ad Creative Guidelines & Promotional Direction">
@@ -616,12 +680,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
-        <!-- TAB 4: PARTNERSHIP RETAINERS (SUB-PAGE UPDATED TO OSWALD) -->
+        <!-- TAB 4: PARTNERSHIP RETAINERS -->
         <div id="tab-retainers" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Sustained Growth Management</div>
@@ -629,8 +692,6 @@
             </div>
 
             <div class="retainer-grid">
-                
-                <!-- Tier 1: Foundational -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Foundational</h2>
@@ -647,7 +708,6 @@
                     </div>
                 </div>
 
-                <!-- Tier 2: Omnichannel Pro -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Omnichannel Pro</h2>
@@ -664,7 +724,6 @@
                     </div>
                 </div>
 
-                <!-- Tier 3: Full-Suite Pro -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Full-Suite Pro</h2>
@@ -680,15 +739,34 @@
                         <span>per month</span>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <!-- TAB 5: OUR STORY (SUB-PAGE UPDATED TO OSWALD) -->
+        <!-- TAB 5: OUR STORY (UPDATED WITH BRAND NEW SPLIT SYSTEM & SIGNATURE) -->
         <div id="tab-story" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">The Blueprint Behind the Studio</div>
-                <h1 class="section-title">Our Story</h1>
+                <h1 class="section-title">About Us</h1>
+            </div>
+
+            <div class="story-container">
+                <!-- Text Area (Left Half) -->
+                <div class="story-content-side">
+                    <div class="story-body">
+                        <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
+                        <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
+                    </div>
+                    <!-- Large handwritten-style Ballet sign-off -->
+                    <div class="story-signature">S.Ryan</div>
+                </div>
+
+                <!-- Image Area (Right Half) -->
+                <div class="story-image-side">
+                    <div class="founder-image-slot">
+                        <img src="founder.png" alt="S. Ryan, Founder of SR Studios">
+                    </div>
+                    <div class="founder-caption">Founder</div>
+                </div>
             </div>
         </div>
 
