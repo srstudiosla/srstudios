@@ -55,7 +55,8 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        header, main, footer {
+        /* Nav, Main Content blocks remain constrained to maintain editorial layout grids */
+        .nav-container, main, footer {
             width: 100%;
             max-width: 1000px;
         }
@@ -63,22 +64,14 @@
         /* --- STRAWBERRY MATCHA NAVIGATION HEADER (HEIGHT ENHANCED BY 30%) --- */
         header {
             width: 100%;
-            max-width: 100%;
             background-color: var(--accent-header);
-            padding: 1rem 1rem; /* Padding adjusted to physically scale height weight by 30% */
+            padding: 1rem; 
             display: flex;
             justify-content: center;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-container {
-            width: 100%;
-            max-width: 1000px;
-            display: flex;
-            justify-content: center;
         }
 
         .nav-tabs {
@@ -95,9 +88,9 @@
             background: transparent;
             border: none;
             color: var(--bg-color);
-            padding: 0.5rem 0.6rem; /* Interior breathing room slightly raised */
+            padding: 0.5rem 0.6rem; 
             font-size: 0.75rem;
-            font-weight: 700; /* Structural font weight emboldened to emphasize panel presence */
+            font-weight: 700; 
             text-transform: uppercase;
             letter-spacing: 0.08em;
             cursor: pointer;
@@ -116,28 +109,32 @@
             font-weight: 900;
         }
 
-        /* --- NATIVE HERO ROTATING CAROUSEL BANNER SYSTEM --- */
-        .carousel-window {
-            width: 100%;
-            max-width: 1000px;
+        /* --- NATIVE FULL-BLEED ROTATING CAROUSEL BANNER SYSTEM (DOUBLE FOOTPRINT) --- */
+        .full-bleed-carousel-outer {
+            width: 100%; /* Spans 100% of the entire screen frame */
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
             overflow: hidden;
             position: relative;
-            border-radius: 4px;
-            margin-bottom: 2rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border-color);
+        }
+
+        .carousel-window {
+            width: 100%;
+            max-width: 100%; 
+            overflow: hidden;
+            position: relative;
         }
 
         .carousel-track {
             display: flex;
-            width: 300%; /* Sized cleanly for the 3 distinct banners */
-            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); /* Ultra premium fluid snap motion */
+            width: 300%; 
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); 
         }
 
         .carousel-track img {
-            width: 33.3333%; /* Each image occupies precisely one card container block */
-            height: auto;
-            object-fit: cover;
+            width: 33.3333%; 
+            height: clamp(500px, 45vh, 700px); /* Height effectively doubled on desktop monitors */
+            object-fit: cover; /* Protects creative from shifting or pulling wide */
             display: block;
         }
 
@@ -175,13 +172,14 @@
             justify-content: center;
             text-align: center;
             flex-grow: 1;
-            min-height: 55vh; /* Balanced perfectly alongside the new landscape banner system */
+            min-height: 45vh; 
             padding: 4rem 2rem;
             border-radius: 4px;
             background: linear-gradient(rgba(11, 25, 20, 0.75), rgba(11, 25, 20, 0.75)), url('srhomepage.png') no-repeat center center;
             background-size: cover;
             width: 100%;
             box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            margin-top: 2rem;
             overflow: hidden;
         }
 
@@ -545,7 +543,6 @@
         /* --- FOOTER --- */
         footer {
             width: 100%;
-            max-width: 100%;
             padding: 2rem;
             margin-top: auto;
             border-top: 1px solid var(--border-color);
@@ -573,6 +570,7 @@
         @media (max-width: 768px) {
             .nav-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
             .tab-btn { padding: 0.4rem 0.5rem; }
+            .carousel-track img { height: 350px; } /* Scales downward cleanly for mobile */
             .home-hero { padding: 4rem 1rem; }
             .brand-title-single { font-size: clamp(2.2rem, 8.5vw, 4.5rem); }
             .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
@@ -587,7 +585,7 @@
 </head>
 <body>
 
-    <!-- PORTAL HEADER (HEIGHT WEIGHT EXTENDED BY 30%) -->
+    <!-- PORTAL HEADER (PANEL PRESENCE REINFORCED) -->
     <header>
         <div class="nav-container">
             <nav class="nav-tabs">
@@ -601,21 +599,22 @@
         </div>
     </header>
 
+    <!-- EXPANDED HIGH-IMPACT FULL BLEED CAROUSEL SLIDER (OUTSIDE THE BODY BLOCK AT THE APEX) -->
+    <div class="full-bleed-carousel-outer">
+        <div class="carousel-window">
+            <div class="carousel-track">
+                <img src="banner1.png" alt="SR Studios Featured Strategy Asset One">
+                <img src="banner2.png" alt="SR Studios Featured Strategy Asset Two">
+                <img src="banner3.png" alt="SR Studios Featured Strategy Asset Three">
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (INCORPORATING THE AUTOMATED CAROUSEL) -->
+        <!-- TAB 1: GET STARTED -->
         <div id="tab-home" class="tab-panel active">
-            
-            <!-- AUTOMATED ROTATING BANNER WINDOW -->
-            <div class="carousel-window">
-                <div class="carousel-track">
-                    <img src="banner1.png" alt="SR Studios Featured Strategy Asset One">
-                    <img src="banner2.png" alt="SR Studios Featured Strategy Asset Two">
-                    <img src="banner3.png" alt="SR Studios Featured Strategy Asset Three">
-                </div>
-            </div>
-
             <section class="home-hero">
                 <div class="hero-branding-block">
                     <h1 class="brand-title-single">SR STUDIOS</h1>
@@ -825,7 +824,7 @@
         <div>Los Angeles, California</div>
     </footer>
 
-    <!-- INTERACTION LOGIC (INCLUDING NEW CAROUSEL AUTO-SLIDER TICKER) -->
+    <!-- INTERACTION LOGIC -->
     <script>
         function switchTab(event, tabId) {
             const buttons = document.querySelectorAll('.tab-btn');
@@ -833,6 +832,14 @@
 
             const panels = document.querySelectorAll('.tab-panel');
             panels.forEach(panel => panel.classList.remove('active'));
+
+            // Control visibility of full bleed banner based on tab focus
+            const topCarousel = document.querySelector('.full-bleed-carousel-outer');
+            if (tabId === 'tab-home') {
+                topCarousel.style.display = 'block';
+            } else {
+                topCarousel.style.display = 'none';
+            }
 
             if(event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('btn-primary')) {
                 document.querySelector(`[onclick*='${tabId}']`).classList.add('active');
@@ -852,9 +859,8 @@
         if (carouselTrack) {
             setInterval(() => {
                 currentSlide = (currentSlide + 1) % totalSlides;
-                // Slides translate smoothly by exactly 1/3 splits of the 300% total track wrapper width
                 carouselTrack.style.transform = `translateX(-${currentSlide * 33.3333}%)`;
-            }, 5000); // Transitions automatically on a clean 5-second interval loop
+            }, 5000); 
         }
     </script>
 
