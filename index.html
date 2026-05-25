@@ -264,10 +264,16 @@
         }
 
         .architect-text-block h1.arch-heading { font-size: clamp(2rem, 4.5vw, 2.8rem); }
-        .architect-text-block h2.arch-heading { font-size: clamp(1.75rem, 4vw, 2.4rem); }
+        .architect-text-block h2.arch-heading { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-top: 1rem; } /* Adjusted size for multi-deliverable stack */
         .architect-body-content { color: var(--text-secondary); font-size: clamp(1rem, 2.5vw, 1.15rem); line-height: 1.7; }
         .architect-body-content p { margin-bottom: 1.5rem; }
         .architect-body-content p:last-child { margin-bottom: 0; }
+        
+        .architect-body-content .cta-highlight {
+            color: var(--accent-cream);
+            font-weight: 500;
+            margin-top: 2rem;
+        }
 
         .architect-image-wrapper {
             width: 100%;
@@ -294,7 +300,7 @@
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 4px;
-            padding: 3rem 1.5rem; /* Adjusted padding to maximize single-line text width */
+            padding: 3rem 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -311,7 +317,6 @@
             width: 100%;
         }
 
-        /* Scaled down 30% from 1.5rem to 1.05rem, added white-space lock */
         .retainer-tier-name {
             font-size: 1.05rem;
             font-weight: 600;
@@ -397,7 +402,7 @@
             margin-bottom: 3.5rem;
         }
         .section-tagline { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--text-secondary); margin-bottom: 1rem; }
-        .section-title { font-size: 2.5rem; font-weight: 400; color: var(--accent-cream); }
+        .section-title { font-size: 2.5rem; font-weight: 400; color: var(--accent-cream); text-transform: uppercase; letter-spacing: 0.05em; }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
         .contact-wrapper {
@@ -436,7 +441,7 @@
                 padding: 2.5rem 1.75rem;
             }
             .retainer-tier-name {
-                white-space: normal; /* Allow text wrapping on mobile devices where columns stack */
+                white-space: normal;
             }
         }
 
@@ -514,15 +519,19 @@
         <div id="tab-brand" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Accelerated Asset Development</div>
-                <h1 class="section-title">The Brand Architect Program</h1>
+                <h1 class="section-title">Brand Architect Program</h1>
             </div>
             
             <div class="architect-container">
+                <!-- Strategic Philosophy Row -->
                 <div class="architect-row-left">
                     <div class="architect-text-block">
-                        <h1 class="arch-heading">Phase I: Identity Creation</h1>
+                        <h1 class="arch-heading">The Strategic Blueprint</h1>
                         <div class="architect-body-content">
-                            <p>We establish your brand style sheets, layout rules, and dynamic asset mapping workflows from day one. This foundational framework serves as the definitive blueprint for alignment across all marketing touchpoints and long-term positioning vectors.</p>
+                            <p>Before scaling acquisition engines, driving paid search traffic, or launching complex email funnels, you must first design a visual framework engineered to win modern customer trust.</p>
+                            <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
+                            <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
+                            <p class="cta-highlight">Reach out to book a Brand Architect Consultation today.</p>
                         </div>
                     </div>
                     <div class="architect-image-wrapper">
@@ -530,14 +539,24 @@
                     </div>
                 </div>
 
+                <!-- Deliverables Stacking Row -->
                 <div class="architect-row-right">
                     <div class="architect-image-wrapper">
                         <img src="srarch2.png" alt="Brand Architect Framework Phase II">
                     </div>
                     <div class="architect-text-block">
-                        <h2 class="arch-heading">Phase II: Execution</h2>
+                        <h1 class="arch-heading">Program Deliverables</h1>
                         <div class="architect-body-content">
-                            <p>We move directly into rapid deployment, asset pipeline activation, and robust storefront optimization testing parameters. We transition concepts into live digital ecosystems engineered to perform under actual traffic conditions.</p>
+                            
+                            <h2 class="arch-heading">Bespoke Color Schemes & Typography Systems</h2>
+                            <p>Color theory is the unspoken language of consumer psychology, and typography is the architecture of your brand's editorial voice. We work closely with you to formulate custom, sophisticated color palettes that evoke immediate emotional trust, balanced alongside robust typography pairings. Our strategic approach ensures that your brand’s reading experience is highly legible, visually elegant, and structurally cohesive across all modern web browsers and mobile platforms.</p>
+                            
+                            <h2 class="arch-heading">Minimalist Logo Architectures & Mark Assets</h2>
+                            <p>Your logo should not attempt to explain everything you do; its sole purpose is to serve as an unforgettable, easily identifiable signature of your visual authority. We construct clean, scalable logo architectures and flexible brand marks designed to perform elegantly at any scale—from tiny mobile browser favicons and circular social media avatars to large-scale print production packages.</p>
+                            
+                            <h2 class="arch-heading">Ad Creative Guidelines & Promotional Direction</h2>
+                            <p>Establishing your visual identity is only the first half of the equation; knowing how to weaponize it within a live digital marketing framework is where true growth occurs. We provide you with comprehensive creative directions specifically tailored for modern promotional advertising. We detail layout structures, visual text hierarchy rules, and imagery guidelines optimized to win attention and trigger immediate conversion on platforms like Google, Instagram, Pinterest, and TikTok.</p>
+                        
                         </div>
                     </div>
                 </div>
