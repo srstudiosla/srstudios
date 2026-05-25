@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
     <style>
-        /* --- CUSTOM FONT INTEGRATION TEMPLATE --- 
-           If you have the Amberfall web font files (.woff2/.woff), 
-           uncomment this block and update the paths to activate it globally:
-        
+        /* --- CUSTOM FONT INTEGRATION TEMPLATE --- */
         @font-face {
             font-family: 'Amberfall';
             src: url('fonts/Amberfall.woff2') format('woff2'),
@@ -16,7 +13,6 @@
             font-weight: normal;
             font-style: normal;
         }
-        ------------------------------------------ */
 
         /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
@@ -54,7 +50,7 @@
             max-width: 1000px;
         }
 
-        /* --- NAVIGATION HEADER (CREAM BAND) --- */
+        /* --- NAVIGATION HEADER --- */
         header {
             width: 100%;
             max-width: 100%;
@@ -75,7 +71,6 @@
             justify-content: center;
         }
 
-        /* --- COMPACT NAVIGATION TABS --- */
         .nav-tabs {
             display: flex;
             justify-content: space-between;
@@ -101,15 +96,8 @@
             opacity: 0.8;
         }
 
-        .nav-tabs:hover .tab-btn {
-            opacity: 0.6;
-        }
-
-        .nav-tabs .tab-btn:hover {
-            opacity: 1;
-            transform: translateY(-1px);
-        }
-
+        .nav-tabs:hover .tab-btn { opacity: 0.6; }
+        .nav-tabs .tab-btn:hover { opacity: 1; transform: translateY(-1px); }
         .tab-btn.active {
             color: var(--bg-color);
             opacity: 1;
@@ -122,6 +110,8 @@
             padding: 2rem;
             width: 100%;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .tab-panel {
@@ -130,8 +120,10 @@
             animation: fadeIn 0.4s ease forwards;
         }
 
-        .tab-panel.active {
-            display: block; 
+        .tab-panel.active { 
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         @keyframes fadeIn {
@@ -139,60 +131,62 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- HOMEPAGE SPECIFIC LAYOUT WITH BACKGROUND IMAGE --- */
+        /* --- FIXED & TRULY CENTERED HOMEPAGE HERO --- */
         .home-hero {
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
             justify-content: center;
-            padding: 12rem 2rem;
+            text-align: center;
+            flex-grow: 1;
+            min-height: 70vh;
+            padding: 4rem 2rem;
             border-radius: 4px;
-            
-            /* Background image asset configuration with linear dark overlay for maximum contrast */
             background: linear-gradient(rgba(11, 25, 20, 0.75), rgba(11, 25, 20, 0.75)), url('srhomepage.png') no-repeat center center;
             background-size: cover;
             width: 100%;
             box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            overflow: hidden; /* Safeguards layout overflow */
         }
 
-        /* Centering frame to lock text layout parameters exactly in the center */
+        /* Unified block container to manage absolute centered alignments */
         .hero-branding-block {
+            width: 100%;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            text-align: center;
+            margin: 0 auto;
         }
 
-        /* --- AMBERFALL TYPOGRAPHY REVISIONS (LOCKED CENTRAL PROPORTIONS) --- */
+        /* --- AMBERFALL TYPOGRAPHY (SCALED & INLINE EMBEDDED CENTERING) --- */
         .brand-title-single {
             font-family: 'Amberfall', 'Ballet', 'Georgia', 'Times New Roman', serif;
-            font-size: clamp(4.5rem, 14vw, 11rem); 
+            /* Slightly scaled down to prevent clipping and force container compliance */
+            font-size: clamp(3.5rem, 11vw, 8.5rem); 
             font-weight: 400;
             color: var(--accent-cream);
             letter-spacing: 0.02em;
-            line-height: 1;
-            margin-bottom: 2.5rem;
-            white-space: nowrap; 
-            width: 100%;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
             text-align: center;
-            display: block;
+            width: 100%;
+            white-space: nowrap; 
         }
 
         .hero-sub-header {
-            font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+            font-size: clamp(1rem, 2.2vw, 1.5rem);
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--text-secondary);
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
             text-align: center;
             width: 100%;
         }
 
-        /* --- SERVICES PAGE ASYMMETRICAL LAYOUT --- */
+        /* --- SERVICES PAGE LAYOUT --- */
         .services-wrapper {
             display: flex;
             flex-direction: column;
@@ -209,11 +203,7 @@
             padding-bottom: 4rem;
         }
 
-        .services-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
+        .services-row:last-child { border-bottom: none; padding-bottom: 0; }
         .services-title {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             font-size: clamp(1.8rem, 4vw, 2.5rem);
@@ -231,43 +221,67 @@
             padding-left: 2.5rem;
             border-left: 1px solid var(--border-color);
         }
+        .services-body p { margin-bottom: 1.5rem; }
+        .services-body p:last-child { margin-bottom: 0; }
 
-        .services-body p {
-            margin-bottom: 1.5rem;
+        /* --- BRAND ARCHITECT INTERLOCKING LAYOUT SYSTEM --- */
+        .architect-container {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+            padding: 2rem 0;
         }
 
-        .services-body p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* --- NATIVE CARD GRID SYSTEM (FOR OTHER PLUG PAGES) --- */
-        .content-grid {
+        .architect-row-left {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            width: 100%;
+            grid-template-columns: 2fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6rem;
         }
 
-        .native-card {
+        .architect-row-right {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3.5rem;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6rem;
+        }
+
+        .architect-row-left:last-child, .architect-row-right:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .architect-text-block { display: flex; flex-direction: column; }
+        .architect-text-block .arch-heading {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--accent-cream);
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+            margin-bottom: 1.75rem;
+        }
+
+        .architect-text-block h1.arch-heading { font-size: clamp(2rem, 4.5vw, 2.8rem); }
+        .architect-text-block h2.arch-heading { font-size: clamp(1.75rem, 4vw, 2.4rem); }
+        .architect-body-content { color: var(--text-secondary); font-size: clamp(1rem, 2.5vw, 1.15rem); line-height: 1.7; }
+        .architect-body-content p { margin-bottom: 1.5rem; }
+        .architect-body-content p:last-child { margin-bottom: 0; }
+
+        .architect-image-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 5;
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 2.5rem;
             border-radius: 4px;
-            text-align: left;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
-
-        .card-title {
-            font-size: 1.25rem;
-            color: var(--accent-cream);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .card-text {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
+        .architect-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; }
 
         /* --- BUTTONS --- */
         .btn-primary {
@@ -293,26 +307,14 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
 
-        /* --- GLOBAL PORTIONS AND GENERAL HEADERS --- */
+        /* --- GLOBAL HEADERS --- */
         .section-header-block {
             padding: 4rem 0 2rem 0;
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
+            margin-bottom: 3.5rem;
         }
-
-        .section-tagline {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: var(--accent-cream);
-        }
+        .section-tagline { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--text-secondary); margin-bottom: 1rem; }
+        .section-title { font-size: 2.5rem; font-weight: 400; color: var(--accent-cream); }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
         .contact-wrapper {
@@ -324,21 +326,10 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        .contact-wrapper h2 { font-size: 2rem; font-weight: 400; margin-bottom: 1rem; color: var(--accent-cream); }
+        .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
 
-        .contact-wrapper h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            color: var(--accent-cream);
-        }
-
-        .contact-wrapper p {
-            color: var(--text-secondary);
-            margin-bottom: 3rem;
-            font-size: 1.05rem;
-        }
-
-        /* --- FOOTER (ZERO CUSHION STRUCTURE) --- */
+        /* --- FOOTER --- */
         footer {
             width: 100%;
             max-width: 100%;
@@ -354,33 +345,21 @@
 
         /* --- RESPONSIVE MEDIA --- */
         @media (max-width: 768px) {
-            .nav-tabs {
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 2px;
-            }
+            .nav-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
             .tab-btn { padding: 0.4rem 0.5rem; }
-            .home-hero { padding: 6rem 1rem; }
-            .brand-title-single { 
-                font-size: clamp(2.5rem, 9vw, 5.5rem); 
-                text-align: center;
-            }
-            .services-row {
-                grid-template-columns: 100%;
-                gap: 1rem;
-                padding-bottom: 2.5rem;
-            }
-            .services-body {
-                padding-left: 0;
-                border-left: none;
-            }
+            .home-hero { padding: 4rem 1rem; }
+            .brand-title-single { font-size: clamp(2.2rem, 8.5vw, 4.5rem); }
+            .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
+            .services-body { padding-left: 0; border-left: none; }
+            .architect-row-left, .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
+            .architect-row-right .architect-image-wrapper { grid-row: 2; }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1.25rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- PORTAL HEADER (CREAM NAVIGATION BAND) -->
+    <!-- PORTAL HEADER -->
     <header>
         <div class="nav-container">
             <nav class="nav-tabs">
@@ -397,52 +376,41 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE WITH HERO IMAGE BACKGROUND) -->
+        <!-- TAB 1: GET STARTED (CENTERED HOMEPAGE) -->
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
                 <div class="hero-branding-block">
                     <h1 class="brand-title-single">SR STUDIOS</h1>
                     <h2 class="hero-sub-header">Digital Marketing Agency</h2>
                 </div>
-                
                 <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
                     Let's Scale Your Brand
                 </a>
             </section>
         </div>
 
-        <!-- TAB 2: SERVICES (SPLIT INDENTED STRUCTURE) -->
+        <!-- TAB 2: SERVICES -->
         <div id="tab-services" class="tab-panel">
             <div class="services-wrapper">
-                
-                <!-- Row 1: Brand Strategy -->
                 <div class="services-row">
                     <h1 class="services-title">Brand Strategy</h1>
                     <div class="services-body">
                         <p>Your brand is your most valuable asset. It is the core identity that dictates how the market perceives your value. We help private clients define exactly who they are, what they stand for, and how they win.</p>
-                        <p>From deep-dive brand strategy and premium visual identity to tone of voice and comprehensive brand guidelines, we build a cohesive, high-end system. Whether we are architecting a brand from scratch or executing a precision rebrand, we ensure your business is unforgettable, authoritative, and positioned for scale.</p>
+                        <p>From deep-dive brand strategy and premium visual identity to tone of voice and comprehensive brand guidelines, we build a cohesive, high-end system.</p>
                     </div>
                 </div>
-
-                <!-- Row 2: Content & Messaging -->
                 <div class="services-row">
                     <h2 class="services-title">Content & Messaging</h2>
                     <div class="services-body">
                         <p>High-performing content does more than just fill a feed, it captures attention, builds deep consumer trust, and converts audience attention into predictable revenue.</p>
-                        <p>We engineer data-driven content tailored specifically to your growth goals. From conversion-focused copywriting and high-impact social assets to behavioral email campaigns and authority-building editorial content, every piece we produce serves a distinct purpose. Consistent. On-Brand. Architected for ROI.</p>
                     </div>
                 </div>
-
-                <!-- Row 3: High-End Production -->
                 <div class="services-row">
                     <h3 class="services-title">High-End Production</h3>
                     <div class="services-body">
                         <p>In a crowded digital landscape, premium visuals are the first thing your audience notices and the metric they judge your quality by.</p>
-                        <p>We produce world-class photo and video content designed to tell your brand story with maximum impact.</p>
-                        <p>From cinematic brand videos and high-converting Reels/TikToks to bespoke product and lifestyle photography, we handle the entire pipeline from pre-production to final asset delivery. Every single frame is crafted with commercial intention.</p>
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -453,14 +421,29 @@
                 <h1 class="section-title">The Brand Architect Program</h1>
             </div>
             
-            <div class="content-grid">
-                <div class="native-card">
-                    <div class="card-title">Phase I: Identity Creation</div>
-                    <div class="card-text">Detail the initial brand style sheets, layout rules, and asset mapping workflows here.</div>
+            <div class="architect-container">
+                <div class="architect-row-left">
+                    <div class="architect-text-block">
+                        <h1 class="arch-heading">Phase I: Identity Creation</h1>
+                        <div class="architect-body-content">
+                            <p>We establish your brand style sheets, layout rules, and dynamic asset mapping workflows from day one. This foundational framework serves as the definitive blueprint for alignment across all marketing touchpoints and long-term positioning vectors.</p>
+                        </div>
+                    </div>
+                    <div class="architect-image-wrapper">
+                        <img src="srarch1.png" alt="Brand Architect Framework Phase I">
+                    </div>
                 </div>
-                <div class="native-card">
-                    <div class="card-title">Phase II: Execution</div>
-                    <div class="card-text">Detail the active buildout, storefront testing, and deployment schedules here.</div>
+
+                <div class="architect-row-right">
+                    <div class="architect-image-wrapper">
+                        <img src="srarch2.png" alt="Brand Architect Framework Phase II">
+                    </div>
+                    <div class="architect-text-block">
+                        <h2 class="arch-heading">Phase II: Execution</h2>
+                        <div class="architect-body-content">
+                            <p>We move directly into rapid deployment, asset pipeline activation, and robust storefront optimization testing parameters. We transition concepts into live digital ecosystems engineered to perform under actual traffic conditions.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -481,12 +464,11 @@
             </div>
         </div>
 
-        <!-- TAB 6: CONTACT ARCHITECTURE -->
+        <!-- TAB 6: CONTACT -->
         <div id="tab-contact" class="tab-panel">
             <div class="contact-wrapper">
                 <h2>Initiate Partnership</h2>
-                <p>Click below to launch a direct, secure communication thread with our execution team. Please include your current metrics and preferred retainer tier parameter targets.</p>
-                
+                <p>Click below to launch a direct, secure communication thread with our execution team.</p>
                 <a href="mailto:strategy@srstudiosla.com?subject=Retainer%20Brief%20-%20SR%20Studios" class="btn-primary">
                     Book Brand Consultation
                 </a>
@@ -501,7 +483,7 @@
         <div>Los Angeles, California</div>
     </footer>
 
-    <!-- INTERACTION LOGIC (LIGHTWEIGHT JAVASCRIPT) -->
+    <!-- INTERACTION LOGIC -->
     <script>
         function switchTab(event, tabId) {
             const buttons = document.querySelectorAll('.tab-btn');
