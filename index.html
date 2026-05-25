@@ -28,7 +28,7 @@
             color: var(--text-primary);
             font-family: var(--font-family);
             line-height: 1.6;
-            padding: 0 2rem;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -38,66 +38,73 @@
 
         header, main, footer {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
-        /* --- FIXED NAVIGATION BRANDING --- */
+        /* --- NAVIGATION HEADER (CREAM BAND) --- */
         header {
-            padding: 3rem 0 2rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent-cream);
-        }
-
-        /* --- NAVIGATION TABS --- */
-        .nav-tabs {
+            width: 100%;
+            max-width: 100%;
+            background-color: var(--accent-cream);
+            padding: 0.75rem 1rem;
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
             width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* --- COMPACT NAVIGATION TABS --- */
+        .nav-tabs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 900px;
+            flex-wrap: nowrap;
+            gap: 0.25rem;
         }
 
         .tab-btn {
             background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 0.6rem 1.2rem;
-            font-size: 0.8rem;
-            font-weight: 500;
+            border: none;
+            color: var(--bg-color);
+            padding: 0.4rem 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 2px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            opacity: 0.8;
         }
 
         .tab-btn:hover {
-            color: var(--accent-cream);
-            border-color: var(--text-secondary);
+            opacity: 1;
+            transform: translateY(-1px);
         }
 
         .tab-btn.active {
-            background-color: var(--accent-cream);
             color: var(--bg-color);
-            border-color: var(--accent-cream);
-            font-weight: 600;
+            opacity: 1;
+            border-bottom: 2px solid var(--bg-color);
+            font-weight: 800;
         }
 
         /* --- TAB CONTENT PANELS --- */
         main {
-            padding: 4rem 0;
+            padding: 2rem;
             width: 100%;
+            flex-grow: 1;
         }
 
         .tab-panel {
@@ -111,49 +118,47 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- NATIVE HERO CONTENT SECTION (HOME) --- */
-        .hero-section {
+        /* --- HOMEPAGE SPECIFIC LAYOUT --- */
+        .home-hero {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+            text-align: center;
+            padding: 8rem 0 6rem 0; /* Slightly increased padding to balance the single-view layout */
         }
 
-        .hero-tagline {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
+        .brand-cursive {
+            font-family: "Georgia", "Didot", Garamond, serif;
+            font-style: italic;
+            font-size: clamp(4rem, 12vw, 8.5rem);
             font-weight: 400;
-            line-height: 1.15;
             color: var(--accent-cream);
-            margin-bottom: 2rem;
-            max-width: 750px;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            width: 100%;
         }
 
-        .hero-description {
-            font-size: 1.15rem;
+        .hero-sub-header {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
-        /* --- NATIVE CARD GRID SYSTEM --- */
+        /* --- NATIVE CARD GRID SYSTEM (FOR OTHER SUBPAGES) --- */
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
+            width: 100%;
         }
 
         .native-card {
@@ -161,11 +166,7 @@
             border: 1px solid var(--border-color);
             padding: 2.5rem;
             border-radius: 4px;
-            transition: border-color 0.3s ease;
-        }
-
-        .native-card:hover {
-            border-color: var(--text-secondary);
+            text-align: left;
         }
 
         .card-title {
@@ -178,6 +179,51 @@
         .card-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-primary {
+            background-color: var(--accent-cream);
+            color: var(--bg-color);
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+            border-radius: 2px;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--text-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        /* --- GLOBAL PORTIONS AND GENERAL HEADERS --- */
+        .section-header-block {
+            padding: 4rem 0 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .section-tagline {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--accent-cream);
         }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
@@ -204,32 +250,9 @@
             font-size: 1.05rem;
         }
 
-        /* --- DIRECT ACTION BUTTONS --- */
-        .btn-primary {
-            background-color: var(--accent-cream);
-            color: var(--bg-color);
-            border: none;
-            padding: 1.2rem 3rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-block;
-            border-radius: 2px;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--text-primary);
-            transform: translateY(-2px);
-        }
-
         /* --- FOOTER --- */
         footer {
-            padding: 2rem 0 4rem 0;
+            padding: 2rem 2rem 4rem 2rem;
             border-top: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
@@ -241,62 +264,54 @@
 
         /* --- RESPONSIVE MEDIA --- */
         @media (max-width: 768px) {
-            body { padding: 0 1.25rem; }
-            header { padding: 2rem 0; }
-            .nav-tabs { gap: 0.5rem; }
-            .tab-btn { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
-            .hero-title { font-size: 2.2rem; }
-            .contact-wrapper h2 { font-size: 1.75rem; }
+            .nav-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 2px;
+            }
+            .tab-btn { padding: 0.4rem 0.5rem; }
+            .home-hero { padding: 6rem 0 3rem 0; }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- PORTAL HEADER & NAVIGATION ARTERIES -->
+    <!-- PORTAL HEADER (CREAM NAVIGATION BAND) -->
     <header>
-        <div class="logo">SR Studios</div>
-        <nav class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-story')">Our Story</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
-        </nav>
+        <div class="nav-container">
+            <nav class="nav-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-story')">Our Story</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
+            </nav>
+        </div>
     </header>
 
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE - NATIVELY CODED) -->
+        <!-- TAB 1: GET STARTED (HOMEPAGE) -->
         <div id="tab-home" class="tab-panel active">
-            <section class="hero-section">
-                <div class="hero-tagline">E-Commerce & Digital Architecture</div>
-                <h1 class="hero-title">We engineer digital storefronts that convert focus into revenue.</h1>
-                <p class="hero-description">Stop losing high-intent traffic to friction. We design immersive brand frameworks and scale infrastructure built to perform.</p>
-                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">Explore Infrastructure</a>
+            <section class="home-hero">
+                <div class="brand-cursive">SR Studios</div>
+                <h2 class="hero-sub-header">Digital Marketing Agency</h2>
+                
+                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
+                    Let's Scale Your Brand
+                </a>
             </section>
-
-            <div class="content-grid">
-                <div class="native-card">
-                    <div class="card-title">01 / Structural Optimization</div>
-                    <div class="card-text">Eliminating funnel drops by rebuilding key landing frameworks natively for performance.</div>
-                </div>
-                <div class="native-card">
-                    <div class="card-title">02 / Growth Architectures</div>
-                    <div class="card-text">Designing premium retention paths and paid channels tuned to high-value consumer targets.</div>
-                </div>
-            </div>
         </div>
 
-        <!-- TAB 2: SERVICES (READY FOR COPYWRITING) -->
+        <!-- TAB 2: SERVICES -->
         <div id="tab-services" class="tab-panel">
-            <section class="hero-section">
-                <div class="hero-tagline">Core Ecosystem Allocations</div>
-                <h1 class="hero-title">Our Services</h1>
-                <p class="hero-description">Tailored operations to optimize visual assets and maximize customer conversion parameters.</p>
-            </section>
+            <div class="section-header-block">
+                <div class="section-tagline">Core Ecosystem Allocations</div>
+                <h1 class="section-title">Our Services</h1>
+            </div>
             
             <div class="content-grid">
                 <div class="native-card">
@@ -316,11 +331,10 @@
 
         <!-- TAB 3: BRAND ARCHITECT PROGRAM -->
         <div id="tab-brand" class="tab-panel">
-            <section class="hero-section">
-                <div class="hero-tagline">Accelerated Asset Development</div>
-                <h1 class="hero-title">The Brand Architect Program</h1>
-                <p class="hero-description">A multi-phase integration blueprint designed to craft high-converting creative structures from scratch.</p>
-            </section>
+            <div class="section-header-block">
+                <div class="section-tagline">Accelerated Asset Development</div>
+                <h1 class="section-title">The Brand Architect Program</h1>
+            </div>
             
             <div class="content-grid">
                 <div class="native-card">
@@ -336,20 +350,18 @@
 
         <!-- TAB 4: PARTNERSHIP RETAINERS -->
         <div id="tab-retainers" class="tab-panel">
-            <section class="hero-section">
-                <div class="hero-tagline">Sustained Growth Management</div>
-                <h1 class="hero-title">Partnership Retainers</h1>
-                <p class="hero-description">Long-term alignment models built to act as your internal strategic growth and engineering arm.</p>
-            </section>
+            <div class="section-header-block">
+                <div class="section-tagline">Sustained Growth Management</div>
+                <h1 class="section-title">Partnership Retainers</h1>
+            </div>
         </div>
 
         <!-- TAB 5: OUR STORY -->
         <div id="tab-story" class="tab-panel">
-            <section class="hero-section">
-                <div class="hero-tagline">The Blueprint Behind the Studio</div>
-                <h1 class="hero-title">Our Story</h1>
-                <p class="hero-description">We bridge the gap between creative visual execution and rigorous quantitative conversion performance metrics.</p>
-            </section>
+            <div class="section-header-block">
+                <div class="section-tagline">The Blueprint Behind the Studio</div>
+                <h1 class="section-title">Our Story</h1>
+            </div>
         </div>
 
         <!-- TAB 6: CONTACT ARCHITECTURE -->
@@ -381,7 +393,6 @@
             const panels = document.querySelectorAll('.tab-panel');
             panels.forEach(panel => panel.classList.remove('active'));
 
-            // Look up corresponding navigation element if triggered from inside hero button
             if(event.currentTarget.tagName === 'A') {
                 document.querySelector(`[onclick*='${tabId}']`).classList.add('active');
             } else {
