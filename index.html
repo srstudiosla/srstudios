@@ -8,7 +8,7 @@
         /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
             --bg-color: #0B1914;       /* Deep Forest Green */
-            --surface-color: #12261E;  /* Slightly lighter green for structural cards */
+            --surface-color: #12261E;  /* Structural card background */
             --text-primary: #FFFFFF;   /* Crisp White */
             --text-secondary: #A3B899; /* Muted Sage Green */
             --accent-cream: #F5EBE6;   /* Premium Warm Cream */
@@ -16,7 +16,7 @@
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* --- GLOBAL STYLES --- */
+        /* --- GLOBAL RESET & LAYOUT --- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -36,70 +36,95 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- LAYOUT CONTAINERS --- */
         header, main, footer {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px;
         }
 
-        /* --- HEADER SECTION --- */
+        /* --- FIXED NAVIGATION BRANDING --- */
         header {
-            padding: 4rem 0 3rem 0;
+            padding: 3rem 0 2rem 0;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            gap: 1.5rem;
             border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--accent-cream);
         }
 
-        .tagline {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+        /* --- NAVIGATION TABS --- */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            width: 100%;
         }
 
-        /* --- MAIN CONTENT & PRESENTATION --- */
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent-cream);
+            border-color: var(--text-secondary);
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-cream);
+            color: var(--bg-color);
+            border-color: var(--accent-cream);
+            font-weight: 600;
+        }
+
+        /* --- TAB CONTENT PANELS --- */
         main {
             padding: 4rem 0;
+            width: 100%;
         }
 
-        .intro-text {
-            margin-bottom: 3rem;
-            max-width: 600px;
+        .tab-panel {
+            display: none; /* Hidden by default */
+            width: 100%;
+            animation: fadeIn 0.4s ease forwards;
         }
 
-        .intro-text h1 {
-            font-size: 2.25rem;
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
+        .tab-panel.active {
+            display: block; /* Shown only when tab active */
         }
 
-        .intro-text p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- RESPONSIVE CANVA CONTAINER --- */
+        /* --- RESPONSIVE CANVA PORTAL FRAME --- */
         .deck-container {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 48.14%; /* Perfect matching ratio for your deck config */
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            margin-bottom: 6rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         .deck-container iframe {
@@ -111,51 +136,55 @@
             border: none;
         }
 
-        /* --- PREMIUM CONTACT SECTION --- */
-        .contact-section {
-            border-top: 1px solid var(--border-color);
-            padding-top: 5rem;
-            margin-bottom: 6rem;
+        /* --- MINIMAL CONTACT INTERFACE --- */
+        .contact-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            padding: 4rem 0;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .contact-section h2 {
-            font-size: 1.75rem;
+        .contact-wrapper h2 {
+            font-size: 2rem;
             font-weight: 400;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             color: var(--accent-cream);
         }
 
-        .contact-section p {
+        .contact-wrapper p {
             color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
         }
 
-        /* --- BUTTON STYLING --- */
-        .btn-submit {
+        /* --- DIRECT EMAIL ACTION BUTTON --- */
+        .btn-email-direct {
             background-color: var(--accent-cream);
             color: var(--bg-color);
             border: none;
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 3rem;
             font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-block;
-            margin-top: 1rem;
             border-radius: 2px;
             text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-submit:hover {
+        .btn-email-direct:hover {
             background-color: var(--text-primary);
             transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
-        /* --- FOOTER SECTION --- */
+        /* --- FOOTER --- */
         footer {
             padding: 2rem 0 4rem 0;
             border-top: 1px solid var(--border-color);
@@ -164,54 +193,115 @@
             align-items: center;
             font-size: 0.8rem;
             color: var(--text-secondary);
+            margin-top: auto;
         }
 
-        /* --- RESPONSIVE ADJUSTMENTS --- */
+        /* --- RESPONSIVE MEDIA --- */
         @media (max-width: 768px) {
             body { padding: 0 1.25rem; }
-            header { padding: 2.5rem 0 2rem 0; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-            .intro-text h1 { font-size: 1.75rem; }
-            .contact-section { padding-top: 3.5rem; }
+            header { padding: 2rem 0; }
+            .nav-tabs { gap: 0.5rem; }
+            .tab-btn { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
+            .contact-wrapper h2 { font-size: 1.75rem; }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- PORTAL HEADER & NAVIGATION ARTERIES -->
     <header>
         <div class="logo">SR Studios</div>
-        <div class="tagline">Asynchronous Growth Systems</div>
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-story')">Our Story</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
+        </nav>
     </header>
 
-    <!-- MAIN PORTAL -->
+    <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
-        <section class="intro-text">
-            <h1>Marketing Solutions & Client Retainers</h1>
-            <p>Review our core capabilities, scope allocations, and three-tier service structure below.</p>
-        </section>
 
-        <!-- CANVA EMBED CONTAINER -->
-        <section class="deck-container">
-            <iframe loading="lazy" src="https://www.canva.com/design/DAHKidzRVaI/u-P-BBbjlx6OZPWrNO8Djw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-        </section>
+        <!-- TAB 1: GET STARTED (HOMEPAGE) -->
+        <div id="tab-home" class="tab-panel active">
+            <div class="deck-container">
+                <!-- Points directly to Slide 1 -->
+                <iframe loading="lazy" src="https://www.canva.com/design/DAHKnzbR1Ao/YbFIg5HJYbIrIngESaTpKg/view?embed#1" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+        </div>
 
-        <!-- SECURE INTAKE PORTAL SECTION -->
-        <section class="contact-section">
-            <h2>Initiate Partnership</h2>
-            <p>Click below to submit your project parameters through our secure client intake portal.</p>
-            
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFd1PtcieDBPfE9xbHD_1BcIEadDynCIWyyRBQm7P10HgJcw/viewform?usp=header" target="_blank" class="btn-submit">
-                Open Client Intake Form
-            </a>
-        </section>
+        <!-- TAB 2: SERVICES (PAGES 3, 4, 5) -->
+        <div id="tab-services" class="tab-panel">
+            <div class="deck-container">
+                <!-- Automatically initiates view on Slide 3 -->
+                <iframe loading="lazy" src="https://www.canva.com/design/DAHKnzbR1Ao/YbFIg5HJYbIrIngESaTpKg/view?embed#3" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+        </div>
+
+        <!-- TAB 3: BRAND ARCHITECT PROGRAM (PAGES 6, 7) -->
+        <div id="tab-brand" class="tab-panel">
+            <div class="deck-container">
+                <!-- Automatically initiates view on Slide 6 -->
+                <iframe loading="lazy" src="https://www.canva.com/design/DAHKnzbR1Ao/YbFIg5HJYbIrIngESaTpKg/view?embed#6" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+        </div>
+
+        <!-- TAB 4: PARTNERSHIP RETAINERS (PAGE 8) -->
+        <div id="tab-retainers" class="tab-panel">
+            <div class="deck-container">
+                <!-- Automatically initiates view on Slide 8 -->
+                <iframe loading="lazy" src="https://www.canva.com/design/DAHKnzbR1Ao/YbFIg5HJYbIrIngESaTpKg/view?embed#8" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+        </div>
+
+        <!-- TAB 5: OUR STORY (PAGE 2) -->
+        <div id="tab-story" class="tab-panel">
+            <div class="deck-container">
+                <!-- Automatically initiates view on Slide 2 -->
+                <iframe loading="lazy" src="https://www.canva.com/design/DAHKnzbR1Ao/YbFIg5HJYbIrIngESaTpKg/view?embed#2" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+        </div>
+
+        <!-- TAB 6: CONTACT ARCHITECTURE -->
+        <div id="tab-contact" class="tab-panel">
+            <div class="contact-wrapper">
+                <h2>Initiate Partnership</h2>
+                <p>Click below to launch a direct, secure communication thread with our execution team. Please include your current metrics and preferred retainer tier parameter targets.</p>
+                
+                <!-- Direct upscale action point to replace contact fields -->
+                <a href="mailto:strategy@srstudiosla.com?subject=Retainer%20Brief%20-%20SR%20Studios" class="btn-email-direct">
+                    Book Brand Consultation
+                </a>
+            </div>
+        </div>
+
     </main>
 
-    <!-- FOOTER -->
+    <!-- GLOBAL SITE FOOTER -->
     <footer>
         <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-        <div>Fully Remote • Asynchronous Operations</div>
+        <div>Fully Remote • Asynchronous Execution Systems</div>
     </footer>
+
+    <!-- INTERACTION LOGIC (LIGHTWEIGHT JAVASCRIPT) -->
+    <script>
+        function switchTab(event, tabId) {
+            // Remove active status from all structural tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Remove active status from all layout panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            // Instantiate active status to clicked target
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
