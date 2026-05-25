@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
+    <!-- Importing Noto Serif and Oswald from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    
     <style>
         /* --- CUSTOM FONT INTEGRATION TEMPLATE --- */
         @font-face {
@@ -14,15 +19,19 @@
             font-style: normal;
         }
 
-        /* --- BRAND PALETTE & CSS VARIABLES --- */
+        /* --- STRAWBERRY MATCHA BRAND PALETTE & CSS VARIABLES --- */
         :root {
             --bg-color: #0B1914;       /* Deep Forest Green (Global background) */
             --surface-color: #12261E;  /* Structural card background */
-            --text-primary: #FFFFFF;   /* Crisp White */
-            --text-secondary: #A3B899; /* Muted Sage Green */
-            --accent-cream: #F5EBE6;   /* Premium Warm Cream */
+            --text-primary: #EED5B9;   /* Dutch White (Soft, creamy premium font color) */
+            --text-secondary: #BFC08E; /* Sage Green Accent (Muted, warm matcha tone) */
+            --accent-header: #EAA093;  /* Tumbleweed (Muted strawberry header tone) */
             --border-color: #1D3D32;   /* Subtle structural borders */
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            /* Typography Systems */
+            --font-body: 'Noto Serif', Georgia, 'Times New Roman', serif;
+            --font-home-hero: 'Amberfall', 'Ballet', 'Georgia', serif;
+            --font-sub-headers: 'Oswald', -apple-system, sans-serif;
         }
 
         /* --- GLOBAL RESET & LAYOUT --- */
@@ -35,7 +44,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
-            font-family: var(--font-family);
+            font-family: var(--font-body);
             line-height: 1.6;
             padding: 0;
             display: flex;
@@ -50,11 +59,11 @@
             max-width: 1000px;
         }
 
-        /* --- NAVIGATION HEADER --- */
+        /* --- STRAWBERRY MATCHA NAVIGATION HEADER --- */
         header {
             width: 100%;
             max-width: 100%;
-            background-color: var(--accent-cream);
+            background-color: var(--accent-header);
             padding: 0.75rem 1rem;
             display: flex;
             justify-content: center;
@@ -94,6 +103,7 @@
             transition: all 0.2s ease;
             white-space: nowrap;
             opacity: 0.8;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         .nav-tabs:hover .tab-btn { opacity: 0.6; }
@@ -131,7 +141,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- FIXED & TRULY CENTERED HOMEPAGE HERO --- */
+        /* --- TRULY CENTERED HOMEPAGE HERO (RETAINS CELEBRATED AMBERFALL) --- */
         .home-hero {
             display: flex;
             flex-direction: column;
@@ -160,10 +170,10 @@
         }
 
         .brand-title-single {
-            font-family: 'Amberfall', 'Ballet', 'Georgia', 'Times New Roman', serif;
+            font-family: var(--font-home-hero);
             font-size: clamp(3.5rem, 11vw, 8.5rem); 
             font-weight: 400;
-            color: var(--accent-cream);
+            color: var(--text-primary);
             letter-spacing: 0.02em;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -173,8 +183,9 @@
         }
 
         .hero-sub-header {
-            font-size: clamp(1rem, 2.2vw, 1.5rem);
-            font-weight: 400;
+            font-family: var(--font-sub-headers);
+            font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+            font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 0.15em;
             color: var(--text-secondary);
@@ -183,7 +194,7 @@
             width: 100%;
         }
 
-        /* --- SERVICES PAGE LAYOUT --- */
+        /* --- SERVICES PAGE LAYOUT (OSWALD SUB-PAGE HEADERS) --- */
         .services-wrapper {
             display: flex;
             flex-direction: column;
@@ -201,13 +212,14 @@
         }
 
         .services-row:last-child { border-bottom: none; padding-bottom: 0; }
+        
         .services-title {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-family: var(--font-sub-headers);
             font-size: clamp(1.8rem, 4vw, 2.5rem);
-            text-transform: uppercase;
             font-weight: 400;
-            color: var(--accent-cream);
-            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            letter-spacing: 0.03em;
             line-height: 1.1;
         }
 
@@ -238,40 +250,47 @@
             padding-bottom: 6rem;
         }
 
+        .deliverables-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+        }
+
         .architect-row-right {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 3.5rem;
             align-items: center;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 6rem;
+            padding-bottom: 5rem;
         }
 
-        .architect-row-left:last-child, .architect-row-right:last-child {
+        .deliverables-stack .architect-row-right:last-child {
             border-bottom: none;
             padding-bottom: 0;
         }
 
         .architect-text-block { display: flex; flex-direction: column; }
+        
         .architect-text-block .arch-heading {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            text-transform: uppercase;
+            font-family: var(--font-sub-headers);
             font-weight: 400;
-            color: var(--accent-cream);
-            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            letter-spacing: 0.03em;
             line-height: 1.1;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .architect-text-block h1.arch-heading { font-size: clamp(2rem, 4.5vw, 2.8rem); }
-        .architect-text-block h2.arch-heading { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-top: 1rem; } /* Adjusted size for multi-deliverable stack */
+        .architect-text-block h2.arch-heading { font-size: clamp(1.5rem, 3.2vw, 2rem); } 
         .architect-body-content { color: var(--text-secondary); font-size: clamp(1rem, 2.5vw, 1.15rem); line-height: 1.7; }
         .architect-body-content p { margin-bottom: 1.5rem; }
         .architect-body-content p:last-child { margin-bottom: 0; }
         
         .architect-body-content .cta-highlight {
-            color: var(--accent-cream);
-            font-weight: 500;
+            color: var(--text-primary);
+            font-weight: 600;
             margin-top: 2rem;
         }
 
@@ -318,17 +337,18 @@
         }
 
         .retainer-tier-name {
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-family: var(--font-sub-headers);
+            font-size: 1.5rem;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent-cream);
+            color: var(--text-primary);
             margin-bottom: 2rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 1rem;
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
+            letter-spacing: 0.05em;
         }
 
         .retainer-bullets {
@@ -352,16 +372,18 @@
         }
 
         .retainer-price {
-            font-size: 1.75rem;
-            font-weight: 600;
+            font-family: var(--font-sub-headers);
+            font-size: 2rem;
+            font-weight: 400;
             color: var(--text-primary);
             margin-top: 2.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
-            letter-spacing: 0.02em;
+            letter-spacing: 0.03em;
         }
 
         .retainer-price span {
+            font-family: var(--font-body);
             font-size: 0.85rem;
             font-weight: 400;
             color: var(--text-secondary);
@@ -373,12 +395,12 @@
 
         /* --- BUTTONS --- */
         .btn-primary {
-            background-color: var(--accent-cream);
+            background-color: var(--accent-header);
             color: var(--bg-color);
             border: none;
             padding: 1.2rem 3rem;
             font-size: 0.9rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
@@ -387,6 +409,7 @@
             border-radius: 2px;
             text-decoration: none;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .btn-primary:hover {
@@ -395,14 +418,22 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
 
-        /* --- GLOBAL HEADERS --- */
+        /* --- GLOBAL HEADERS (OSWALD SUB-PAGE HEADERS) --- */
         .section-header-block {
             padding: 4rem 0 2rem 0;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 3.5rem;
         }
-        .section-tagline { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--text-secondary); margin-bottom: 1rem; }
-        .section-title { font-size: 2.5rem; font-weight: 400; color: var(--accent-cream); text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-tagline { font-family: var(--font-sub-headers); font-weight: 300; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); margin-bottom: 1rem; }
+        
+        .section-title { 
+            font-family: var(--font-sub-headers);
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            font-weight: 400; 
+            text-transform: uppercase;
+            color: var(--text-primary); 
+            letter-spacing: 0.03em;
+        }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
         .contact-wrapper {
@@ -414,7 +445,7 @@
             max-width: 600px;
             margin: 0 auto;
         }
-        .contact-wrapper h2 { font-size: 2rem; font-weight: 400; margin-bottom: 1rem; color: var(--accent-cream); }
+        .contact-wrapper h2 { font-family: var(--font-sub-headers); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text-primary); }
         .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
 
         /* --- FOOTER --- */
@@ -460,7 +491,7 @@
 </head>
 <body>
 
-    <!-- PORTAL HEADER -->
+    <!-- PORTAL HEADER (TUMBLEWEED STRAWBERRY MATCHA ACCENT) -->
     <header>
         <div class="nav-container">
             <nav class="nav-tabs">
@@ -477,7 +508,7 @@
     <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED -->
+        <!-- TAB 1: GET STARTED (HOMEPAGE RETAINS ORIGINAL EDITORIAL SERIF IDENTITY) -->
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
                 <div class="hero-branding-block">
@@ -490,7 +521,7 @@
             </section>
         </div>
 
-        <!-- TAB 2: SERVICES -->
+        <!-- TAB 2: SERVICES (SUB-PAGE UPDATED TO OSWALD) -->
         <div id="tab-services" class="tab-panel">
             <div class="services-wrapper">
                 <div class="services-row">
@@ -515,7 +546,7 @@
             </div>
         </div>
 
-        <!-- TAB 3: BRAND ARCHITECT PROGRAM -->
+        <!-- TAB 3: BRAND ARCHITECT PROGRAM (SUB-PAGE UPDATED TO OSWALD) -->
         <div id="tab-brand" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Accelerated Asset Development</div>
@@ -523,7 +554,7 @@
             </div>
             
             <div class="architect-container">
-                <!-- Strategic Philosophy Row -->
+                <!-- Strategic Philosophy Section -->
                 <div class="architect-row-left">
                     <div class="architect-text-block">
                         <h1 class="arch-heading">The Strategic Blueprint</h1>
@@ -535,35 +566,62 @@
                         </div>
                     </div>
                     <div class="architect-image-wrapper">
-                        <img src="srarch1.png" alt="Brand Architect Framework Phase I">
+                        <img src="srarch_blueprint.png" alt="Strategic Blueprint Framework">
                     </div>
                 </div>
 
-                <!-- Deliverables Stacking Row -->
-                <div class="architect-row-right">
-                    <div class="architect-image-wrapper">
-                        <img src="srarch2.png" alt="Brand Architect Framework Phase II">
-                    </div>
-                    <div class="architect-text-block">
-                        <h1 class="arch-heading">Program Deliverables</h1>
-                        <div class="architect-body-content">
-                            
-                            <h2 class="arch-heading">Bespoke Color Schemes & Typography Systems</h2>
-                            <p>Color theory is the unspoken language of consumer psychology, and typography is the architecture of your brand's editorial voice. We work closely with you to formulate custom, sophisticated color palettes that evoke immediate emotional trust, balanced alongside robust typography pairings. Our strategic approach ensures that your brand’s reading experience is highly legible, visually elegant, and structurally cohesive across all modern web browsers and mobile platforms.</p>
-                            
-                            <h2 class="arch-heading">Minimalist Logo Architectures & Mark Assets</h2>
-                            <p>Your logo should not attempt to explain everything you do; its sole purpose is to serve as an unforgettable, easily identifiable signature of your visual authority. We construct clean, scalable logo architectures and flexible brand marks designed to perform elegantly at any scale—from tiny mobile browser favicons and circular social media avatars to large-scale print production packages.</p>
-                            
-                            <h2 class="arch-heading">Ad Creative Guidelines & Promotional Direction</h2>
-                            <p>Establishing your visual identity is only the first half of the equation; knowing how to weaponize it within a live digital marketing framework is where true growth occurs. We provide you with comprehensive creative directions specifically tailored for modern promotional advertising. We detail layout structures, visual text hierarchy rules, and imagery guidelines optimized to win attention and trigger immediate conversion on platforms like Google, Instagram, Pinterest, and TikTok.</p>
-                        
+                <!-- Global Heading for Program Deliverables -->
+                <div class="section-header-block" style="padding: 2rem 0 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
+                    <h1 class="section-title" style="font-size: 2.2rem;">Program Deliverables</h1>
+                </div>
+
+                <!-- Deliverables Stacking System (Three Aligned Image/Text Pairs) -->
+                <div class="deliverables-stack">
+                    
+                    <!-- Deliverable 1: Color & Typography -->
+                    <div class="architect-row-right">
+                        <div class="architect-image-wrapper">
+                            <img src="srarch_typography.png" alt="Bespoke Color Schemes & Typography Systems">
+                        </div>
+                        <div class="architect-text-block">
+                            <div class="architect-body-content">
+                                <h2 class="arch-heading">Bespoke Color Schemes & Typography Systems</h2>
+                                <p>Color theory is the unspoken language of consumer psychology, and typography is the architecture of your brand's editorial voice. We work closely with you to formulate custom, sophisticated color palettes that evoke immediate emotional trust, balanced alongside robust typography pairings. Our strategic approach ensures that your brand’s reading experience is highly legible, visually elegant, and structurally cohesive across all modern web browsers and mobile platforms.</p>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Deliverable 2: Logo Architecture -->
+                    <div class="architect-row-right">
+                        <div class="architect-image-wrapper">
+                            <img src="srarch_logo.png" alt="Minimalist Logo Architectures & Mark Assets">
+                        </div>
+                        <div class="architect-text-block">
+                            <div class="architect-body-content">
+                                <h2 class="arch-heading">Minimalist Logo Architectures & Mark Assets</h2>
+                                <p>Your logo should not attempt to explain everything you do; its sole purpose is to serve as an unforgettable, easily identifiable signature of your visual authority. We construct clean, scalable logo architectures and flexible brand marks designed to perform elegantly at any scale—from tiny mobile browser favicons and circular social media avatars to large-scale print production packages.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deliverable 3: Ad Creative Guidelines -->
+                    <div class="architect-row-right">
+                        <div class="architect-image-wrapper">
+                            <img src="srarch_advertising.png" alt="Ad Creative Guidelines & Promotional Direction">
+                        </div>
+                        <div class="architect-text-block">
+                            <div class="architect-body-content">
+                                <h2 class="arch-heading">Ad Creative Guidelines & Promotional Direction</h2>
+                                <p>Establishing your visual identity is only the first half of the equation; knowing how to weaponize it within a live digital marketing framework is where true growth occurs. We provide you with comprehensive creative directions specifically tailored for modern promotional advertising. We detail layout structures, visual text hierarchy rules, and imagery guidelines optimized to win attention and trigger immediate conversion on platforms like Google, Instagram, Pinterest, and TikTok.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
 
-        <!-- TAB 4: PARTNERSHIP RETAINERS -->
+        <!-- TAB 4: PARTNERSHIP RETAINERS (SUB-PAGE UPDATED TO OSWALD) -->
         <div id="tab-retainers" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Sustained Growth Management</div>
@@ -626,7 +684,7 @@
             </div>
         </div>
 
-        <!-- TAB 5: OUR STORY -->
+        <!-- TAB 5: OUR STORY (SUB-PAGE UPDATED TO OSWALD) -->
         <div id="tab-story" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">The Blueprint Behind the Studio</div>
