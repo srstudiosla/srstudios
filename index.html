@@ -88,7 +88,11 @@
             opacity: 0.8;
         }
 
-        .tab-btn:hover {
+        .nav-tabs:hover .tab-btn {
+            opacity: 0.6;
+        }
+
+        .nav-tabs .tab-btn:hover {
             opacity: 1;
             transform: translateY(-1px);
         }
@@ -128,19 +132,39 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 8rem 0 6rem 0; /* Slightly increased padding to balance the single-view layout */
+            padding: 12rem 0 8rem 0; /* Expanded padding to perfectly balance the 3x scale header increase */
         }
 
-        .brand-cursive {
-            font-family: "Georgia", "Didot", Garamond, serif;
-            font-style: italic;
-            font-size: clamp(4rem, 12vw, 8.5rem);
+        /* --- TYPOGRAPHY REVISIONS (3X SCALED SPLIT HEADER) --- */
+        .brand-header-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5.5rem; /* Increased spacing to prevent overlapping with scaled fonts */
+            width: 100%;
+        }
+
+        /* 3x Scaled Edwardian Script Style Hook */
+        .brand-sr {
+            font-family: "Edwardian Script ITC", "ITC Edwardian Script", "Brush Script MT", "Bickham Script Pro", cursive;
+            font-size: clamp(12rem, 36vw, 25.5rem); 
             font-weight: 400;
             color: var(--accent-cream);
-            line-height: 0.9;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            width: 100%;
+            line-height: 0.5;
+            margin-bottom: 2rem;
+        }
+
+        /* 3x Scaled Condensed Serif Style Hook */
+        .brand-studios {
+            font-family: "Flatory Serif Condensed", "Didot LT Std Condensed", "Bodoni MT Condensed", "Times New Roman Condensed", serif;
+            font-size: clamp(3rem, 9vw, 6rem); 
+            font-stretch: condensed;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--accent-cream);
+            letter-spacing: 0.15em;
+            line-height: 1;
         }
 
         .hero-sub-header {
@@ -152,7 +176,7 @@
             margin-bottom: 4rem;
         }
 
-        /* --- NATIVE CARD GRID SYSTEM (FOR OTHER SUBPAGES) --- */
+        /* --- NATIVE CARD GRID SYSTEM (FOR SUBPAGES) --- */
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -270,7 +294,7 @@
                 padding-bottom: 2px;
             }
             .tab-btn { padding: 0.4rem 0.5rem; }
-            .home-hero { padding: 6rem 0 3rem 0; }
+            .home-hero { padding: 8rem 0 4rem 0; }
             footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
         }
     </style>
@@ -297,7 +321,10 @@
         <!-- TAB 1: GET STARTED (HOMEPAGE) -->
         <div id="tab-home" class="tab-panel active">
             <section class="home-hero">
-                <div class="brand-cursive">SR Studios</div>
+                <div class="brand-header-group">
+                    <span class="brand-sr">SR</span>
+                    <span class="brand-studios">Studios</span>
+                </div>
                 <h2 class="hero-sub-header">Digital Marketing Agency</h2>
                 
                 <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
