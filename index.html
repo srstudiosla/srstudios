@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
-    <!-- Importing Noto Serif, Oswald, and Ballet from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -25,8 +24,12 @@
             --surface-color: #F7C5CF;  /* Structural card background */
             --text-primary: #5F7E5D;   /* Matcha (Soft, creamy premium font color) */
             --text-secondary: #0D0E12; /* Charcoal */
-            --accent-header: #F0A1BC;  /* Tumbleweed (Muted strawberry header/footer tone) */
+            --accent-header: #F0A1BC;  /* Muted strawberry header/footer tone */
             --border-color: #111415;   /* Subtle structural borders */
+            
+            /* Integrated Styling Color Systems */
+            --brand-sage: #BFC08E;     /* Sage Green background tone */
+            --brand-forest: #1E2F26;   /* Deep Forest Green high-contrast text */
             
             /* Typography Systems */
             --font-body: 'Noto Serif', Georgia, 'Times New Roman', serif;
@@ -151,7 +154,8 @@
         /* Separate the full-bleed tabs completely from standard page padding restrictions */
         #tab-home.tab-panel.active,
         #tab-services.tab-panel.active,
-        #tab-brand.tab-panel.active {
+        #tab-brand.tab-panel.active,
+        #tab-about.tab-panel.active {
             display: block;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
@@ -173,6 +177,19 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- UTILITY: FULL BLEED ACCENT LINES --- */
+        .accent-line-full {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            border: none;
+            border-top: 1px solid var(--border-color);
+            display: block;
         }
 
         /* --- FULL-BLEED SCREEN-SPANNING HOMEPAGE HERO BACKDROP --- */
@@ -341,7 +358,7 @@
             padding-left: 4px;
         }
 
-        /* --- HOMEPAGE FULL-BLEED BRAND ARCHITECT BLOCK --- */
+        /* --- HOMEPAGE FULL-BLEED BRAND ARCHITECT PROMO CALLOUT --- */
         .home-architect-promo {
             width: 100vw;
             height: clamp(500px, 45vh, 700px); 
@@ -379,16 +396,18 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* --- SERVICES PAGE (COLOR INVERSION HIGH-CONTRAST OVERRIDE) --- */
-        .services-full-bleed-bg {
-            background-color: var(--text-secondary); /* Flipped to Charcoal */
+        /* --- SERVICES & ABOUT US PAGES (REVISED SAGE & FOREST HIGH-CONTRAST DESIGN) --- */
+        .services-full-bleed-bg,
+        .about-full-bleed-bg {
+            background-color: var(--brand-sage); /* Revised Sage Background */
             width: 100vw;
             padding: 4rem 2rem;
             display: flex;
             justify-content: center;
         }
 
-        .services-wrapper {
+        .services-wrapper,
+        .about-wrapper {
             display: flex;
             flex-direction: column;
             gap: 5rem;
@@ -396,47 +415,63 @@
             max-width: 1000px;
         }
 
-        .services-row {
+        .services-row,
+        .about-row {
             display: grid;
             grid-template-columns: 35% 65%;
             gap: 2rem;
             align-items: flex-start;
-            border-bottom: 1px solid rgba(246, 240, 229, 0.15); /* Muted contrast borders */
+            border-bottom: 1px solid rgba(30, 47, 38, 0.15); /* Contrast borders */
             padding-bottom: 4rem;
         }
 
-        .services-row:last-child { border-bottom: none; padding-bottom: 0; }
+        .services-row:last-child,
+        .about-row:last-child { border-bottom: none; padding-bottom: 0; }
         
-        .services-title {
+        .services-title,
+        .about-title {
             font-family: var(--font-sub-headers);
             font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 400;
             text-transform: uppercase;
-            color: var(--text-primary); /* Renders in Premium Matcha Green against Charcoal */
+            color: var(--accent-header) !important; /* Pale Pink Accent Headers Override */
             letter-spacing: 0.03em;
             line-height: 1.1;
         }
 
-        .services-body {
-            color: var(--bg-color); /* Flipped to Cream background tone for crisp reading */
+        .services-body,
+        .about-body {
+            color: var(--brand-forest); /* Deep Forest Green for optimal scannability */
             font-size: clamp(1rem, 2.5vw, 1.15rem);
             line-height: 1.7;
             padding-left: 2.5rem;
-            border-left: 1px solid rgba(246, 240, 229, 0.15);
+            border-left: 1px solid rgba(30, 47, 38, 0.15);
         }
-        .services-body p { margin-bottom: 1.5rem; }
-        .services-body p:last-child { margin-bottom: 0; }
+        .services-body p, .about-body p { margin-bottom: 1.5rem; }
+        .services-body p:last-child, .about-body p:last-child { margin-bottom: 0; }
 
-        /* --- BRAND ARCHITECT (SURFACE MATCH & TEXT CENTERING OVERRIDE) --- */
+        .about-signature {
+            font-family: var(--font-signature);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            color: var(--brand-forest); 
+            margin-top: 2rem;
+            line-height: 1;
+            user-select: none;
+        }
+
+        /* Custom header block adjustments inside revised tabs */
+        .revised-header .section-tagline { color: rgba(30, 47, 38, 0.7); }
+        .revised-header .section-title { color: var(--brand-forest); }
+        .revised-header { border-bottom-color: rgba(30, 47, 38, 0.15); }
+
+        /* --- BRAND ARCHITECT TAB LAYOUT SYSTEM --- */
         .brand-full-bleed-bg {
             background-color: var(--surface-color); /* Matches Partnership Card Surface */
             width: 100vw;
-            padding: 2rem 2rem 6rem 2rem;
+            padding: 0 2rem 6rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
         }
 
         .brand-max-width-constrain {
@@ -444,29 +479,44 @@
             max-width: 1000px;
         }
 
-        .architect-container {
-            display: flex;
-            flex-direction: column;
-            gap: 6rem;
-            padding: 2rem 0;
+        .architect-blueprint-section-container {
+            display: block;
+            width: 100%;
+            padding: 4rem 0 3.5rem 0;
         }
 
-        /* Unified centered visual layout replacing the old split layout and image block */
-        .architect-row-centered {
+        .architect-blueprint-content-alignment {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-bottom: 6rem;
-            border-bottom: 1px solid var(--border-color);
+            width: 100%;
         }
+
+        .architect-blueprint-heading {
+            font-family: var(--font-sub-headers);
+            font-size: clamp(2.5rem, 6vw, 4rem); 
+            font-weight: 400; 
+            text-transform: uppercase;
+            color: var(--text-primary); 
+            letter-spacing: 0.03em;
+            margin-bottom: 1.75rem;
+            text-align: left;
+        }
+
+        .architect-blueprint-body-format {
+            color: var(--text-secondary);
+            font-size: clamp(1.05rem, 2.4vw, 1.25rem); 
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .architect-blueprint-body-format p { margin-bottom: 1.75rem; }
+        .architect-blueprint-body-format p:last-child { margin-bottom: 0; }
 
         .deliverables-stack {
             display: flex;
             flex-direction: column;
             gap: 5rem;
+            padding-top: 5rem;
         }
 
         .architect-row-right {
@@ -501,9 +551,7 @@
         .architect-body-content p { margin-bottom: 1.5rem; }
         .architect-body-content p:last-child { margin-bottom: 0; }
         
-        .architect-body-content .cta-wrapper-inline {
-            margin-top: 2.5rem;
-        }
+        .architect-body-content .cta-wrapper-inline { margin-top: 2.5rem; }
 
         .architect-image-wrapper {
             width: 100%;
@@ -515,38 +563,6 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
         .architect-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; }
-
-        /* --- ABOUT US INTERFACE --- */
-        .about-container {
-            display: block; 
-            width: 100%;
-            padding: 2rem 0 4rem 0;
-        }
-
-        .about-content-side {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .about-body {
-            color: var(--text-secondary);
-            font-size: clamp(1.05rem, 2.4vw, 1.25rem); 
-            line-height: 1.8;
-        }
-
-        .about-body p {
-            margin-bottom: 1.75rem;
-        }
-
-        .about-signature {
-            font-family: var(--font-signature);
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            color: var(--text-secondary); 
-            margin-top: 2rem;
-            line-height: 1;
-            user-select: none;
-        }
 
         /* --- THREE-PANEL RETAINER GRID SYSTEM --- */
         .retainer-grid {
@@ -575,9 +591,7 @@
             border-color: var(--text-secondary);
         }
 
-        .retainer-card-top {
-            width: 100%;
-        }
+        .retainer-card-top { width: 100%; }
 
         .retainer-tier-name {
             font-family: var(--font-sub-headers);
@@ -680,11 +694,6 @@
             letter-spacing: 0.03em;
         }
 
-        /* Overrides to adapt typography cleanly to inverted color sections */
-        .inverted-header .section-tagline { color: rgba(246, 240, 229, 0.7); }
-        .inverted-header .section-title { color: var(--bg-color); }
-        .inverted-header { border-bottom-color: rgba(246, 240, 229, 0.15); }
-
         /* --- MINIMAL CONTACT INTERFACE --- */
         .contact-wrapper {
             display: flex;
@@ -724,10 +733,7 @@
 
         /* --- RESPONSIVE MEDIA --- */
         @media (max-width: 900px) {
-            .retainer-grid {
-                grid-template-columns: 100%;
-                gap: 2rem;
-            }
+            .retainer-grid { grid-template-columns: 100%; gap: 2rem; }
             .retainer-card { padding: 2.5rem 1.75rem; }
             .retainer-tier-name { white-space: normal; }
         }
@@ -741,18 +747,16 @@
             .brand-title-single { font-size: clamp(2.5rem, 9.5vw, 4.5rem); }
             .home-services-grid { grid-template-columns: 100%; gap: 3.5rem; }
             .home-architect-promo { height: auto; padding: 5rem 1.5rem; background-attachment: scroll; }
-            .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
-            .services-body { padding-left: 0; border-left: none; }
+            .services-row, .about-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
+            .services-body, .about-body { padding-left: 0; border-left: none; }
             .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
             .architect-row-right .architect-image-wrapper { grid-row: 2; }
-            .about-container { padding: 1rem 0 3rem 0; }
             .footer-container { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.25rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- PORTAL HEADER -->
     <header>
         <div class="nav-container">
             <nav class="nav-tabs">
@@ -766,7 +770,6 @@
         </div>
     </header>
 
-    <!-- SECTION 1: ROTATING CAROUSEL BANNER SYSTEM -->
     <div class="full-bleed-carousel-outer">
         <div class="carousel-window">
             <div class="carousel-track">
@@ -777,13 +780,9 @@
         </div>
     </div>
 
-    <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE SEQUENCE) -->
         <div id="tab-home" class="tab-panel active">
-            
-            <!-- PART A: HERO CONTENT BACKDROP -->
             <section class="home-hero">
                 <div class="hero-branding-block">
                     <h1 class="brand-title-single">SR STUDIOS</h1>
@@ -794,7 +793,6 @@
                 </a>
             </section>
 
-            <!-- PART B: PROJECTS SHOWCASE VIDEO PIPELINE -->
             <section class="full-bleed-video-showcase">
                 <video autoplay loop muted playsinline poster="videoshowcase_fallback.png">
                     <source src="videoshowcase.mp4" type="video/mp4">
@@ -803,11 +801,8 @@
                 <div class="video-vignette-overlay"></div>
             </section>
 
-            <!-- PART C: THREE-PANEL QUICK HOVER SERVICES GRID -->
             <section class="home-services-grid-wrapper">
                 <div class="home-services-grid">
-                    
-                    <!-- Column 1: Brand Strategy -->
                     <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_brand_strat.png" alt="Brand Strategy Pipeline Showcase">
@@ -816,7 +811,6 @@
                         <a href="#" class="home-service-cta">let's talk strat</a>
                     </div>
 
-                    <!-- Column 2: Content & Messaging -->
                     <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_content_messaging.png" alt="Content and Messaging Architecture">
@@ -825,7 +819,6 @@
                         <a href="#" class="home-service-cta">lets chat:</a>
                     </div>
 
-                    <!-- Column 3: High-End Production -->
                     <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_production.png" alt="High End Production and Creative Framing">
@@ -833,11 +826,9 @@
                         <h3 class="home-service-title">high-end production</h3>
                         <a href="#" class="home-service-cta">we got production covered</a>
                     </div>
-
                 </div>
             </section>
 
-            <!-- PART D: FULL-BLEED BRAND ARCHITECT PROMO CALLOUT -->
             <section class="home-architect-promo">
                 <h1>Just Getting Started</h1>
                 <p>learn more about our brand architect program</p>
@@ -845,14 +836,12 @@
                     learn more
                 </a>
             </section>
-
         </div>
 
-        <!-- TAB 2: SERVICES (COLOR INVERTED LAYOUT) -->
         <div id="tab-services" class="tab-panel">
             <div class="services-full-bleed-bg">
                 <div class="services-wrapper">
-                    <div class="section-header-block inverted-header" style="padding-top: 0;">
+                    <div class="section-header-block revised-header" style="padding-top: 0;">
                         <div class="section-tagline">Our Core Capabilities</div>
                         <h1 class="section-title">Services</h1>
                     </div>
@@ -866,83 +855,74 @@
                     <div class="services-row">
                         <h2 class="services-title">Content & Messaging</h2>
                         <div class="services-body">
-                            <p>High-performing content does more than just fill a feed, it captures attention, builds deep consumer trust, and converts audience attention into predictable revenue.</p>
+                            <p>High-performing content does more than just fill a feed; it captures search intent and guides users smoothly down the conversion path. We create robust messaging systems built specifically for conversion.</p>
+                            <p>Through customized technical copy, target market segmentation, search architecture optimization, and cross-channel positioning workflows, we translate product value directly into audience retention.</p>
                         </div>
                     </div>
                     <div class="services-row">
                         <h3 class="services-title">High-End Production</h3>
                         <div class="services-body">
-                            <p>In a crowded digital landscape, premium visuals are the first thing your audience notices and the metric they judge your quality by.</p>
+                            <p>Premium aesthetics demand uncompromising execution. We provide cinematic, commercial-grade digital production and image post-processing workflows that set your brand apart structurally from competitors.</p>
+                            <p>From advanced product photography and spatial color correction to data-informed ad creative generation and faceless growth assets, your visuals will perform as expertly as they look.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 3: BRAND ARCHITECT PROGRAM (SURFACE MATCHED & CENTERED) -->
         <div id="tab-brand" class="tab-panel">
             <div class="brand-full-bleed-bg">
                 <div class="brand-max-width-constrain">
-                    <div class="section-header-block">
-                        <div class="section-tagline">Accelerated Asset Development</div>
-                        <h1 class="section-title">Brand Architect Program</h1>
-                    </div>
+                    <section class="architect-blueprint-section-container">
+                        <div class="architect-blueprint-content-alignment">
+                            <h1 class="architect-blueprint-heading">The Strategic Blueprint</h1>
+                            <div class="architect-blueprint-body-format">
+                                <p>The Brand Architect Program is a dedicated identity consultation workflow engineered for fast-moving startups and creators who require high-level design validation before launching into competitive markets.</p>
+                                <p>Instead of fragmented design revisions, we provide an objective, data-backed approach to your ecosystem's visual fundamentals—giving your team the layout frameworks needed to scale with total consistency from day one.</p>
+                            </div>
+                        </div>
+                    </section>
                     
-                    <div class="architect-container">
-                        <!-- Clean centered introductory row layout following image removal -->
-                        <div class="architect-row-centered">
+                    <hr class="accent-line-full" style="border-top-color: var(--border-color);">
+                    
+                    <div class="deliverables-stack">
+                        <div class="architect-row-right">
+                            <div class="architect-image-wrapper">
+                                <img src="architect_palette.png" alt="Color Architecture & Contrast Spectrum Testing">
+                            </div>
                             <div class="architect-text-block">
-                                <h1 class="arch-heading">The Strategic Blueprint</h1>
+                                <h1 class="arch-heading">1. Color Architecture</h1>
                                 <div class="architect-body-content">
-                                    <p>Before scaling acquisition engines, driving paid search traffic, or launching complex email funnels, you must first design a visual framework engineered to win modern customer trust.</p>
-                                    <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
-                                    <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
+                                    <p>Color is foundational to instantaneous recognition. We construct a hyper-curated palette tailored perfectly to your market niche, testing all hex values meticulously across varying contrast matrix variables to guarantee accessibility compliance.</p>
+                                    <p>Your team receives precise brand-specific color rules defining exact master values, complementary accent highlights, structural body inversions, and background layout application constraints.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="architect-row-right">
+                            <div class="architect-image-wrapper">
+                                <img src="architect_typography.png" alt="Editorial Structural Typography Stack Systems">
+                            </div>
+                            <div class="architect-text-block">
+                                <h2 class="arch-heading">2. Font Hierarchies</h2>
+                                <div class="architect-body-content">
+                                    <p>Typography functions silently as the voice of your brand's technical authority. We establish a rigorous editorial font structure combining primary headers, sub-heading tags, signature stylistic highlights, and highly clean body text rules.</p>
+                                    <p>This layout configuration prevents visual clutter, stabilizes cross-device content presentation systems, and provides clear line-height systems that maximize layout readability metrics at a glance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="architect-row-right">
+                            <div class="architect-image-wrapper">
+                                <img src="architect_logo.png" alt="Minimal Grid Logo Layout Validation Sheets">
+                            </div>
+                            <div class="architect-text-block">
+                                <h2 class="arch-heading">3. Logo Systems</h2>
+                                <div class="architect-body-content">
+                                    <p>A logo must remain functional whether scaled to an expansive physical billboard or compressed down onto a micro-mobile header bar. We design or refine clean, minimalist geometric layouts configured for dynamic responsiveness.</p>
+                                    <p>We deliver your vector assets mapped carefully against dark and light configurations, absolute minimum padding requirements, and multi-use icon alternates optimized specifically for modern app headers or high-end street packaging stamps.</p>
                                     <div class="cta-wrapper-inline">
-                                        <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
-                                            Reach out to book a Brand Architect Consultation today.
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="section-header-block" style="padding: 2rem 0 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-                            <h1 class="section-title" style="font-size: 2.2rem;">Program Deliverables</h1>
-                        </div>
-
-                        <div class="deliverables-stack">
-                            <div class="architect-row-right">
-                                <div class="architect-image-wrapper">
-                                    <img src="srarch_typography.png" alt="Bespoke Color Schemes & Typography Systems">
-                                </div>
-                                <div class="architect-text-block">
-                                    <div class="architect-body-content">
-                                        <h2 class="arch-heading">Bespoke Color Schemes & Typography Systems</h2>
-                                        <p>Color theory is the unspoken language of consumer psychology, and typography is the architecture of your brand's editorial voice. We work closely with you to formulate custom, sophisticated color palettes that evoke immediate emotional trust, balanced alongside robust typography pairings. Our strategic approach ensures that your brand’s reading experience is highly legible, visually elegant, and structurally cohesive across all modern web browsers and mobile platforms.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="architect-row-right">
-                                <div class="architect-image-wrapper">
-                                    <img src="srarch_logo.png" alt="Minimalist Logo Architectures & Mark Assets">
-                                </div>
-                                <div class="architect-text-block">
-                                    <div class="architect-body-content">
-                                        <h2 class="arch-heading">Minimalist Logo Architectures & Mark Assets</h2>
-                                        <p>Your logo should not attempt to explain everything you do; its sole purpose is to serve as an unforgettable, easily identifiable signature of your visual authority. We construct clean, scalable logo architectures and flexible brand marks designed to perform elegantly at any scale—from tiny mobile browser favicons and circular social media avatars to large-scale print production packages.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="architect-row-right">
-                                <div class="architect-image-wrapper">
-                                    <img src="srarch_advertising.png" alt="Ad Creative Guidelines & Promotional Direction">
-                                </div>
-                                <div class="architect-text-block">
-                                    <div class="architect-body-content">
-                                        <h2 class="arch-heading">Ad Creative Guidelines & Promotional Direction</h2>
-                                        <p>Establishing your visual identity is only the first half of the equation; knowing how to weaponize it within a live digital marketing framework is where true growth occurs. We provide you with comprehensive creative directions specifically tailored for modern promotional advertising. We detail layout structures, visual text hierarchy rules, and imagery guidelines optimized to win attention and trigger immediate conversion on platforms like Google, Instagram, Pinterest, and TikTok.</p>
+                                        <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">Build Your Blueprint</a>
                                     </div>
                                 </div>
                             </div>
@@ -952,150 +932,124 @@
             </div>
         </div>
 
-        <!-- TAB 4: PARTNERSHIP RETAINERS -->
         <div id="tab-retainers" class="tab-panel">
-            <div class="section-header-block">
-                <div class="section-tagline">Sustained Growth Management</div>
-                <h1 class="section-title">Partnership Retainers</h1>
+            <div class="section-header-block" style="padding-top: 0;">
+                <div class="section-tagline">Integrated Solutions</div>
+                <h1 class="section-title">Partnership Tiers</h1>
             </div>
-
             <div class="retainer-grid">
-                
-                <!-- Tier 1: Foundational -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
-                        <h2 class="retainer-tier-name">Foundational</h2>
+                        <h1 class="retainer-tier-name">Growth Foundations</h1>
                         <ul class="retainer-bullets">
-                            <li>Search Engine PPC : full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li>
-                            <li>Email Retention : 1-2 weekly newsletters & custom audience segmentation</li>
-                            <li>Reporting : weekly ROAs tracking and revenue attribution report</li>
-                            <li>+1 monthly request list from client including all marketing priorities for that month</li>
+                            <li>Targeted Search Intent Keyword Mapping</li>
+                            <li>Bi-Weekly Copywriting & Messaging Architecture</li>
+                            <li>Monthly Core Tech Audits & On-Page Health Updates</li>
+                            <li>Comprehensive Retention & Email Workflow Setup</li>
                         </ul>
                     </div>
-                    <div class="retainer-price">
-                        $2,800
-                        <span>per month</span>
-                    </div>
+                    <h2 class="retainer-price">$3,500<span>/ Month</span></h2>
                 </div>
 
-                <!-- Tier 2: Omnichannel Pro -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
-                        <h2 class="retainer-tier-name">Omnichannel Pro</h2>
+                        <h2 class="retainer-tier-name">Integrated Scale</h2>
                         <ul class="retainer-bullets">
-                            <li>Everything in Foundational included (full paid search and email retention management)</li>
-                            <li>Social Media: asynchronous content scheduling, 2-3 reels weekly (all channels), 2-3 carousels weekly (all channels)</li>
-                            <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
-                            <li>Bi-weekly social media updates via loom and email</li>
+                            <li>Full Meta & Search Ad Management (Up to $10k Spend)</li>
+                            <li>Dedicated Content Production & Multi-Platform Assets</li>
+                            <li>Automated Email/SMS Retention Infrastructure Flows</li>
+                            <li>Weekly Multi-Channel Attribution Health Audits</li>
                         </ul>
                     </div>
-                    <div class="retainer-price">
-                        $3,600
-                        <span>per month</span>
-                    </div>
+                    <h2 class="retainer-price">$6,000<span>/ Month</span></h2>
                 </div>
 
-                <!-- Tier 3: Full-Suite Pro -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
-                        <h2 class="retainer-tier-name">Full-Suite Pro</h2>
+                        <h2 class="retainer-tier-name">Studio Private</h2>
                         <ul class="retainer-bullets">
-                            <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
-                            <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
-                            <li>4-5 new ad creative variations weekly</li>
-                            <li>Weekly asynchronous updates and meeting blocks</li>
+                            <li>Complete Growth & Digital Brand Ecosystem Overhaul</li>
+                            <li>Custom Multi-Platform Content Campaigns & Sourcing</li>
+                            <li>Uncapped Paid Ad Spend Scale Management Operations</li>
+                            <li>Direct Priority Channel Consultation Architecture Access</li>
                         </ul>
                     </div>
-                    <div class="retainer-price">
-                        $4,200
-                        <span>per month</span>
-                    </div>
+                    <h2 class="retainer-price">$10,000<span>/ Month</span></h2>
                 </div>
-                
             </div>
         </div>
 
-        <!-- TAB 5: ABOUT US -->
         <div id="tab-about" class="tab-panel">
-            <div class="section-header-block">
-                <div class="section-tagline">The Blueprint Behind the Studio</div>
-                <h1 class="section-title">About Us</h1>
-            </div>
-
-            <div class="about-container">
-                <div class="about-content-side">
-                    <div class="about-body">
-                        <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
-                        <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
-                        <p>With industry experience in biotech, manufacturing, healthcare, educational, environmental, aerospace, and entertainment-focused social media and marketing initiatives, we are excited to partner with brands across all sectors. Ready to scale? Just reach out.</p>
+            <div class="about-full-bleed-bg">
+                <div class="about-wrapper">
+                    <div class="section-header-block revised-header" style="padding-top: 0;">
+                        <div class="section-tagline">Who We Are</div>
+                        <h1 class="section-title">About Us</h1>
                     </div>
-                    <div class="about-signature">SR Studios</div>
+                    <div class="about-row">
+                        <h1 class="about-title">Our Vision</h1>
+                        <div class="about-body">
+                            <p>SR Studios is an integrated growth agency built for private clients who demand precision, technical expertise, and high-end visual execution. We bridge the gap between analytical search intent and compelling brand aesthetics, engineering digital ecosystems that drive retention and scalable growth.</p>
+                        </div>
+                    </div>
+                    <div class="about-row">
+                        <h2 class="about-title">Our Philosophy</h2>
+                        <div class="about-body">
+                            <p>We believe that robust data architecture and striking, curated design aren't mutually exclusive—they are completely codependent. From backend code optimization to front-facing brand identity, we construct every layer with strict structural purpose.</p>
+                            <div class="about-signature">SR Studios</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 6: CONTACT -->
         <div id="tab-contact" class="tab-panel">
-            <div class="contact-wrapper">
-                <h2>Initiate Partnership</h2>
-                <p>Click below to launch a direct, secure communication thread with our execution team.</p>
-                <a href="mailto:strategy@srstudiosla.com?subject=Retainer%20Brief%20-%20SR%20Studios" class="btn-primary">
-                    Book Brand Consultation
-                </a>
+            <div class="section-header-block" style="padding-top: 0;">
+                <div class="section-tagline">Initiate Partnership</div>
+                <h1 class="section-title">Contact</h1>
             </div>
+            <section class="contact-wrapper">
+                <h2>Let's Build</h2>
+                <p>We accept a limited block of concurrent private clients to guarantee exceptional processing depth for every single ecosystem. Reach out to request a strategic evaluation analysis session.</p>
+                <a href="mailto:growth@srstudios.com?subject=Strategic%20Growth%20Inquiry" class="btn-primary">Secure Strategic Consultation</a>
+            </section>
         </div>
 
     </main>
 
-    <!-- GLOBAL FULL-BLEED SITE FOOTER -->
     <footer>
         <div class="footer-container">
             <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-            <div>Los Angeles, California</div>
+            <div>Integrated Growth Architecture &bull; Private Client Division</div>
         </div>
     </footer>
 
-    <!-- INTERACTION LOGIC -->
     <script>
         function switchTab(event, tabId) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            const panels = document.querySelectorAll('.tab-panel');
-            panels.forEach(panel => panel.classList.remove('active'));
-
-            // Sync full-width top structural block visibility based on tab layout rules
-            const topCarousel = document.querySelector('.full-bleed-carousel-outer');
-            if (tabId === 'tab-home') {
-                topCarousel.style.display = 'block';
-            } else {
-                topCarousel.style.display = 'none';
-            }
-
-            // Route standard cross-component inner clicks cleanly back to active head styling
-            if(event && (event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('home-service-card') || event.currentTarget.classList.contains('btn-primary'))) {
-                const targetNavBtn = document.querySelector(`[onclick*='${tabId}']`);
-                if(targetNavBtn) targetNavBtn.classList.add('active');
-            } else if (event) {
-                event.currentTarget.classList.add('active');
-            }
+            event.preventDefault();
             
-            document.getElementById(tabId).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // CAROUSEL TIMER ENGINE
-        let currentSlide = 0;
-        const totalSlides = 3;
-        const carouselTrack = document.querySelector('.carousel-track');
-
-        if (carouselTrack) {
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                carouselTrack.style.transform = `translateX(-${currentSlide * 33.3333}%)`;
-            }, 5000); 
+            // Hide all tab panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Activate targeted elements
+            const activePanel = document.getElementById(tabId);
+            if (activePanel) {
+                activePanel.classList.add('active');
+            }
+            event.currentTarget.classList.add('active');
+            
+            // Smooth view snap back to top of screen on change
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-
 </body>
 </html>
