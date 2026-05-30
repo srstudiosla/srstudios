@@ -148,8 +148,10 @@
             flex-direction: column;
         }
 
-        /* Separate the home panel completely from standard page padding restrictions */
-        #tab-home.tab-panel.active {
+        /* Separate the full-bleed tabs completely from standard page padding restrictions */
+        #tab-home.tab-panel.active,
+        #tab-services.tab-panel.active,
+        #tab-brand.tab-panel.active {
             display: block;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
@@ -377,12 +379,21 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* --- SERVICES PAGE LAYOUT --- */
+        /* --- SERVICES PAGE (COLOR INVERSION HIGH-CONTRAST OVERRIDE) --- */
+        .services-full-bleed-bg {
+            background-color: var(--text-secondary); /* Flipped to Charcoal */
+            width: 100vw;
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
         .services-wrapper {
             display: flex;
             flex-direction: column;
             gap: 5rem;
-            padding: 4rem 0;
+            width: 100%;
+            max-width: 1000px;
         }
 
         .services-row {
@@ -390,7 +401,7 @@
             grid-template-columns: 35% 65%;
             gap: 2rem;
             align-items: flex-start;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(246, 240, 229, 0.15); /* Muted contrast borders */
             padding-bottom: 4rem;
         }
 
@@ -401,22 +412,38 @@
             font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 400;
             text-transform: uppercase;
-            color: var(--text-primary);
+            color: var(--text-primary); /* Renders in Premium Matcha Green against Charcoal */
             letter-spacing: 0.03em;
             line-height: 1.1;
         }
 
         .services-body {
-            color: var(--text-secondary);
+            color: var(--bg-color); /* Flipped to Cream background tone for crisp reading */
             font-size: clamp(1rem, 2.5vw, 1.15rem);
             line-height: 1.7;
             padding-left: 2.5rem;
-            border-left: 1px solid var(--border-color);
+            border-left: 1px solid rgba(246, 240, 229, 0.15);
         }
         .services-body p { margin-bottom: 1.5rem; }
         .services-body p:last-child { margin-bottom: 0; }
 
-        /* --- BRAND ARCHITECT INTERLOCKING LAYOUT SYSTEM --- */
+        /* --- BRAND ARCHITECT (SURFACE MATCH & TEXT CENTERING OVERRIDE) --- */
+        .brand-full-bleed-bg {
+            background-color: var(--surface-color); /* Matches Partnership Card Surface */
+            width: 100vw;
+            padding: 2rem 2rem 6rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-max-width-constrain {
+            width: 100%;
+            max-width: 1000px;
+        }
+
         .architect-container {
             display: flex;
             flex-direction: column;
@@ -424,13 +451,16 @@
             padding: 2rem 0;
         }
 
-        .architect-row-left {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3.5rem;
+        /* Unified centered visual layout replacing the old split layout and image block */
+        .architect-row-centered {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
             padding-bottom: 6rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .deliverables-stack {
@@ -637,6 +667,7 @@
             padding: 4rem 0 2rem 0;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 3.5rem;
+            width: 100%;
         }
         .section-tagline { font-family: var(--font-sub-headers); font-weight: 300; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); margin-bottom: 1rem; }
         
@@ -648,6 +679,11 @@
             color: var(--text-primary); 
             letter-spacing: 0.03em;
         }
+
+        /* Overrides to adapt typography cleanly to inverted color sections */
+        .inverted-header .section-tagline { color: rgba(246, 240, 229, 0.7); }
+        .inverted-header .section-title { color: var(--bg-color); }
+        .inverted-header { border-bottom-color: rgba(246, 240, 229, 0.15); }
 
         /* --- MINIMAL CONTACT INTERFACE --- */
         .contact-wrapper {
@@ -707,7 +743,7 @@
             .home-architect-promo { height: auto; padding: 5rem 1.5rem; background-attachment: scroll; }
             .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
             .services-body { padding-left: 0; border-left: none; }
-            .architect-row-left, .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
+            .architect-row-right { grid-template-columns: 100%; gap: 2rem; padding-bottom: 4rem; }
             .architect-row-right .architect-image-wrapper { grid-row: 2; }
             .about-container { padding: 1rem 0 3rem 0; }
             .footer-container { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.25rem; }
@@ -812,95 +848,103 @@
 
         </div>
 
-        <!-- TAB 2: SERVICES -->
+        <!-- TAB 2: SERVICES (COLOR INVERTED LAYOUT) -->
         <div id="tab-services" class="tab-panel">
-            <div class="services-wrapper">
-                <div class="services-row">
-                    <h1 class="services-title">Brand Strategy</h1>
-                    <div class="services-body">
-                        <p>Your brand is your most valuable asset. It is the core identity that dictates how the market perceives your value. We help private clients define exactly who they are, what they stand for, and how they win.</p>
-                        <p>From deep-dive brand strategy and premium visual identity to tone of voice and comprehensive brand guidelines, we build a cohesive, high-end system.</p>
+            <div class="services-full-bleed-bg">
+                <div class="services-wrapper">
+                    <div class="section-header-block inverted-header" style="padding-top: 0;">
+                        <div class="section-tagline">Our Core Capabilities</div>
+                        <h1 class="section-title">Services</h1>
                     </div>
-                </div>
-                <div class="services-row">
-                    <h2 class="services-title">Content & Messaging</h2>
-                    <div class="services-body">
-                        <p>High-performing content does more than just fill a feed, it captures attention, builds deep consumer trust, and converts audience attention into predictable revenue.</p>
+                    <div class="services-row">
+                        <h1 class="services-title">Brand Strategy</h1>
+                        <div class="services-body">
+                            <p>Your brand is your most valuable asset. It is the core identity that dictates how the market perceives your value. We help private clients define exactly who they are, what they stand for, and how they win.</p>
+                            <p>From deep-dive brand strategy and premium visual identity to tone of voice and comprehensive brand guidelines, we build a cohesive, high-end system.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="services-row">
-                    <h3 class="services-title">High-End Production</h3>
-                    <div class="services-body">
-                        <p>In a crowded digital landscape, premium visuals are the first thing your audience notices and the metric they judge your quality by.</p>
+                    <div class="services-row">
+                        <h2 class="services-title">Content & Messaging</h2>
+                        <div class="services-body">
+                            <p>High-performing content does more than just fill a feed, it captures attention, builds deep consumer trust, and converts audience attention into predictable revenue.</p>
+                        </div>
+                    </div>
+                    <div class="services-row">
+                        <h3 class="services-title">High-End Production</h3>
+                        <div class="services-body">
+                            <p>In a crowded digital landscape, premium visuals are the first thing your audience notices and the metric they judge your quality by.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- TAB 3: BRAND ARCHITECT PROGRAM -->
+        <!-- TAB 3: BRAND ARCHITECT PROGRAM (SURFACE MATCHED & CENTERED) -->
         <div id="tab-brand" class="tab-panel">
-            <div class="section-header-block">
-                <div class="section-tagline">Accelerated Asset Development</div>
-                <h1 class="section-title">Brand Architect Program</h1>
-            </div>
-            
-            <div class="architect-container">
-                <div class="architect-row-left">
-                    <div class="architect-text-block">
-                        <h1 class="arch-heading">The Strategic Blueprint</h1>
-                        <div class="architect-body-content">
-                            <p>Before scaling acquisition engines, driving paid search traffic, or launching complex email funnels, you must first design a visual framework engineered to win modern customer trust.</p>
-                            <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
-                            <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
-                            <div class="cta-wrapper-inline">
-                                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
-                                    Reach out to book a Brand Architect Consultation today.
-                                </a>
+            <div class="brand-full-bleed-bg">
+                <div class="brand-max-width-constrain">
+                    <div class="section-header-block">
+                        <div class="section-tagline">Accelerated Asset Development</div>
+                        <h1 class="section-title">Brand Architect Program</h1>
+                    </div>
+                    
+                    <div class="architect-container">
+                        <!-- Clean centered introductory row layout following image removal -->
+                        <div class="architect-row-centered">
+                            <div class="architect-text-block">
+                                <h1 class="arch-heading">The Strategic Blueprint</h1>
+                                <div class="architect-body-content">
+                                    <p>Before scaling acquisition engines, driving paid search traffic, or launching complex email funnels, you must first design a visual framework engineered to win modern customer trust.</p>
+                                    <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
+                                    <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
+                                    <div class="cta-wrapper-inline">
+                                        <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
+                                            Reach out to book a Brand Architect Consultation today.
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="architect-image-wrapper">
-                        <img src="srarch_blueprint.png" alt="Strategic Blueprint Framework">
-                    </div>
-                </div>
 
-                <div class="section-header-block" style="padding: 2rem 0 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
-                    <h1 class="section-title" style="font-size: 2.2rem;">Program Deliverables</h1>
-                </div>
-
-                <div class="deliverables-stack">
-                    <div class="architect-row-right">
-                        <div class="architect-image-wrapper">
-                            <img src="srarch_typography.png" alt="Bespoke Color Schemes & Typography Systems">
+                        <div class="section-header-block" style="padding: 2rem 0 1rem 0; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color);">
+                            <h1 class="section-title" style="font-size: 2.2rem;">Program Deliverables</h1>
                         </div>
-                        <div class="architect-text-block">
-                            <div class="architect-body-content">
-                                <h2 class="arch-heading">Bespoke Color Schemes & Typography Systems</h2>
-                                <p>Color theory is the unspoken language of consumer psychology, and typography is the architecture of your brand's editorial voice. We work closely with you to formulate custom, sophisticated color palettes that evoke immediate emotional trust, balanced alongside robust typography pairings. Our strategic approach ensures that your brand’s reading experience is highly legible, visually elegant, and structurally cohesive across all modern web browsers and mobile platforms.</p>
+
+                        <div class="deliverables-stack">
+                            <div class="architect-row-right">
+                                <div class="architect-image-wrapper">
+                                    <img src="srarch_typography.png" alt="Bespoke Color Schemes & Typography Systems">
+                                </div>
+                                <div class="architect-text-block">
+                                    <div class="architect-body-content">
+                                        <h2 class="arch-heading">Bespoke Color Schemes & Typography Systems</h2>
+                                        <p>Color theory is the unspoken language of consumer psychology, and typography is the architecture of your brand's editorial voice. We work closely with you to formulate custom, sophisticated color palettes that evoke immediate emotional trust, balanced alongside robust typography pairings. Our strategic approach ensures that your brand’s reading experience is highly legible, visually elegant, and structurally cohesive across all modern web browsers and mobile platforms.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="architect-row-right">
-                        <div class="architect-image-wrapper">
-                            <img src="srarch_logo.png" alt="Minimalist Logo Architectures & Mark Assets">
-                        </div>
-                        <div class="architect-text-block">
-                            <div class="architect-body-content">
-                                <h2 class="arch-heading">Minimalist Logo Architectures & Mark Assets</h2>
-                                <p>Your logo should not attempt to explain everything you do; its sole purpose is to serve as an unforgettable, easily identifiable signature of your visual authority. We construct clean, scalable logo architectures and flexible brand marks designed to perform elegantly at any scale—from tiny mobile browser favicons and circular social media avatars to large-scale print production packages.</p>
+                            <div class="architect-row-right">
+                                <div class="architect-image-wrapper">
+                                    <img src="srarch_logo.png" alt="Minimalist Logo Architectures & Mark Assets">
+                                </div>
+                                <div class="architect-text-block">
+                                    <div class="architect-body-content">
+                                        <h2 class="arch-heading">Minimalist Logo Architectures & Mark Assets</h2>
+                                        <p>Your logo should not attempt to explain everything you do; its sole purpose is to serve as an unforgettable, easily identifiable signature of your visual authority. We construct clean, scalable logo architectures and flexible brand marks designed to perform elegantly at any scale—from tiny mobile browser favicons and circular social media avatars to large-scale print production packages.</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="architect-row-right">
-                        <div class="architect-image-wrapper">
-                            <img src="srarch_advertising.png" alt="Ad Creative Guidelines & Promotional Direction">
-                        </div>
-                        <div class="architect-text-block">
-                            <div class="architect-body-content">
-                                <h2 class="arch-heading">Ad Creative Guidelines & Promotional Direction</h2>
-                                <p>Establishing your visual identity is only the first half of the equation; knowing how to weaponize it within a live digital marketing framework is where true growth occurs. We provide you with comprehensive creative directions specifically tailored for modern promotional advertising. We detail layout structures, visual text hierarchy rules, and imagery guidelines optimized to win attention and trigger immediate conversion on platforms like Google, Instagram, Pinterest, and TikTok.</p>
+                            <div class="architect-row-right">
+                                <div class="architect-image-wrapper">
+                                    <img src="srarch_advertising.png" alt="Ad Creative Guidelines & Promotional Direction">
+                                </div>
+                                <div class="architect-text-block">
+                                    <div class="architect-body-content">
+                                        <h2 class="arch-heading">Ad Creative Guidelines & Promotional Direction</h2>
+                                        <p>Establishing your visual identity is only the first half of the equation; knowing how to weaponize it within a live digital marketing framework is where true growth occurs. We provide you with comprehensive creative directions specifically tailored for modern promotional advertising. We detail layout structures, visual text hierarchy rules, and imagery guidelines optimized to win attention and trigger immediate conversion on platforms like Google, Instagram, Pinterest, and TikTok.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -917,7 +961,7 @@
 
             <div class="retainer-grid">
                 
-                <!-- Tier 1: Foundational (REVISED BULLETS) -->
+                <!-- Tier 1: Foundational -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Foundational</h2>
@@ -929,7 +973,7 @@
                         </ul>
                     </div>
                     <div class="retainer-price">
-                        $3,000
+                        $2,800
                         <span>per month</span>
                     </div>
                 </div>
@@ -963,7 +1007,7 @@
                         </ul>
                     </div>
                     <div class="retainer-price">
-                        $4,000
+                        $4,200
                         <span>per month</span>
                     </div>
                 </div>
