@@ -520,11 +520,15 @@
      /* --- ABOUT US INTERFACE --- */
  
         .about-container {
-            display: block; 
-            width: 100%;
-            padding: 2rem 0 4rem 0;
-            background-color: var(--text-secondary);
-        }
+             display: block; 
+             /* Extends the charcoal background full-bleed edge to edge */
+             width: 100vw;
+             margin-left: calc(-50vw + 50%);
+             margin-right: calc(-50vw + 50%);
+             /* Keeps your beautiful internal formatting and spacing */
+             padding: 4rem 2rem; 
+             background-color: var(--text-secondary);
+         }
         
 
         .about-content-side {
