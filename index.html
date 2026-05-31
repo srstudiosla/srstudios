@@ -230,6 +230,15 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
+        /* --- HOMEPAGE DIVIDER BAND (MATCHES CAROUSEL THICKNESS) --- */
+        .home-divider-band {
+            width: 100vw;
+            height: clamp(500px, 45vh, 700px);
+            background-color: var(--text-secondary); /* Pure Charcoal/Black */
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
         /* --- CONTINUOUS CINEMATIC VIDEO SHOWCASE BLOCK --- */
         .full-bleed-video-showcase {
             width: 100vw;
@@ -666,6 +675,7 @@
             .tab-btn { padding: 0.4rem 0.5rem; }
             .carousel-track img { height: 350px; } 
             .home-hero { min-height: 60vh; padding: 4rem 1.5rem; background-attachment: scroll; } 
+            .home-divider-band { height: 350px; }
             .full-bleed-video-showcase video { height: 350px; } 
             .brand-title-single { font-size: clamp(2.5rem, 9.5vw, 4.5rem); }
             .home-services-grid { grid-template-columns: 100%; gap: 3.5rem; }
@@ -720,6 +730,9 @@
                     Let's Scale Your Brand
                 </a>
             </section>
+
+            <!-- HOMEPAGE SECTION DIVIDER BAND -->
+            <div class="home-divider-band"></div>
 
             <!-- PART B: PROJECTS SHOWCASE VIDEO PIPELINE -->
             <section class="full-bleed-video-showcase">
