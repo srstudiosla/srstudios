@@ -230,10 +230,10 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* --- HOMEPAGE DIVIDER BAND (MATCHES CAROUSEL THICKNESS) --- */
+        /* --- HOMEPAGE DIVIDER BAND (UPDATED: 30% THINNER THAN MAIN CAROUSEL) --- */
         .home-divider-band {
             width: 100vw;
-            height: clamp(500px, 45vh, 700px);
+            height: clamp(350px, 31.5vh, 490px);
             background-color: var(--text-secondary); /* Pure Charcoal/Black */
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
@@ -547,6 +547,17 @@
             color: var(--text-secondary);
         }
 
+        .retainer-white {
+            font-family: var(--font-sub-headers);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            letter-spacing: 0.03em;
+        }
+
         .retainer-price {
             font-family: var(--font-sub-headers);
             font-size: 2rem;
@@ -675,7 +686,7 @@
             .tab-btn { padding: 0.4rem 0.5rem; }
             .carousel-track img { height: 350px; } 
             .home-hero { min-height: 60vh; padding: 4rem 1.5rem; background-attachment: scroll; } 
-            .home-divider-band { height: 350px; }
+            .home-divider-band { height: 245px; } /* Updated: 30% Thinner for Mobile Breakpoint */
             .full-bleed-video-showcase video { height: 350px; } 
             .brand-title-single { font-size: clamp(2.5rem, 9.5vw, 4.5rem); }
             .home-services-grid { grid-template-columns: 100%; gap: 3.5rem; }
@@ -731,7 +742,7 @@
                 </a>
             </section>
 
-            <!-- HOMEPAGE SECTION DIVIDER BAND -->
+            <!-- HOMEPAGE SECTION DIVIDER BAND (BAND 1) -->
             <div class="home-divider-band"></div>
 
             <!-- PART B: PROJECTS SHOWCASE VIDEO PIPELINE -->
@@ -776,6 +787,9 @@
 
                 </div>
             </section>
+
+            <!-- HOMEPAGE SECTION DIVIDER BAND (BAND 2) -->
+            <div class="home-divider-band"></div>
 
             <!-- PART D: FULL-BLEED BRAND ARCHITECT PROMO CALLOUT -->
             <section class="home-architect-promo">
