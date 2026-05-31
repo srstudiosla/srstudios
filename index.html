@@ -517,50 +517,7 @@
         }
         .architect-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; }
 
-        
-
-       /* --- ABOUT US INTERFACE --- */
- 
-        .about-container {
-             display: block !important; 
-             background-color: var(--text-secondary) !important; /* Forces Charcoal */
-             color: var(--bg-color) !important;              /* Forces Cream Text */
-             
-             /* Breaks out to full screen width cleanly */
-             width: 100vw !important;
-             position: relative;
-             left: 50%;
-             right: 50%;
-             margin-left: -50vw !important;
-             margin-right: -50vw !important;
-             
-             /* Generous padding so text doesn't touch the screen edges */
-             padding: 6rem max(2rem, calc((100vw - 1000px) / 2)) !important; 
-             box-sizing: border-box !important;
-        }
-
-        /* Adjusts header block inside the About container to sit slightly inset left */
-        .about-container .section-header-block {
-            padding-left: 4rem;
-        }
-        
-
-        .about-content-side {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .about-body {
-            color: var(--bg-color);
-            font-size: clamp(1.05rem, 2.4vw, 1.25rem); 
-            line-height: 1.8;
-        }
-
-        .about-body p {
-            margin-bottom: 1.75rem;
-        }
-
+        /* --- ABOUT US INTERFACE --- */
         .about-signature {
             font-family: var(--font-signature);
             font-size: clamp(3rem, 6vw, 4.5rem);
@@ -1037,21 +994,23 @@
             </div>
         </div>
 
-        <!-- TAB 5: ABOUT US -->
+        <!-- TAB 5: ABOUT US (MIRRORED IDEAL SERVICES LAYOUT WITH INVERTED COLORS) -->
         <div id="tab-about" class="tab-panel">
-            <div class="section-header-block">
-                <div class="section-tagline">The Blueprint Behind the Studio</div>
-                <h1 class="section-title">About Us</h1>
-            </div>
-
-            <div class="about-container">
-                <div class="about-content-side">
-                    <div class="about-body">
-                        <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
-                        <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
-                        <p>With industry experience in biotech, manufacturing, healthcare, educational, environmental, aerospace, and entertainment-focused social media and marketing initiatives, we are excited to partner with brands across all sectors. Ready to scale? Just reach out.</p>
+            <div class="services-full-bleed-bg">
+                <div class="services-wrapper">
+                    <div class="section-header-block inverted-header" style="padding-top: 0;">
+                        <div class="section-tagline">The Blueprint Behind the Studio</div>
+                        <h1 class="section-title">About Us</h1>
                     </div>
-                    <div class="about-signature">SR Studios</div>
+                    <div class="services-row">
+                        <h1 class="services-title">Our Ecosystem</h1>
+                        <div class="services-body">
+                            <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
+                            <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
+                            <p>With industry experience in biotech, manufacturing, healthcare, educational, environmental, aerospace, and entertainment-focused social media and marketing initiatives, we are excited to partner with brands across all sectors. Ready to scale? Just reach out.</p>
+                            <div class="about-signature">SR Studios</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
