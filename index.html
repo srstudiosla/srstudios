@@ -518,12 +518,13 @@
         .architect-image-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.9; }
 
         
-     /* --- ABOUT US INTERFACE --- */
+
+       /* --- ABOUT US INTERFACE --- */
  
-       .about-container {
+        .about-container {
              display: block !important; 
              background-color: var(--text-secondary) !important; /* Forces Charcoal */
-             color: var(--bg-color) !important;             /* Forces Cream Text */
+             color: var(--bg-color) !important;              /* Forces Cream Text */
              
              /* Breaks out to full screen width cleanly */
              width: 100vw !important;
@@ -536,6 +537,11 @@
              /* Generous padding so text doesn't touch the screen edges */
              padding: 6rem max(2rem, calc((100vw - 1000px) / 2)) !important; 
              box-sizing: border-box !important;
+        }
+
+        /* Adjusts header block inside the About container to sit slightly inset left */
+        .about-container .section-header-block {
+            padding-left: 2rem;
         }
         
 
