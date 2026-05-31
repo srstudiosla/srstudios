@@ -520,16 +520,23 @@
         
      /* --- ABOUT US INTERFACE --- */
  
-        .about-container {
-             display: block; 
-             /* Extends the charcoal background full-bleed edge to edge */
-             width: 100vw;
-             margin-left: calc(-50vw + 50%);
-             margin-right: calc(-50vw + 50%);
-             /* Keeps your beautiful internal formatting and spacing */
-             padding: 4rem 2rem; 
-             background-color: var(--text-secondary);
-         }
+       .about-container {
+             display: block !important; 
+             background-color: var(--text-secondary) !important; /* Forces Charcoal */
+             color: var(--bg-color) !important;             /* Forces Cream Text */
+             
+             /* Breaks out to full screen width cleanly */
+             width: 100vw !important;
+             position: relative;
+             left: 50%;
+             right: 50%;
+             margin-left: -50vw !important;
+             margin-right: -50vw !important;
+             
+             /* Generous padding so text doesn't touch the screen edges */
+             padding: 6rem max(2rem, calc((100vw - 1000px) / 2)) !important; 
+             box-sizing: border-box !important;
+        }
         
 
         .about-content-side {
