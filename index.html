@@ -179,7 +179,7 @@
 
         /* --- SELECTED WORK PAGE STYLING (INVERTED DARK THEME) --- */
         .portfolio-full-bleed-bg {
-            background-color: var(--text-secondary); /* Flipped to Charcoal/Black */
+            background-color: var(--text-secondary); /* Charcoal/Black */
             width: 100vw;
             padding-bottom: 5rem;
             display: flex;
@@ -196,7 +196,7 @@
         }
 
         .portfolio-header-block h1 {
-            font-family: var(--font-sub-headers); /* Flipped to Oswald Header */
+            font-family: var(--font-sub-headers); /* Oswald Header */
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 400;
             text-transform: uppercase;
@@ -229,7 +229,9 @@
             max-width: 1000px;
             padding: 4rem 2rem 0 2rem;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 6rem; /* Strategic breathing room between multi-million dollar architecture blocks */
         }
 
         .portfolio-case-container {
@@ -245,6 +247,37 @@
             align-items: center;
             text-align: left;
             width: 100%;
+        }
+
+        /* --- INTEGRATED COMPONENT CAROUSEL SYSTEM (CASE STUDY 1 EXCLUSIVE) --- */
+        .case-carousel-outer {
+            width: 100vw; /* Full bleed screen span match */
+            background-color: var(--text-secondary);
+            overflow: hidden;
+            position: relative;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-top: 1px solid rgba(246, 240, 229, 0.1);
+            border-bottom: 1px solid rgba(246, 240, 229, 0.1);
+        }
+
+        .case-carousel-window {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .case-carousel-track {
+            display: flex;
+            width: 500%; /* 5 Slots allocated for execution slide files */
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); 
+        }
+
+        .case-carousel-track img {
+            width: 20%; /* Exact sizing metrics matching main landing viewport benchmarks */
+            height: clamp(500px, 45vh, 700px); 
+            object-fit: cover; 
+            display: block;
         }
 
         .case-data-side {
@@ -264,7 +297,7 @@
         }
 
         .case-title {
-            font-family: var(--font-sub-headers); /* Flipped to Oswald Header */
+            font-family: var(--font-sub-headers); /* Oswald Header */
             font-size: clamp(1.6rem, 3.8vw, 2.4rem);
             text-transform: uppercase;
             color: var(--accent-header); /* Pink Font */
@@ -273,7 +306,7 @@
             letter-spacing: 0.03em;
         }
 
-        .case-scope, .case-baseline {
+        .case-baseline {
             font-family: var(--font-body);
             font-size: 0.95rem;
             color: var(--bg-color); /* Cream contrast */
@@ -281,7 +314,7 @@
             line-height: 1.7;
         }
 
-        .case-scope strong, .case-baseline strong {
+        .case-baseline strong {
             color: var(--accent-header); /* Pink emphasis highlights */
             font-weight: 600;
         }
@@ -894,6 +927,7 @@
             .nav-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
             .tab-btn { padding: 0.4rem 0.5rem; }
             .carousel-track img { height: 350px; } 
+            .case-carousel-track img { height: 350px; }
             .home-hero { min-height: 60vh; padding: 4rem 1.5rem; background-attachment: scroll; } 
             .home-divider-band { height: 245px; } 
             .full-bleed-video-showcase video { height: 350px; } 
@@ -904,7 +938,7 @@
             .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
             .services-body { padding-left: 0; border-left: none; }
             .brand-divider-band { height: 175px; }
-            .portfolio-grid-section { padding: 3rem 1.25rem 0 1.25rem; }
+            .portfolio-grid-section { padding: 3rem 1.25rem 0 1.25rem; gap: 4rem; }
             .footer-container { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.25rem; }
         }
     </style>
@@ -1116,11 +1150,11 @@
                     </p>
                 </div>
 
-                <!-- Part 2: Centered Case Study Data -->
+                <!-- Part 2: Centered Case Study Grid Section -->
                 <div class="portfolio-grid-section">
+                    
+                    <!-- CASE STUDY 01: B2B AEROSPACE MANUFACTURING -->
                     <div class="portfolio-case-container">
-                        
-                        <!-- Project Card 01 (Centered Execution Frame) -->
                         <div class="anonymized-card">
                             <div class="case-data-side">
                                 <div class="case-meta-tag">Project 01 // B2B Industrial Aerospace Manufacturing</div>
@@ -1129,6 +1163,19 @@
                                 <p class="case-baseline">
                                     <strong>The Baseline:</strong> High-intent product line hidden behind an outdated desktop interface, fragmented ad budgets across unoptimized search terms, and high Customer Acquisition Costs (CAC).
                                 </p>
+
+                                <!-- Case Study 1 Slides Asset Carousel Component -->
+                                <div class="case-carousel-outer">
+                                    <div class="case-carousel-window">
+                                        <div class="case-carousel-track" id="project-one-track">
+                                            <img src="project1_slide1.png" alt="Case Study 1 - Strategic Slide 1">
+                                            <img src="project1_slide2.png" alt="Case Study 1 - Strategic Slide 2">
+                                            <img src="project1_slide3.png" alt="Case Study 1 - Strategic Slide 3">
+                                            <img src="project1_slide4.png" alt="Case Study 1 - Strategic Slide 4">
+                                            <img src="project1_slide5.png" alt="Case Study 1 - Strategic Slide 5">
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <!-- The Data Core Metrics Matrix -->
                                 <table class="data-core-table">
@@ -1165,21 +1212,84 @@
                                 <!-- Strategy Breakout Core -->
                                 <ul class="strategy-breakout-list">
                                     <li>
-                                        <strong>Funnel Unification:</strong> Re-architected fragmented ad channels into an interconnected ecosystem, leveraging Google Search for immediate transactional intent and high-end Meta visual retargeting to solidify brand authority.
+                                        <strong>Funnel Unification:</strong> Re-architected fragmented ad channels into an interconnected ecosystem, leveraging Google Search for immediate transactional intent and high-end Meta visual retargeting to solidify brand authority.[cite: 1]
                                     </li>
                                     <li>
-                                        <strong>UI/UX Layout Overhaul:</strong> Stripped away dense, technical engineering jargon on primary landing pages and replaced it with clean, editorial copywriting that simplified complex value propositions in 5 seconds or less.
+                                        <strong>UI/UX Layout Overhaul:</strong> Stripped away dense, technical engineering jargon on primary landing pages and replaced it with clean, editorial copywriting that simplified complex value propositions in 5 seconds or less.[cite: 1]
                                     </li>
                                     <li>
-                                        <strong>Infrastructure Optimization:</strong> Re-coded clunky mobile layouts to ensure rapid loading speeds, completely removing conversion friction for busy, mobile-first procurement directors.
+                                        <strong>Infrastructure Optimization:</strong> Re-coded clunky mobile layouts to ensure rapid loading speeds, completely removing conversion friction for busy, mobile-first procurement directors.[cite: 1]
                                     </li>
                                 </ul>
                             </div>
                         </div>
-
                     </div>
-                </div>
 
+
+                    <!-- CASE STUDY 02: B2B BIOTECH MANUFACTURING (NEW COMPONENT) -->
+                    <div class="portfolio-case-container">
+                        <div class="anonymized-card">
+                            <div class="case-data-side">
+                                <div class="case-meta-tag">Project 02 // B2B Biotech Manufacturing & Clinical Systems</div>
+                                <h2 class="case-title">Email Campaign Optimization & Digital Retention Architecture</h2>
+                                
+                                <p class="case-baseline">
+                                    <strong>The Baseline:</strong> Low email open rates across cleanroom equipment buyers, list degradation due to poor audience division, and unexploited customer lifetime value pathways.
+                                </p>
+
+                                <!-- Case Study 2 Performance Data Grid Matrix -->
+                                <table class="data-core-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Metric Focused</th>
+                                            <th>Before SR Studios</th>
+                                            <th>After 90-Day Optimization</th>
+                                            <th>Net Shift</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Email Newsletter CTR</td>
+                                            <td>1.12%</td>
+                                            <td>4.89%</td>
+                                            <td class="shift-positive">+336% Improvement</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Automated Flow Attributed Revenue</td>
+                                            <td>Minimal</td>
+                                            <td>Predictable Pipeline Capture</td>
+                                            <td class="shift-positive">Optimized</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Unsubscribe / Bounce Rate</td>
+                                            <td>High</td>
+                                            <td>Industry Benchmarks Satisfied</td>
+                                            <td class="shift-positive">Stabilized</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <!-- Filler Strategy Breakdown - Ready for User Fine-Tuning -->
+                                <p class="case-baseline" style="margin-bottom: 1rem;">
+                                    This filler description can be completely customized to recount your precise agency methodology. Use this block to articulate how your retention sequences were implemented.
+                                </p>
+
+                                <ul class="strategy-breakout-list">
+                                    <li>
+                                        <strong>Audience Division:</strong> Segmented technical research labs from corporate procurement officers to deliver hyper-specific messaging tailored to purchasing permissions.
+                                    </li>
+                                    <li>
+                                        <strong>Editorial Overhaul:</strong> Engineered technical storytelling frameworks that elevated traditional sterile product updates into premium, educational industry insights.
+                                    </li>
+                                    <li>
+                                        <strong>Lifecycle Sequences:</strong> Implemented automated re-engagement trees and replenishment logic workflows to completely systematically maximize technical product replacement windows.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -1317,7 +1427,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // CAROUSEL TIMER ENGINE
+        // CAROUSEL TIMER ENGINE (GLOBAL HERO BANNER)
         let currentSlide = 0;
         const totalSlides = 3;
         const carouselTrack = document.querySelector('.carousel-track');
@@ -1327,6 +1437,18 @@
                 currentSlide = (currentSlide + 1) % totalSlides;
                 carouselTrack.style.transform = `translateX(-${currentSlide * 33.3333}%)`;
             }, 5000); 
+        }
+
+        // CAROUSEL TIMER ENGINE (CASE STUDY 01 - 5 SLOTS EXCLUSIVE)
+        let projectOneSlide = 0;
+        const totalProjectOneSlides = 5;
+        const projectOneTrack = document.getElementById('project-one-track');
+
+        if (projectOneTrack) {
+            setInterval(() => {
+                projectOneSlide = (projectOneSlide + 1) % totalProjectOneSlides;
+                projectOneTrack.style.transform = `translateX(-${projectOneSlide * 20}%)`;
+            }, 5000);
         }
     </script>
 
