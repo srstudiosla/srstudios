@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
-    <!-- Importing Noto Serif, Oswald, and Ballet from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -259,6 +258,9 @@
             margin-bottom: 2rem;
             border-top: 1px solid rgba(246, 240, 229, 0.1);
             border-bottom: 1px solid rgba(246, 240, 229, 0.1);
+            /* Correct breakout alignment to force perfectly centered full-bleed execution */
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
         }
 
         .case-carousel-window {
@@ -945,7 +947,6 @@
 </head>
 <body>
 
-    <!-- PORTAL HEADER -->
     <header>
         <div class="nav-container">
             <nav class="nav-tabs">
@@ -960,7 +961,6 @@
         </div>
     </header>
 
-    <!-- SECTION 1: ROTATING CAROUSEL BANNER SYSTEM -->
     <div class="full-bleed-carousel-outer">
         <div class="carousel-window">
             <div class="carousel-track">
@@ -971,13 +971,10 @@
         </div>
     </div>
 
-    <!-- MAIN STRATEGIC INTERFACE CONTAINER -->
     <main>
 
-        <!-- TAB 1: GET STARTED (HOMEPAGE SEQUENCE) -->
         <div id="tab-home" class="tab-panel active">
             
-            <!-- PART A: HERO CONTENT BACKDROP -->
             <section class="home-hero">
                 <div class="hero-branding-block">
                     <h1 class="brand-title-single">SR STUDIOS</h1>
@@ -988,10 +985,8 @@
                 </a>
             </section>
 
-            <!-- HOMEPAGE SECTION DIVIDER BAND (BAND 1) -->
             <div class="home-divider-band"></div>
 
-            <!-- PART B: PROJECTS SHOWCASE VIDEO PIPELINE -->
             <section class="full-bleed-video-showcase">
                 <video autoplay loop muted playsinline poster="videoshowcase_fallback.png">
                     <source src="videoshowcase.mp4" type="video/mp4">
@@ -1000,11 +995,9 @@
                 <div class="video-vignette-overlay"></div>
             </section>
 
-            <!-- PART C: THREE-PANEL QUICK HOVER SERVICES GRID -->
             <section class="home-services-grid-wrapper">
                 <div class="home-services-grid">
                     
-                    <!-- Column 1: Brand Strategy -->
                     <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_brand_strat.png" alt="Brand Strategy Pipeline Showcase">
@@ -1013,7 +1006,6 @@
                         <a href="#" class="home-service-cta">let's talk strat</a>
                     </div>
 
-                    <!-- Column 2: Content & Messaging -->
                     <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_content_messaging.png" alt="Content and Messaging Architecture">
@@ -1022,7 +1014,6 @@
                         <a href="#" class="home-service-cta">lets chat:</a>
                     </div>
 
-                    <!-- Column 3: High-End Production -->
                     <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_production.png" alt="High End Production and Creative Framing">
@@ -1034,10 +1025,8 @@
                 </div>
             </section>
 
-            <!-- HOMEPAGE SECTION DIVIDER BAND (BAND 2) -->
             <div class="home-divider-band"></div>
 
-            <!-- PART D: FULL-BLEED PARTNERSHIP RETAINER CALLOUT (MINIMAL CREAM STYLE) -->
             <section class="home-retainer-promo">
                 <h1>An Entire Marketing Team Dedicated to Your Brand</h1>
                 <p>Monthly retainers include a custom brand package sent monthly, including prints of next months email newsletters, ad campaign highlights, color palettes and patterns for upcoming promos, notes from the founder, and small thank you gifts, personal to you. As a token of gratitude because we couldn't do this without our clients. -SR STUDIOS</p>
@@ -1046,7 +1035,6 @@
                 </a>
             </section>
 
-            <!-- PART E: FULL-BLEED BRAND ARCHITECT PROMO CALLOUT -->
             <section class="home-architect-promo">
                 <h1>Just Getting Started</h1>
                 <p>Learn more about our brand architect program</p>
@@ -1057,7 +1045,6 @@
 
         </div>
 
-        <!-- TAB 2: SERVICES (COLOR INVERTED LAYOUT) -->
         <div id="tab-services" class="tab-panel">
             <div class="services-full-bleed-bg">
                 <div class="services-wrapper">
@@ -1090,7 +1077,6 @@
             </div>
         </div>
 
-        <!-- TAB 3: BRAND ARCHITECT PROGRAM (MIRRORED SERVICES GRID SECTIONS) -->
         <div id="tab-brand" class="tab-panel">
             <div class="brand-full-bleed-bg">
                 <div class="services-wrapper">
@@ -1112,7 +1098,6 @@
                         </div>
                     </div>
                     
-                    <!-- FULL BAND BREAK SEPARATOR BLOCK -->
                     <div class="brand-divider-band"></div>
 
                     <div class="services-row" style="margin-top: 4rem;">
@@ -1137,11 +1122,9 @@
             </div>
         </div>
 
-        <!-- SELECTED WORK (INVERTED HIGH-CONTRAST LAYOUT) -->
         <div id="tab-selected-work" class="tab-panel">
             <div class="portfolio-full-bleed-bg">
                 
-                <!-- Header (The Trust-Builder) -->
                 <div class="portfolio-header-block">
                     <h1>Selected Retainer Frameworks</h1>
                     <div class="sub-head">[ Case Studies ]</div>
@@ -1150,10 +1133,8 @@
                     </p>
                 </div>
 
-                <!-- Centered Case Study Grid Section -->
                 <div class="portfolio-grid-section">
                     
-                    <!-- CASE STUDY 01: B2B AEROSPACE MANUFACTURING -->
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
@@ -1164,7 +1145,6 @@
                                     <strong>The Baseline:</strong> High-intent product line hidden behind an outdated desktop interface, fragmented ad budgets across unoptimized search terms, and high Customer Acquisition Costs (CAC).
                                 </p>
 
-                                <!-- Case Study 1 Slides Asset Carousel Component -->
                                 <div class="case-carousel-outer">
                                     <div class="case-carousel-window">
                                         <div class="case-carousel-track" id="project-one-track">
@@ -1177,7 +1157,6 @@
                                     </div>
                                 </div>
 
-                                <!-- The Data Core Metrics Matrix -->
                                 <table class="data-core-table">
                                     <thead>
                                         <tr>
@@ -1209,16 +1188,15 @@
                                     </tbody>
                                 </table>
 
-                                <!-- Strategy Breakout Core -->
                                 <ul class="strategy-breakout-list">
                                     <li>
-                                        <strong>Funnel Unification:</strong> Re-architected fragmented ad channels into an interconnected ecosystem, leveraging Google Search for immediate transactional intent and high-end Meta visual retargeting to solidify brand authority.[cite: 1]
+                                        <strong>Funnel Unification:</strong> Re-architected fragmented ad channels into an interconnected ecosystem, leveraging Google Search for immediate transactional intent and high-end Meta visual retargeting to solidify brand authority.
                                     </li>
                                     <li>
-                                        <strong>UI/UX Layout Overhaul:</strong> Stripped away dense, technical engineering jargon on primary landing pages and replaced it with clean, editorial copywriting that simplified complex value propositions in 5 seconds or less.[cite: 1]
+                                        <strong>UI/UX Layout Overhaul:</strong> Stripped away dense, technical engineering jargon on primary landing pages and replaced it with clean, editorial copywriting that simplified complex value propositions in 5 seconds or less.
                                     </li>
                                     <li>
-                                        <strong>Infrastructure Optimization:</strong> Re-coded clunky mobile layouts to ensure rapid loading speeds, completely removing conversion friction for busy, mobile-first procurement directors.[cite: 1]
+                                        <strong>Infrastructure Optimization:</strong> Re-coded clunky mobile layouts to ensure rapid loading speeds, completely removing conversion friction for busy, mobile-first procurement directors.
                                     </li>
                                 </ul>
                             </div>
@@ -1226,7 +1204,6 @@
                     </div>
 
 
-                    <!-- CASE STUDY 02: B2B BIOTECH MANUFACTURING -->
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
@@ -1237,7 +1214,6 @@
                                     <strong>The Baseline:</strong> Low email open rates across cleanroom equipment buyers, list degradation due to poor audience division, and unexploited customer lifetime value pathways.
                                 </p>
 
-                                <!-- Case Study 2 Slides Asset Carousel Component -->
                                 <div class="case-carousel-outer">
                                     <div class="case-carousel-window">
                                         <div class="case-carousel-track" id="project-two-track">
@@ -1250,7 +1226,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Case Study 2 Performance Data Grid Matrix -->
                                 <table class="data-core-table">
                                     <thead>
                                         <tr>
@@ -1282,7 +1257,6 @@
                                     </tbody>
                                 </table>
 
-                                <!-- Customizable Filler Strategy Breakdown -->
                                 <p class="case-baseline" style="margin-bottom: 1rem;">
                                     This filler description can be completely customized to recount your precise agency methodology. Use this block to articulate how your retention sequences were implemented.
                                 </p>
@@ -1303,7 +1277,6 @@
                     </div>
 
 
-                    <!-- CASE STUDY 03: SOCIAL MEDIA GROWTH & COMMUNITY ARCHITECTURE -->
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
@@ -1314,7 +1287,6 @@
                                     <strong>The Baseline:</strong> Low brand engagement, static or non-existent content loops across key channels, and an inability to convert casual social impressions into targeted marketing leads.
                                 </p>
 
-                                <!-- Case Study 3 Slides Asset Carousel Component -->
                                 <div class="case-carousel-outer">
                                     <div class="case-carousel-window">
                                         <div class="case-carousel-track" id="project-three-track">
@@ -1327,7 +1299,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Case Study 3 Performance Data Grid Matrix -->
                                 <table class="data-core-table">
                                     <thead>
                                         <tr>
@@ -1359,7 +1330,6 @@
                                     </tbody>
                                 </table>
 
-                                <!-- Customizable Filler Strategy Breakdown for Social Media -->
                                 <p class="case-baseline" style="margin-bottom: 1rem;">
                                     This filler description can be completely customized to display your social media marketing genius. Use this area to explain how you scaled impressions and targeted target buyer profiles organically.
                                 </p>
@@ -1383,7 +1353,6 @@
             </div>
         </div>
 
-        <!-- TAB 4: PARTNERSHIP RETAINERS -->
         <div id="tab-retainers" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Sustained Growth Management</div>
@@ -1392,7 +1361,6 @@
 
             <div class="retainer-grid">
                 
-                <!-- Tier 1: Foundational -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Foundational</h2>
@@ -1409,7 +1377,6 @@
                     </div>
                 </div>
 
-                <!-- Tier 2: Omnichannel Pro -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Omnichannel Pro</h2>
@@ -1426,7 +1393,6 @@
                     </div>
                 </div>
 
-                <!-- Tier 3: Full-Suite Pro -->
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Full-Suite Pro</h2>
@@ -1446,7 +1412,6 @@
             </div>
         </div>
 
-        <!-- TAB 5: ABOUT US -->
         <div id="tab-about" class="tab-panel">
             <div class="services-full-bleed-bg">
                 <div class="services-wrapper">
@@ -1467,7 +1432,6 @@
             </div>
         </div>
 
-        <!-- TAB 6: CONTACT -->
         <div id="tab-contact" class="tab-panel">
             <div class="contact-wrapper">
                 <h2>Initiate Partnership</h2>
@@ -1480,7 +1444,6 @@
 
     </main>
 
-    <!-- GLOBAL FULL-BLEED SITE FOOTER -->
     <footer>
         <div class="footer-container">
             <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
@@ -1488,7 +1451,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTION LOGIC -->
     <script>
         function switchTab(event, tabId) {
             const buttons = document.querySelectorAll('.tab-btn');
