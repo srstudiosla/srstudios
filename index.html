@@ -23,8 +23,8 @@
             --bg-color: #FDFBF7;       /* Cream (Global background) */
             --surface-color: #FFFFFF;  /* Structural card background */
             --text-primary: #1C1210;   /* Beige (Soft, creamy premium font color) */
-            --text-secondary: #000000; /* True Black (Updated from Charcoal Brown) */
-            --accent-header: #FF0000;  /* Bright Red (Updated from Muted Strawberry) */
+            --text-secondary: #000000; /* True Black */
+            --accent-header: #FF0000;  /* Bright Red */
             --border-color: #000000;   /* Subtle structural borders */
             
             /* Typography Systems */
@@ -55,7 +55,6 @@
             overflow-x: hidden;
         }
 
-        /* Nav, Main Content blocks remain constrained to maintain editorial layout grids */
         .nav-container, main, .footer-container {
             width: 100%;
             max-width: 1000px;
@@ -87,7 +86,7 @@
         .tab-btn {
             background: transparent;
             border: none;
-            color: var(--bg-color);
+            color: #FFFFFF; /* Pure white for clean contrast on red background */
             padding: 0.5rem 0.6rem; 
             font-size: 0.72rem;
             font-weight: 700; 
@@ -102,10 +101,11 @@
 
         .nav-tabs:hover .tab-btn { opacity: 0.6; }
         .nav-tabs .tab-btn:hover { opacity: 1; transform: translateY(-1px); }
+        
         .tab-btn.active {
-            color: var(--bg-color);
-            opacity: 1;
-            border-bottom: 2px solid var(--bg-color);
+            color: #FFFFFF !important;
+            opacity: 1 !important;
+            border-bottom: 2px solid #FFFFFF;
             font-weight: 900;
         }
 
@@ -147,7 +147,6 @@
             flex-direction: column;
         }
 
-        /* Separate the full-bleed tabs completely from standard page padding restrictions */
         #tab-home.tab-panel.active,
         #tab-services.tab-panel.active,
         #tab-brand.tab-panel.active,
@@ -176,7 +175,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- SELECTED WORK PAGE STYLING (INVERTED DARK THEME) --- */
+        /* --- SELECTED WORK PAGE STYLING --- */
         .portfolio-full-bleed-bg {
             background-color: var(--text-secondary); /* Solid Black */
             width: 100vw;
@@ -191,16 +190,16 @@
             padding: 5rem 2rem 3rem 2rem;
             width: 100%;
             max-width: 1000px;
-            border-bottom: 1px solid rgba(246, 240, 229, 0.15); /* Muted contrast border */
+            border-bottom: 1px solid rgba(246, 240, 229, 0.15);
         }
 
         .portfolio-header-block h1 {
-            font-family: var(--font-sub-headers); /* Oswald Header */
+            font-family: var(--font-sub-headers);
             font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.03em;
-            color: var(--accent-header); /* Red Font Accent */
+            color: var(--accent-header);
             margin-bottom: 1rem;
         }
 
@@ -209,7 +208,7 @@
             font-size: clamp(0.95rem, 2vw, 1.2rem);
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            color: var(--bg-color); /* Cream contrast */
+            color: var(--bg-color);
             margin-bottom: 2rem;
         }
 
@@ -218,7 +217,7 @@
             margin: 0 auto;
             font-family: var(--font-body);
             font-size: 1rem;
-            color: var(--bg-color); /* Cream contrast copy */
+            color: var(--bg-color);
             line-height: 1.7;
             opacity: 0.9;
         }
@@ -230,12 +229,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6rem; /* Strategic breathing room between architecture blocks */
+            gap: 6rem;
         }
 
         .portfolio-case-container {
             width: 100%;
-            max-width: 800px; /* Constrained width for tight execution alignment */
+            max-width: 800px;
             display: flex;
             flex-direction: column;
         }
@@ -248,9 +247,8 @@
             width: 100%;
         }
 
-        /* --- INTEGRATED COMPONENT CAROUSEL SYSTEM --- */
         .case-carousel-outer {
-            width: 100vw; /* Full bleed screen span match */
+            width: 100vw;
             background-color: var(--text-secondary);
             overflow: hidden;
             position: relative;
@@ -258,7 +256,6 @@
             margin-bottom: 2rem;
             border-top: 1px solid rgba(246, 240, 229, 0.1);
             border-bottom: 1px solid rgba(246, 240, 229, 0.1);
-            /* Correct breakout alignment to force perfectly centered full-bleed execution */
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
         }
@@ -271,12 +268,12 @@
 
         .case-carousel-track {
             display: flex;
-            width: 500%; /* 5 Slots allocated for execution slide files */
+            width: 500%;
             transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); 
         }
 
         .case-carousel-track img {
-            width: 20%; /* Exact sizing metrics matching main landing viewport benchmarks */
+            width: 20%;
             height: clamp(500px, 45vh, 700px); 
             object-fit: cover; 
             display: block;
@@ -299,10 +296,10 @@
         }
 
         .case-title {
-            font-family: var(--font-sub-headers); /* Oswald Header */
+            font-family: var(--font-sub-headers);
             font-size: clamp(1.6rem, 3.8vw, 2.4rem);
             text-transform: uppercase;
-            color: var(--accent-header); /* Red Font */
+            color: var(--accent-header);
             line-height: 1.2;
             margin-bottom: 1.5rem;
             letter-spacing: 0.03em;
@@ -311,17 +308,16 @@
         .case-baseline {
             font-family: var(--font-body);
             font-size: 0.95rem;
-            color: var(--bg-color); /* Cream contrast */
+            color: var(--bg-color);
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
 
         .case-baseline strong {
-            color: var(--accent-header); /* Red emphasis highlights */
+            color: var(--accent-header);
             font-weight: 600;
         }
 
-        /* Inverted Data Core Table Design */
         .data-core-table {
             width: 100%;
             border-collapse: collapse;
@@ -336,8 +332,8 @@
             letter-spacing: 0.05em;
             text-align: left;
             padding: 0.85rem;
-            background-color: var(--accent-header); /* Red table headers */
-            color: var(--text-secondary); /* Dark text inside headers */
+            background-color: var(--accent-header);
+            color: #000000;
             font-weight: 600;
         }
 
@@ -353,11 +349,10 @@
         }
 
         .shift-positive {
-            color: var(--accent-header); /* Red Shift highlights */
+            color: var(--accent-header);
             font-weight: bold;
         }
 
-        /* Strategy Breakout Bullets */
         .strategy-breakout-list {
             list-style: none;
             margin-top: 1rem;
@@ -385,7 +380,7 @@
             color: var(--accent-header);
         }
 
-        /* --- HOMEPAGE FULL-BLEED HERO BACKDROP --- */
+        /* --- HOMEPAGE HERO --- */
         .home-hero {
             display: flex;
             flex-direction: column;
@@ -439,16 +434,15 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* --- HOMEPAGE DIVIDER BAND --- */
+        /* --- HOMEPAGE SECTIONS --- */
         .home-divider-band {
             width: 100vw;
             height: clamp(350px, 31.5vh, 490px);
-            background-color: var(--text-secondary); /* Solid Black */
+            background-color: var(--text-secondary);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* --- CONTINUOUS CINEMATIC VIDEO SHOWCASE BLOCK --- */
         .full-bleed-video-showcase {
             width: 100vw;
             background-color: var(--bg-color);
@@ -474,7 +468,6 @@
             pointer-events: none;
         }
 
-        /* --- HOMEPAGE THREE-PANEL SERVICES GRID --- */
         .home-services-grid-wrapper {
             width: 100vw;
             background-color: var(--bg-color);
@@ -560,7 +553,6 @@
             padding-left: 4px;
         }
 
-        /* --- HOMEPAGE RETAINER PROMO CALLOUT --- */
         .home-retainer-promo {
             width: 100vw;
             height: clamp(500px, 45vh, 700px); 
@@ -595,7 +587,6 @@
             line-height: 1.7;
         }
 
-        /* --- HOMEPAGE FULL-BLEED BRAND ARCHITECT PROMO CALLOUT --- */
         .home-architect-promo {
             width: 100vw;
             height: clamp(500px, 45vh, 700px); 
@@ -633,9 +624,9 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* --- SERVICES PAGE (COLOR INVERSION HIGH-CONTRAST OVERRIDE) --- */
+        /* --- SERVICES PAGE --- */
         .services-full-bleed-bg {
-            background-color: var(--text-secondary); /* Flipped to Black */
+            background-color: var(--text-secondary);
             width: 100vw;
             padding: 4rem 2rem;
             display: flex;
@@ -655,7 +646,7 @@
             grid-template-columns: 35% 65%;
             gap: 2rem;
             align-items: flex-start;
-            border-bottom: 1px solid rgba(246, 240, 229, 0.15); /* Muted contrast borders */
+            border-bottom: 1px solid rgba(246, 240, 229, 0.15);
             padding-bottom: 4rem;
         }
 
@@ -672,7 +663,7 @@
         }
 
         .services-body {
-            color: var(--bg-color); /* Flipped to Cream background tone for crisp reading */
+            color: var(--bg-color);
             font-size: clamp(1rem, 2.5vw, 1.15rem);
             line-height: 1.7;
             padding-left: 2.5rem;
@@ -683,20 +674,19 @@
 
         /* --- BRAND ARCHITECT --- */
         .brand-full-bleed-bg {
-            background-color: var(--surface-color); /* Matches Partnership Card Surface */
+            background-color: var(--surface-color);
             width: 100vw;
             padding: 4rem 2rem;
             display: flex;
             justify-content: center;
         }
 
-        /* Specific text color configurations to keep Brand Architect looking pristine on its background */
         .brand-full-bleed-bg .services-title {
             color: var(--text-primary); 
         }
         
         .brand-full-bleed-bg .services-body {
-            color: var(--text-secondary); /* Black Text */
+            color: var(--text-secondary);
             border-left-color: rgba(13, 14, 18, 0.15);
         }
 
@@ -704,18 +694,17 @@
             border-bottom-color: rgba(13, 14, 18, 0.15);
         }
 
-        /* Brand Architecture Section-Separating Mid-Band */
         .brand-divider-band {
             width: 100vw;
             height: clamp(250px, 22.5vh, 350px);
-            background-color: var(--text-secondary); /* Solid Black */
+            background-color: var(--text-secondary);
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* --- ABOUT US INTERFACE --- */
+        /* --- ABOUT US --- */
         .about-signature {
             font-family: var(--font-signature);
             font-size: clamp(3rem, 6vw, 4.5rem);
@@ -725,7 +714,7 @@
             user-select: none;
         }
 
-        /* --- THREE-PANEL RETAINER GRID SYSTEM --- */
+        /* --- PARTNERSHIPS GRID --- */
         .retainer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -791,17 +780,6 @@
             color: var(--text-secondary);
         }
 
-        .retainer-white {
-            font-family: var(--font-sub-headers);
-            font-size: 2rem;
-            font-weight: 400;
-            color: var(--text-primary);
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            letter-spacing: 0.03em;
-        }
-
         .retainer-price {
             font-family: var(--font-sub-headers);
             font-size: 2rem;
@@ -824,7 +802,7 @@
             margin-top: 0.25rem;
         }
 
-        /* --- BUTTONS --- */
+        /* --- GLOBAL ACTIONS & HEADERS --- */
         .btn-primary {
             background-color: var(--accent-header);
             color: var(--bg-color);
@@ -850,7 +828,6 @@
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
         }
 
-        /* --- GLOBAL HEADERS --- */
         .section-header-block {
             padding: 4rem 0 2rem 0;
             border-bottom: 1px solid var(--border-color);
@@ -868,17 +845,15 @@
             letter-spacing: 0.03em;
         }
 
-        /* Overrides to adapt typography cleanly to inverted color sections */
         .inverted-header .section-tagline { color: rgba(246, 240, 229, 0.7); }
         .inverted-header .section-title { color: var(--bg-color); }
         .inverted-header { border-bottom-color: rgba(246, 240, 229, 0.15); }
 
-        /* Brand Architect layout adaptations */
         .brand-header .section-tagline { color: var(--text-secondary); opacity: 0.7; }
         .brand-header .section-title { color: var(--text-primary); }
         .brand-header { border-bottom-color: rgba(13, 14, 18, 0.15); }
 
-        /* --- MINIMAL CONTACT INTERFACE --- */
+        /* --- CONTACT INTERFACE --- */
         .contact-wrapper {
             display: flex;
             flex-direction: column;
@@ -891,7 +866,7 @@
         .contact-wrapper h2 { font-family: var(--font-sub-headers); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text-primary); }
         .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
 
-        /* --- FULL-BLEED FOOTER --- */
+        /* --- FOOTER --- */
         footer {
             width: 100vw;
             background-color: var(--accent-header); 
@@ -915,7 +890,7 @@
             padding: 0 2rem;
         }
 
-        /* --- RESPONSIVE MEDIA --- */
+        /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 900px) {
             .retainer-grid {
                 grid-template-columns: 100%;
@@ -973,14 +948,14 @@
 
     <main>
 
+        <!-- HOME PANEL -->
         <div id="tab-home" class="tab-panel active">
-            
             <section class="home-hero">
                 <div class="hero-branding-block">
                     <h1 class="brand-title-single">SR STUDIOS</h1>
                     <h2 class="hero-sub-header">Digital Marketing Agency</h2>
                 </div>
-                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
+                <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-primary">
                     Let's Scale Your Brand
                 </a>
             </section>
@@ -997,8 +972,7 @@
 
             <section class="home-services-grid-wrapper">
                 <div class="home-services-grid">
-                    
-                    <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
+                    <div class="home-service-card" onclick="switchTab(null, 'tab-services'); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_brand_strat.png" alt="Brand Strategy Pipeline Showcase">
                         </div>
@@ -1006,7 +980,7 @@
                         <a href="#" class="home-service-cta">let's talk strat</a>
                     </div>
 
-                    <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
+                    <div class="home-service-card" onclick="switchTab(null, 'tab-services'); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_content_messaging.png" alt="Content and Messaging Architecture">
                         </div>
@@ -1014,14 +988,13 @@
                         <a href="#" class="home-service-cta">lets chat:</a>
                     </div>
 
-                    <div class="home-service-card" onclick="document.querySelector('[onclick*=\'tab-services\']').click(); return false;">
+                    <div class="home-service-card" onclick="switchTab(null, 'tab-services'); return false;">
                         <div class="home-service-image-slot">
                             <img src="home_production.png" alt="High End Production and Creative Framing">
                         </div>
                         <h3 class="home-service-title">high-end production</h3>
                         <a href="#" class="home-service-cta">we got production covered</a>
                     </div>
-
                 </div>
             </section>
 
@@ -1030,7 +1003,7 @@
             <section class="home-retainer-promo">
                 <h1>An Entire Marketing Team Dedicated to Your Brand</h1>
                 <p>Monthly retainers include a custom brand package sent monthly, including prints of next months email newsletters, ad campaign highlights, color palettes and patterns for upcoming promos, notes from the founder, and small thank you gifts, personal to you. As a token of gratitude because we couldn't do this without our clients. -SR STUDIOS</p>
-                <a href="#" onclick="document.querySelector('[onclick*=\'tab-retainers\']').click(); return false;" class="btn-primary">
+                <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-primary">
                     explore retainers
                 </a>
             </section>
@@ -1038,13 +1011,13 @@
             <section class="home-architect-promo">
                 <h1>Just Getting Started</h1>
                 <p>Learn more about our brand architect program</p>
-                <a href="#" onclick="document.querySelector('[onclick*=\'tab-brand\']').click(); return false;" class="btn-primary">
+                <a href="#" onclick="switchTab(null, 'tab-brand'); return false;" class="btn-primary">
                     learn more
                 </a>
             </section>
-
         </div>
 
+        <!-- SERVICES PANEL -->
         <div id="tab-services" class="tab-panel">
             <div class="services-full-bleed-bg">
                 <div class="services-wrapper">
@@ -1077,6 +1050,7 @@
             </div>
         </div>
 
+        <!-- BRAND ARCHITECT PANEL -->
         <div id="tab-brand" class="tab-panel">
             <div class="brand-full-bleed-bg">
                 <div class="services-wrapper">
@@ -1091,7 +1065,7 @@
                             <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
                             <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
                             <p style="margin-top: 2rem;">
-                                <a href="#" onclick="document.querySelector('[onclick*=\'tab-contact\']').click(); return false;" class="btn-primary">
+                                <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-primary">
                                     Book a Consultation
                                 </a>
                             </p>
@@ -1122,9 +1096,9 @@
             </div>
         </div>
 
+        <!-- SELECTED WORK PANEL -->
         <div id="tab-selected-work" class="tab-panel">
             <div class="portfolio-full-bleed-bg">
-                
                 <div class="portfolio-header-block">
                     <h1>Selected Retainer Frameworks</h1>
                     <p class="portfolio-disclaimer">
@@ -1133,13 +1107,12 @@
                 </div>
 
                 <div class="portfolio-grid-section">
-                    
+                    <!-- Project 1 -->
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
                                 <div class="case-meta-tag">Project 01 // Direct-to-Consumer Biotech E-Commerce</div>
                                 <h2 class="case-title">High-Velocity Google Shopping Architecture & Creative Testing Loop</h2>
-                                
                                 <p class="case-baseline">
                                     <strong>The Baseline:</strong> Fragmented budget allocated to broad-reach Google Shopping campaigns; ad spend waste on non-converting consumer traffic; and a stagnant 1.5% conversion rate lacking consistent creative iteration.
                                 </p>
@@ -1147,11 +1120,11 @@
                                 <div class="case-carousel-outer">
                                     <div class="case-carousel-window">
                                         <div class="case-carousel-track" id="project-one-track">
-                                            <img src="project1_slide1.png" alt="Case Study 1 - Strategic Slide 1">
-                                            <img src="project1_slide2.png" alt="Case Study 1 - Strategic Slide 2">
-                                            <img src="project1_slide3.png" alt="Case Study 1 - Strategic Slide 3">
-                                            <img src="project1_slide4.png" alt="Case Study 1 - Strategic Slide 4">
-                                            <img src="project1_slide5.png" alt="Case Study 1 - Strategic Slide 5">
+                                            <img src="project1_slide1.png" alt="Case Study 1 - Slide 1">
+                                            <img src="project1_slide2.png" alt="Case Study 1 - Slide 2">
+                                            <img src="project1_slide3.png" alt="Case Study 1 - Slide 3">
+                                            <img src="project1_slide4.png" alt="Case Study 1 - Slide 4">
+                                            <img src="project1_slide5.png" alt="Case Study 1 - Slide 5">
                                         </div>
                                     </div>
                                 </div>
@@ -1188,27 +1161,20 @@
                                 </table>
 
                                 <ul class="strategy-breakout-list">
-                                    <li>
-                                        <strong>Precision Audience Narrowing:</strong> Shifted away from broad-reach campaigns to highly refined, exact audience segments within the biotech space. This eliminated budget waste on low-intent casual shoppers who were statistically unlikely to convert.
-                                    </li>
-                                    <li>
-                                        <strong>High-Velocity A/B Testing:</strong> Deployed a rigorous optimization loop, launching 2 to 3 new A/B test campaigns every week for three months to aggressively isolate top-performing assets.
-                                    </li>
-                                    <li>
-                                        <strong>Creative Asset Elevation:</strong> Replaced standard, low-effort product listings with high-quality, premium creative variations designed specifically to capture immediate visual trust from biotech buyers.
-                                    </li>
+                                    <li><strong>Precision Audience Narrowing:</strong> Shifted away from broad-reach campaigns to highly refined, exact audience segments within the biotech space.</li>
+                                    <li><strong>High-Velocity A/B Testing:</strong> Deployed a rigorous optimization loop, launching 2 to 3 new A/B test campaigns every week to aggressively isolate top assets.</li>
+                                    <li><strong>Creative Asset Elevation:</strong> Replaced standard, low-effort product listings with high-quality, premium creative variations.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-
+                    <!-- Project 2 -->
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
                                 <div class="case-meta-tag">Project 02 // B2B Industrial Aerospace Manufacturing</div>
                                 <h2 class="case-title">Email Campaign Optimization & Digital Retention Architecture</h2>
-                                
                                 <p class="case-baseline">
                                     <strong>The Baseline:</strong> Low open rates across industrial parts buyers, massive list degradation due to poor audience division, and unexploited customer lifetime value (LTV) pathways for recurring contract renewals.
                                 </p>
@@ -1216,11 +1182,11 @@
                                 <div class="case-carousel-outer">
                                     <div class="case-carousel-window">
                                         <div class="case-carousel-track" id="project-two-track">
-                                            <img src="project2_slide1.png" alt="Case Study 2 - Strategic Slide 1">
-                                            <img src="project2_slide2.png" alt="Case Study 2 - Strategic Slide 2">
-                                            <img src="project2_slide3.png" alt="Case Study 2 - Strategic Slide 3">
-                                            <img src="project2_slide4.png" alt="Case Study 2 - Strategic Slide 4">
-                                            <img src="project2_slide5.png" alt="Case Study 2 - Strategic Slide 5">
+                                            <img src="project2_slide1.png" alt="Case Study 2 - Slide 1">
+                                            <img src="project2_slide2.png" alt="Case Study 2 - Slide 2">
+                                            <img src="project2_slide3.png" alt="Case Study 2 - Slide 3">
+                                            <img src="project2_slide4.png" alt="Case Study 2 - Slide 4">
+                                            <img src="project2_slide5.png" alt="Case Study 2 - Slide 5">
                                         </div>
                                     </div>
                                 </div>
@@ -1256,32 +1222,21 @@
                                     </tbody>
                                 </table>
 
-                                <p class="case-baseline" style="margin-bottom: 1rem;">
-                                    Our approach rejected standard corporate broadcast models in favor of a synchronized, data-driven lifecycle retention framework. By engineering automated triggers centered around high-value enterprise replacement windows, we established an entirely new digital pipeline that captured latent buyer intent without fatiguing the main database.
-                                </p>
-
                                 <ul class="strategy-breakout-list">
-                                    <li>
-                                        <strong>Audience Division:</strong> Segmented technical engineering leads from corporate procurement officers to deliver hyper-specific messaging tailored to actual purchasing authority vs. technical specs.
-                                    </li>
-                                    <li>
-                                        <strong>Editorial Overhaul:</strong> Engineered premium, educational storytelling frameworks that elevated traditional, dry product sheets into high-value industry insights.
-                                    </li>
-                                    <li>
-                                        <strong>Lifecycle Sequences:</strong> Implemented automated re-engagement trees and replenishment logic workflows to systematically trigger emails right before standard part replacement windows.
-                                    </li>
+                                    <li><strong>Audience Division:</strong> Segmented technical engineering leads from corporate procurement officers to deliver hyper-specific messaging.</li>
+                                    <li><strong>Editorial Overhaul:</strong> Engineered premium, educational storytelling frameworks that elevated dry product sheets into high-value insights.</li>
+                                    <li><strong>Lifecycle Sequences:</strong> Implemented automated re-engagement trees and replenishment logic workflows to trigger systematically.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-
+                    <!-- Project 3 -->
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
                                 <div class="case-meta-tag">Project 03 // E-Commerce Apparel & Design Aesthetics</div>
                                 <h2 class="case-title">Organic Community Architecture & High-End Short Form Video Pipeline</h2>
-                                
                                 <p class="case-baseline">
                                     <strong>The Baseline:</strong> Flat organic reach, disjointed visual branding across channels, and a complete lack of automated conversion paths to turn casual social impressions into e-commerce store checkouts.
                                 </p>
@@ -1289,11 +1244,11 @@
                                 <div class="case-carousel-outer">
                                     <div class="case-carousel-window">
                                         <div class="case-carousel-track" id="project-three-track">
-                                            <img src="project3_slide1.png" alt="Case Study 3 - Strategic Slide 1">
-                                            <img src="project3_slide2.png" alt="Case Study 3 - Strategic Slide 2">
-                                            <img src="project3_slide3.png" alt="Case Study 3 - Strategic Slide 3">
-                                            <img src="project3_slide4.png" alt="Case Study 3 - Strategic Slide 4">
-                                            <img src="project3_slide5.png" alt="Case Study 3 - Strategic Slide 5">
+                                            <img src="project3_slide1.png" alt="Case Study 3 - Slide 1">
+                                            <img src="project3_slide2.png" alt="Case Study 3 - Slide 2">
+                                            <img src="project3_slide3.png" alt="Case Study 3 - Slide 3">
+                                            <img src="project3_slide4.png" alt="Case Study 3 - Slide 4">
+                                            <img src="project3_slide5.png" alt="Case Study 3 - Slide 5">
                                         </div>
                                     </div>
                                 </div>
@@ -1329,29 +1284,19 @@
                                     </tbody>
                                 </table>
 
-                                <p class="case-baseline" style="margin-bottom: 1rem;">
-                                    We established a unified, high-end visual template framework built specifically to stop modern consumers from scrolling. By shifting the channel's focus toward premium cinematic aesthetics and a structured narrative flow, we successfully turned casual social media visibility into a streamlined, high-converting checkout funnel.
-                                </p>
-
                                 <ul class="strategy-breakout-list">
-                                    <li>
-                                        <strong>Cinematic Direction:</strong> Replaced boring, standard industry graphics with high-end, editorial video aesthetics designed to stop users from scrolling instantly.
-                                    </li>
-                                    <li>
-                                        <strong>Strategic Value Content:</strong> Built dedicated, educational content carousels explaining structural brand architecture secrets that established immediate industry expertise.
-                                    </li>
-                                    <li>
-                                        <strong>Inbound Lead Routing:</strong> Structured clean comment-to-DM automated triggers to pull high-intent audience profiles directly off public feeds and straight into conversion pipelines.
-                                    </li>
+                                    <li><strong>Cinematic Direction:</strong> Replaced standard industry graphics with high-end, editorial video aesthetics.</li>
+                                    <li><strong>Strategic Value Content:</strong> Built dedicated, educational content carousels explaining structural brand secrets.</li>
+                                    <li><strong>Inbound Lead Routing:</strong> Structured clean comment-to-DM automated triggers off public feeds into checkouts.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
 
+        <!-- PARTNERSHIPS PANEL -->
         <div id="tab-retainers" class="tab-panel">
             <div class="section-header-block">
                 <div class="section-tagline">Sustained Growth Management</div>
@@ -1359,7 +1304,6 @@
             </div>
 
             <div class="retainer-grid">
-                
                 <div class="retainer-card">
                     <div class="retainer-card-top">
                         <h2 class="retainer-tier-name">Foundational</h2>
@@ -1370,10 +1314,7 @@
                             <li>+1 monthly request list from client including all marketing priorities for that month</li>
                         </ul>
                     </div>
-                    <div class="retainer-price">
-                        $3,000
-                        <span>per month</span>
-                    </div>
+                    <div class="retainer-price">$3,000<span>per month</span></div>
                 </div>
 
                 <div class="retainer-card">
@@ -1381,9 +1322,151 @@
                         <h2 class="retainer-tier-name">Omnichannel Pro</h2>
                         <ul class="retainer-bullets">
                             <li>Everything in Foundational included (full paid search and email retention management)</li>
-                            <li>Social Media: asynchronous content scheduling, 2-3 reels weekly (all channels), 2-3 carousels weekly (all channels)</li>
+                            <li>Social Media: asynchronous content scheduling, 2-3 reels weekly, 2-3 carousels weekly (all channels)</li>
                             <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
                             <li>Bi-weekly social media updates via loom and email</li>
                         </ul>
                     </div>
-                    <div class="retainer
+                    <div class="retainer-price">$3,600<span>per month</span></div>
+                </div>
+
+                <div class="retainer-card">
+                    <div class="retainer-card-top">
+                        <h2 class="retainer-tier-name">Full-Suite Pro</h2>
+                        <ul class="retainer-bullets">
+                            <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
+                            <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
+                            <li>4-5 new ad creative variations weekly</li>
+                            <li>Weekly asynchronous updates and meeting blocks</li>
+                        </ul>
+                    </div>
+                    <div class="retainer-price">$4,000<span>per month</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT US PANEL -->
+        <div id="tab-about" class="tab-panel">
+            <div class="services-full-bleed-bg">
+                <div class="services-wrapper">
+                    <div class="section-header-block inverted-header" style="padding-top: 0;">
+                        <div class="section-tagline">The Blueprint Behind the Studio</div>
+                        <h1 class="section-title">About Us</h1>
+                    </div>
+                    <div class="services-row">
+                        <h1 class="services-title">Our Ecosystem</h1>
+                        <div class="services-body">
+                            <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
+                            <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
+                            <p>With industry experience in biotech, manufacturing, healthcare, educational, environmental, aerospace, and entertainment-focused social media and marketing initiatives, we are excited to partner with brands across all sectors. Ready to scale? Just reach out.</p>
+                            <div class="about-signature">SR Studios</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT PANEL -->
+        <div id="tab-contact" class="tab-panel">
+            <div class="contact-wrapper">
+                <h2>Initiate Partnership</h2>
+                <p>Click below to launch a direct, secure communication thread with our execution team.</p>
+                <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-primary">
+                    Book Brand Consultation
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
+            <div>Los Angeles, California</div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            // Remove active status from all navigation tabs
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Remove active status from all content panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            // Toggle top carousel view exclusively on Get Started (Home)
+            const topCarousel = document.querySelector('.full-bleed-carousel-outer');
+            if (tabId === 'tab-home') {
+                topCarousel.style.display = 'block';
+            } else {
+                topCarousel.style.display = 'none';
+            }
+
+            // Sync the header button style cleanly if triggered from internal CTA anchors
+            if (event === null || event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('home-service-card')) {
+                const targetNavBtn = document.querySelector(`[onclick*='${tabId}']`);
+                if (targetNavBtn) targetNavBtn.classList.add('active');
+            } else if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            }
+            
+            // Activate target content panel
+            const targetPanel = document.getElementById(tabId);
+            if (targetPanel) targetPanel.classList.add('active');
+            
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // --- GLOBAL CAROUSEL AUTOMATION TRACKS ---
+        const SLIDE_INTERVAL = 5000;
+        const FIVE_SLOT_PERCENTAGE = 20;
+
+        // Home Banner Carousel
+        let currentHomeSlide = 0;
+        const totalHomeSlides = 3;
+        const carouselTrack = document.querySelector('.carousel-track');
+        if (carouselTrack) {
+            setInterval(() => {
+                currentHomeSlide = (currentHomeSlide + 1) % totalHomeSlides;
+                carouselTrack.style.transform = `translateX(-${currentHomeSlide * 33.3333}%)`;
+            }, SLIDE_INTERVAL); 
+        }
+
+        // Case Study 01 Carousel
+        let projectOneSlide = 0;
+        const totalProjectOneSlides = 5;
+        const projectOneTrack = document.getElementById('project-one-track');
+        if (projectOneTrack) {
+            setInterval(() => {
+                projectOneSlide = (projectOneSlide + 1) % totalProjectOneSlides;
+                projectOneTrack.style.transform = `translateX(-${projectOneSlide * FIVE_SLOT_PERCENTAGE}%)`;
+            }, SLIDE_INTERVAL);
+        }
+
+        // Case Study 02 Carousel
+        let projectTwoSlide = 0;
+        const totalProjectTwoSlides = 5;
+        const projectTwoTrack = document.getElementById('project-two-track');
+        if (projectTwoTrack) {
+            setInterval(() => {
+                projectTwoSlide = (projectTwoSlide + 1) % totalProjectTwoSlides;
+                projectTwoTrack.style.transform = `translateX(-${projectTwoSlide * FIVE_SLOT_PERCENTAGE}%)`;
+            }, SLIDE_INTERVAL);
+        }
+
+        // Case Study 03 Carousel
+        let projectThreeSlide = 0;
+        const totalProjectThreeSlides = 5;
+        const projectThreeTrack = document.getElementById('project-three-track');
+        if (projectThreeTrack) {
+            setInterval(() => {
+                projectThreeSlide = (projectThreeSlide + 1) % totalProjectThreeSlides;
+                projectThreeTrack.style.transform = `translateX(-${projectThreeSlide * FIVE_SLOT_PERCENTAGE}%)`;
+            }, SLIDE_INTERVAL);
+        }
+    </script>
+
+</body>
+</html>
