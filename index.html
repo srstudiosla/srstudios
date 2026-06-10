@@ -18,13 +18,13 @@
             font-style: normal;
         }
 
-        /* --- STRAWBERRY BRAND PALETTE & CSS VARIABLES --- */
+        /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
             --bg-color: #FDFBF7;       /* Cream (Global background) */
             --surface-color: #FFFFFF;  /* Structural card background */
             --text-primary: #1C1210;   /* Beige (Soft, creamy premium font color) */
-            --text-secondary: #5C5351; /* Charcoal Brown*/
-            --accent-header: #FF8F8F;  /* Tumbleweed (Muted strawberry header/footer tone) */
+            --text-secondary: #000000; /* True Black (Updated from Charcoal Brown) */
+            --accent-header: #FF0000;  /* Bright Red (Updated from Muted Strawberry) */
             --border-color: #000000;   /* Subtle structural borders */
             
             /* Typography Systems */
@@ -61,7 +61,7 @@
             max-width: 1000px;
         }
 
-        /* --- STRAWBERRY MATCHA NAVIGATION HEADER --- */
+        /* --- NAVIGATION HEADER --- */
         header {
             width: 100%;
             background-color: var(--accent-header);
@@ -178,7 +178,7 @@
 
         /* --- SELECTED WORK PAGE STYLING (INVERTED DARK THEME) --- */
         .portfolio-full-bleed-bg {
-            background-color: var(--text-secondary); /* Charcoal/Black */
+            background-color: var(--text-secondary); /* Solid Black */
             width: 100vw;
             padding-bottom: 5rem;
             display: flex;
@@ -200,7 +200,7 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.03em;
-            color: var(--accent-header); /* Pink Font Accent */
+            color: var(--accent-header); /* Red Font Accent */
             margin-bottom: 1rem;
         }
 
@@ -230,7 +230,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6rem; /* Strategic breathing room between multi-million dollar architecture blocks */
+            gap: 6rem; /* Strategic breathing room between architecture blocks */
         }
 
         .portfolio-case-container {
@@ -302,7 +302,7 @@
             font-family: var(--font-sub-headers); /* Oswald Header */
             font-size: clamp(1.6rem, 3.8vw, 2.4rem);
             text-transform: uppercase;
-            color: var(--accent-header); /* Pink Font */
+            color: var(--accent-header); /* Red Font */
             line-height: 1.2;
             margin-bottom: 1.5rem;
             letter-spacing: 0.03em;
@@ -317,7 +317,7 @@
         }
 
         .case-baseline strong {
-            color: var(--accent-header); /* Pink emphasis highlights */
+            color: var(--accent-header); /* Red emphasis highlights */
             font-weight: 600;
         }
 
@@ -336,7 +336,7 @@
             letter-spacing: 0.05em;
             text-align: left;
             padding: 0.85rem;
-            background-color: var(--accent-header); /* Pink table headers */
+            background-color: var(--accent-header); /* Red table headers */
             color: var(--text-secondary); /* Dark text inside headers */
             font-weight: 600;
         }
@@ -353,7 +353,7 @@
         }
 
         .shift-positive {
-            color: var(--accent-header); /* Pink Shift highlights */
+            color: var(--accent-header); /* Red Shift highlights */
             font-weight: bold;
         }
 
@@ -385,7 +385,7 @@
             color: var(--accent-header);
         }
 
-        /* --- HOMEPAGE FULL-BLEED SCREEN-SPANNING HERO BACKDROP --- */
+        /* --- HOMEPAGE FULL-BLEED HERO BACKDROP --- */
         .home-hero {
             display: flex;
             flex-direction: column;
@@ -439,11 +439,11 @@
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
 
-        /* --- HOMEPAGE DIVIDER BAND (30% THINNER THAN MAIN CAROUSEL) --- */
+        /* --- HOMEPAGE DIVIDER BAND --- */
         .home-divider-band {
             width: 100vw;
             height: clamp(350px, 31.5vh, 490px);
-            background-color: var(--text-secondary); /* Pure Charcoal/Black */
+            background-color: var(--text-secondary); /* Solid Black */
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
@@ -560,7 +560,7 @@
             padding-left: 4px;
         }
 
-        /* --- HOMEPAGE RETAINER PROMO CALLOUT (CREAM MATCH OVERRIDE) --- */
+        /* --- HOMEPAGE RETAINER PROMO CALLOUT --- */
         .home-retainer-promo {
             width: 100vw;
             height: clamp(500px, 45vh, 700px); 
@@ -635,7 +635,7 @@
 
         /* --- SERVICES PAGE (COLOR INVERSION HIGH-CONTRAST OVERRIDE) --- */
         .services-full-bleed-bg {
-            background-color: var(--text-secondary); /* Flipped to Charcoal */
+            background-color: var(--text-secondary); /* Flipped to Black */
             width: 100vw;
             padding: 4rem 2rem;
             display: flex;
@@ -681,7 +681,7 @@
         .services-body p { margin-bottom: 1.5rem; }
         .services-body p:last-child { margin-bottom: 0; }
 
-        /* --- BRAND ARCHITECT (SURFACE MATCH OVERRIDE) --- */
+        /* --- BRAND ARCHITECT --- */
         .brand-full-bleed-bg {
             background-color: var(--surface-color); /* Matches Partnership Card Surface */
             width: 100vw;
@@ -690,13 +690,13 @@
             justify-content: center;
         }
 
-        /* Specific text color configurations to keep Brand Architect looking pristine on its pink background */
+        /* Specific text color configurations to keep Brand Architect looking pristine on its background */
         .brand-full-bleed-bg .services-title {
-            color: var(--text-primary); /* Matcha Green on Pink */
+            color: var(--text-primary); 
         }
         
         .brand-full-bleed-bg .services-body {
-            color: var(--text-secondary); /* Charcoal Text on Pink */
+            color: var(--text-secondary); /* Black Text */
             border-left-color: rgba(13, 14, 18, 0.15);
         }
 
@@ -704,11 +704,11 @@
             border-bottom-color: rgba(13, 14, 18, 0.15);
         }
 
-        /* Brand Architecture Section-Separating Mid-Band (1/2 Height of Home Carousel) */
+        /* Brand Architecture Section-Separating Mid-Band */
         .brand-divider-band {
             width: 100vw;
             height: clamp(250px, 22.5vh, 350px);
-            background-color: var(--text-secondary); /* Pure Charcoal/Black */
+            background-color: var(--text-secondary); /* Solid Black */
             margin-left: calc(-50vw + 50%);
             margin-right: calc(-50vw + 50%);
             border-top: 1px solid var(--border-color);
@@ -891,7 +891,7 @@
         .contact-wrapper h2 { font-family: var(--font-sub-headers); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text-primary); }
         .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
 
-        /* --- FULL-BLEED HOVER SOLID PINK FOOTER --- */
+        /* --- FULL-BLEED FOOTER --- */
         footer {
             width: 100vw;
             background-color: var(--accent-header); 
@@ -1127,7 +1127,6 @@
                 
                 <div class="portfolio-header-block">
                     <h1>Selected Retainer Frameworks</h1>
-                    <div class="sub-head">[ Case Studies ]</div>
                     <p class="portfolio-disclaimer">
                         A precise look under the hood of our high-ticket digital execution. To maintain absolute data integrity and respect strict non-disclosure agreements within technical, aerospace, and enterprise spaces, corporate identities are anonymized. Full performance data and live workspace demonstrations are available upon request during strategic consultation.
                     </p>
@@ -1142,7 +1141,7 @@
                                 <h2 class="case-title">High-Velocity Google Shopping Architecture & Creative Testing Loop</h2>
                                 
                                 <p class="case-baseline">
-                                    <strong>The Baseline:</strong> Fragmented budget allocated to broad-reach Google Shopping campaigns; high ad spend waste on non-converting consumer traffic; and a stagnant 1.5% conversion rate lacking consistent creative iteration.
+                                    <strong>The Baseline:</strong> Fragmented budget allocated to broad-reach Google Shopping campaigns; ad spend waste on non-converting consumer traffic; and a stagnant 1.5% conversion rate lacking consistent creative iteration.
                                 </p>
 
                                 <div class="case-carousel-outer">
@@ -1280,7 +1279,7 @@
                     <div class="portfolio-case-container">
                         <div class="anonymized-card">
                             <div class="case-data-side">
-                                <div class="case-meta-tag">Project 03 // E-Commerce Apparel & Design Aestheticsy</div>
+                                <div class="case-meta-tag">Project 03 // E-Commerce Apparel & Design Aesthetics</div>
                                 <h2 class="case-title">Organic Community Architecture & High-End Short Form Video Pipeline</h2>
                                 
                                 <p class="case-baseline">
@@ -1387,146 +1386,4 @@
                             <li>Bi-weekly social media updates via loom and email</li>
                         </ul>
                     </div>
-                    <div class="retainer-price">
-                        $3,600
-                        <span>per month</span>
-                    </div>
-                </div>
-
-                <div class="retainer-card">
-                    <div class="retainer-card-top">
-                        <h2 class="retainer-tier-name">Full-Suite Pro</h2>
-                        <ul class="retainer-bullets">
-                            <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
-                            <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
-                            <li>4-5 new ad creative variations weekly</li>
-                            <li>Weekly asynchronous updates and meeting blocks</li>
-                        </ul>
-                    </div>
-                    <div class="retainer-price">
-                        $4,000
-                        <span>per month</span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div id="tab-about" class="tab-panel">
-            <div class="services-full-bleed-bg">
-                <div class="services-wrapper">
-                    <div class="section-header-block inverted-header" style="padding-top: 0;">
-                        <div class="section-tagline">The Blueprint Behind the Studio</div>
-                        <h1 class="section-title">About Us</h1>
-                    </div>
-                    <div class="services-row">
-                        <h1 class="services-title">Our Ecosystem</h1>
-                        <div class="services-body">
-                            <p>SR Studios is an integrated growth agency engineered to scale your entire brand ecosystem. We don't just design visuals or manage isolated platforms; we synchronize three powerful revenue engines: Search Intent, Email Retention, and Social Media.</p>
-                            <p>Our elite team of strategists, creators, and analysts operate as an extension of your business. We bridge the gap between creative vision and technical execution, building high-performing brands that dominate their market and sustain long-term growth.</p>
-                            <p>With industry experience in biotech, manufacturing, healthcare, educational, environmental, aerospace, and entertainment-focused social media and marketing initiatives, we are excited to partner with brands across all sectors. Ready to scale? Just reach out.</p>
-                            <div class="about-signature">SR Studios</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="tab-contact" class="tab-panel">
-            <div class="contact-wrapper">
-                <h2>Initiate Partnership</h2>
-                <p>Click below to launch a direct, secure communication thread with our execution team.</p>
-                <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-primary">
-                    Book Brand Consultation
-                </a>
-            </div>
-        </div>
-
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-            <div>Los Angeles, California</div>
-        </div>
-    </footer>
-
-    <script>
-        function switchTab(event, tabId) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-
-            const panels = document.querySelectorAll('.tab-panel');
-            panels.forEach(panel => panel.classList.remove('active'));
-
-            // Sync full-width top structural block visibility based on tab layout rules
-            const topCarousel = document.querySelector('.full-bleed-carousel-outer');
-            if (tabId === 'tab-home') {
-                topCarousel.style.display = 'block';
-            } else {
-                topCarousel.style.display = 'none';
-            }
-
-            // Route standard cross-component inner clicks cleanly back to active head styling
-            if(event && (event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('home-service-card') || event.currentTarget.classList.contains('btn-primary'))) {
-                const targetNavBtn = document.querySelector(`[onclick*='${tabId}']`);
-                if(targetNavBtn) targetNavBtn.classList.add('active');
-            } else if (event) {
-                event.currentTarget.classList.add('active');
-            }
-            
-            document.getElementById(tabId).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // --- GLOBAL CAROUSEL TIMER CONFIGURATION ---
-        const SLIDE_INTERVAL = 5000; // 5 Seconds Global Switch Pace
-        const FIVE_SLOT_PERCENTAGE = 20; // 100% / 5 Slides
-
-        // 1. HOME MAIN HERO BANNER CAROUSEL
-        let currentHomeSlide = 0;
-        const totalHomeSlides = 3;
-        const carouselTrack = document.querySelector('.carousel-track');
-        if (carouselTrack) {
-            setInterval(() => {
-                currentHomeSlide = (currentHomeSlide + 1) % totalHomeSlides;
-                carouselTrack.style.transform = `translateX(-${currentHomeSlide * 33.3333}%)`;
-            }, SLIDE_INTERVAL); 
-        }
-
-        // 2. CASE STUDY 01 CAROUSEL (AEROSPACE)
-        let projectOneSlide = 0;
-        const totalProjectOneSlides = 5;
-        const projectOneTrack = document.getElementById('project-one-track');
-        if (projectOneTrack) {
-            setInterval(() => {
-                projectOneSlide = (projectOneSlide + 1) % totalProjectOneSlides;
-                projectOneTrack.style.transform = `translateX(-${projectOneSlide * FIVE_SLOT_PERCENTAGE}%)`;
-            }, SLIDE_INTERVAL);
-        }
-
-        // 3. CASE STUDY 02 CAROUSEL (EMAIL CAMPAIGNS)
-        let projectTwoSlide = 0;
-        const totalProjectTwoSlides = 5;
-        const projectTwoTrack = document.getElementById('project-two-track');
-        if (projectTwoTrack) {
-            setInterval(() => {
-                projectTwoSlide = (projectTwoSlide + 1) % totalProjectTwoSlides;
-                projectTwoTrack.style.transform = `translateX(-${projectTwoSlide * FIVE_SLOT_PERCENTAGE}%)`;
-            }, SLIDE_INTERVAL);
-        }
-
-        // 4. CASE STUDY 03 CAROUSEL (SOCIAL MEDIA)
-        let projectThreeSlide = 0;
-        const totalProjectThreeSlides = 5;
-        const projectThreeTrack = document.getElementById('project-three-track');
-        if (projectThreeTrack) {
-            setInterval(() => {
-                projectThreeSlide = (projectThreeSlide + 1) % totalProjectThreeSlides;
-                projectThreeTrack.style.transform = `translateX(-${projectThreeSlide * FIVE_SLOT_PERCENTAGE}%)`;
-            }, SLIDE_INTERVAL);
-        }
-    </script>
-
-</body>
-</html>
+                    <div class="retainer
