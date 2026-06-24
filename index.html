@@ -497,18 +497,22 @@
 
         .portfolio-grid-section {
             width: 100%;
+            max-width: 1200px; /* Aligns the overall layout wrapper to center logic */
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0;
+            gap: 2rem; /* Creates structured block gaps rather than flat infinite rows */
+            padding: 0 2rem;
         }
 
         .portfolio-case-container {
-            width: 100vw;
+            width: 100%; /* Keeps dimensions standard inside the layout grid container */
+            max-width: 1100px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: stretch;
             background-color: var(--bg-color);
+            border: 1px solid rgba(0, 0, 0, 0.1); /* Wraps the balanced square layout crisp */
         }
 
         .portfolio-text-panel {
@@ -545,7 +549,7 @@
         }
 
         .case-carousel-outer {
-            width: 50vw;
+            width: 100%; /* Fills the square split layout exactly half and half */
             background-color: var(--text-secondary);
             overflow: hidden;
             position: relative;
@@ -576,7 +580,7 @@
         .services-full-bleed-bg {
             background-color: var(--text-secondary);
             width: 100vw;
-            padding: 4rem 4rem; /* Adjusted down from 2rem to align more to the left globally */
+            padding: 4rem 4rem;
             display: flex;
             justify-content: center;
         }
@@ -586,12 +590,12 @@
             flex-direction: column;
             gap: 5rem;
             width: 100%;
-            max-width: 1100px; /* Expanded slightly to give layout breathing room on the left */
+            max-width: 1100px;
         }
 
         .services-row {
             display: grid;
-            grid-template-columns: 30% 70%; /* Shifted distribution leftward */
+            grid-template-columns: 30% 70%;
             gap: 2rem;
             align-items: flex-start;
             border-bottom: 1px solid rgba(246, 240, 229, 0.15);
@@ -614,7 +618,7 @@
             color: var(--bg-color);
             font-size: clamp(1rem, 2.5vw, 1.15rem);
             line-height: 1.7;
-            padding-left: 1.25rem; /* Pulled 2 indents back to the left */
+            padding-left: 1.25rem;
             border-left: 1px solid rgba(246, 240, 229, 0.15);
         }
         .services-body p { margin-bottom: 1.5rem; }
@@ -624,7 +628,7 @@
         .brand-full-bleed-bg {
             background-color: var(--surface-color);
             width: 100vw;
-            padding: 4rem 4rem; /* Match the shifts from the main services wrapper */
+            padding: 4rem 4rem;
             display: flex;
             justify-content: center;
         }
@@ -772,13 +776,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             text-align: center;
             padding: 8rem 2rem;
             max-width: 700px;
             margin: 0 auto;
+            flex-grow: 1; /* Pushes layout logic cleanly to prioritize absolute vertical center formatting */
         }
         .contact-wrapper h2 { font-family: var(--font-home-hero); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; }
         .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.1rem; }
+        .contact-wrapper .btn-editorial-action { align-self: center; } /* Forces the button template element to layout exactly center */
 
         /* --- FOOTER --- */
         footer {
@@ -815,9 +822,9 @@
             .retention-promo-split { grid-template-columns: 100%; }
             .retention-text-block { border-right: none; border-bottom: 1px solid var(--text-secondary); padding: 4rem 2rem; }
             .retainer-grid { grid-template-columns: 100%; }
+            .portfolio-grid-section { padding: 0 1rem; }
             .portfolio-case-container { grid-template-columns: 100%; }
             .portfolio-text-panel { height: auto; padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-            .case-carousel-outer { width: 100vw; }
             .case-carousel-track img { height: 400px; }
             .services-row { grid-template-columns: 100%; gap: 1rem; }
             .services-body { padding-left: 0; border-left: none; }
@@ -1061,7 +1068,7 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-case-container" style="border-top: 1px solid var(--text-secondary);">
+                    <div class="portfolio-case-container">
                         <div class="portfolio-text-panel">
                             <h2 class="portfolio-case-title">Email Campaign Optimization & Digital Retention</h2>
                             <div class="portfolio-case-body">
@@ -1082,7 +1089,7 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-case-container" style="border-top: 1px solid var(--text-secondary);">
+                    <div class="portfolio-case-container">
                         <div class="portfolio-text-panel">
                             <h3 class="portfolio-case-title">High-End Short Form Video Pipeline</h3>
                             <div class="portfolio-case-body">
