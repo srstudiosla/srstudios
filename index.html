@@ -22,10 +22,11 @@
         :root {
             --bg-color: #FDFBF7;       /* Cream (Global background) */
             --surface-color: #FFFFFF;  /* Structural card background */
-            --text-primary: #1C1210;   /* Beige (Soft, creamy premium font color) */
+            --text-primary: #1C1210;   /* Beige / Dark Earth */
             --text-secondary: #000000; /* True Black */
             --accent-header: #9E1B1B;  /* Cherry Red */
-            --border-color: #000000;   /* Subtle structural borders */
+            --border-color: #1C1210;   /* Subtle structural borders */
+            --subtle-pink: #FFBFCD;    /* Strawberry Accent */
             
             /* Typography Systems */
             --font-body: 'Noto Serif', Georgia, 'Times New Roman', serif;
@@ -57,20 +58,19 @@
 
         .nav-container, main, .footer-container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1200px;
         }
 
         /* --- NAVIGATION HEADER --- */
         header {
             width: 100%;
-            background-color: var(--accent-header);
-            padding: 1rem; 
+            background-color: var(--text-secondary);
+            padding: 1.2rem 1rem; 
             display: flex;
             justify-content: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .nav-tabs {
@@ -78,7 +78,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 950px;
+            max-width: 1100px;
             flex-wrap: nowrap;
             gap: 0.25rem;
         }
@@ -86,36 +86,36 @@
         .tab-btn {
             background: transparent;
             border: none;
-            color: #FFFFFF; /* Pure white for clean contrast on red background */
-            padding: 0.5rem 0.6rem; 
-            font-size: 0.72rem;
-            font-weight: 700; 
+            color: #FFFFFF;
+            padding: 0.5rem 0.8rem; 
+            font-size: 0.75rem;
+            font-weight: 600; 
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.12em;
             cursor: pointer;
             transition: all 0.2s ease;
             white-space: nowrap;
-            opacity: 0.8;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            opacity: 0.7;
+            font-family: 'Oswald', sans-serif;
         }
 
-        .nav-tabs:hover .tab-btn { opacity: 0.6; }
-        .nav-tabs .tab-btn:hover { opacity: 1; transform: translateY(-1px); }
+        .nav-tabs:hover .tab-btn { opacity: 0.4; }
+        .nav-tabs .tab-btn:hover { opacity: 1; }
         
         .tab-btn.active {
-            color: #FFFFFF !important;
+            color: var(--subtle-pink) !important;
             opacity: 1 !important;
-            border-bottom: 2px solid #FFFFFF;
-            font-weight: 900;
+            font-weight: 700;
         }
 
-        /* --- NATIVE FULL-BLEED ROTATING CAROUSEL BANNER SYSTEM --- */
+        /* --- GLOBAL TOP CAROUSEL BANNER (HIDDEN ON REAMPED HOME) --- */
         .full-bleed-carousel-outer {
             width: 100%; 
             background-color: var(--surface-color);
             border-bottom: 1px solid var(--border-color);
             overflow: hidden;
             position: relative;
+            display: none;
         }
 
         .carousel-window {
@@ -133,29 +133,18 @@
 
         .carousel-track img {
             width: 33.3333%; 
-            height: clamp(500px, 45vh, 700px); 
+            height: clamp(400px, 35vh, 600px); 
             object-fit: cover; 
             display: block;
         }
 
         /* --- TAB CONTENT PANELS --- */
         main {
-            padding: 2rem;
+            padding: 0;
             width: 100%;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-        }
-
-        #tab-home.tab-panel.active,
-        #tab-services.tab-panel.active,
-        #tab-brand.tab-panel.active,
-        #tab-selected-work.tab-panel.active,
-        #tab-about.tab-panel.active {
-            display: block;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
         }
 
         .tab-panel {
@@ -171,8 +160,302 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
+            from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- NEW EDITORIAL AGENDA HERO LAYOUT --- */
+        .agency-hero-section {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            background-color: var(--text-secondary);
+            color: #FFFFFF;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            min-height: calc(85vh - 60px);
+            position: relative;
+        }
+
+        .hero-left-editorial {
+            padding: 6rem 4rem 6rem 8vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            font-family: var(--font-sub-headers);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.25em;
+            color: var(--subtle-pink);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-headline-massive {
+            font-family: var(--font-home-hero);
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 300;
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-headline-massive span {
+            display: block;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+
+        .hero-desc-editorial {
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 1.8vw, 1.25rem);
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 540px;
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-right-imagery {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            position: relative;
+            background-color: #111;
+            overflow: hidden;
+        }
+
+        .hero-right-imagery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+            filter: grayscale(20%);
+        }
+
+        /* --- MODERN PLATFORM & PERFORMANCE METRICS BAR --- */
+        .agency-metrics-strip {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            background-color: var(--subtle-pink);
+            color: var(--text-secondary);
+            padding: 3rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            border-bottom: 1px solid var(--text-secondary);
+        }
+
+        .metric-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid rgba(28, 18, 16, 0.15);
+        }
+
+        .metric-block:last-child { border-right: none; }
+
+        .metric-number {
+            font-family: var(--font-home-hero);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-family: var(--font-sub-headers);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* --- ASYMMETRIC MANIFESTO BLOCK --- */
+        .manifesto-container {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            background-color: var(--bg-color);
+            padding: 8rem 8vw;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .manifesto-text-side {
+            max-width: 680px;
+        }
+
+        .manifesto-header {
+            font-family: var(--font-home-hero);
+            font-size: clamp(2.2rem, 4.5vw, 4rem);
+            line-height: 1.15;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .manifesto-header b {
+            font-weight: 700;
+            color: var(--accent-header);
+        }
+
+        .manifesto-body {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .manifesto-image-side {
+            position: relative;
+            padding-top: 120%; /* 4:5 Aspect */
+            background-color: var(--text-secondary);
+            box-shadow: 25px 25px 0px var(--subtle-pink);
+        }
+
+        .manifesto-image-side img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- PREMIUM CAPABILITIES ROW GRID --- */
+        .capabilities-showcase-outer {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            background-color: var(--text-secondary);
+            color: #FFFFFF;
+            padding: 8rem 8vw;
+        }
+
+        .capabilities-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .capabilities-header-row h2 {
+            font-family: var(--font-home-hero);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .capability-premium-card {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .capability-frame {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background-color: #111;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .capability-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            opacity: 0.9;
+        }
+
+        .capability-premium-card:hover .capability-frame img {
+            transform: scale(1.05);
+        }
+
+        .capability-index {
+            font-family: var(--font-home-hero);
+            font-size: 0.9rem;
+            color: var(--subtle-pink);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .capability-title-line {
+            font-family: var(--font-sub-headers);
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .capability-short-desc {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* --- HYPER-TARGETED RETENTION PROMO SPLIT --- */
+        .retention-promo-split {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            background-color: var(--surface-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 1px solid var(--text-secondary);
+        }
+
+        .retention-text-block {
+            padding: 7rem 8vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--text-secondary);
+        }
+
+        .retention-text-block h2 {
+            font-family: var(--font-home-hero);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .retention-text-block p {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+        }
+
+        .retention-image-block {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
+            background-color: var(--subtle-pink);
+            position: relative;
+        }
+
+        .retention-image-block img {
+            width: 100%; height: 100%; object-fit: cover;
         }
 
         /* --- SELECTED WORK PAGE STYLING --- */
@@ -217,18 +500,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0; /* Handled strictly by the black full-bleed splitters */
+            gap: 0;
         }
 
         .portfolio-case-container {
             width: 100vw;
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Symmetrical side by side layout */
+            grid-template-columns: 1fr 1fr;
             align-items: stretch;
             background-color: var(--bg-color);
         }
 
-        /* Fixed height container matching carousel height exactly */
         .portfolio-text-panel {
             height: clamp(500px, 45vh, 700px);
             display: flex;
@@ -238,15 +520,11 @@
             background-color: var(--bg-color);
             overflow-y: auto;
             border-right: 1px solid rgba(0, 0, 0, 0.1);
-            
-            /* Hide scrollbars elegantly to protect design lines */
             -ms-overflow-style: none;  
             scrollbar-width: none;  
         }
 
-        .portfolio-text-panel::-webkit-scrollbar {
-            display: none;
-        }
+        .portfolio-text-panel::-webkit-scrollbar { display: none; }
 
         .portfolio-case-title {
             font-family: var(--font-sub-headers);
@@ -294,217 +572,6 @@
             display: block;
         }
 
-        /* --- HOMEPAGE HERO --- */
-        .home-hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100vw; 
-            min-height: calc(100vh - 58px); 
-            padding: 4rem 2rem;
-            background: #FFBFCD;
-            overflow: hidden;
-        }
-
-        .hero-branding-block {
-            width: 100%;
-            max-width: 1000px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-        }
-
-        .brand-title-single {
-            font-family: var(--font-home-hero);
-            font-size: clamp(3.5rem, 11vw, 8.5rem); 
-            font-weight: 200;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            letter-spacing: 0.05em;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            width: 100%;
-            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-sub-header {
-            font-family: var(--font-sub-headers);
-            font-size: clamp(1.1rem, 2.5vw, 1.75rem);
-            font-weight: 200;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #000000;
-            margin-bottom: 3.5rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        /* --- HOMEPAGE SECTIONS --- */
-        .home-divider-band {
-            width: 100vw;
-            height: clamp(350px, 31.5vh, 490px);
-            background-color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .home-services-grid-wrapper {
-            width: 100vw;
-            background-color: var(--bg-color);
-            padding: 6rem 2rem;
-            display: flex;
-            justify-content: center;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .home-services-grid {
-            width: 100%;
-            max-width: 1000px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-        }
-
-        .home-service-card {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .home-service-image-slot {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 2px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin-bottom: 1.5rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .home-service-card:hover .home-service-image-slot {
-            border-color: var(--accent-header);
-        }
-
-        .home-service-image-slot img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            opacity: 0.85;
-            transition: transform 0.5s ease;
-        }
-
-        .home-service-card:hover .home-service-image-slot img {
-            transform: scale(1.03);
-        }
-
-        .home-service-title {
-            font-family: var(--font-sub-headers);
-            font-weight: 200;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            letter-spacing: 0.04em;
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
-        }
-        
-        .home-service-card h1.home-service-title { font-size: clamp(1.5rem, 3.2vw, 2rem); }
-        .home-service-card h2.home-service-title { font-size: clamp(1.5rem, 3.2vw, 2rem); }
-        .home-service-card h3.home-service-title { font-size: clamp(1.5rem, 3.2vw, 2rem); }
-
-        .home-service-cta {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 2px;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            text-transform: lowercase;
-            font-style: italic;
-        }
-
-        .home-service-card:hover .home-service-cta {
-            color: var(--accent-header);
-            border-bottom-color: var(--accent-header);
-            padding-left: 4px;
-        }
-
-        .home-retainer-promo {
-            width: 100vw;
-            height: clamp(500px, 45vh, 700px); 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem;
-            background-color: var(--bg-color); 
-            border-top: 1px solid var(--border-color);
-        }
-
-        .home-retainer-promo h1 {
-            font-family: var(--font-home-hero); 
-            font-size: clamp(2.3rem, 7vw, 4.8rem);
-            font-weight: 200;
-            text-transform: uppercase;
-            color: var(--text-primary); 
-            letter-spacing: 0.05em;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            max-width: 900px;
-        }
-
-        .home-retainer-promo p {
-            font-family: var(--font-body);
-            font-size: clamp(0.95rem, 2vw, 1.2rem);
-            color: var(--text-secondary); 
-            margin-bottom: 3rem;
-            max-width: 850px;
-            line-height: 1.7;
-        }
-
-        .home-architect-promo {
-            width: 100vw;
-            height: clamp(500px, 45vh, 700px); 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 4rem 2rem;
-            background: #FFBFCD;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .home-architect-promo h1 {
-            font-family: var(--font-home-hero); 
-            font-size: clamp(2.5rem, 8vw, 5.5rem);
-            font-weight: 200;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            letter-spacing: 0.05em;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-        }
-
-        .home-architect-promo p {
-            font-family: var(--font-body);
-            font-size: clamp(1rem, 2.2vw, 1.35rem);
-            color: #000000;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            font-weight: 400;
-        }
-
         /* --- SERVICES PAGE --- */
         .services-full-bleed-bg {
             background-color: var(--text-secondary);
@@ -538,7 +605,7 @@
             font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 200;
             text-transform: uppercase;
-            color: var(--accent-header); 
+            color: var(--subtle-pink); 
             letter-spacing: 0.03em;
             line-height: 1.1;
         }
@@ -562,34 +629,22 @@
             justify-content: center;
         }
 
-        .brand-full-bleed-bg .services-title {
-            color: var(--text-primary); 
-        }
-        
-        .brand-full-bleed-bg .services-body {
-            color: var(--text-secondary);
-            border-left-color: rgba(13, 14, 18, 0.15);
-        }
-
-        .brand-full-bleed-bg .services-row {
-            border-bottom-color: rgba(13, 14, 18, 0.15);
-        }
+        .brand-full-bleed-bg .services-title { color: var(--text-primary); }
+        .brand-full-bleed-bg .services-body { color: var(--text-secondary); border-left-color: rgba(13, 14, 18, 0.15); }
+        .brand-full-bleed-bg .services-row { border-bottom-color: rgba(13, 14, 18, 0.15); }
 
         .brand-divider-band {
             width: 100vw;
-            height: clamp(250px, 22.5vh, 350px);
-            background-color: var(--text-secondary);
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            height: 1px;
+            background-color: rgba(0,0,0,0.1);
+            margin: 4rem 0;
         }
 
         /* --- ABOUT US --- */
         .about-signature {
             font-family: var(--font-signature);
             font-size: clamp(3rem, 6vw, 4.5rem);
-            color: var(--accent-header); 
+            color: var(--subtle-pink); 
             margin-top: 2rem;
             line-height: 1;
             user-select: none;
@@ -603,41 +658,28 @@
             margin-top: 2rem;
             width: 100%;
             align-items: stretch;
+            padding: 0 2rem 4rem 2rem;
         }
 
         .retainer-card {
             background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border: 1px solid var(--text-secondary);
+            border-radius: 0px;
             padding: 3rem 1.5rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .retainer-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--text-secondary);
-        }
-
-        .retainer-card-top {
-            width: 100%;
         }
 
         .retainer-tier-name {
             font-family: var(--font-sub-headers);
             font-size: 1.5rem;
-            font-weight: 200;
+            font-weight: 600;
             text-transform: uppercase;
             color: var(--text-primary);
             margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--text-secondary);
             padding-bottom: 1rem;
-            white-space: nowrap; 
-            overflow: hidden;
-            text-overflow: ellipsis;
             letter-spacing: 0.05em;
         }
 
@@ -658,81 +700,72 @@
             content: "—";
             position: absolute;
             left: 0;
-            color: var(--text-secondary);
         }
 
         .retainer-price {
             font-family: var(--font-sub-headers);
             font-size: 2rem;
-            font-weight: 200;
+            font-weight: 700;
             color: var(--text-primary);
             margin-top: 2.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            letter-spacing: 0.03em;
+            border-top: 1px solid var(--text-secondary);
         }
 
         .retainer-price span {
             font-family: var(--font-body);
             font-size: 0.85rem;
             font-weight: 400;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             display: block;
             margin-top: 0.25rem;
         }
 
         /* --- GLOBAL ACTIONS & HEADERS --- */
-        .btn-primary {
-            background-color: var(--accent-header);
-            color: var(--bg-color);
-            border: none;
-            padding: 1.2rem 3rem;
-            font-size: 0.9rem;
+        .btn-editorial-action {
+            align-self: flex-start;
+            background-color: var(--subtle-pink);
+            color: var(--text-secondary);
+            border: 1px solid var(--text-secondary);
+            padding: 1.2rem 2.5rem;
+            font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-block;
-            border-radius: 2px;
+            transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            text-align: center;
+            font-family: var(--font-sub-headers);
+            display: inline-block;
         }
 
-        .btn-primary:hover {
-            background-color: var(--text-primary);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        .btn-editorial-action:hover {
+            background-color: var(--text-secondary);
+            color: #FFFFFF;
+        }
+
+        .btn-editorial-action.light-on-dark {
+            background-color: transparent;
+            color: #FFFFFF;
+            border-color: #FFFFFF;
+        }
+
+        .btn-editorial-action.light-on-dark:hover {
+            background-color: #FFFFFF;
+            color: var(--text-secondary);
         }
 
         .section-header-block {
-            padding: 4rem 0 2rem 0;
-            border-bottom: 1px solid var(--border-color);
+            padding: 6rem 2rem 2rem 2rem;
+            border-bottom: 1px solid var(--text-secondary);
             margin-bottom: 3.5rem;
             width: 100%;
         }
-        .section-tagline { font-family: var(--font-sub-headers); font-weight: 200; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); margin-bottom: 1rem; }
-        
-        .section-title { 
-            font-family: var(--font-sub-headers);
-            font-size: clamp(2.5rem, 6vw, 4rem); 
-            font-weight: 200; 
-            text-transform: uppercase;
-            color: var(--text-primary); 
-            letter-spacing: 0.03em;
-        }
+        .section-tagline { font-family: var(--font-sub-headers); font-weight: 400; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); margin-bottom: 1rem; }
+        .section-title { font-family: var(--font-sub-headers); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; text-transform: uppercase; }
 
-        .inverted-header .section-tagline { color: rgba(246, 240, 229, 0.7); }
-        .inverted-header .section-title { color: var(--bg-color); }
-        .inverted-header { border-bottom-color: rgba(246, 240, 229, 0.15); }
-
-        .brand-header .section-tagline { color: var(--text-secondary); opacity: 0.7; }
-        .brand-header .section-title { color: var(--text-primary); }
-        .brand-header { border-bottom-color: rgba(13, 14, 18, 0.15); }
+        .inverted-header .section-tagline { color: rgba(255,255,255,0.7); }
+        .inverted-header .section-title { color: #FFFFFF; }
+        .inverted-header { border-bottom-color: rgba(255,255,255,0.15); }
 
         /* --- CONTACT INTERFACE --- */
         .contact-wrapper {
@@ -740,22 +773,21 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 4rem 0;
-            max-width: 600px;
+            padding: 8rem 2rem;
+            max-width: 700px;
             margin: 0 auto;
         }
-        .contact-wrapper h2 { font-family: var(--font-sub-headers); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 200; text-transform: uppercase; margin-bottom: 1.5rem; color: var(--text-primary); }
-        .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.05rem; }
+        .contact-wrapper h2 { font-family: var(--font-home-hero); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; text-transform: uppercase; margin-bottom: 1.5rem; }
+        .contact-wrapper p { color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.1rem; }
 
         /* --- FOOTER --- */
         footer {
             width: 100vw;
-            background-color: var(--accent-header); 
-            padding: 2rem 0;
+            background-color: var(--text-secondary); 
+            padding: 3rem 0;
             margin-top: auto;
             display: flex;
             justify-content: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .footer-container {
@@ -763,45 +795,32 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--bg-color); 
+            font-weight: 500;
+            color: rgba(255,255,255,0.6); 
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            padding: 0 2rem;
+            font-family: var(--font-sub-headers);
+            padding: 0 4rem;
         }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
-        @media (max-width: 900px) {
-            .retainer-grid {
-                grid-template-columns: 100%;
-                gap: 2rem;
-            }
-            .retainer-card { padding: 2.5rem 1.75rem; }
-            .retainer-tier-name { white-space: normal; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 2px; }
-            .tab-btn { padding: 0.4rem 0.5rem; }
-            .carousel-track img { height: 350px; } 
-            .home-hero { min-height: 60vh; padding: 4rem 1.5rem; } 
-            .home-divider-band { height: 245px; } 
-            .brand-title-single { font-size: clamp(2.5rem, 9.5vw, 4.5rem); }
-            .home-services-grid { grid-template-columns: 100%; gap: 3.5rem; }
-            .home-retainer-promo { height: auto; padding: 5rem 1.5rem; }
-            .home-architect-promo { height: auto; padding: 5rem 1.5rem; }
-            .services-row { grid-template-columns: 100%; gap: 1rem; padding-bottom: 2.5rem; }
-            .services-body { padding-left: 0; border-left: none; }
-            .brand-divider-band { height: 175px; }
-            
-            /* Unstack asymmetrical grids down to clean sequential rows on small screens */
+        @media (max-width: 968px) {
+            .agency-hero-section { grid-template-columns: 100%; }
+            .hero-left-editorial { padding: 4rem 2rem; }
+            .hero-right-imagery { min-height: 350px; }
+            .agency-metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 2rem; }
+            .metric-block { border-right: none; }
+            .manifesto-container { grid-template-columns: 100%; gap: 2rem; padding: 4rem 2rem; }
+            .capabilities-grid { grid-template-columns: 100%; gap: 3rem; }
+            .retention-promo-split { grid-template-columns: 100%; }
+            .retention-text-block { border-right: none; border-bottom: 1px solid var(--text-secondary); padding: 4rem 2rem; }
+            .retainer-grid { grid-template-columns: 100%; }
             .portfolio-case-container { grid-template-columns: 100%; }
             .portfolio-text-panel { height: auto; padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
             .case-carousel-outer { width: 100vw; }
             .case-carousel-track img { height: 400px; }
-            
-            .footer-container { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 0 1.25rem; }
+            .services-row { grid-template-columns: 100%; gap: 1rem; }
+            .services-body { padding-left: 0; border-left: none; }
         }
     </style>
 </head>
@@ -824,9 +843,7 @@
     <div class="full-bleed-carousel-outer">
         <div class="carousel-window">
             <div class="carousel-track">
-                <img src="banner1.png" alt="SR Studios Featured Strategy Asset One">
-                <img src="banner2.png" alt="SR Studios Featured Strategy Asset Two">
-                <img src="banner3.png" alt="SR Studios Featured Strategy Asset Three">
+                <img src="banner1.png" alt="Featured Strategy Asset">
             </div>
         </div>
     </div>
@@ -834,65 +851,106 @@
     <main>
 
         <div id="tab-home" class="tab-panel active">
-            <section class="home-hero">
-                <div class="hero-branding-block">
-                    <h1 class="brand-title-single">SR STUDIOS</h1>
-                    <p class="hero-sub-header">Digital Marketing Agency</p>
+            
+            <section class="agency-hero-section">
+                <div class="hero-left-editorial">
+                    <div class="hero-tag">Integrated Growth Studio</div>
+                    <h1 class="hero-headline-massive">
+                        Design &<span>Performance.</span>
+                    </h1>
+                    <p class="hero-desc-editorial">
+                        We synchronize Search Intent, Email Retention, and high-end Short Form Video Pipeline infrastructure to scale complex digital brand systems.
+                    </p>
+                    <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-editorial-action light-on-dark">
+                        Let's Scale Your Brand
+                    </a>
                 </div>
-                <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-primary">
-                    Let's Scale Your Brand
-                </a>
-            </section>
-
-            <div class="home-divider-band"></div>
-
-            <section class="home-services-grid-wrapper">
-                <div class="home-services-grid">
-                    <div class="home-service-card" onclick="switchTab(null, 'tab-services'); return false;">
-                        <div class="home-service-image-slot">
-                            <img src="home_brand_strat.png" alt="Brand Strategy Pipeline Showcase">
-                        </div>
-                        <h1 class="home-service-title">brand strategy</h1>
-                        <a href="#" class="home-service-cta">let's talk strat</a>
-                    </div>
-
-                    <div class="home-service-card" onclick="switchTab(null, 'tab-services'); return false;">
-                        <div class="home-service-image-slot">
-                            <img src="home_content_messaging.png" alt="Content and Messaging Architecture">
-                        </div>
-                        <h2 class="home-service-title">content & messaging</h2>
-                        <a href="#" class="home-service-cta">lets chat:</a>
-                    </div>
-
-                    <div class="home-service-card" onclick="switchTab(null, 'tab-services'); return false;">
-                        <div class="home-service-image-slot">
-                            <img src="home_production.png" alt="High End Production and Creative Framing">
-                        </div>
-                        <h3 class="home-service-title">high-end production</h3>
-                        <a href="#" class="home-service-cta">we got production covered</a>
-                    </div>
+                <div class="hero-right-imagery">
+                    <img src="banner1.png" alt="SR Studios Creative Presentation Spread">
                 </div>
             </section>
 
-            <div class="home-divider-band"></div>
-
-            <section class="home-retainer-promo">
-                <h1>An Entire Marketing Team Dedicated to Your Brand</h1>
-                <p>Monthly retainers include a custom brand package sent monthly, including prints of next months email newsletters, ad campaign highlights, color palettes and patterns for upcoming promos, notes from the founder, and small thank you gifts, personal to you. As a token of gratitude because we couldn't do this without our clients. -SR STUDIOS</p>
-                <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-primary">
-                    explore retainers
-                </a>
+            <section class="agency-metrics-strip">
+                <div class="metric-block">
+                    <div class="metric-number">$20M+</div>
+                    <div class="metric-label">Managed Ad Spend</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-number">3.4×</div>
+                    <div class="metric-label">Average Net ROAS</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-number">500+</div>
+                    <div class="metric-label">Funnels Optimized</div>
+                </div>
+                <div class="metric-block">
+                    <div class="metric-number">50+</div>
+                    <div class="metric-label">Premium Partnerships</div>
+                </div>
             </section>
 
-            <div class="home-divider-band"></div>
-
-            <section class="home-architect-promo">
-                <h1>Just Getting Started</h1>
-                <p>Learn more about our brand architect program</p>
-                <a href="#" onclick="switchTab(null, 'tab-brand'); return false;" class="btn-primary">
-                    learn more
-                </a>
+            <section class="manifesto-container">
+                <div class="manifesto-text-side">
+                    <h2 class="manifesto-header">
+                        We are not your average <b>Growth Strategy Agency</b>.
+                    </h2>
+                    <div class="manifesto-body">
+                        <p>Most agencies optimize platforms in isolation, leaving your brand messaging fragmented. At SR Studios, we construct unified visual frameworks and performance architectures designed to systematically build consumer authority, recapture acquisition costs, and maximize retention.</p>
+                    </div>
+                </div>
+                <div class="manifesto-image-side">
+                    <img src="home_brand_strat.png" alt="Growth Blueprint Framework">
+                </div>
             </section>
+
+            <section class="capabilities-showcase-outer">
+                <div class="capabilities-header-row">
+                    <h2>Our Growth Engines</h2>
+                    <a href="#" onclick="switchTab(null, 'tab-services'); return false;" style="color: var(--subtle-pink); text-transform: uppercase; font-family: var(--font-sub-headers); font-size: 0.9rem; letter-spacing: 0.1em; text-decoration: none;">View All Offerings →</a>
+                </div>
+                <div class="capabilities-grid">
+                    <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
+                        <div class="capability-frame">
+                            <img src="home_brand_strat.png" alt="Brand System Architecture">
+                        </div>
+                        <div class="capability-index">01 // VISUAL CAPITAL</div>
+                        <div class="capability-title-line">Brand Strategy</div>
+                        <div class="capability-short-desc">Formulating custom, high-end visual system layouts and tone guidelines that establish market value.</div>
+                    </div>
+
+                    <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
+                        <div class="capability-frame">
+                            <img src="home_content_messaging.png" alt="Email Campaigns Layout">
+                        </div>
+                        <div class="capability-index">02 // RETENTION INFRASTRUCTURE</div>
+                        <div class="capability-title-line">Email Campaigns</div>
+                        <div class="capability-short-desc">Segmenting technical audience profiles to transform dry data listings into high-converting sequences.</div>
+                    </div>
+
+                    <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
+                        <div class="capability-frame">
+                            <img src="home_production.png" alt="Short Form Pipeline Spread">
+                        </div>
+                        <div class="capability-index">03 // ATTENTION ACQUISITION</div>
+                        <div class="capability-title-line">Short Form Video</div>
+                        <div class="capability-short-desc">Replacing typical agency graphics with a high-end, structured short form video asset production engine.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="retention-promo-split">
+                <div class="retention-text-block">
+                    <h2>Dedicated Scale Management</h2>
+                    <p>Our monthly premium partnership retainers act as a seamless extension of your marketing department. We combine performance tracking logs with tailored brand toolkits sent directly to your team monthly to align strategy with real growth outcomes.</p>
+                    <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-editorial-action">
+                        Explore Retainers
+                    </a>
+                </div>
+                <div class="retention-image-block">
+                    <img src="banner2.png" alt="Studio Production Environment">
+                </div>
+            </section>
+
         </div>
 
         <div id="tab-services" class="tab-panel">
@@ -939,7 +997,7 @@
                             <p>At SR Studios, we recognize that starting a new venture is a masterclass in prioritization. Startups, independent brands, and prominent digital creators transitioning into enterprise operations often struggle with a fundamental challenge: translating a dynamic business vision into a cohesive, recognizable market presence.</p>
                             <p>Our Brand Architect Consultation program is engineered specifically to help early-stage founders transcend to an established, recognizable, brand presence.</p>
                             <p style="margin-top: 2rem;">
-                                <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-primary">
+                                <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-editorial-action">
                                     Book a Consultation
                                 </a>
                             </p>
@@ -979,9 +1037,6 @@
                     </p>
                 </div>
                 
-                <!-- Full-bleed black divider band block re-added beneath top text -->
-                <div class="home-divider-band"></div>
-
                 <div class="portfolio-grid-section">
                     
                     <div class="portfolio-case-container">
@@ -1005,9 +1060,7 @@
                         </div>
                     </div>
 
-                    <div class="home-divider-band" style="height: 1px;"></div>
-
-                    <div class="portfolio-case-container">
+                    <div class="portfolio-case-container" style="border-top: 1px solid var(--text-secondary);">
                         <div class="portfolio-text-panel">
                             <h2 class="portfolio-case-title">Email Campaign Optimization & Digital Retention</h2>
                             <div class="portfolio-case-body">
@@ -1028,9 +1081,7 @@
                         </div>
                     </div>
 
-                    <div class="home-divider-band" style="height: 1px;"></div>
-
-                    <div class="portfolio-case-container">
+                    <div class="portfolio-case-container" style="border-top: 1px solid var(--text-secondary);">
                         <div class="portfolio-text-panel">
                             <h3 class="portfolio-case-title">High-End Short Form Video Pipeline</h3>
                             <div class="portfolio-case-body">
@@ -1063,7 +1114,7 @@
 
             <div class="retainer-grid">
                 <div class="retainer-card">
-                    <div class="retainer-card-top">
+                    <div>
                         <h2 class="retainer-tier-name">Foundational</h2>
                         <ul class="retainer-bullets">
                             <li>Search Engine PPC : full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li>
@@ -1076,7 +1127,7 @@
                 </div>
 
                 <div class="retainer-card">
-                    <div class="retainer-card-top">
+                    <div>
                         <h2 class="retainer-tier-name">Omnichannel Pro</h2>
                         <ul class="retainer-bullets">
                             <li>Everything in Foundational included (full paid search and email retention management)</li>
@@ -1089,7 +1140,7 @@
                 </div>
 
                 <div class="retainer-card">
-                    <div class="retainer-card-top">
+                    <div>
                         <h2 class="retainer-tier-name">Full-Suite Pro</h2>
                         <ul class="retainer-bullets">
                             <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
@@ -1127,7 +1178,7 @@
             <div class="contact-wrapper">
                 <h2>Initiate Partnership</h2>
                 <p>Click below to launch a direct, secure communication thread with our execution team.</p>
-                <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-primary">
+                <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-editorial-action">
                     Book Brand Consultation
                 </a>
             </div>
@@ -1151,13 +1202,15 @@
             panels.forEach(panel => panel.classList.remove('active'));
 
             const topCarousel = document.querySelector('.full-bleed-carousel-outer');
-            if (tabId === 'tab-home') {
-                topCarousel.style.display = 'block';
-            } else {
-                topCarousel.style.display = 'none';
+            if (topCarousel) {
+                if (tabId === 'tab-home') {
+                    topCarousel.style.display = 'none';
+                } else {
+                    topCarousel.style.display = 'none'; /* Seamless switch across tabs */
+                }
             }
 
-            if (event === null || event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('home-service-card')) {
+            if (event === null || event.currentTarget.tagName === 'A' || event.currentTarget.classList.contains('capability-premium-card')) {
                 const targetNavBtn = document.querySelector(`[onclick*='${tabId}']`);
                 if (targetNavBtn) targetNavBtn.classList.add('active');
             } else if (event && event.currentTarget) {
@@ -1170,19 +1223,9 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // --- GLOBAL CAROUSEL AUTOMATION TRACKS ---
+        // --- SLIDE AUTOMATION TRACKS FOR SELECTED WORK ---
         const SLIDE_INTERVAL = 5000;
         const FIVE_SLOT_PERCENTAGE = 20;
-
-        let currentHomeSlide = 0;
-        const totalHomeSlides = 3;
-        const carouselTrack = document.querySelector('.carousel-track');
-        if (carouselTrack) {
-            setInterval(() => {
-                currentHomeSlide = (currentHomeSlide + 1) % totalHomeSlides;
-                carouselTrack.style.transform = `translateX(-${currentHomeSlide * 33.3333}%)`;
-            }, SLIDE_INTERVAL); 
-        }
 
         let projectOneSlide = 0;
         const totalProjectOneSlides = 5;
