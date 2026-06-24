@@ -576,7 +576,7 @@
         .services-full-bleed-bg {
             background-color: var(--text-secondary);
             width: 100vw;
-            padding: 4rem 2rem;
+            padding: 4rem 4rem; /* Adjusted down from 2rem to align more to the left globally */
             display: flex;
             justify-content: center;
         }
@@ -586,12 +586,12 @@
             flex-direction: column;
             gap: 5rem;
             width: 100%;
-            max-width: 1000px;
+            max-width: 1100px; /* Expanded slightly to give layout breathing room on the left */
         }
 
         .services-row {
             display: grid;
-            grid-template-columns: 35% 65%;
+            grid-template-columns: 30% 70%; /* Shifted distribution leftward */
             gap: 2rem;
             align-items: flex-start;
             border-bottom: 1px solid rgba(246, 240, 229, 0.15);
@@ -614,7 +614,7 @@
             color: var(--bg-color);
             font-size: clamp(1rem, 2.5vw, 1.15rem);
             line-height: 1.7;
-            padding-left: 2.5rem;
+            padding-left: 1.25rem; /* Pulled 2 indents back to the left */
             border-left: 1px solid rgba(246, 240, 229, 0.15);
         }
         .services-body p { margin-bottom: 1.5rem; }
@@ -624,7 +624,7 @@
         .brand-full-bleed-bg {
             background-color: var(--surface-color);
             width: 100vw;
-            padding: 4rem 2rem;
+            padding: 4rem 4rem; /* Match the shifts from the main services wrapper */
             display: flex;
             justify-content: center;
         }
@@ -821,6 +821,7 @@
             .case-carousel-track img { height: 400px; }
             .services-row { grid-template-columns: 100%; gap: 1rem; }
             .services-body { padding-left: 0; border-left: none; }
+            .services-full-bleed-bg, .brand-full-bleed-bg { padding: 4rem 2rem; }
         }
     </style>
 </head>
@@ -956,7 +957,7 @@
         <div id="tab-services" class="tab-panel">
             <div class="services-full-bleed-bg">
                 <div class="services-wrapper">
-                    <div class="section-header-block inverted-header" style="padding-top: 0;">
+                    <div class="section-header-block inverted-header" style="padding-top: 0; padding-left: 0;">
                         <div class="section-tagline">Our Core Capabilities</div>
                         <h1 class="section-title">Services</h1>
                     </div>
@@ -986,7 +987,7 @@
         <div id="tab-brand" class="tab-panel">
             <div class="brand-full-bleed-bg">
                 <div class="services-wrapper">
-                    <div class="section-header-block brand-header" style="padding-top: 0;">
+                    <div class="section-header-block brand-header" style="padding-top: 0; padding-left: 0;">
                         <div class="section-tagline">Accelerated Asset Development</div>
                         <h1 class="section-title">Brand Architect</h1>
                     </div>
