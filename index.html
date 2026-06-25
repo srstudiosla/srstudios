@@ -64,12 +64,12 @@
             flex-grow: 1;
         }
 
-        /* --- NAVIGATION HEADER (PERFECTLY CENTERED) --- */
+        /* --- NAVIGATION HEADER (PERFECTLY CENTERED SINGLE-LINE SYSTEM) --- */
         header {
             width: 100%;
             background-color: var(--surface-color);
             border-bottom: 1px solid var(--tan-accent);
-            padding: 1.5rem 0; 
+            padding: 1.2rem 0; 
             display: flex;
             justify-content: center;
             position: sticky;
@@ -82,20 +82,20 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 900px;
-            flex-wrap: wrap;
-            gap: 2rem;
+            max-width: 1100px;
+            flex-wrap: nowrap; /* Prevent horizontal element breakdown */
+            gap: 1.5rem;       /* Elegant editorial horizontal spacing */
         }
 
         .tab-btn {
             background: transparent;
             border: none;
             color: var(--text-primary);
-            padding: 0.5rem 0; 
-            font-size: 0.75rem;
+            padding: 0.4rem 0; 
+            font-size: 0.72rem;
             font-weight: 500; 
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -140,7 +140,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- EDITORIAL HOME HERO LAYOUT (CENTERED CORRECTIONS) --- */
+        /* --- EDITORIAL HOME HERO LAYOUT --- */
         .agency-hero-section {
             width: 100%;
             display: grid;
@@ -571,34 +571,6 @@
             padding-top: 4rem; 
         }
 
-        .lookbook-mini-collage-row {
-            display: grid;
-            grid-template-columns: 0.45fr 0.55fr;
-            gap: 2rem;
-            align-items: flex-end;
-        }
-
-        .lookbook-mini-photo {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            background-color: var(--tan-accent);
-            overflow: hidden;
-            border: 1px solid var(--tan-accent);
-        }
-
-        .lookbook-mini-photo img {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-
-        .lookbook-signature-caption {
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 1.6rem;
-            color: var(--text-primary);
-            line-height: 1.2;
-            font-weight: 400;
-        }
-
         /* --- SERVICES & BRAND SYSTEMS --- */
         .services-wrapper {
             display: flex;
@@ -790,7 +762,7 @@
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 968px) {
-            .nav-tabs { gap: 1rem; }
+            .nav-tabs { flex-wrap: wrap; gap: 1rem; justify-content: center; }
             .agency-hero-section { grid-template-columns: 100%; }
             .hero-left-editorial { padding: 3rem 1.5rem; }
             .hero-right-imagery { min-height: 350px; }
@@ -1057,15 +1029,6 @@
                             <div class="lookbook-editorial-text-block">
                                 <div class="lookbook-text-tag">Case Studio 03 // Social Scale</div>
                                 <p>To transform flat organic reach and disjointed visual branding across channels, we replaced standard industry graphics with high-end, editorial video aesthetics. Our team built dedicated, educational content carousels explaining structural brand secrets to strengthen the value behind social media outreach.</p>
-                            </div>
-
-                            <div class="lookbook-mini-collage-row">
-                                <div class="lookbook-mini-photo">
-                                    <img src="project3_slide2.png" alt="Asset Grid View">
-                                </div>
-                                <div class="lookbook-signature-caption">
-                                    Creative is King.
-                                </div>
                             </div>
                         </div>
 
