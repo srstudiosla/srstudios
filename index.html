@@ -405,6 +405,7 @@
             grid-template-columns: 1fr 1fr;
             border: 1px solid var(--tan-accent);
             margin-bottom: 4rem;
+            align-items: stretch;
         }
 
         .retention-text-block {
@@ -429,18 +430,6 @@
             line-height: 1.75;
             color: var(--text-secondary);
             margin-bottom: 2.5rem;
-        }
-
-        .retention-image-block {
-            width: 100%;
-            height: 100%;
-            min-height: 450px;
-            background-color: var(--tan-accent);
-            position: relative;
-        }
-
-        .retention-image-block img {
-            width: 100%; height: 100%; object-fit: cover;
         }
 
         /* --- PORTFOLIO SYSTEM --- */
@@ -793,7 +782,6 @@
             .capabilities-grid { grid-template-columns: 100%; gap: 3rem; }
             .retention-promo-split { grid-template-columns: 100%; }
             .retention-text-block { padding: 3rem 1.5rem; }
-            .retention-image-block { min-height: 350px; }
             .retainer-grid { grid-template-columns: 100%; gap: 2rem; }
             .services-row { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 0; }
             
@@ -914,6 +902,7 @@
                     </div>
                 </section>
 
+                <!-- UPDATED RETENTION PROMO SPLIT GRID SECTION -->
                 <section class="retention-promo-split">
                     <div class="retention-text-block">
                         <h2>Dedicated Scale Management</h2>
@@ -922,8 +911,12 @@
                             Explore Retainers
                         </a>
                     </div>
-                    <div class="retention-image-block">
-                        <img src="banner2.png" alt="Studio Production Environment">
+                    <div class="hero-right-testimonial" style="border-left: 1px solid var(--tan-accent);">
+                        <p class="testimonial-quote">
+                            "The predictability of their monthly retainers paired with their raw execution speed completely transformed our direct-to-consumer infrastructure. They operate like true equity partners."
+                        </p>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-author">— Sophia, E-Commerce Director</div>
                     </div>
                 </section>
 
