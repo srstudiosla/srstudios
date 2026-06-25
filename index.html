@@ -6,7 +6,6 @@
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Editorial Serif & Elegant Sans Pairings -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
@@ -145,7 +144,7 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            align-items: center;
+            align-items: stretch; /* Stretch panels evenly */
             min-height: 75vh;
             border-bottom: 1px solid var(--tan-accent);
             background-color: var(--surface-color);
@@ -195,19 +194,41 @@
             margin-bottom: 3rem;
         }
 
-        .hero-right-imagery {
-            width: 100%;
-            height: 100%;
-            min-height: 500px;
-            position: relative;
-            background-color: var(--tan-accent);
-            overflow: hidden;
+        /* NEW TESTIMONIAL PANEL SYSTEM */
+        .hero-right-testimonial {
+            background-color: #FAF8F5; /* Subtle premium alternate container hue */
+            border-left: 1px solid var(--tan-accent);
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
         }
 
-        .hero-right-imagery img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            line-height: 1.5;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial-stars {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            font-weight: 600;
         }
 
         /* --- METRICS STRIP --- */
@@ -765,7 +786,7 @@
             .nav-tabs { flex-wrap: wrap; gap: 1rem; justify-content: center; }
             .agency-hero-section { grid-template-columns: 100%; }
             .hero-left-editorial { padding: 3rem 1.5rem; }
-            .hero-right-imagery { min-height: 350px; }
+            .hero-right-testimonial { border-left: none; border-top: 1px solid var(--tan-accent); padding: 3rem 1.5rem; }
             .agency-metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 2rem 1rem; }
             .metric-block { border-right: none; }
             .manifesto-container { grid-template-columns: 100%; gap: 3rem; }
@@ -801,7 +822,6 @@
     <div class="site-wrapper">
         <main>
 
-            <!-- HOME TAB PANEL -->
             <div id="tab-home" class="tab-panel active">
                 
                 <section class="agency-hero-section">
@@ -817,8 +837,12 @@
                             Let's Scale Your Brand
                         </a>
                     </div>
-                    <div class="hero-right-imagery">
-                        <img src="banner1.png" alt="SR Studios Creative Presentation Spread">
+                    <div class="hero-right-testimonial">
+                        <p class="testimonial-quote">
+                            "SR Studios is ahead of the market trends. They truly shine through at PPC and social media. Beyond marketing, they have exceptional customer service."
+                        </p>
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-author">— Ethan, Customer</div>
                     </div>
                 </section>
 
@@ -905,7 +929,6 @@
 
             </div>
 
-            <!-- SERVICES TAB PANEL -->
             <div id="tab-services" class="tab-panel">
                 <div class="services-wrapper">
                     <div class="section-header-block">
@@ -934,7 +957,6 @@
                 </div>
             </div>
 
-            <!-- BRAND ARCHITECT TAB PANEL -->
             <div id="tab-brand" class="tab-panel">
                 <div class="services-wrapper">
                     <div class="section-header-block">
@@ -978,7 +1000,6 @@
                 </div>
             </div>
 
-            <!-- SELECTED WORK TAB PANEL -->
             <div id="tab-selected-work" class="tab-panel">
                 <div class="portfolio-header-block">
                     <h1>Selected Projects</h1>
@@ -989,7 +1010,6 @@
                 
                 <div class="portfolio-magazine-container">
                     
-                    <!-- PROJECT 1 -->
                     <div class="portfolio-asymmetric-hero">
                         <div class="portfolio-hero-image-frame">
                             <img src="project1_slide1.png" alt="Google Shopping Performance Layout Framework">
@@ -1000,7 +1020,6 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 2 & 3 -->
                     <div class="portfolio-lookbook-layout">
                         
                         <div class="lookbook-left-col">
@@ -1037,7 +1056,6 @@
                 </div>
             </div>
 
-            <!-- PARTNERSHIPS TAB PANEL -->
             <div id="tab-retainers" class="tab-panel">
                 <div class="section-header-block">
                     <div class="section-tagline">Sustained Growth Management</div>
@@ -1086,7 +1104,6 @@
                 </div>
             </div>
 
-            <!-- ABOUT US TAB PANEL -->
             <div id="tab-about" class="tab-panel">
                 <div class="services-wrapper">
                     <div class="section-header-block">
@@ -1104,7 +1121,6 @@
                 </div>
             </div>
 
-            <!-- CONTACT TAB PANEL -->
             <div id="tab-contact" class="tab-panel">
                 <div class="contact-wrapper">
                     <h2>Initiate Partnership</h2>
