@@ -6,19 +6,19 @@
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Editorial Serif & Elegant Sans Pairings replacing heavy/bold options -->
+    <!-- Editorial Serif & Elegant Sans Pairings -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
         /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
-            --bg-color: #FDFBF7;       /* Warm Cream Warmth */
+            --bg-color: #F5F2EB;       /* Darker, richer editorial cream background */
             --surface-color: #FFFFFF;  /* Crisp White Layers */
-            --tan-accent: #EFEBE4;     /* Editorial Structural Dividers */
-            --text-primary: #2B2523;   /* Soft Charcoal/Dark Earth (Less harsh than pure black) */
-            --text-secondary: #5C534F; /* Muted Taupe for Subtext */
-            --accent-color: #9E1B1B;   /* Elegant Cherry Red Accent */
-            --border-color: #D6CFC7;   /* Soft Minimal Outlines */
+            --tan-accent: #E3DDD3;     /* Darker structural sand dividers */
+            --text-primary: #2B2523;   /* Soft Charcoal/Dark Earth */
+            --text-secondary: #6E6560; /* Muted Taupe for Subtext */
+            --accent-color: #3D3531;   /* Sophisticated Dark Espresso replacing cherry red */
+            --border-color: #CFC7BC;   /* Elegant Muted Outlines */
             
             /* Clean Editorial Typography Systems */
             --font-serif: 'Playfair Display', Georgia, serif;
@@ -46,17 +46,30 @@
             overflow-x: hidden;
         }
 
-        .nav-container, main, .footer-container {
+        /* Master wrapper centered perfectly to fix alignment issues */
+        .site-wrapper {
             width: 100%;
             max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2rem;
         }
 
-        /* --- NAVIGATION HEADER (REPOSITIONED & INVERTED TO LIGHT EDITORIAL) --- */
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        /* --- NAVIGATION HEADER (PERFECTLY CENTERED) --- */
         header {
             width: 100%;
             background-color: var(--surface-color);
             border-bottom: 1px solid var(--tan-accent);
-            padding: 1.5rem 1rem; 
+            padding: 1.5rem 0; 
             display: flex;
             justify-content: center;
             position: sticky;
@@ -70,7 +83,7 @@
             align-items: center;
             width: 100%;
             max-width: 900px;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 2rem;
         }
 
@@ -86,7 +99,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
-            opacity: 0.6;
+            opacity: 0.5;
             font-family: var(--font-sans);
             position: relative;
         }
@@ -104,19 +117,11 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 1px;
+            height: 2px;
             background-color: var(--accent-color);
         }
 
         /* --- TAB CONTENT PANELS --- */
-        main {
-            padding: 0;
-            width: 100%;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
         .tab-panel {
             display: none; 
             width: 100%;
@@ -126,7 +131,8 @@
         .tab-panel.active { 
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            align-items: center;
+            width: 100%;
         }
 
         @keyframes fadeIn {
@@ -134,27 +140,24 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- EDITORIAL LIGHT HOME HERO LAYOUT --- */
+        /* --- EDITORIAL HOME HERO LAYOUT (CENTERED CORRECTIONS) --- */
         .agency-hero-section {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            width: 100%;
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            min-height: 80vh;
-            position: relative;
+            min-height: 75vh;
             border-bottom: 1px solid var(--tan-accent);
+            background-color: var(--surface-color);
+            margin-top: 2rem;
         }
 
         .hero-left-editorial {
-            padding: 6rem 4rem 6rem 8vw;
+            padding: 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            z-index: 2;
+            align-items: flex-start;
         }
 
         .hero-tag {
@@ -169,7 +172,7 @@
 
         .hero-headline-massive {
             font-family: var(--font-serif);
-            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
             font-weight: 400;
             line-height: 1.15;
             letter-spacing: -0.01em;
@@ -180,13 +183,12 @@
             display: block;
             font-style: italic;
             font-weight: 400;
-            color: var(--text-primary);
         }
 
         .hero-desc-editorial {
             font-family: var(--font-sans);
             font-weight: 300;
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.7;
             color: var(--text-secondary);
             max-width: 480px;
@@ -200,7 +202,6 @@
             position: relative;
             background-color: var(--tan-accent);
             overflow: hidden;
-            border-left: 1px solid var(--tan-accent);
         }
 
         .hero-right-imagery img {
@@ -209,14 +210,11 @@
             object-fit: cover;
         }
 
-        /* --- CLEAN STATS LINE SYSTEM --- */
+        /* --- METRICS STRIP --- */
         .agency-metrics-strip {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
+            width: 100%;
             background-color: var(--surface-color);
-            color: var(--text-primary);
-            padding: 4.5rem 6vw;
+            padding: 4rem 2rem;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             text-align: center;
@@ -227,12 +225,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 1rem;
+            border-right: 1px solid var(--tan-accent);
+        }
+        .metric-block:last-child {
+            border-right: none;
         }
 
         .metric-number {
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
             font-weight: 400;
             color: var(--text-primary);
             line-height: 1;
@@ -248,16 +249,13 @@
             font-weight: 500;
         }
 
-        /* --- ASYMMETRIC MANIFESTO BLOCK --- */
+        /* --- MANIFESTO BLOCK --- */
         .manifesto-container {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            background-color: var(--bg-color);
-            padding: 8rem 8vw;
+            width: 100%;
+            padding: 6rem 0;
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 6rem;
+            gap: 4rem;
             align-items: center;
         }
 
@@ -267,7 +265,7 @@
 
         .manifesto-header {
             font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             line-height: 1.25;
             font-weight: 400;
             color: var(--text-primary);
@@ -277,7 +275,7 @@
         .manifesto-header b {
             font-weight: 400;
             font-style: italic;
-            color: var(--accent-color);
+            color: var(--text-secondary);
         }
 
         .manifesto-body {
@@ -301,16 +299,11 @@
             object-fit: cover;
         }
 
-        /* --- CARDS & CAPABILITIES GRID --- */
+        /* --- CAPABILITIES GRID --- */
         .capabilities-showcase-outer {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            background-color: var(--surface-color);
-            color: var(--text-primary);
-            padding: 8rem 8vw;
+            width: 100%;
+            padding: 6rem 0;
             border-top: 1px solid var(--tan-accent);
-            border-bottom: 1px solid var(--tan-accent);
         }
 
         .capabilities-header-row {
@@ -324,14 +317,14 @@
 
         .capabilities-header-row h2 {
             font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 400;
         }
 
         .capabilities-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3.5rem;
+            gap: 2.5rem;
         }
 
         .capability-premium-card {
@@ -370,7 +363,7 @@
 
         .capability-title-line {
             font-family: var(--font-serif);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 400;
             margin-bottom: 0.75rem;
         }
@@ -385,16 +378,16 @@
 
         /* --- PROMO SPLIT SECTION --- */
         .retention-promo-split {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            background-color: var(--bg-color);
+            width: 100%;
+            background-color: var(--surface-color);
             display: grid;
             grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--tan-accent);
+            margin-bottom: 4rem;
         }
 
         .retention-text-block {
-            padding: 8rem 8vw;
+            padding: 5rem 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -402,7 +395,7 @@
 
         .retention-text-block h2 {
             font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 400;
             line-height: 1.2;
             margin-bottom: 1.5rem;
@@ -423,32 +416,23 @@
             min-height: 450px;
             background-color: var(--tan-accent);
             position: relative;
-            border-left: 1px solid var(--tan-accent);
         }
 
         .retention-image-block img {
             width: 100%; height: 100%; object-fit: cover;
         }
 
-        /* --- RE-ALIGNED SELECTED WORK INTERFACE --- */
-        .portfolio-full-bleed-bg {
-            background-color: var(--bg-color); 
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
+        /* --- PORTFOLIO SYSTEM --- */
         .portfolio-header-block {
             text-align: center;
-            padding: 6rem 2rem 4rem 2rem;
+            padding: 4rem 2rem;
             width: 100%;
             max-width: 800px;
         }
 
         .portfolio-header-block h1 {
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
             font-weight: 400;
             color: var(--text-primary);
             margin-bottom: 1.5rem;
@@ -464,14 +448,11 @@
 
         .portfolio-magazine-container {
             width: 100%;
-            max-width: 1100px;
             display: flex;
             flex-direction: column;
-            gap: 8rem;
-            padding: 0 2rem;
+            gap: 6rem;
         }
 
-        /* Full Bleed Structural Alignment Revisions */
         .portfolio-asymmetric-hero {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -504,7 +485,7 @@
 
         .portfolio-hero-dark-panel h2 {
             font-family: var(--font-serif);
-            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
             font-weight: 400;
             line-height: 1.25;
             margin-bottom: 1.5rem;
@@ -518,18 +499,17 @@
             color: var(--text-secondary);
         }
 
-        /* Lookbook Structural Alignment Revisions */
         .portfolio-lookbook-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 4rem;
             align-items: flex-start;
         }
 
-        .lookbook-left-col {
+        .lookbook-left-col, .lookbook-right-col {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
         .lookbook-rule-header {
@@ -537,7 +517,6 @@
             align-items: center;
             gap: 1.5rem;
             width: 100%;
-            margin-bottom: 0.5rem;
         }
 
         .lookbook-line-accent {
@@ -549,12 +528,12 @@
 
         .lookbook-rule-header h3 {
             font-family: var(--font-serif);
-            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
             font-weight: 400;
             color: var(--text-primary);
         }
 
-        .lookbook-primary-image-box {
+        .lookbook-primary-image-box, .lookbook-offset-image-box {
             width: 100%;
             aspect-ratio: 4 / 5;
             background-color: var(--tan-accent);
@@ -562,7 +541,7 @@
             border: 1px solid var(--tan-accent);
         }
 
-        .lookbook-primary-image-box img {
+        .lookbook-primary-image-box img, .lookbook-offset-image-box img {
             width: 100%; height: 100%; object-fit: cover;
         }
 
@@ -575,7 +554,7 @@
             font-size: 0.65rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--accent-color);
+            color: var(--text-primary);
             margin-bottom: 0.75rem;
             font-weight: 600;
         }
@@ -589,22 +568,7 @@
         }
 
         .lookbook-right-col {
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-            padding-top: 6rem; 
-        }
-
-        .lookbook-offset-image-box {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background-color: var(--tan-accent);
-            overflow: hidden;
-            border: 1px solid var(--tan-accent);
-        }
-
-        .lookbook-offset-image-box img {
-            width: 100%; height: 100%; object-fit: cover;
+            padding-top: 4rem; 
         }
 
         .lookbook-mini-collage-row {
@@ -629,41 +593,18 @@
         .lookbook-signature-caption {
             font-family: var(--font-serif);
             font-style: italic;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--text-primary);
             line-height: 1.2;
             font-weight: 400;
         }
 
-        .portfolio-fullbleed-metrics-strip {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
-            background-color: var(--surface-color);
-            color: var(--text-primary);
-            padding: 4.5rem 6vw;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            text-align: center;
-            border-top: 1px solid var(--tan-accent);
-            border-bottom: 1px solid var(--tan-accent);
-            margin-top: 2rem;
-        }
-
-        /* --- UNIFIED SERVICES LAYOUT --- */
-        .services-full-bleed-bg, .brand-full-bleed-bg {
-            background-color: var(--bg-color);
-            width: 100vw;
-            padding: 4rem 6vw;
-            display: flex;
-            justify-content: center;
-        }
-
+        /* --- SERVICES & BRAND SYSTEMS --- */
         .services-wrapper {
             display: flex;
             flex-direction: column;
             width: 100%;
-            max-width: 1000px;
+            margin-top: 2rem;
         }
 
         .services-row {
@@ -679,7 +620,7 @@
         
         .services-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.4rem, 2.5vw, 2rem);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
             font-weight: 400;
             color: var(--text-primary); 
             line-height: 1.2;
@@ -702,15 +643,13 @@
             margin: 2rem 0;
         }
 
-        /* --- PARTNERSHIPS CARD REDESIGN --- */
+        /* --- PARTNERSHIPS GRID --- */
         .retainer-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin: 2rem auto 6rem auto;
+            gap: 2rem;
+            margin: 3rem 0 6rem 0;
             width: 100%;
-            max-width: 1100px;
-            padding: 0 2rem;
         }
 
         .retainer-card {
@@ -724,7 +663,7 @@
 
         .retainer-tier-name {
             font-family: var(--font-serif);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 400;
             color: var(--text-primary);
             margin-bottom: 1.5rem;
@@ -776,12 +715,12 @@
             margin-top: 0.25rem;
         }
 
-        /* --- EDITORIAL ACTIONS --- */
+        /* --- ACTION BUTTONS --- */
         .btn-editorial-action {
             align-self: flex-start;
-            background-color: var(--text-primary);
+            background-color: var(--accent-color);
             color: var(--surface-color);
-            border: 1px solid var(--text-primary);
+            border: 1px solid var(--accent-color);
             padding: 1rem 2rem;
             font-size: 0.75rem;
             font-weight: 500;
@@ -796,30 +735,17 @@
 
         .btn-editorial-action:hover {
             background-color: transparent;
-            color: var(--text-primary);
-        }
-
-        .btn-editorial-action.light-on-dark {
-            background-color: var(--text-primary);
-            color: var(--surface-color);
-        }
-
-        .btn-editorial-action.light-on-dark:hover {
-            background-color: transparent;
-            color: var(--text-primary);
+            color: var(--accent-color);
         }
 
         .section-header-block {
-            padding: 6rem 2rem 2rem 0;
+            padding: 4rem 0 2rem 0;
             border-bottom: 1px solid var(--tan-accent);
             margin-bottom: 2rem;
             width: 100%;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
         }
         .section-tagline { font-family: var(--font-sans); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); margin-bottom: 0.75rem; }
-        .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 400; }
+        .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; }
 
         /* --- CONTACT CONTAINER --- */
         .contact-wrapper {
@@ -828,22 +754,21 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 10rem 2rem;
+            padding: 8rem 2rem;
             max-width: 600px;
             margin: 0 auto;
-            flex-grow: 1; 
         }
-        .contact-wrapper h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; margin-bottom: 1.5rem; }
+        .contact-wrapper h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 400; margin-bottom: 1.5rem; }
         .contact-wrapper p { font-family: var(--font-sans); font-weight: 300; color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 0.95rem; }
         .contact-wrapper .btn-editorial-action { align-self: center; } 
 
         /* --- FOOTER --- */
         footer {
-            width: 100vw;
+            width: 100%;
             background-color: var(--surface-color); 
             border-top: 1px solid var(--tan-accent);
             padding: 2.5rem 0;
-            margin-top: auto;
+            margin-top: 4rem;
             display: flex;
             justify-content: center;
         }
@@ -852,33 +777,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
+            max-width: 1200px;
             font-size: 0.7rem;
             font-weight: 400;
             color: var(--text-secondary); 
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-family: var(--font-sans);
-            padding: 0 4rem;
+            padding: 0 2rem;
         }
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 968px) {
-            .nav-tabs { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .nav-tabs { gap: 1rem; }
             .agency-hero-section { grid-template-columns: 100%; }
-            .hero-left-editorial { padding: 4rem 2rem; }
-            .hero-right-imagery { min-height: 350px; border-left: none; border-top: 1px solid var(--tan-accent); }
-            .agency-metrics-strip, .portfolio-fullbleed-metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; padding: 3rem 2rem; }
-            .manifesto-container { grid-template-columns: 100%; gap: 3rem; padding: 4rem 2rem; }
+            .hero-left-editorial { padding: 3rem 1.5rem; }
+            .hero-right-imagery { min-height: 350px; }
+            .agency-metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 2rem 1rem; }
+            .metric-block { border-right: none; }
+            .manifesto-container { grid-template-columns: 100%; gap: 3rem; }
             .capabilities-grid { grid-template-columns: 100%; gap: 3rem; }
             .retention-promo-split { grid-template-columns: 100%; }
-            .retention-text-block { padding: 4rem 2rem; }
-            .retention-image-block { border-left: none; border-top: 1px solid var(--tan-accent); min-height: 350px; }
-            .retainer-grid { grid-template-columns: 100%; gap: 2rem; padding: 0 1.5rem; }
-            .services-row { grid-template-columns: 100%; gap: 1rem; padding: 2.5rem 0; }
-            .services-full-bleed-bg, .brand-full-bleed-bg { padding: 2rem 1.5rem; }
-            .section-header-block { padding: 4rem 1.5rem 1.5rem 1.5rem; }
+            .retention-text-block { padding: 3rem 1.5rem; }
+            .retention-image-block { min-height: 350px; }
+            .retainer-grid { grid-template-columns: 100%; gap: 2rem; }
+            .services-row { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 0; }
             
-            /* Portfolio Architecture Mobile Adjustments */
             .portfolio-asymmetric-hero { grid-template-columns: 100%; }
             .portfolio-hero-image-frame { min-height: 350px; }
             .portfolio-hero-dark-panel { padding: 3rem 1.5rem; }
@@ -890,130 +815,128 @@
 <body>
 
     <header>
-        <div class="nav-container">
-            <nav class="nav-tabs">
-                <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-about')">About Us</button>
-                <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
-            </nav>
-        </div>
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-about')">About Us</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
+        </nav>
     </header>
 
-    <main>
+    <div class="site-wrapper">
+        <main>
 
-        <!-- HOME TAB PANEL -->
-        <div id="tab-home" class="tab-panel active">
-            
-            <section class="agency-hero-section">
-                <div class="hero-left-editorial">
-                    <div class="hero-tag">Integrated Growth Studio</div>
-                    <h1 class="hero-headline-massive">
-                        Design & <span>Performance.</span>
-                    </h1>
-                    <p class="hero-desc-editorial">
-                        We synchronize Search Intent, Email Retention, and high-end Short Form Video Pipeline infrastructure to scale complex digital brand systems.
-                    </p>
-                    <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-editorial-action light-on-dark">
-                        Let's Scale Your Brand
-                    </a>
-                </div>
-                <div class="hero-right-imagery">
-                    <img src="banner1.png" alt="SR Studios Creative Presentation Spread">
-                </div>
-            </section>
-
-            <section class="agency-metrics-strip">
-                <div class="metric-block">
-                    <div class="metric-number">$20M+</div>
-                    <div class="metric-label">Managed Ad Spend</div>
-                </div>
-                <div class="metric-block">
-                    <div class="metric-number">3.4×</div>
-                    <div class="metric-label">Average Net ROAS</div>
-                </div>
-                <div class="metric-block">
-                    <div class="metric-number">500+</div>
-                    <div class="metric-label">Funnels Optimized</div>
-                </div>
-                <div class="metric-block">
-                    <div class="metric-number">50+</div>
-                    <div class="metric-label">Premium Partnerships</div>
-                </div>
-            </section>
-
-            <section class="manifesto-container">
-                <div class="manifesto-text-side">
-                    <h2 class="manifesto-header">
-                        We are not your average <b>Growth Strategy Agency</b>.
-                    </h2>
-                    <div class="manifesto-body">
-                        <p>Most agencies optimize platforms in isolation, leaving your brand messaging fragmented. At SR Studios, we construct unified visual frameworks and performance architectures designed to systematically build consumer authority, recapture acquisition costs, and maximize retention.</p>
+            <!-- HOME TAB PANEL -->
+            <div id="tab-home" class="tab-panel active">
+                
+                <section class="agency-hero-section">
+                    <div class="hero-left-editorial">
+                        <div class="hero-tag">Integrated Growth Studio</div>
+                        <h1 class="hero-headline-massive">
+                            Design & <span>Performance.</span>
+                        </h1>
+                        <p class="hero-desc-editorial">
+                            We synchronize Search Intent, Email Retention, and high-end Short Form Video Pipeline infrastructure to scale complex digital brand systems.
+                        </p>
+                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-editorial-action">
+                            Let's Scale Your Brand
+                        </a>
                     </div>
-                </div>
-                <div class="manifesto-image-side">
-                    <img src="home_brand_strat.png" alt="Growth Blueprint Framework">
-                </div>
-            </section>
+                    <div class="hero-right-imagery">
+                        <img src="banner1.png" alt="SR Studios Creative Presentation Spread">
+                    </div>
+                </section>
 
-            <section class="capabilities-showcase-outer">
-                <div class="capabilities-header-row">
-                    <h2>Our Growth Engines</h2>
-                    <a href="#" onclick="switchTab(null, 'tab-services'); return false;" style="color: var(--text-primary); text-transform: uppercase; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-decoration: none; border-bottom: 1px solid var(--text-primary); padding-bottom: 2px;">View All Offerings</a>
-                </div>
-                <div class="capabilities-grid">
-                    <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
-                        <div class="capability-frame">
-                            <img src="home_brand_strat.png" alt="Brand System Architecture">
+                <section class="agency-metrics-strip">
+                    <div class="metric-block">
+                        <div class="metric-number">$20M+</div>
+                        <div class="metric-label">Managed Ad Spend</div>
+                    </div>
+                    <div class="metric-block">
+                        <div class="metric-number">3.4×</div>
+                        <div class="metric-label">Average Net ROAS</div>
+                    </div>
+                    <div class="metric-block">
+                        <div class="metric-number">500+</div>
+                        <div class="metric-label">Funnels Optimized</div>
+                    </div>
+                    <div class="metric-block">
+                        <div class="metric-number">50+</div>
+                        <div class="metric-label">Premium Partnerships</div>
+                    </div>
+                </section>
+
+                <section class="manifesto-container">
+                    <div class="manifesto-text-side">
+                        <h2 class="manifesto-header">
+                            We are not your average <b>Growth Strategy Agency</b>.
+                        </h2>
+                        <div class="manifesto-body">
+                            <p>Most agencies optimize platforms in isolation, leaving your brand messaging fragmented. At SR Studios, we construct unified visual frameworks and performance architectures designed to systematically build consumer authority, recapture acquisition costs, and maximize retention.</p>
                         </div>
-                        <div class="capability-index">01 // VISUAL CAPITAL</div>
-                        <div class="capability-title-line">Brand Strategy</div>
-                        <div class="capability-short-desc">Formulating custom, high-end visual system layouts and tone guidelines that establish market value.</div>
                     </div>
+                    <div class="manifesto-image-side">
+                        <img src="home_brand_strat.png" alt="Growth Blueprint Framework">
+                    </div>
+                </section>
 
-                    <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
-                        <div class="capability-frame">
-                            <img src="home_content_messaging.png" alt="Email Campaigns Layout">
+                <section class="capabilities-showcase-outer">
+                    <div class="capabilities-header-row">
+                        <h2>Our Growth Engines</h2>
+                        <a href="#" onclick="switchTab(null, 'tab-services'); return false;" style="color: var(--text-primary); text-transform: uppercase; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-decoration: none; border-bottom: 1px solid var(--text-primary); padding-bottom: 2px;">View All Offerings</a>
+                    </div>
+                    <div class="capabilities-grid">
+                        <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
+                            <div class="capability-frame">
+                                <img src="home_brand_strat.png" alt="Brand System Architecture">
+                            </div>
+                            <div class="capability-index">01 // VISUAL CAPITAL</div>
+                            <div class="capability-title-line">Brand Strategy</div>
+                            <div class="capability-short-desc">Formulating custom, high-end visual system layouts and tone guidelines that establish market value.</div>
                         </div>
-                        <div class="capability-index">02 // RETENTION INFRASTRUCTURE</div>
-                        <div class="capability-title-line">Email Campaigns</div>
-                        <div class="capability-short-desc">Segmenting technical audience profiles to transform dry data listings into high-converting sequences.</div>
-                    </div>
 
-                    <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
-                        <div class="capability-frame">
-                            <img src="home_production.png" alt="Short Form Pipeline Spread">
+                        <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
+                            <div class="capability-frame">
+                                <img src="home_content_messaging.png" alt="Email Campaigns Layout">
+                            </div>
+                            <div class="capability-index">02 // RETENTION INFRASTRUCTURE</div>
+                            <div class="capability-title-line">Email Campaigns</div>
+                            <div class="capability-short-desc">Segmenting technical audience profiles to transform dry data listings into high-converting sequences.</div>
                         </div>
-                        <div class="capability-index">03 // ATTENTION ACQUISITION</div>
-                        <div class="capability-title-line">Short Form Video</div>
-                        <div class="capability-short-desc">Replacing typical agency graphics with a high-end, structured short form video asset production engine.</div>
+
+                        <div class="capability-premium-card" onclick="switchTab(null, 'tab-services'); return false;">
+                            <div class="capability-frame">
+                                <img src="home_production.png" alt="Short Form Pipeline Spread">
+                            </div>
+                            <div class="capability-index">03 // ATTENTION ACQUISITION</div>
+                            <div class="capability-title-line">Short Form Video</div>
+                            <div class="capability-short-desc">Replacing typical agency graphics with a high-end, structured short form video asset production engine.</div>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="retention-promo-split">
-                <div class="retention-text-block">
-                    <h2>Dedicated Scale Management</h2>
-                    <p>Our monthly premium partnership retainers act as a seamless extension of your marketing department. We combine performance tracking logs with tailored brand toolkits sent directly to your team monthly to align strategy with real growth outcomes.</p>
-                    <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-editorial-action">
-                        Explore Retainers
-                    </a>
-                </div>
-                <div class="retention-image-block">
-                    <img src="banner2.png" alt="Studio Production Environment">
-                </div>
-            </section>
+                <section class="retention-promo-split">
+                    <div class="retention-text-block">
+                        <h2>Dedicated Scale Management</h2>
+                        <p>Our monthly premium partnership retainers act as a seamless extension of your marketing department. We combine performance tracking logs with tailored brand toolkits sent directly to your team monthly to align strategy with real growth outcomes.</p>
+                        <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-editorial-action">
+                            Explore Retainers
+                        </a>
+                    </div>
+                    <div class="retention-image-block">
+                        <img src="banner2.png" alt="Studio Production Environment">
+                    </div>
+                </section>
 
-        </div>
+            </div>
 
-        <!-- SERVICES TAB PANEL -->
-        <div id="tab-services" class="tab-panel">
-            <div class="services-full-bleed-bg">
+            <!-- SERVICES TAB PANEL -->
+            <div id="tab-services" class="tab-panel">
                 <div class="services-wrapper">
-                    <div class="section-header-block" style="padding-top: 0; padding-left: 0;">
+                    <div class="section-header-block">
                         <div class="section-tagline">Our Core Capabilities</div>
                         <h1 class="section-title">Services</h1>
                     </div>
@@ -1038,13 +961,11 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- BRAND ARCHITECT TAB PANEL -->
-        <div id="tab-brand" class="tab-panel">
-            <div class="brand-full-bleed-bg">
+            <!-- BRAND ARCHITECT TAB PANEL -->
+            <div id="tab-brand" class="tab-panel">
                 <div class="services-wrapper">
-                    <div class="section-header-block" style="padding-top: 0; padding-left: 0;">
+                    <div class="section-header-block">
                         <div class="section-tagline">Accelerated Asset Development</div>
                         <h1 class="section-title">Brand Architect</h1>
                     </div>
@@ -1084,11 +1005,9 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- SELECTED WORK TAB PANEL -->
-        <div id="tab-selected-work" class="tab-panel">
-            <div class="portfolio-full-bleed-bg">
+            <!-- SELECTED WORK TAB PANEL -->
+            <div id="tab-selected-work" class="tab-panel">
                 <div class="portfolio-header-block">
                     <h1>Selected Projects</h1>
                     <p class="portfolio-disclaimer">
@@ -1098,7 +1017,7 @@
                 
                 <div class="portfolio-magazine-container">
                     
-                    <!-- PROJECT 1: Structural Grid Realignment -->
+                    <!-- PROJECT 1 -->
                     <div class="portfolio-asymmetric-hero">
                         <div class="portfolio-hero-image-frame">
                             <img src="project1_slide1.png" alt="Google Shopping Performance Layout Framework">
@@ -1109,10 +1028,9 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 2 & 3: Clean Editorial Collage Arrangement -->
+                    <!-- PROJECT 2 & 3 -->
                     <div class="portfolio-lookbook-layout">
                         
-                        <!-- Left Layout Column -->
                         <div class="lookbook-left-col">
                             <div>
                                 <div class="lookbook-rule-header">
@@ -1131,7 +1049,6 @@
                             </div>
                         </div>
 
-                        <!-- Right Layout Column (Offset Downward) -->
                         <div class="lookbook-right-col">
                             <div class="lookbook-offset-image-box">
                                 <img src="project3_slide1.png" alt="Short Form Cinematic Pipeline Frame">
@@ -1142,7 +1059,6 @@
                                 <p>To transform flat organic reach and disjointed visual branding across channels, we replaced standard industry graphics with high-end, editorial video aesthetics. Our team built dedicated, educational content carousels explaining structural brand secrets to strengthen the value behind social media outreach.</p>
                             </div>
 
-                            <!-- Elegant Playfair Italic Accent Feature Section -->
                             <div class="lookbook-mini-collage-row">
                                 <div class="lookbook-mini-photo">
                                     <img src="project3_slide2.png" alt="Asset Grid View">
@@ -1155,83 +1071,62 @@
 
                     </div>
 
-                    <section class="portfolio-fullbleed-metrics-strip">
-                        <div class="metric-block">
-                            <div class="metric-number">$20M+</div>
-                            <div class="metric-label">Managed Ad Spend</div>
-                        </div>
-                        <div class="metric-block">
-                            <div class="metric-number">3.4×</div>
-                            <div class="metric-label">Average Net ROAS</div>
-                        </div>
-                        <div class="metric-block">
-                            <div class="metric-number">500+</div>
-                            <div class="metric-label">Funnels Optimized</div>
-                        </div>
-                        <div class="metric-block">
-                            <div class="metric-number">50+</div>
-                            <div class="metric-label">Premium Partnerships</div>
-                        </div>
-                    </section>
-
                 </div>
             </div>
-        </div>
 
-        <!-- PARTNERSHIPS TAB PANEL -->
-        <div id="tab-retainers" class="tab-panel">
-            <div class="section-header-block">
-                <div class="section-tagline">Sustained Growth Management</div>
-                <h1 class="section-title">Partnership Retainers</h1>
+            <!-- PARTNERSHIPS TAB PANEL -->
+            <div id="tab-retainers" class="tab-panel">
+                <div class="section-header-block">
+                    <div class="section-tagline">Sustained Growth Management</div>
+                    <h1 class="section-title">Partnership Retainers</h1>
+                </div>
+
+                <div class="retainer-grid">
+                    <div class="retainer-card">
+                        <div>
+                            <h2 class="retainer-tier-name">Foundational</h2>
+                            <ul class="retainer-bullets">
+                                <li>Search Engine PPC : full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li>
+                                <li>Email Retention : 1-2 weekly newsletters & custom audience segmentation</li>
+                                <li>Reporting : weekly ROAs tracking and revenue attribution report</li>
+                                <li>+1 monthly request list from client including all marketing priorities for that month</li>
+                            </ul>
+                        </div>
+                        <div class="retainer-price">$3,000<span>per month</span></div>
+                    </div>
+
+                    <div class="retainer-card">
+                        <div>
+                            <h2 class="retainer-tier-name">Omnichannel Pro</h2>
+                            <ul class="retainer-bullets">
+                                <li>Everything in Foundational included (full paid search and email retention management)</li>
+                                <li>Social Media: asynchronous content scheduling, 2-3 reels weekly, 2-3 carousels weekly (all channels)</li>
+                                <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
+                                <li>Bi-weekly social media updates via loom and email</li>
+                            </ul>
+                        </div>
+                        <div class="retainer-price">$3,600<span>per month</span></div>
+                    </div>
+
+                    <div class="retainer-card">
+                        <div>
+                            <h2 class="retainer-tier-name">Full-Suite Pro</h2>
+                            <ul class="retainer-bullets">
+                                <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
+                                <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
+                                <li>4-5 new ad creative variations weekly</li>
+                                <li>Weekly asynchronous updates and meeting blocks</li>
+                            </ul>
+                        </div>
+                        <div class="retainer-price">$4,000<span>per month</span></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="retainer-grid">
-                <div class="retainer-card">
-                    <div>
-                        <h2 class="retainer-tier-name">Foundational</h2>
-                        <ul class="retainer-bullets">
-                            <li>Search Engine PPC : full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li>
-                            <li>Email Retention : 1-2 weekly newsletters & custom audience segmentation</li>
-                            <li>Reporting : weekly ROAs tracking and revenue attribution report</li>
-                            <li>+1 monthly request list from client including all marketing priorities for that month</li>
-                        </ul>
-                    </div>
-                    <div class="retainer-price">$3,000<span>per month</span></div>
-                </div>
-
-                <div class="retainer-card">
-                    <div>
-                        <h2 class="retainer-tier-name">Omnichannel Pro</h2>
-                        <ul class="retainer-bullets">
-                            <li>Everything in Foundational included (full paid search and email retention management)</li>
-                            <li>Social Media: asynchronous content scheduling, 2-3 reels weekly, 2-3 carousels weekly (all channels)</li>
-                            <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
-                            <li>Bi-weekly social media updates via loom and email</li>
-                        </ul>
-                    </div>
-                    <div class="retainer-price">$3,600<span>per month</span></div>
-                </div>
-
-                <div class="retainer-card">
-                    <div>
-                        <h2 class="retainer-tier-name">Full-Suite Pro</h2>
-                        <ul class="retainer-bullets">
-                            <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
-                            <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
-                            <li>4-5 new ad creative variations weekly</li>
-                            <li>Weekly asynchronous updates and meeting blocks</li>
-                        </ul>
-                    </div>
-                    <div class="retainer-price">$4,000<span>per month</span></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ABOUT US TAB PANEL -->
-        <div id="tab-about" class="tab-panel">
-            <div class="services-full-bleed-bg">
+            <!-- ABOUT US TAB PANEL -->
+            <div id="tab-about" class="tab-panel">
                 <div class="services-wrapper">
-                    <div class="section-header-block" style="padding-top: 0; padding-left: 0;">
+                    <div class="section-header-block">
                         <div class="section-tagline">The Blueprint Behind the Studio</div>
                         <h1 class="section-title">About Us</h1>
                     </div>
@@ -1245,20 +1140,20 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- CONTACT TAB PANEL -->
-        <div id="tab-contact" class="tab-panel">
-            <div class="contact-wrapper">
-                <h2>Initiate Partnership</h2>
-                <p>Click below to launch a direct, secure communication thread with our execution team.</p>
-                <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-editorial-action">
-                    Book Brand Consultation
-                </a>
+            <!-- CONTACT TAB PANEL -->
+            <div id="tab-contact" class="tab-panel">
+                <div class="contact-wrapper">
+                    <h2>Initiate Partnership</h2>
+                    <p>Click below to launch a direct, secure communication thread with our execution team.</p>
+                    <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-editorial-action">
+                        Book Brand Consultation
+                    </a>
+                </div>
             </div>
-        </div>
 
-    </main>
+        </main>
+    </div>
 
     <footer>
         <div class="footer-container">
