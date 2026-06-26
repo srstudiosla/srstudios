@@ -509,78 +509,6 @@
             color: var(--text-secondary);
         }
 
-        .portfolio-lookbook-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: flex-start;
-        }
-
-        .lookbook-left-col, .lookbook-right-col {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        .lookbook-rule-header {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            width: 100%;
-        }
-
-        .lookbook-line-accent {
-            height: 1px;
-            background-color: var(--border-color);
-            flex-grow: 1;
-            max-width: 80px;
-        }
-
-        .lookbook-rule-header h3 {
-            font-family: var(--font-serif);
-            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-            font-weight: 400;
-            color: var(--text-primary);
-        }
-
-        .lookbook-primary-image-box, .lookbook-offset-image-box {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            background-color: var(--tan-accent);
-            overflow: hidden;
-            border: 1px solid var(--tan-accent);
-        }
-
-        .lookbook-primary-image-box img, .lookbook-offset-image-box img {
-            width: 100%; height: 100%; object-fit: cover;
-        }
-
-        .lookbook-editorial-text-block {
-            padding: 0.5rem 0;
-        }
-
-        .lookbook-text-tag {
-            font-family: var(--font-sans);
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .lookbook-editorial-text-block p {
-            font-family: var(--font-sans);
-            font-weight: 300;
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
-        }
-
-        .lookbook-right-col {
-            padding-top: 4rem; 
-        }
-
         /* --- SERVICES & BRAND SYSTEMS --- */
         .services-wrapper {
             display: flex;
@@ -788,8 +716,6 @@
             .portfolio-asymmetric-hero { grid-template-columns: 100%; }
             .portfolio-hero-image-frame { min-height: 350px; }
             .portfolio-hero-dark-panel { padding: 3rem 1.5rem; }
-            .portfolio-lookbook-layout { grid-template-columns: 100%; gap: 3rem; }
-            .lookbook-right-col { padding-top: 0; }
         }
     </style>
 </head>
@@ -902,7 +828,6 @@
                     </div>
                 </section>
 
-                <!-- UPDATED RETENTION PROMO SPLIT GRID SECTION -->
                 <section class="retention-promo-split">
                     <div class="retention-text-block">
                         <h2>Dedicated Scale Management</h2>
@@ -1012,37 +937,24 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-lookbook-layout">
-                        
-                        <div class="lookbook-left-col">
-                            <div>
-                                <div class="lookbook-rule-header">
-                                    <div class="lookbook-line-accent"></div>
-                                    <h3>Retention Engine</h3>
-                                </div>
-                            </div>
-                            
-                            <div class="lookbook-primary-image-box">
-                                <img src="project2_slide1.png" alt="Email Marketing Retention Matrix Spread">
-                            </div>
-
-                            <div class="lookbook-editorial-text-block">
-                                <div class="lookbook-text-tag">Case Studio 02 // Retention & Sequencing</div>
-                                <p>To improve low open rates across industrial parts buyers, we segmented technical engineering leads from corporate procurement officers to deliver hyper-specific messaging. Our team engineered premium, educational storytelling frameworks that elevated dry product sheets into high-value insights.</p>
-                            </div>
+                    <div class="portfolio-asymmetric-hero">
+                        <div class="portfolio-hero-image-frame">
+                            <img src="project2_slide1.png" alt="Email Marketing Retention Matrix Spread">
                         </div>
-
-                        <div class="lookbook-right-col">
-                            <div class="lookbook-offset-image-box">
-                                <img src="project3_slide1.png" alt="Short Form Cinematic Pipeline Frame">
-                            </div>
-
-                            <div class="lookbook-editorial-text-block">
-                                <div class="lookbook-text-tag">Case Studio 03 // Social Scale</div>
-                                <p>To transform flat organic reach and disjointed visual branding across channels, we replaced standard industry graphics with high-end, editorial video aesthetics. Our team built dedicated, educational content carousels explaining structural brand secrets to strengthen the value behind social media outreach.</p>
-                            </div>
+                        <div class="portfolio-hero-dark-panel">
+                            <h2>Retention & Sequencing</h2>
+                            <p>To improve low open rates across industrial parts buyers, we segmented technical engineering leads from corporate procurement officers to deliver hyper-specific messaging. Our team engineered premium, educational storytelling frameworks that elevated dry product sheets into high-value insights.</p>
                         </div>
+                    </div>
 
+                    <div class="portfolio-asymmetric-hero">
+                        <div class="portfolio-hero-image-frame">
+                            <img src="project3_slide1.png" alt="Short Form Cinematic Pipeline Frame">
+                        </div>
+                        <div class="portfolio-hero-dark-panel">
+                            <h2>Social Scale</h2>
+                            <p>To transform flat organic reach and disjointed visual branding across channels, we replaced standard industry graphics with high-end, editorial video aesthetics. Our team built dedicated, educational content carousels explaining structural brand secrets to strengthen the value behind social media outreach.</p>
+                        </div>
                     </div>
 
                 </div>
