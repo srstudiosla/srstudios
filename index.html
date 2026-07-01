@@ -450,81 +450,201 @@
             display: block;
         }
 
-        /* --- PORTFOLIO SYSTEM --- */
-        .portfolio-header-block {
-            text-align: center;
-            padding: 4rem 2rem;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .portfolio-header-block h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
-            font-weight: 400;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .portfolio-disclaimer {
-            font-family: var(--font-sans);
-            font-weight: 300;
-            font-size: 0.95rem;
-            color: var(--text-secondary); 
-            line-height: 1.7;
-        }
-
+        /* --- REDESIGNED SELECTED WORKS LAYOUT (FOLLOWING SCREENSHOT 2026-06-30 AT 7.22.17 PM.JPG) --- */
         .portfolio-magazine-container {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 6rem;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .portfolio-asymmetric-hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background-color: var(--surface-color);
+        /* Section 1: Hero Block Cover Style */
+        .portfolio-hero-block {
+            width: 100%;
+            height: 70vh;
+            min-height: 480px;
+            position: relative;
+            background-color: var(--accent-color);
+            display: flex;
             align-items: center;
+            justify-content: center;
+            overflow: hidden;
             border: 1px solid var(--tan-accent);
         }
 
-        .portfolio-hero-image-frame {
-            position: relative;
-            min-height: 500px;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .portfolio-hero-image-frame img {
-            width: 100%;
-            height: 100%;
+        .portfolio-hero-block img {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
+            opacity: 0.65;
         }
 
-        .portfolio-hero-dark-panel {
+        .portfolio-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--surface-color);
+            padding: 2rem;
+        }
+
+        .portfolio-hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+        }
+
+        /* Section 2: Advertising Layout ("Our Why" transformation) */
+        .portfolio-advertising-section {
+            width: 100%;
             background-color: var(--surface-color);
-            color: var(--text-primary);
-            padding: 5rem 4rem;
+            border: 1px solid var(--tan-accent);
+            padding: 4.5rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .adv-left-content {
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
-        .portfolio-hero-dark-panel h2 {
+        .adv-header-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .adv-header-tag {
+            font-family: var(--font-sans);
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .adv-main-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-size: clamp(2.5rem, 4.5vw, 3.8rem);
             font-weight: 400;
-            line-height: 1.25;
-            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            line-height: 1;
+            color: var(--text-primary);
         }
 
-        .portfolio-hero-dark-panel p {
+        .adv-body-text {
             font-family: var(--font-sans);
             font-weight: 300;
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .adv-image-collage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .adv-collage-frame {
+            background-color: var(--tan-accent);
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            border: 1px solid var(--tan-accent);
+        }
+
+        .adv-collage-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        /* Section 3: UI/UX Projects Layout ("Recent Posts" transformation) */
+        .portfolio-uiux-section {
+            width: 100%;
+            background-color: #211C1A; /* Ultra dark elegant espresso background panel */
+            color: #FAF6F0;
+            border: 1px solid #141110;
+            padding: 5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .uiux-section-label {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: #A39992;
+            margin-bottom: 0.75rem;
+        }
+
+        .uiux-main-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .uiux-cards-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .uiux-project-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .uiux-card-image-wrapper {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background-color: #38312E;
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .uiux-card-image-wrapper img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s ease;
+            opacity: 0.85;
+        }
+
+        .uiux-project-card:hover .uiux-card-image-wrapper img {
+            transform: scale(1.02);
+            opacity: 1;
+        }
+
+        .uiux-card-meta {
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #A39992;
+            margin-bottom: 0.4rem;
+        }
+
+        .uiux-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #FFFFFF;
+            letter-spacing: 0.02em;
         }
 
         /* --- SERVICES & BRAND SYSTEMS --- */
@@ -711,9 +831,10 @@
             .retainer-grid { grid-template-columns: 100%; gap: 2rem; }
             .services-row { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 0; }
             
-            .portfolio-asymmetric-hero { grid-template-columns: 100%; }
-            .portfolio-hero-image-frame { min-height: 350px; }
-            .portfolio-hero-dark-panel { padding: 3rem 1.5rem; }
+            /* Portfolio responsive fixes */
+            .portfolio-advertising-section { grid-template-columns: 100%; gap: 3rem; padding: 3rem 1.5rem; }
+            .uiux-cards-grid { grid-template-columns: 100%; gap: 2.5rem; }
+            .portfolio-uiux-section { padding: 4rem 1.5rem; }
         }
     </style>
 </head>
@@ -721,10 +842,10 @@
 
     <header>
         <nav class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-home')">Get Started</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-about')">About Us</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
@@ -734,7 +855,7 @@
     <div class="site-wrapper">
         <main>
 
-            <div id="tab-home" class="tab-panel active">
+            <div id="tab-home" class="tab-panel">
                 
                 <section class="agency-hero-section">
                     <div class="hero-left-editorial">
@@ -828,7 +949,7 @@
                 <section class="retention-promo-split">
                     <div class="retention-text-block">
                         <h2>Dedicated Scale Management</h2>
-                        <p>Our monthly premium partnership retainers act as a seamless extension of your marketing department. We combine performance tracking logs with tailored brand toolkits sent directly to your team monthly to align strategy with real growth outcomes. Join our retainer program and you will also recieve a monthly care package, hand curated by our founder. </p>
+                        <p>Our monthly premium partnership retainers act as a seamless extension of your marketing department. We combine performance tracking logs with tailored brand toolkits sent directly to your team monthly to align strategy with real growth outcomes.</p>
                         <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-editorial-action">
                             Explore Retainers
                         </a>
@@ -910,43 +1031,67 @@
                 </div>
             </div>
 
-            <div id="tab-selected-work" class="tab-panel">
-                <div class="portfolio-header-block">
-                    <h1>Selected Projects</h1>
-                    <p class="portfolio-disclaimer">
-                        A precise look under the hood of our high-ticket digital execution. To maintain absolute data integrity, all corporate identities are anonymized.
-                    </p>
-                </div>
-                
+            <div id="tab-selected-work" class="tab-panel active">
                 <div class="portfolio-magazine-container">
                     
-                    <div class="portfolio-asymmetric-hero">
-                        <div class="portfolio-hero-image-frame">
-                            <img src="project1_slide1.png" alt="Google Shopping Performance Layout Framework">
-                        </div>
-                        <div class="portfolio-hero-dark-panel">
-                            <h2>Google Shopping Architecture & Creative Testing</h2>
-                            <p>We shifted away from broad-reach campaigns to highly refined, exact audience segments within the biotech space. Initially, we deployed a rigorous optimization loop, launching 2 to 3 new A/B test campaigns every week to aggressively isolate top assets. This replaced standard, low-effort product listings with high-quality, premium creative variations.</p>
+                    <!-- Redesigned Section 1: Hero Block Cover Style -->
+                    <div class="portfolio-hero-block">
+                        <img src="selected_work_hero_cover.png" alt="Selected Work Cinematic Hero Preview Showcase Frame">
+                        <div class="portfolio-hero-content">
+                            <h1 class="portfolio-hero-title">Selected Work</h1>
                         </div>
                     </div>
 
-                    <div class="portfolio-asymmetric-hero">
-                        <div class="portfolio-hero-image-frame">
-                            <img src="project2_slide1.png" alt="Email Marketing Retention Matrix Spread">
+                    <!-- Redesigned Section 2: Advertising Layout -->
+                    <div class="portfolio-advertising-section">
+                        <div class="adv-left-content">
+                            <div class="adv-header-group">
+                                <span class="adv-header-tag">01 // Acquisition Funnels</span>
+                                <h2 class="adv-main-title">Advertising</h2>
+                            </div>
+                            <p class="adv-body-text">
+                                We shift away from broad-reach campaigns to highly refined, exact audience segments. By executing strict asset optimization loops and creative iteration metrics, we replace standard industry assets with high-converting, performance-driven advertising systems across Google Shopping and paid social.
+                            </p>
                         </div>
-                        <div class="portfolio-hero-dark-panel">
-                            <h2>Retention & Sequencing</h2>
-                            <p>To improve low open rates across industrial parts buyers, we segmented technical engineering leads from corporate procurement officers to deliver hyper-specific messaging. Our team engineered premium, educational storytelling frameworks that elevated dry product sheets into high-value insights.</p>
+                        <div class="adv-image-collage-grid">
+                            <div class="adv-collage-frame">
+                                <img src="project1_slide1.png" alt="Google Shopping Performance Ad Creative Layout">
+                            </div>
+                            <div class="adv-collage-frame">
+                                <img src="home_production.png" alt="Short Form Campaign Performance Grid Asset">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="portfolio-asymmetric-hero">
-                        <div class="portfolio-hero-image-frame">
-                            <img src="project3_slide1.png" alt="Short Form Cinematic Pipeline Frame">
-                        </div>
-                        <div class="portfolio-hero-dark-panel">
-                            <h2>Social Scale</h2>
-                            <p>To transform flat organic reach and disjointed visual branding across channels, we replaced standard industry graphics with high-end, editorial video aesthetics. Our team built dedicated, educational content carousels explaining structural brand secrets to strengthen the value behind social media outreach.</p>
+                    <!-- Redesigned Section 3: UI/UX Projects Layout -->
+                    <div class="portfolio-uiux-section">
+                        <span class="uiux-section-label">Digital Retainer Frameworks</span>
+                        <h2 class="uiux-main-title">UI/UX Projects</h2>
+                        
+                        <div class="uiux-cards-grid">
+                            <div class="uiux-project-card">
+                                <div class="uiux-card-image-wrapper">
+                                    <img src="home_brand_strat.png" alt="E-Commerce Conversion Optimization Storefront Wireframe View">
+                                </div>
+                                <div class="uiux-card-meta">Platform Design // 01</div>
+                                <h3 class="uiux-card-title">Conversion Path Architecture</h3>
+                            </div>
+                            
+                            <div class="uiux-project-card">
+                                <div class="uiux-card-image-wrapper">
+                                    <img src="home_content_messaging.png" alt="Retention Funnel Wireframe Interaction Flows Spread">
+                                </div>
+                                <div class="uiux-card-meta">User Flow // 02</div>
+                                <h3 class="uiux-card-title">Retention Matrix Interfaces</h3>
+                            </div>
+                            
+                            <div class="uiux-project-card">
+                                <div class="uiux-card-image-wrapper">
+                                    <img src="project2_slide1.png" alt="Mobile Checkout Experience Interface Prototypes View">
+                                </div>
+                                <div class="uiux-card-meta">Mobile Flow // 03</div>
+                                <h3 class="uiux-card-title">High-Velocity Checkouts</h3>
+                            </div>
                         </div>
                     </div>
 
