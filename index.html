@@ -807,6 +807,99 @@
             margin: 2rem 0;
         }
 
+        /* --- TESTIMONIALS TAB SYSTEM --- */
+        .testimonial-editorial-card {
+            width: 100%;
+            background-color: var(--surface-color);
+            border: 1px solid var(--tan-accent);
+            padding: 5rem 4.5rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-left-block {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-large-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+            line-height: 1.55;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .testimonial-meta-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .testimonial-client-name {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .testimonial-client-brand {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .testimonial-right-metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: #FAF8F5;
+            border: 1px solid var(--tan-accent);
+            padding: 3.5rem 3rem;
+        }
+
+        .metric-rating-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .metric-rating-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .metric-rating-visual {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .metric-stars {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            letter-spacing: 0.15em;
+        }
+
+        .metric-score-text {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
         /* --- PARTNERSHIPS GRID --- */
         .retainer-grid {
             display: grid;
@@ -956,6 +1049,10 @@
             .portfolio-disco-section { grid-template-columns: 100%; padding: 3rem 1.5rem; gap: 3.5rem; }
             .disco-left-collage { height: 380px; }
             .disco-right-content { padding-left: 0; }
+
+            /* Testimonials Responsive */
+            .testimonial-editorial-card { grid-template-columns: 100%; padding: 3rem 1.5rem; gap: 3rem; }
+            .testimonial-right-metrics { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -966,8 +1063,9 @@
             <button class="tab-btn" onclick="switchTab(event, 'tab-home')">Get Started</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-testimonials')">Testimonials</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-about')">About Us</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
         </nav>
@@ -976,8 +1074,8 @@
     <div class="site-wrapper">
         <main>
 
+            <!-- TAB: GET STARTED / HOME -->
             <div id="tab-home" class="tab-panel">
-                
                 <section class="agency-hero-section">
                     <div class="hero-left-editorial">
                         <div class="hero-tag">Integrated Growth Studio</div>
@@ -1079,9 +1177,9 @@
                         <img src="retention_partnership_showcase.png" alt="Retention Infrastructure Performance Architecture">
                     </div>
                 </section>
-
             </div>
 
+            <!-- TAB: SERVICES -->
             <div id="tab-services" class="tab-panel">
                 <div class="services-wrapper">
                     <div class="section-header-block">
@@ -1109,6 +1207,7 @@
                 </div>
             </div>
 
+            <!-- TAB: BRAND ARCHITECT -->
             <div id="tab-brand" class="tab-panel">
                 <div class="services-wrapper">
                     <div class="section-header-block">
@@ -1152,9 +1251,9 @@
                 </div>
             </div>
 
-            <div id="tab-selected-work" class="tab-panel active">
+            <!-- TAB: SELECTED WORK -->
+            <div id="tab-selected-work" class="tab-panel">
                 <div class="portfolio-magazine-container">
-                    
                     <div class="portfolio-hero-block">
                         <img src="selectedhero.png" alt="Selected Work Cinematic Hero Preview Showcase Frame">
                         <div class="portfolio-hero-content">
@@ -1183,7 +1282,6 @@
 
                     <div class="portfolio-uiux-section">
                         <h2 class="uiux-main-title">UI/UX</h2>
-                        
                         <div class="uiux-cards-grid">
                             <div class="uiux-project-card">
                                 <div class="uiux-card-image-wrapper">
@@ -1228,23 +1326,23 @@
                         <div class="disco-right-content">
                             <div class="disco-title-container">
                                 <h2 class="disco-headline">
-                                    Cardio Dance <span>Disco.</span>
+                                    Creating <span>Disruption.</span>
                                 </h2>
                             </div>
                             <div class="disco-meta-row">
-                                <span class="disco-tag">Presented by:</span>
+                                <span class="disco-tag">Breaking / Norms</span>
                                 <div class="disco-divider-small"></div>
-                                <span class="disco-tag">Girl Please</span>
+                                <span class="disco-tag">Hardly Traditional</span>
                             </div>
                             <p class="disco-description">
-                                When designing for Cardio Dance Disco, the goal was to showcase the high-energy of Girl Please through beautifully crafted, high-energy creatives. 
+                                Cardio Dance Disco by Girl Please breaks traditional visual rules to design high-energy systems. Aligning performance metrics with striking layout disruption, we produce immersive digital interfaces that build strong communities and drive engagement.
                             </p>
                         </div>
                     </div>
-
                 </div>
             </div>
 
+            <!-- TAB: PARTNERSHIP RETAINERS -->
             <div id="tab-retainers" class="tab-panel">
                 <div class="section-header-block">
                     <div class="section-tagline">Sustained Growth Management</div>
@@ -1290,6 +1388,56 @@
                 </div>
             </div>
 
+            <!-- TAB: TESTIMONIALS -->
+            <div id="tab-testimonials" class="tab-panel active">
+                <div class="section-header-block">
+                    <div class="section-tagline">Verified Client Outcomes</div>
+                    <h1 class="section-title">Testimonials</h1>
+                </div>
+
+                <div class="testimonial-editorial-card">
+                    <div class="testimonial-left-block">
+                        <blockquote class="testimonial-large-quote">
+                            "Staton at SR Studios was amazing! From the moment I met her I could tell she was a go getter. She responded to my original email right away, asked the right questions and was willing to do the work. I received multiple mockups and was able to make changes. I appreciated the collaborative environment and look forward to my next project."
+                        </blockquote>
+                        <div class="testimonial-meta-block">
+                            <span class="testimonial-client-name">— Loren</span>
+                            <span class="testimonial-client-brand">Cardio Dance Disco</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-right-metrics">
+                        <!-- Metric 1 -->
+                        <div class="metric-rating-row">
+                            <div class="metric-rating-label">Communication Skills</div>
+                            <div class="metric-rating-visual">
+                                <span class="metric-stars">★★★★★</span>
+                                <span class="metric-score-text">5.0 / 5.0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Metric 2 -->
+                        <div class="metric-rating-row">
+                            <div class="metric-rating-label">Project Delivery Speed</div>
+                            <div class="metric-rating-visual">
+                                <span class="metric-stars">★★★★★</span>
+                                <span class="metric-score-text">5.0 / 5.0</span>
+                            </div>
+                        </div>
+
+                        <!-- Metric 3 -->
+                        <div class="metric-rating-row">
+                            <div class="metric-rating-label">Overall Satisfaction</div>
+                            <div class="metric-rating-visual">
+                                <span class="metric-stars">★★★★★</span>
+                                <span class="metric-score-text">5.0 / 5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB: ABOUT -->
             <div id="tab-about" class="tab-panel">
                 <div class="services-wrapper">
                     <div class="section-header-block">
@@ -1307,6 +1455,7 @@
                 </div>
             </div>
 
+            <!-- TAB: CONTACT -->
             <div id="tab-contact" class="tab-panel">
                 <div class="contact-wrapper">
                     <h2>Initiate Partnership</h2>
