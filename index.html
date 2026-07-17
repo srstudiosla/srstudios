@@ -208,8 +208,8 @@
 
         .testimonial-quote {
             font-family: var(--font-serif);
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            line-height: 1.5;
+            font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+            line-height: 1.55;
             font-weight: 400;
             color: var(--text-primary);
             margin-bottom: 2rem;
@@ -595,6 +595,7 @@
             letter-spacing: 0.05em;
             margin-bottom: 4rem;
             text-align: center;
+            color: #FFFFFF;
         }
 
         .uiux-cards-grid {
@@ -809,7 +810,6 @@
 
         .email-image-frame {
             width: 100%;
-            /* Uses padding-top to force a long, vertical aspect ratio that perfectly displays full-length email designs without clipping */
             position: relative;
             padding-top: 250%; /* Adjust height proportion dynamically */
             background-color: var(--tan-accent);
@@ -1153,12 +1153,12 @@
 
     <header>
         <nav class="nav-tabs">
-            <button class="tab-btn" onclick="switchTab(event, 'tab-home')">Get Started</button>
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-services')">Services</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-brand')">Brand Architect</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-selected-work')">Selected Work</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-retainers')">Partnerships</button>
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-testimonials')">Testimonials</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-testimonials')">Testimonials</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-about')">About Us</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-contact')">Contact</button>
         </nav>
@@ -1168,7 +1168,7 @@
         <main>
 
             <!-- TAB: GET STARTED / HOME -->
-            <div id="tab-home" class="tab-panel">
+            <div id="tab-home" class="tab-panel active">
                 <section class="agency-hero-section">
                     <div class="hero-left-editorial">
                         <div class="hero-tag">Integrated Growth Studio</div>
@@ -1184,9 +1184,9 @@
                     </div>
                     <div class="hero-right-testimonial">
                         <p class="testimonial-quote">
-                            "At SR Studios, we don't just follow market trends—we build the frameworks that anticipate them. We engineered this agency to bridge the gap between high-end visual architecture and raw conversion performance, backed by a culture of absolute alignment with our partners."
+                            "Staton at SR Studios was amazing! From the moment I met her I could tell she was a go getter. She responded to my original email right away, asked the right questions and was willing to do the work. I received multiple mockups and was able to make changes. I appreciated the collaborative environment and look forward to my next project."
                         </p>
-                        <div class="testimonial-author">— Founder Ryan Murray</div>
+                        <div class="testimonial-author">— Loren, Cardio Dance Disco</div>
                     </div>
                 </section>
 
@@ -1545,7 +1545,7 @@
             </div>
 
             <!-- TAB: TESTIMONIALS -->
-            <div id="tab-testimonials" class="tab-panel active">
+            <div id="tab-testimonials" class="tab-panel">
                 <div class="section-header-block">
                     <div class="section-tagline">Verified Client Outcomes</div>
                     <h1 class="section-title">Testimonials</h1>
