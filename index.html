@@ -763,6 +763,95 @@
             color: var(--text-secondary);
         }
 
+        /* --- NEW SECTION: EMAIL MARKETING --- */
+        .portfolio-emails-section {
+            width: 100%;
+            background-color: var(--surface-color);
+            border: 1px solid var(--tan-accent);
+            padding: 5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .emails-section-tag {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .emails-main-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .emails-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .email-template-card {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .email-image-frame {
+            width: 100%;
+            /* Uses padding-top to force a long, vertical aspect ratio that perfectly displays full-length email designs without clipping */
+            position: relative;
+            padding-top: 250%; /* Adjust height proportion dynamically */
+            background-color: var(--tan-accent);
+            border: 1px solid var(--tan-accent);
+            overflow: hidden;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .email-image-frame img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .email-template-card:hover .email-image-frame {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .email-meta {
+            font-family: var(--font-sans);
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .email-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
         /* --- SERVICES & BRAND SYSTEMS --- */
         .services-wrapper {
             display: flex;
@@ -1049,6 +1138,10 @@
             .portfolio-disco-section { grid-template-columns: 100%; padding: 3rem 1.5rem; gap: 3.5rem; }
             .disco-left-collage { height: 380px; }
             .disco-right-content { padding-left: 0; }
+
+            /* Emails Section Responsive */
+            .emails-grid { grid-template-columns: 100%; gap: 3.5rem; }
+            .portfolio-emails-section { padding: 4rem 1.5rem; }
 
             /* Testimonials Responsive */
             .testimonial-editorial-card { grid-template-columns: 100%; padding: 3rem 1.5rem; gap: 3rem; }
@@ -1339,6 +1432,69 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- EMAIL MARKETING PORTFOLIO SECTION -->
+                    <div class="portfolio-emails-section">
+                        <span class="emails-section-tag">Retention Design Portfolio</span>
+                        <h2 class="emails-main-title">email marketing you can't get enough of</h2>
+                        
+                        <div class="emails-grid">
+                            <!-- Template 1 -->
+                            <div class="email-template-card">
+                                <div class="email-image-frame">
+                                    <img src="email_template_1.png" alt="Editorial Interior Design Email Layout 1">
+                                </div>
+                                <span class="email-meta">Campaign Design // 01</span>
+                                <h3 class="email-title">Unforgettable Interiors Editorial Sequence</h3>
+                            </div>
+
+                            <!-- Template 2 -->
+                            <div class="email-template-card">
+                                <div class="email-image-frame">
+                                    <img src="email_template_2.png" alt="Editorial Interior Design Email Layout 2">
+                                </div>
+                                <span class="email-meta">Campaign Design // 02</span>
+                                <h3 class="email-title">Cozy Living Space Showcase Architecture</h3>
+                            </div>
+
+                            <!-- Template 3 -->
+                            <div class="email-template-card">
+                                <div class="email-image-frame">
+                                    <img src="email_template_3.png" alt="Editorial Interior Design Email Layout 3">
+                                </div>
+                                <span class="email-meta">Campaign Design // 03</span>
+                                <h3 class="email-title">Tactile Autumn Textures Narrative Layout</h3>
+                            </div>
+
+                            <!-- Template 4 -->
+                            <div class="email-template-card">
+                                <div class="email-image-frame">
+                                    <img src="email_template_4.png" alt="Matcha Wellness Email Layout 1">
+                                </div>
+                                <span class="email-meta">Campaign Design // 04</span>
+                                <h3 class="email-title">Pure Green Energy Campaign</h3>
+                            </div>
+
+                            <!-- Template 5 -->
+                            <div class="email-template-card">
+                                <div class="email-image-frame">
+                                    <img src="email_template_5.png" alt="Matcha Wellness Email Layout 2">
+                                </div>
+                                <span class="email-meta">Campaign Design // 05</span>
+                                <h3 class="email-title">Your Daily Dose of Green Retention Series</h3>
+                            </div>
+
+                            <!-- Template 6 -->
+                            <div class="email-template-card">
+                                <div class="email-image-frame">
+                                    <img src="email_template_6.png" alt="Matcha Wellness Email Layout 3">
+                                </div>
+                                <span class="email-meta">Campaign Design // 06</span>
+                                <h3 class="email-title">Strawberry Matcha Editorial Launch Sequence</h3>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
