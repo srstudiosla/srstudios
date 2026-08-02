@@ -852,6 +852,69 @@
             line-height: 1.3;
         }
 
+        /* --- SIDE BY SIDE WEBSITE & EMAIL MOCKUP PAIR SECTION --- */
+        .portfolio-sidebyside-section {
+            width: 100%;
+            background-color: var(--surface-color);
+            border: 1px solid var(--tan-accent);
+            padding: 5rem 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebyside-container {
+            width: 100%;
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .sidebyside-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebyside-header {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .sidebyside-frame {
+            width: 100%;
+            position: relative;
+            background-color: var(--tan-accent);
+            border: 1px solid var(--tan-accent);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Proportional Aspect Ratios derived from source image dimensions */
+        .sidebyside-frame.website-frame {
+            padding-top: 531.73%; /* (7657 / 1440) * 100 */
+        }
+
+        .sidebyside-frame.email-frame {
+            padding-top: 322.29%; /* (4641 / 1440) * 100 */
+        }
+
+        .sidebyside-frame img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         /* --- SERVICES & BRAND SYSTEMS --- */
         .services-wrapper {
             display: flex;
@@ -1142,6 +1205,10 @@
             /* Emails Section Responsive */
             .emails-grid { grid-template-columns: 100%; gap: 3.5rem; }
             .portfolio-emails-section { padding: 4rem 1.5rem; }
+
+            /* Side by Side Responsive */
+            .portfolio-sidebyside-section { padding: 4rem 1.5rem; }
+            .sidebyside-container { flex-direction: column; gap: 3rem; }
 
             /* Testimonials Responsive */
             .testimonial-editorial-card { grid-template-columns: 100%; padding: 3rem 1.5rem; gap: 3rem; }
@@ -1480,8 +1547,8 @@
                         </div>
                     </div>
 
-                    <!-- NEW ADDITION: PREMIUM SKINCARE RETENTION SERIES -->
-                    <div class="portfolio-emails-section" style="border-top: none; padding-top: 0; margin-bottom: 2rem;">
+                    <!-- PREMIUM SKINCARE RETENTION SERIES -->
+                    <div class="portfolio-emails-section" style="border-top: none; padding-top: 0; margin-bottom: 0;">
                         <div class="emails-grid">
                             <!-- Skincare Email 1 -->
                             <div class="email-template-card">
@@ -1501,6 +1568,27 @@
                             <div class="email-template-card">
                                 <div class="email-image-frame">
                                     <img src="email_template_9.png" alt="Dewy Textures Campaign - Your Daily Dose of Dewy Layout">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIDE-BY-SIDE WEBSITE & EMAIL MOCKUP SHOWCASE -->
+                    <div class="portfolio-sidebyside-section">
+                        <div class="sidebyside-container">
+                            <!-- Left Slot: Website Mockup (1440 x 7657) -->
+                            <div class="sidebyside-col">
+                                <div class="sidebyside-header">Home</div>
+                                <div class="sidebyside-frame website-frame">
+                                    <img src="natural_glam_website.png" alt="Natural Glam Website Mockup">
+                                </div>
+                            </div>
+
+                            <!-- Right Slot: Email Mockup (1440 x 4641) -->
+                            <div class="sidebyside-col">
+                                <div class="sidebyside-header">Email</div>
+                                <div class="sidebyside-frame email-frame">
+                                    <img src="natural_glam_email.png" alt="Natural Glam Email Mockup">
                                 </div>
                             </div>
                         </div>
