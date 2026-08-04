@@ -232,48 +232,6 @@
             font-weight: 600;
         }
 
-        /* --- METRICS STRIP (Grid layout fully preserved) --- */
-        .agency-metrics-strip {
-            width: 100%;
-            background-color: var(--surface-color);
-            padding: 4rem 2rem;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            text-align: center;
-            border-bottom: 1px solid var(--tan-accent);
-        }
-
-        .metric-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-right: 1px solid var(--tan-accent);
-            padding: 0 1rem;
-        }
-        .metric-block:last-child {
-            border-right: none;
-        }
-
-        .metric-number {
-            font-family: var(--font-serif);
-            font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-            font-weight: 400;
-            color: var(--text-primary);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-label {
-            font-family: var(--font-sans);
-            text-transform: uppercase;
-            font-size: 0.68rem;
-            letter-spacing: 0.15em;
-            color: var(--text-secondary);
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
         /* --- MANIFESTO BLOCK --- */
         .manifesto-container {
             width: 100%;
@@ -1182,8 +1140,6 @@
             .agency-hero-section { grid-template-columns: 100%; }
             .hero-left-editorial { padding: 3rem 1.5rem; }
             .hero-right-testimonial { border-left: none; border-top: 1px solid var(--tan-accent); padding: 3rem 1.5rem; }
-            .agency-metrics-strip { grid-template-columns: repeat(2, 1fr); gap: 2rem; padding: 2rem 1rem; }
-            .metric-block { border-right: none; padding: 1rem 0; }
             .manifesto-container { grid-template-columns: 100%; gap: 3rem; }
             .capabilities-grid { grid-template-columns: 100%; gap: 3rem; }
             .retention-promo-split { grid-template-columns: 100%; }
@@ -1254,25 +1210,6 @@
                             "Staton at SR Studios was amazing! From the moment I met her I could tell she was a go getter. She responded to my original email right away, asked the right questions and was willing to do the work. I received multiple mockups and was able to make changes. I appreciated the collaborative environment and look forward to my next project."
                         </p>
                         <div class="testimonial-author">— Loren, Cardio Dance Disco</div>
-                    </div>
-                </section>
-
-                <section class="agency-metrics-strip">
-                    <div class="metric-block">
-                        <div class="metric-number" style="font-size: clamp(1.1rem, 1.8vw, 1.4rem); font-weight: 500; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.05em;">Industry-experienced marketing</div>
-                        <div class="metric-label">Multi-Million Dollar Companies</div>
-                    </div>
-                    <div class="metric-block">
-                        <div class="metric-number">100+</div>
-                        <div class="metric-label">Campaigns Launched Across Partners</div>
-                    </div>
-                    <div class="metric-block">
-                        <div class="metric-number">250+</div>
-                        <div class="metric-label">Conversion Assets</div>
-                    </div>
-                    <div class="metric-block">
-                        <div class="metric-number">20+</div>
-                        <div class="metric-label">Premium Partnerships Across Industries</div>
                     </div>
                 </section>
 
