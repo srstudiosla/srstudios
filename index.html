@@ -19,7 +19,7 @@
             --text-secondary: #CCCCCC;       /* Soft light gray */
             --text-dark: #1A1A1A;            /* Dark text for light cream sections */
             --pink-script: #D88CB3;          /* Signature pink accent */
-            --red-accent: #8B0000;           /* Deep burgundy pill button / red accents */
+            --red-accent: #800000;           /* Deep burgundy pill button / red accents */
             --border-color: #333333;         /* Subtle dark borders */
             
             /* Clean Editorial Typography Systems */
@@ -573,10 +573,10 @@
             display: block;
         }
 
-        /* --- STAGGERED OUR PARTNERS SECTION (WITH DARK SURFACE BLOCK) --- */
+        /* --- STAGGERED OUR PARTNERS SECTION --- */
         .about-partners-section-new {
             width: 100%;
-            background-color: var(--surface-color); /* #121212 universal backdrop */
+            background-color: var(--surface-color);
             padding: 7rem 2rem 6rem 2rem;
             text-align: center;
             border-top: 1px solid var(--border-color);
@@ -683,7 +683,7 @@
         /* --- EDITORIAL ABOUT BOTTOM SECTIONS --- */
         .about-client-box-section {
             width: 100%;
-            background-color: var(--bg-color); /* #1A1A1A backdrop */
+            background-color: var(--bg-color);
             padding: 6rem 2rem;
             text-align: left;
             max-width: 1100px;
@@ -848,64 +848,217 @@
             display: block;
         }
 
-        .section-header-block {
-            padding: 4rem 0 2rem 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
+        /* --- NEW EDITORIAL PARTNERSHIPS / RETAINERS PAGE STYLES --- */
+        .retainers-page-wrapper {
             width: 100%;
-        }
-        .section-tagline { font-family: var(--font-sans); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-secondary); margin-bottom: 0.75rem; }
-        .section-title { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; }
-
-        /* --- PARTNERSHIPS GRID --- */
-        .retainer-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0 6rem 0;
-            width: 100%;
-        }
-
-        .retainer-card {
-            background-color: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 3.5rem 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            background-color: #E2DDD5;
+            color: #1A1A1A;
+            padding-bottom: 6rem;
         }
 
-        .retainer-tier-name {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .retainer-bullets {
-            list-style-type: none;
-            color: var(--text-secondary);
-            font-family: var(--font-sans);
-            font-weight: 300;
-            font-size: 0.88rem;
-            line-height: 1.65;
-        }
-
-        .retainer-bullets li {
-            margin-bottom: 1rem;
+        /* Hero Header with Overlay Text */
+        .retainers-hero-banner {
+            width: 100%;
+            height: 380px;
             position: relative;
-            padding-left: 1.25rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('hero_bg_dark.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .retainer-bullets li::before {
+        .retainers-hero-banner h1 {
+            font-family: var(--font-title);
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            color: #FFFFFF;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* What We Offer Hero Grid */
+        .what-we-offer-grid {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            margin-top: -60px;
+            z-index: 10;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .offer-red-box {
+            background-color: var(--red-accent);
+            min-height: 280px;
+        }
+
+        .offer-image-box {
+            position: relative;
+            background: url('unboxing_box.png') center/cover no-repeat;
+            min-height: 280px;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        .offer-overlay-title {
+            font-family: var(--font-title);
+            font-size: clamp(3rem, 6.5vw, 5.5rem);
+            color: #BDBDBD;
+            line-height: 0.9;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* Retainer Block Cards */
+        .retainer-card-container {
+            width: 100%;
+            max-width: 1050px;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .retainer-block {
+            width: 100%;
+            padding: 3.5rem 4rem;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .retainer-block.block-foundational {
+            background-color: #E8E4DD;
+            color: #1A1A1A;
+        }
+
+        .retainer-block.block-omnichannel {
+            background-color: var(--red-accent);
+            color: #FFFFFF;
+        }
+
+        .retainer-block.block-fullsuite {
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+        }
+
+        .retainer-block-title {
+            font-family: var(--font-title);
+            font-size: 2.6rem;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .retainer-block-content h3 {
+            font-family: var(--font-title);
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+        }
+
+        .retainer-block-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .retainer-block-content li {
+            font-size: 0.78rem;
+            line-height: 1.5;
+            font-weight: 300;
+            position: relative;
+            padding-left: 1rem;
+            opacity: 0.95;
+        }
+
+        .retainer-block-content li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: var(--text-secondary);
-            opacity: 0.5;
+            top: 0;
+        }
+
+        /* Retainer Mid Feature Image */
+        .retainer-mid-image {
+            width: 100%;
+            max-width: 1050px;
+            height: 220px;
+            overflow: hidden;
+            margin-top: 2.5rem;
+        }
+
+        .retainer-mid-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Additional Investments Section */
+        .additional-investments-grid {
+            width: 100%;
+            max-width: 1050px;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            margin-top: 3.5rem;
+        }
+
+        .investments-red-side {
+            background-color: var(--red-accent);
+            color: #FFFFFF;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .investments-red-side h2 {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .investments-red-side h2 span {
+            font-family: var(--font-script);
+            font-size: 2.2rem;
+            text-transform: none;
+            font-weight: 400;
+            margin-left: 0.2rem;
+        }
+
+        .investments-red-side p {
+            font-size: 0.72rem;
+            line-height: 1.6;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .investments-black-side {
+            background-color: #121212;
+            color: #FFFFFF;
+            padding: 3rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .investment-item {
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            font-weight: 300;
+            color: #E0E0E0;
         }
 
         /* --- CONTACT CONTAINER --- */
@@ -955,10 +1108,12 @@
             .testimonial-quote-banner { flex-direction: column; text-align: center; gap: 2rem; }
             .callout-pill-section { flex-direction: column; gap: 3rem; text-align: center; }
             .promise-split-section { grid-template-columns: 100%; gap: 2rem; padding: 3rem 1.5rem; }
-            .retainer-grid { grid-template-columns: 100%; gap: 2rem; }
             .about-sustainability-split-new { grid-template-columns: 100%; }
             .staggered-partners-container { height: auto; display: flex; flex-direction: column; gap: 2rem; align-items: center; }
             .partner-layer-1, .partner-layer-2, .partner-layer-3, .partner-layer-4 { position: static; width: 100%; max-width: 400px; }
+            .what-we-offer-grid { grid-template-columns: 100%; margin-top: 0; }
+            .retainer-block { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 2rem; }
+            .additional-investments-grid { grid-template-columns: 100%; }
         }
     </style>
 </head>
@@ -1171,7 +1326,7 @@
                     </div>
                 </section>
 
-                <!-- SECTION 2: OUR PARTNERS (WITH UNIVERSAL SURFACE BLOCK) -->
+                <!-- SECTION 2: OUR PARTNERS -->
                 <section class="about-partners-section-new">
                     <h2 class="about-partners-title-new">Our Partners</h2>
                     
@@ -1250,49 +1405,114 @@
                 </div>
             </div>
 
-            <!-- TAB: PARTNERSHIP RETAINERS -->
+            <!-- TAB: PARTNERSHIP RETAINERS (REVISED EDITORIAL LAYOUT) -->
             <div id="tab-retainers" class="tab-panel">
-                <div class="section-header-block">
-                    <div class="section-tagline">Sustained Growth Management</div>
-                    <h1 class="section-title">Partnership Retainers</h1>
-                </div>
+                <div class="retainers-page-wrapper">
+                    
+                    <!-- 1. Editorial Hero Header -->
+                    <div class="retainers-hero-banner">
+                        <h1>RETAINERS</h1>
+                    </div>
 
-                <div class="retainer-grid">
-                    <div class="retainer-card">
-                        <div>
-                            <h2 class="retainer-tier-name">Foundational</h2>
-                            <ul class="retainer-bullets">
-                                <li>Search Engine PPC : full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li>
-                                <li>Email Retention : 1-2 weekly newsletters & custom audience segmentation</li>
-                                <li>Reporting : weekly ROAs tracking and revenue attribution report</li>
-                                <li>+1 monthly request list from client including all marketing priorities for that month</li>
-                            </ul>
+                    <!-- 2. What We Offer Split Grid -->
+                    <div class="what-we-offer-grid">
+                        <div class="offer-red-box"></div>
+                        <div class="offer-image-box">
+                            <div class="offer-overlay-title">WHAT WE OFFER</div>
                         </div>
                     </div>
 
-                    <div class="retainer-card">
-                        <div>
-                            <h2 class="retainer-tier-name">Omnichannel Pro</h2>
-                            <ul class="retainer-bullets">
-                                <li>Everything in Foundational included (full paid search and email retention management)</li>
-                                <li>Social Media: asynchronous content scheduling, 2-3 reels weekly, 2-3 carousels weekly (all channels)</li>
-                                <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
-                                <li>Bi-weekly social media updates via loom and email</li>
-                            </ul>
+                    <!-- 3. Retainer Tier Blocks -->
+                    <div class="retainer-card-container">
+                        
+                        <!-- Foundational -->
+                        <div class="retainer-block block-foundational">
+                            <div class="retainer-block-title">Foundational</div>
+                            <div class="retainer-block-content">
+                                <h3>What's Included</h3>
+                                <ul>
+                                    <li>Paid Advertising PPC : Full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li>
+                                    <li>Email Retention : 1-2 weekly Newsletters, Flows, & custom audience segmentation</li>
+                                    <li>Reporting : weekly ROAS tracking and revenue attribution report</li>
+                                    <li>+1 monthly request list from client</li>
+                                    <li>Hand-curated client box</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Mid Feature Image -->
+                        <div class="retainer-mid-image">
+                            <img src="coffee_scale.png" alt="SR Studios Coffee Accent Visual">
+                        </div>
+
+                        <!-- Omnichannel Pro -->
+                        <div class="retainer-block block-omnichannel">
+                            <div class="retainer-block-title">Omnichannel Pro</div>
+                            <div class="retainer-block-content">
+                                <h3>What's Included</h3>
+                                <ul>
+                                    <li>Everything in Foundational included (full paid search and email retention management)</li>
+                                    <li>Social Media: asynchronous content scheduling, 2-3 reels weekly, 2-3 carousels weekly (all channels)</li>
+                                    <li>Community engagement: 30 minutes daily interacting with comments, target accounts, & dms</li>
+                                    <li>Bi-weekly asynchronous updates via loom and email</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Full-Suite Pro -->
+                        <div class="retainer-block block-fullsuite">
+                            <div class="retainer-block-title">Full-Suite Pro</div>
+                            <div class="retainer-block-content">
+                                <h3>What's Included</h3>
+                                <ul>
+                                    <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
+                                    <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyle and studio-product shots, tailored with photoshop</li>
+                                    <li>4-5 new ad creative variations weekly</li>
+                                    <li>Weekly asynchronous updates and meeting blocks</li>
+                                    <li>Full web management and audits</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 4. Additional Investments Split Section -->
+                    <div class="additional-investments-grid">
+                        <div class="investments-red-side">
+                            <h2>ADDITIONAL INVESTMENTS <span>to consider</span></h2>
+                            <p>Don't need an entire marketing team? We're happy to offer single-time services or customized options. Perfect for getting started or supporting your existing team.</p>
+                        </div>
+                        <div class="investments-black-side">
+                            <div class="investment-item">Paid Advertising – Single or Multi-Platform</div>
+                            <div class="investment-item">SMM – Single or Multi-Channel</div>
+                            <div class="investment-item">Website Development – Partial or Full</div>
+                            <div class="investment-item">Email Marketing – Campaign Series or Full Management</div>
                         </div>
                     </div>
 
-                    <div class="retainer-card">
-                        <div>
-                            <h2 class="retainer-tier-name">Full-Suite Pro</h2>
-                            <ul class="retainer-bullets">
-                                <li>Everything in Omnichannel Pro included (Paid Search, Email, Social, & Daily Engagement)</li>
-                                <li>Premium Asset Studio: In-house generation of custom, high end, AI lifestyles and studio-product shots, tailored with photoshop</li>
-                                <li>4-5 new ad creative variations weekly</li>
-                                <li>Weekly asynchronous updates and meeting blocks</li>
-                            </ul>
+                    <!-- 5. Editorial Footer Block inside Retainers -->
+                    <section class="about-footer-block" style="margin-top: 5rem; width: 100%;">
+                        <div class="about-footer-container">
+                            <div class="footer-nav-col">
+                                <h3>NAVIGATE</h3>
+                                <div class="footer-nav-links-grid">
+                                    <a href="#" onclick="switchTab(null, 'tab-home'); return false;">HOME</a>
+                                    <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;">PROJECTS</a>
+                                    <a href="#" onclick="switchTab(null, 'tab-about'); return false;">ABOUT</a>
+                                    <a href="#" onclick="switchTab(null, 'tab-contact'); return false;">CONSULTATION</a>
+                                </div>
+                            </div>
+                            <div class="footer-scale-col">
+                                <div class="footer-scale-title">Let’s<br>Scale</div>
+                                <div class="footer-scale-stack">
+                                    <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;" class="link-arrow-red">SEE OUR PROJECTS</a>
+                                    <a href="#" onclick="switchTab(null, 'tab-about'); return false;" class="link-arrow-red">OUR COMMITMENT</a>
+                                    <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="link-arrow-red">BOOK A CONSULTATION</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+
                 </div>
             </div>
 
