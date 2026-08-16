@@ -854,8 +854,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #E2DDD5;
-            color: #1A1A1A;
+            background-color: var(--bg-color);
+            color: #FFFFFF;
             padding-bottom: 6rem;
         }
 
@@ -877,42 +877,6 @@
             letter-spacing: 0.08em;
             font-weight: 400;
             text-transform: uppercase;
-        }
-
-        /* What We Offer Hero Grid */
-        .what-we-offer-grid {
-            width: 100%;
-            max-width: 1100px;
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            margin-top: -60px;
-            z-index: 10;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .offer-red-box {
-            background-color: var(--red-accent);
-            min-height: 280px;
-        }
-
-        .offer-image-box {
-            position: relative;
-            background: url('unboxing_box.png') center/cover no-repeat;
-            min-height: 280px;
-            display: flex;
-            align-items: flex-end;
-            padding: 2rem;
-        }
-
-        .offer-overlay-title {
-            font-family: var(--font-title);
-            font-size: clamp(3rem, 6.5vw, 5.5rem);
-            color: #BDBDBD;
-            line-height: 0.9;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
         }
 
         /* Retainer Block Cards */
@@ -947,6 +911,7 @@
         .retainer-block.block-fullsuite {
             background-color: #1A1A1A;
             color: #FFFFFF;
+            border: 1px solid var(--border-color);
         }
 
         .retainer-block-title {
@@ -984,21 +949,6 @@
             position: absolute;
             left: 0;
             top: 0;
-        }
-
-        /* Retainer Mid Feature Image */
-        .retainer-mid-image {
-            width: 100%;
-            max-width: 1050px;
-            height: 220px;
-            overflow: hidden;
-            margin-top: 2.5rem;
-        }
-
-        .retainer-mid-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         /* Additional Investments Section */
@@ -1052,6 +1002,7 @@
             flex-direction: column;
             justify-content: center;
             gap: 1.5rem;
+            border: 1px solid var(--border-color);
         }
 
         .investment-item {
@@ -1111,7 +1062,6 @@
             .about-sustainability-split-new { grid-template-columns: 100%; }
             .staggered-partners-container { height: auto; display: flex; flex-direction: column; gap: 2rem; align-items: center; }
             .partner-layer-1, .partner-layer-2, .partner-layer-3, .partner-layer-4 { position: static; width: 100%; max-width: 400px; }
-            .what-we-offer-grid { grid-template-columns: 100%; margin-top: 0; }
             .retainer-block { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 2rem; }
             .additional-investments-grid { grid-template-columns: 100%; }
         }
@@ -1414,15 +1364,7 @@
                         <h1>RETAINERS</h1>
                     </div>
 
-                    <!-- 2. What We Offer Split Grid -->
-                    <div class="what-we-offer-grid">
-                        <div class="offer-red-box"></div>
-                        <div class="offer-image-box">
-                            <div class="offer-overlay-title">WHAT WE OFFER</div>
-                        </div>
-                    </div>
-
-                    <!-- 3. Retainer Tier Blocks -->
+                    <!-- 2. Retainer Tier Blocks -->
                     <div class="retainer-card-container">
                         
                         <!-- Foundational -->
@@ -1438,11 +1380,6 @@
                                     <li>Hand-curated client box</li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <!-- Mid Feature Image -->
-                        <div class="retainer-mid-image">
-                            <img src="coffee_scale.png" alt="SR Studios Coffee Accent Visual">
                         </div>
 
                         <!-- Omnichannel Pro -->
@@ -1476,7 +1413,7 @@
 
                     </div>
 
-                    <!-- 4. Additional Investments Split Section -->
+                    <!-- 3. Additional Investments Split Section -->
                     <div class="additional-investments-grid">
                         <div class="investments-red-side">
                             <h2>ADDITIONAL INVESTMENTS <span>to consider</span></h2>
@@ -1490,7 +1427,7 @@
                         </div>
                     </div>
 
-                    <!-- 5. Editorial Footer Block inside Retainers -->
+                    <!-- 4. Editorial Footer Block inside Retainers -->
                     <section class="about-footer-block" style="margin-top: 5rem; width: 100%;">
                         <div class="about-footer-container">
                             <div class="footer-nav-col">
