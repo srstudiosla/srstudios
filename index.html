@@ -12,7 +12,7 @@
         /* --- BRAND PALETTE & CSS VARIABLES --- */
         :root {
             --bg-color: #1A1A1A;             /* Dark editorial backdrop */
-            --surface-color: #121212;        /* Pure dark surface */
+            --surface-color: #121212;        /* Pure dark surface block */
             --tan-accent: #333333;           /* Darker structural sand/border dividers */
             --cream-bg: #EAE6DF;             /* Light cream contrast section */
             --text-primary: #FFFFFF;         /* Crisp white text */
@@ -404,7 +404,7 @@
             padding: 6rem 2rem;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-style: space-around;
         }
 
         .btn-pill-burgundy {
@@ -519,8 +519,9 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            background-color: #121212;
+            background-color: var(--surface-color);
             align-items: stretch;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .sustainability-left-new {
@@ -572,12 +573,14 @@
             display: block;
         }
 
-        /* --- STAGGERED OUR PARTNERS SECTION --- */
+        /* --- STAGGERED OUR PARTNERS SECTION (WITH DARK SURFACE BLOCK) --- */
         .about-partners-section-new {
             width: 100%;
-            background-color: var(--bg-color);
-            padding: 7rem 2rem 4rem 2rem;
+            background-color: var(--surface-color); /* #121212 universal backdrop */
+            padding: 7rem 2rem 6rem 2rem;
             text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .about-partners-title-new {
@@ -677,13 +680,13 @@
             color: #777777;
         }
 
-        /* --- UPDATED EDITORIAL ABOUT BOTTOM SECTIONS --- */
+        /* --- EDITORIAL ABOUT BOTTOM SECTIONS --- */
         .about-client-box-section {
             width: 100%;
-            background-color: #1A1A1A;
-            padding: 5rem 2rem;
+            background-color: var(--bg-color); /* #1A1A1A backdrop */
+            padding: 6rem 2rem;
             text-align: left;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -761,10 +764,11 @@
         /* Editorial Footer Block */
         .about-footer-block {
             width: 100%;
-            background-color: #121212;
+            background-color: var(--surface-color);
             padding: 7rem 2rem 6rem 2rem;
             display: flex;
             justify-content: center;
+            border-top: 1px solid var(--border-color);
         }
 
         .about-footer-container {
@@ -1167,7 +1171,7 @@
                     </div>
                 </section>
 
-                <!-- SECTION 2: OUR PARTNERS (STAGGERED & LAYERED) -->
+                <!-- SECTION 2: OUR PARTNERS (WITH UNIVERSAL SURFACE BLOCK) -->
                 <section class="about-partners-section-new">
                     <h2 class="about-partners-title-new">Our Partners</h2>
                     
@@ -1177,14 +1181,14 @@
                             <img src="rush_product_1.png" alt="Raptor Supplements Rush Energy">
                         </div>
 
-                        <!-- Top Right Testimonial -->
+                        <!-- Top Right Testimonial Card -->
                         <div class="partner-layer-2">
                             <div class="card-stars">★★★★★</div>
                             <p class="card-quote">Staton at SR Studios was amazing! From the moment I met her I could tell she was a go getter. She responded to my original email right away, asked the right questions and was willing to do the work. I received multiple mockups and was able to make changes. I appreciated the collaborative environment and look forward to my next project.</p>
                             <div class="card-author">Cardio Dance Disco | <span>Loren</span></div>
                         </div>
 
-                        <!-- Bottom Left Testimonial -->
+                        <!-- Bottom Left Testimonial Card -->
                         <div class="partner-layer-3">
                             <div class="card-stars">★★★★★</div>
                             <p class="card-quote">Communication was direct, the work was quick, and results were high quality and exactly what I wanted.</p>
@@ -1193,7 +1197,7 @@
 
                         <!-- Bottom Right Image -->
                         <div class="partner-layer-4">
-                            <img src="cardio_disco_2.png" alt="Partner Aesthetic Graphic">
+                            <img src="cardio_disco_2.png" alt="Cardio Dance Disco Visual">
                         </div>
                     </div>
 
