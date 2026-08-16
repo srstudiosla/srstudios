@@ -18,9 +18,8 @@
             --text-primary: #FFFFFF;         /* Crisp white text */
             --text-secondary: #CCCCCC;       /* Soft light gray */
             --text-dark: #1A1A1A;            /* Dark text for light cream sections */
-            --pink-script: #D88CB3;          /* Figma signature pink/magenta accent */
-            --red-accent: #8B0000;           /* Deep burgundy pill button */
-            --accent-color: #D88CB3;         /* Primary brand accent */
+            --pink-script: #D88CB3;          /* Signature pink accent */
+            --red-accent: #8B0000;           /* Deep burgundy pill button / red accents */
             --border-color: #333333;         /* Subtle dark borders */
             
             /* Clean Editorial Typography Systems */
@@ -68,17 +67,44 @@
             flex-grow: 1;
         }
 
-        /* --- NAVIGATION HEADER --- */
+        /* --- NAVIGATION HEADER & BRAND LOGO --- */
         header {
             width: 100%;
             background-color: var(--surface-color);
             border-bottom: 1px solid var(--border-color);
             padding: 1.2rem 0; 
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+
+        .global-brand-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 0 1rem 0;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .global-brand-logo {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: #FFFFFF;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: baseline;
+            line-height: 1;
+        }
+
+        .global-brand-logo span {
+            font-family: var(--font-script);
+            font-weight: 400;
+            font-size: 2.6rem;
+            margin-left: 0.25rem;
         }
 
         .nav-tabs {
@@ -468,7 +494,7 @@
             margin-bottom: 2rem;
         }
 
-        /* --- REVISED ABOUT US TOP SECTION --- */
+        /* --- ABOUT US TOP SECTION --- */
         .about-us-hero-new {
             width: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('about_hero_bg.png') center/cover no-repeat;
@@ -478,21 +504,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-
-        .about-brand-logo {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: #FFFFFF;
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
-        }
-
-        .about-brand-logo span {
-            font-family: var(--font-script);
-            font-weight: 400;
-            font-size: 2.8rem;
-            margin-left: 0.2rem;
         }
 
         .about-us-hero-new h1 {
@@ -561,11 +572,11 @@
             display: block;
         }
 
-        /* --- REVISED STAGGERED OUR PARTNERS SECTION --- */
+        /* --- STAGGERED OUR PARTNERS SECTION --- */
         .about-partners-section-new {
             width: 100%;
             background-color: var(--bg-color);
-            padding: 7rem 2rem;
+            padding: 7rem 2rem 4rem 2rem;
             text-align: center;
         }
 
@@ -584,7 +595,6 @@
             margin: 0 auto 5rem auto;
         }
 
-        /* Top Left Image */
         .partner-layer-1 {
             position: absolute;
             top: 0;
@@ -600,7 +610,6 @@
             display: block;
         }
 
-        /* Top Right Testimonial Card */
         .partner-layer-2 {
             position: absolute;
             top: 40px;
@@ -614,7 +623,6 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.6);
         }
 
-        /* Bottom Left Testimonial Card */
         .partner-layer-3 {
             position: absolute;
             bottom: 40px;
@@ -628,7 +636,6 @@
             box-shadow: 0 25px 50px rgba(0,0,0,0.6);
         }
 
-        /* Bottom Right Image */
         .partner-layer-4 {
             position: absolute;
             bottom: 0;
@@ -668,6 +675,155 @@
         .card-author span {
             font-weight: 300;
             color: #777777;
+        }
+
+        /* --- UPDATED EDITORIAL ABOUT BOTTOM SECTIONS --- */
+        .about-client-box-section {
+            width: 100%;
+            background-color: #1A1A1A;
+            padding: 5rem 2rem;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .client-box-tagline {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .client-box-headline {
+            font-family: var(--font-title);
+            font-size: clamp(2rem, 4.5vw, 3.2rem);
+            font-weight: 400;
+            line-height: 1.25;
+            color: #FFFFFF;
+            margin-bottom: 2.5rem;
+            max-width: 900px;
+        }
+
+        /* Book Consultation Glass/Coffee Hero Banner */
+        .about-consultation-banner {
+            width: 100%;
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('coffee_scale.png') center/cover no-repeat;
+            padding: 9rem 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .consultation-tagline {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: #FFFFFF;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+        }
+
+        .consultation-headline {
+            font-family: var(--font-title);
+            font-size: clamp(3rem, 6vw, 4.8rem);
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .link-arrow-red {
+            color: #FFFFFF;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .link-arrow-red::after {
+            content: '→';
+            color: var(--red-accent);
+            font-size: 1rem;
+        }
+
+        .link-arrow-red:hover { opacity: 0.8; }
+
+        /* Editorial Footer Block */
+        .about-footer-block {
+            width: 100%;
+            background-color: #121212;
+            padding: 7rem 2rem 6rem 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-footer-container {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+        }
+
+        .footer-nav-col h3 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links-grid {
+            display: grid;
+            grid-template-columns: 120px 120px;
+            gap: 1.2rem 3rem;
+        }
+
+        .footer-nav-links-grid a {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-nav-links-grid a:hover { color: #FFFFFF; }
+
+        .footer-scale-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-scale-title {
+            font-family: var(--font-script);
+            font-size: 5rem;
+            line-height: 0.9;
+            color: #FFFFFF;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            text-transform: none;
+        }
+
+        .footer-scale-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
         }
 
         /* --- FULL BLEED PORTFOLIO SLOT --- */
@@ -768,7 +924,6 @@
             background-color: var(--surface-color); 
             border-top: 1px solid var(--border-color);
             padding: 2.5rem 0;
-            margin-top: 4rem;
             display: flex;
             justify-content: center;
         }
@@ -805,7 +960,11 @@
 </head>
 <body>
 
+    <!-- TOP FIXED HEADER WITH LOGO OVERLAY ACROSS ALL PAGES -->
     <header>
+        <a href="#" onclick="switchTab(null, 'tab-home'); return false;" class="global-brand-header">
+            <div class="global-brand-logo">SR <span>Studios</span></div>
+        </a>
         <nav class="nav-tabs">
             <button class="tab-btn active" onclick="switchTab(event, 'tab-home')">Get Started</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-about')">About Us</button>
@@ -945,7 +1104,7 @@
                         <h2 style="font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; line-height: 1.2; margin-bottom: 2rem;">
                             YOUR <span class="script-accent" style="color: var(--text-dark);">next</span><br>
                             CAMPAIGN DESERVES<br>
-                            <span class="script-accent" style="color: var(--text-dark);">high-end </span> VISUALS
+                            <span class="script-accent" style="color: var(--text-dark);">high-end</span> VISUALS
                         </h2>
                         <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-pill-burgundy">
                             BOOK A CONSULTATION
@@ -990,9 +1149,8 @@
             <!-- TAB: ABOUT US -->
             <div id="tab-about" class="tab-panel">
                 
-                <!-- REVISED TOP SECTION 1: HERO & SUSTAINABILITY -->
+                <!-- SECTION 1: HERO & SUSTAINABILITY -->
                 <section class="about-us-hero-new">
-                    <div class="about-brand-logo">SR <span>Studios</span></div>
                     <h1>ABOUT US</h1>
                 </section>
 
@@ -1009,7 +1167,7 @@
                     </div>
                 </section>
 
-                <!-- REVISED SECTION 2: OUR PARTNERS (STAGGERED & LAYERED) -->
+                <!-- SECTION 2: OUR PARTNERS (STAGGERED & LAYERED) -->
                 <section class="about-partners-section-new">
                     <h2 class="about-partners-title-new">Our Partners</h2>
                     
@@ -1049,14 +1207,14 @@
                     <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="btn-pill-burgundy">OUR RETAINERS</a>
                 </section>
 
-                <!-- SECTION 4: CONSULTATION BANNER -->
+                <!-- SECTION 4: BOOK CONSULTATION HERO BANNER -->
                 <section class="about-consultation-banner">
-                    <p class="consultation-tagline">Let's Scale</p>
+                    <p class="consultation-tagline">Let’s<br>Scale</p>
                     <h2 class="consultation-headline">Book Your Consultation</h2>
                     <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="link-arrow-red">GIVE US A CALL</a>
                 </section>
 
-                <!-- SECTION 5: FOOTER NAVIGATION BLOCK -->
+                <!-- SECTION 5: EDITORIAL FOOTER NAVIGATION -->
                 <section class="about-footer-block">
                     <div class="about-footer-container">
                         <div class="footer-nav-col">
@@ -1069,7 +1227,7 @@
                             </div>
                         </div>
                         <div class="footer-scale-col">
-                            <h3>Let's Scale</h3>
+                            <div class="footer-scale-title">Let’s<br>Scale</div>
                             <div class="footer-scale-stack">
                                 <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;" class="link-arrow-red">SEE OUR PROJECTS</a>
                                 <a href="#" onclick="switchTab(null, 'tab-about'); return false;" class="link-arrow-red">OUR COMMITMENT</a>
