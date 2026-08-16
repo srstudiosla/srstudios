@@ -6,7 +6,7 @@
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Playball&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
         /* --- BRAND PALETTE & CSS VARIABLES --- */
@@ -25,8 +25,9 @@
             
             /* Clean Editorial Typography Systems */
             --font-serif: 'Playfair Display', Georgia, serif;
+            --font-title: 'Instrument Serif', Georgia, serif;
             --font-sans: 'Montserrat', -apple-system, sans-serif;
-            --font-script: 'Playball', cursive;
+            --font-script: 'Pinyon Script', cursive;
         }
 
         /* --- GLOBAL RESET & LAYOUT --- */
@@ -148,8 +149,9 @@
         .script-accent {
             font-family: var(--font-script);
             color: var(--pink-script);
-            font-style: italic;
+            font-style: normal;
             font-weight: 400;
+            text-transform: none;
         }
 
         /* Hero Title Block */
@@ -163,7 +165,7 @@
         }
 
         .figma-hero-header h1 {
-            font-family: var(--font-serif);
+            font-family: var(--font-title);
             font-size: clamp(3.5rem, 8vw, 7rem);
             letter-spacing: 0.05em;
             font-weight: 400;
@@ -178,8 +180,8 @@
         }
 
         .big-quote-mark {
-            font-size: 5rem;
-            line-height: 1;
+            font-size: 20rem;
+            line-height: 0.8;
             opacity: 0.2;
             font-family: var(--font-serif);
         }
@@ -234,7 +236,7 @@
         }
 
         .agency-card-link .script-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 0.5rem;
         }
 
@@ -263,7 +265,7 @@
 
         .cream-subtitle {
             font-family: var(--font-script);
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--text-dark);
             display: block;
             margin-bottom: 0.5rem;
@@ -737,6 +739,7 @@
             .services-row { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 0; }
             .testimonial-editorial-card { grid-template-columns: 100%; padding: 3rem 1.5rem; gap: 3rem; }
             .testimonial-right-metrics { padding: 2rem 1.5rem; }
+            .big-quote-mark { font-size: 10rem; }
         }
     </style>
 </head>
@@ -758,7 +761,7 @@
     <div class="site-wrapper">
         <main>
 
-            <!-- TAB: GET STARTED / HOME (FIGMA REVISED) -->
+            <!-- TAB: GET STARTED / HOME -->
             <div id="tab-home" class="tab-panel active">
                 
                 <!-- 1. HERO HEADER WITH RATING METRICS -->
@@ -835,7 +838,7 @@
                         <img src="rush_product_1.png" alt="Raptor Supplements Rush Ad">
                     </div>
                     <div class="center-quote-block">
-                        <span class="big-quote-mark" style="display:block; margin-bottom: 1rem;">“</span>
+                        <span style="font-family: var(--font-serif); font-size: 5rem; opacity: 0.2; line-height: 1; display:block; margin-bottom: 1rem;">“</span>
                         <p>“Communication was direct, the work was quick, and results were high quality and exactly what I wanted.”</p>
                         <div class="author">Raptor Supplements</div>
                     </div>
@@ -867,7 +870,7 @@
                         <img src="cardio_disco_1.png" alt="Cardio Dance Disco Poster">
                     </div>
                     <div class="center-quote-block">
-                        <span class="big-quote-mark" style="display:block; margin-bottom: 1rem;">“</span>
+                        <span style="font-family: var(--font-serif); font-size: 5rem; opacity: 0.2; line-height: 1; display:block; margin-bottom: 1rem;">“</span>
                         <p>“Staton at SR Studios was amazing! From the moment I met her I could tell she was a go getter.”</p>
                         <div class="author">Cardio Dance Disco</div>
                     </div>
@@ -999,7 +1002,7 @@
                 </div>
             </div>
 
-            <!-- TAB: SELECTED WORK (FULL BLEED FIGMA PORTFOLIO SLOT) -->
+            <!-- TAB: SELECTED WORK (FULL BLEED PORTFOLIO SLOT) -->
             <div id="tab-selected-work" class="tab-panel">
                 <div class="fullbleed-portfolio-wrapper">
                     <img src="selected_work_portfolio.png" alt="SR Studios Selected Works Portfolio">
