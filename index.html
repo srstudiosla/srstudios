@@ -1028,19 +1028,69 @@
             color: #E0E0E0;
         }
 
-        /* --- CONTACT CONTAINER --- */
-        .contact-wrapper {
+        /* --- CONTACT HERO SECTION STYLES --- */
+        .contact-hero-container {
+            position: relative;
+            width: 100%;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #121212;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .contact-bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+        }
+
+        .contact-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 3;
+            max-width: 650px;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 2rem;
-            max-width: 600px;
-            margin: 0 auto;
         }
-        .contact-wrapper h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 400; margin-bottom: 1.5rem; }
-        .contact-wrapper p { font-family: var(--font-sans); font-weight: 300; color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 0.95rem; }
+
+        .contact-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.25rem;
+            color: #FFFFFF;
+        }
+
+        .contact-description {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            font-weight: 300;
+        }
 
         /* --- FOOTER --- */
         footer {
@@ -1523,13 +1573,21 @@
 
             <!-- TAB: CONTACT -->
             <div id="tab-contact" class="tab-panel">
-                <div class="contact-wrapper">
-                    <h2>Initiate Partnership</h2>
-                    <p>Click below to launch a direct, secure communication thread with our execution team.</p>
-                    <a href="mailto:admin@srstudiosla.com?subject=Partnership%20Inquiry%20-%20SR%20Studios" class="btn-pill-burgundy">
-                        Book Brand Consultation
-                    </a>
-                </div>
+                <section class="contact-hero-container">
+                    <div class="contact-overlay"></div>
+                    <!-- Replace with your actual background image URL or local asset name -->
+                    <img src="contact_hero_bg.png" alt="Contact Background" class="contact-bg-image" />
+
+                    <div class="contact-content">
+                        <h1 class="contact-title">Initiate Partnership</h1>
+                        <p class="contact-description">
+                            Click below to launch a direct, secure communication thread with our execution team.
+                        </p>
+                        <a href="mailto:admin@srstudiosla.com?subject=Brand%20Consultation%20Inquiry" class="btn-pill-burgundy">
+                            Book Your Brand Consultation
+                        </a>
+                    </div>
+                </section>
 
                 <!-- EDITORIAL FOOTER NAVIGATION -->
                 <section class="about-footer-block">
