@@ -296,47 +296,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Premium Retainers 3-Card Grid */
-        .retainers-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .gallery-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .gallery-frame {
-            width: 100%;
-            aspect-ratio: 3/4;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(0,0,0,0.1);
-        }
-
-        .gallery-frame img { width: 100%; height: 100%; object-fit: cover; }
-
-        .gallery-title {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
-            color: var(--text-dark);
-        }
-
-        .gallery-link {
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            color: var(--red-accent);
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
         /* Testimonial Quote Banner */
         .testimonial-quote-banner {
             width: 100%;
@@ -1121,7 +1080,6 @@
         @media (max-width: 968px) {
             .nav-tabs { flex-wrap: wrap; gap: 1rem; justify-content: center; }
             .integrated-agency-split { grid-template-columns: 100%; gap: 2rem; }
-            .retainers-gallery-grid { grid-template-columns: 100%; }
             .testimonial-quote-banner { flex-direction: column; text-align: center; gap: 2rem; }
             .callout-pill-section { flex-direction: column; gap: 3rem; text-align: center; }
             .promise-split-section { grid-template-columns: 100%; gap: 2rem; padding: 3rem 1.5rem; }
@@ -1191,39 +1149,7 @@
                     </a>
                 </section>
 
-                <!-- 3. PREMIUM RETAINERS (CREAM BACKGROUND) -->
-                <section class="cream-section">
-                    <span class="cream-subtitle">Our Services</span>
-                    <h2 class="cream-section-title">Premium Retainers</h2>
-                    
-                    <div class="retainers-gallery-grid">
-                        <div class="gallery-card">
-                            <div class="gallery-frame">
-                                <img src="email_marketing_thumb.png" alt="Email Marketing">
-                            </div>
-                            <div class="gallery-title">Email Marketing</div>
-                            <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="gallery-link">VIEW RETAINERS</a>
-                        </div>
-
-                        <div class="gallery-card">
-                            <div class="gallery-frame">
-                                <img src="paid_advertising_thumb.png" alt="Paid Advertising">
-                            </div>
-                            <div class="gallery-title">Paid Advertising</div>
-                            <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="gallery-link">VIEW RETAINERS</a>
-                        </div>
-
-                        <div class="gallery-card">
-                            <div class="gallery-frame">
-                                <img src="web_design_thumb.png" alt="Web Design">
-                            </div>
-                            <div class="gallery-title">Web Design</div>
-                            <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="gallery-link">VIEW RETAINERS</a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 4. TESTIMONIAL BANNER (RAPTOR SUPPLEMENTS) -->
+                <!-- 3. TESTIMONIAL BANNER (RAPTOR SUPPLEMENTS) -->
                 <section class="testimonial-quote-banner">
                     <div class="side-img-frame">
                         <img src="rush_product_1.png" alt="Raptor Supplements Rush Ad">
@@ -1238,7 +1164,7 @@
                     </div>
                 </section>
 
-                <!-- 5. EMAIL MARKETING SCROLLING SHOWCASE (CREAM BACKGROUND) -->
+                <!-- 4. EMAIL MARKETING SCROLLING SHOWCASE (CREAM BACKGROUND) -->
                 <section class="cream-section">
                     <span class="cream-subtitle">Premium Designs</span>
                     <h2 class="cream-section-title">EMAIL MARKETING</h2>
@@ -1255,7 +1181,7 @@
                     </div>
                 </section>
 
-                <!-- 6. CARDIO DANCE DISCO TESTIMONIAL BANNER -->
+                <!-- 5. CARDIO DANCE DISCO TESTIMONIAL BANNER -->
                 <section class="testimonial-quote-banner">
                     <div class="side-img-frame">
                         <img src="cardio_disco_1.png" alt="Cardio Dance Disco Poster">
@@ -1270,7 +1196,7 @@
                     </div>
                 </section>
 
-                <!-- 7. CALLOUT BANNER WITH RED PILL BUTTON -->
+                <!-- 6. CALLOUT BANNER WITH RED PILL BUTTON -->
                 <section class="callout-pill-section">
                     <div class="side-img-frame" style="width: 180px; height: 260px;">
                         <img src="skincare_preview_1.png" alt="Skincare Campaign Visual">
@@ -1290,7 +1216,7 @@
                     </div>
                 </section>
 
-                <!-- 8. OUR COMMITMENT DARK BANNER -->
+                <!-- 7. OUR COMMITMENT DARK BANNER -->
                 <section class="commitment-banner">
                     <div class="commitment-content">
                         <h2>Our Commitment <span class="script-accent">Community</span></h2>
@@ -1303,7 +1229,7 @@
                     </div>
                 </section>
 
-                <!-- 9. OUR RETAINER PROMISE SPLIT -->
+                <!-- 8. OUR RETAINER PROMISE SPLIT -->
                 <section class="promise-split-section">
                     <div class="promise-img-box">
                         <img src="unboxing_box.png" alt="SR Studios Client Package Box">
