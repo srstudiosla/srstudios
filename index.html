@@ -171,7 +171,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- FIGMA EDITORIAL STYLES --- */
         .script-accent {
             font-family: var(--font-script);
             color: var(--pink-script);
@@ -180,244 +179,297 @@
             text-transform: none;
         }
 
-        /* Hero Title Block */
-        .figma-hero-header {
+        /* --- NEW MOCKUP HOMEPAGE STYLES --- */
+
+        /* 1. Hero Title Header Block */
+        .mockup-hero-header {
             width: 100%;
             position: relative;
-            background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(18,18,18,1) 100%), url('hero_bg_dark.png') center/cover no-repeat;
-            padding: 6rem 2rem 4rem 2rem;
-            text-align: center;
+            background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(18,18,18,0.95) 100%), url('hero_bg_dark.png') center/cover no-repeat;
+            padding: 5rem 2rem 4rem 2rem;
+            text-align: left;
             border-bottom: 1px solid var(--border-color);
         }
 
-        .figma-hero-header h1 {
+        .mockup-hero-header h1 {
             font-family: var(--font-title);
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
             letter-spacing: 0.05em;
             font-weight: 400;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
-        .hero-rating-block {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .big-quote-mark {
-            font-size: 20rem;
-            line-height: 0.8;
-            opacity: 0.2;
-            font-family: var(--font-serif);
-        }
-
-        .rating-items {
+        .mockup-rating-block {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             text-align: left;
+            margin-top: 1.5rem;
         }
 
-        .rating-row {
+        .mockup-rating-row {
             display: flex;
             align-items: center;
             gap: 1rem;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
+            color: var(--text-secondary);
         }
 
-        .rating-stars { color: #FFF; letter-spacing: 0.1em; }
+        .mockup-stars { color: #FFF; letter-spacing: 0.1em; }
 
-        /* Integrated Growth Section */
-        .integrated-agency-split {
+        /* 2. About Us Split Section */
+        .mockup-about-section {
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            padding: 5rem 2rem;
+            gap: 3rem;
+            padding: 4rem 3rem;
+            background-color: var(--surface-color);
             align-items: center;
-            background-color: var(--red-accent);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .agency-text-content h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 400;
-            margin-bottom: 1.5rem;
+        .mockup-cards-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
         }
 
-        .agency-card-link {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 4/5;
-            background: url('coffee_scale.png') center/cover no-repeat;
+        .mockup-mini-card {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            padding: 1.5rem 1rem;
+            text-align: left;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            border: 1px solid var(--border-color);
+            justify-content: space-between;
+            min-height: 180px;
         }
 
-        .agency-card-link .script-title {
-            font-size: 3.5rem;
+        .mockup-mini-card h4 {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 0.5rem;
         }
 
-        .agency-card-link .link-subtext {
-            color: var(--text-primary);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+        .mockup-mini-card p {
+            font-size: 0.68rem;
+            line-height: 1.4;
+            color: #444444;
+            margin-bottom: 1rem;
         }
 
-        /* Cream Background Sections */
-        .cream-section {
+        .mockup-mini-card a {
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .mockup-about-text h2 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        .mockup-about-text p {
+            font-size: 0.78rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* 3. Script Title Sections (Email Marketing, Landing Pages) */
+        .mockup-script-section {
             width: 100%;
             background-color: var(--cream-bg);
             color: var(--text-dark);
             padding: 5rem 2rem;
             text-align: center;
-        }
-
-        .cream-section-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 400;
-            margin-bottom: 3rem;
-        }
-
-        .cream-subtitle {
-            font-family: var(--font-script);
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Testimonial Quote Banner */
-        .testimonial-quote-banner {
-            width: 100%;
-            background-color: var(--surface-color);
-            padding: 6rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-            border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        .side-img-frame {
-            width: 220px;
-            height: 280px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
+        .mockup-script-title {
+            font-family: var(--font-script);
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            color: var(--text-dark);
+            font-weight: 400;
+            margin-bottom: 3rem;
+            text-transform: none;
         }
 
-        .side-img-frame img { width: 100%; height: 100%; object-fit: cover; }
-
-        .center-quote-block {
-            max-width: 500px;
-            text-align: center;
-        }
-
-        .center-quote-block p {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .center-quote-block .author {
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-        }
-
-        /* Horizontal Email Showcase Grid */
-        .email-horizontal-scroll {
-            display: flex;
+        .mockup-email-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
             gap: 1rem;
-            overflow-x: auto;
-            padding-bottom: 1rem;
             max-width: 1100px;
             margin: 0 auto;
         }
 
-        .email-thumb {
-            min-width: 120px;
-            height: 320px;
-            flex-shrink: 0;
+        .mockup-email-card {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
             border: 1px solid rgba(0,0,0,0.1);
         }
 
-        .email-thumb img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Callout Red Pill Button Section */
-        .callout-pill-section {
+        .mockup-email-card img {
             width: 100%;
-            background-color: var(--cream-bg);
-            color: var(--text-dark);
-            padding: 6rem 2rem;
-            display: flex;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 4. Web Design Dark Split Showcase */
+        .mockup-webdesign-section {
+            width: 100%;
+            background-color: var(--surface-color);
+            padding: 5rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
             align-items: center;
-            justify-content: space-around;
-        }
-
-        .btn-pill-burgundy {
-            background-color: var(--red-accent);
-            color: #FFF;
-            padding: 1.1rem 2.5rem;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-pill-burgundy:hover { opacity: 0.9; }
-
-        /* Commitment Banner */
-        .commitment-banner {
-            width: 100%;
-            position: relative;
-            background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ), url('hands_soil.png') center/cover no-repeat;
-            padding: 8rem 4rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        .commitment-content {
-            max-width: 500px;
-            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+        .mockup-webdesign-previews {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
         }
 
-        .commitment-content h2 {
-            font-family: var(--font-title);
+        .mockup-webdesign-previews img {
+            width: 48%;
+            height: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .mockup-webdesign-text {
+            text-align: left;
+        }
+
+        .mockup-webdesign-text h2 {
+            font-family: var(--font-script);
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            color: #FFFFFF;
             font-weight: 400;
-            font-size: 2.8rem;
+            line-height: 1;
             margin-bottom: 1.5rem;
         }
 
-        .commitment-content p {
-            font-family: var(--font-title);
-            font-weight: 400;
-            font-size: 1.35rem;
-            line-height: 1.5;
+        .mockup-webdesign-text a {
             color: #FFFFFF;
-            margin-bottom: 2rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        /* Retainer Promise Split */
+        /* 5. Mobile Mockups Grid (5 columns) */
+        .mockup-mobile-grid-section {
+            width: 100%;
+            background-color: var(--cream-bg);
+            padding: 5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mockup-mobile-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mockup-mobile-card {
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        .mockup-mobile-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 6. Testimonial Quote Banner Dark */
+        .mockup-testimonial-banner {
+            width: 100%;
+            background-color: var(--surface-color);
+            padding: 5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mockup-side-square {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .mockup-side-square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mockup-quote-center {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .mockup-quote-center p {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: #FFFFFF;
+        }
+
+        .mockup-quote-center .author {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        /* 7. Landing Pages Showcase Section */
+        .mockup-landing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mockup-landing-card {
+            width: 100%;
+            border: 1px solid rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .mockup-landing-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 8. Retainer Promise Split Section */
         .promise-split-section {
             width: 100%;
             background-color: var(--cream-bg);
@@ -427,6 +479,7 @@
             gap: 4rem;
             padding: 6rem 4rem;
             align-items: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .promise-img-box {
@@ -448,11 +501,101 @@
         .promise-text p {
             font-family: var(--font-title);
             font-weight: 400;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             line-height: 1.5;
             color: #555;
             margin-bottom: 2rem;
         }
+
+        /* Editorial Footer Block */
+        .about-footer-block {
+            width: 100%;
+            background-color: var(--surface-color);
+            padding: 6rem 2rem 5rem 2rem;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-footer-container {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .footer-nav-col h3 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            letter-spacing: 0.08em;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .footer-nav-links-grid {
+            display: grid;
+            grid-template-columns: 120px 120px;
+            gap: 1.2rem 3rem;
+        }
+
+        .footer-nav-links-grid a {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-nav-links-grid a:hover { color: #FFFFFF; }
+
+        .footer-scale-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-scale-title {
+            font-family: var(--font-script);
+            font-size: 5rem;
+            line-height: 0.9;
+            color: #FFFFFF;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+            text-transform: none;
+        }
+
+        .footer-scale-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .link-arrow-red {
+            color: #FFFFFF;
+            font-size: 0.72rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .link-arrow-red::after {
+            content: '→';
+            color: var(--red-accent);
+            font-size: 1rem;
+        }
+
+        .link-arrow-red:hover { opacity: 0.8; }
 
         /* --- ABOUT US TOP SECTION --- */
         .about-us-hero-new {
@@ -598,7 +741,22 @@
             color: #666666;
         }
 
-        /* --- EDITORIAL ABOUT BOTTOM SECTIONS --- */
+        .btn-pill-burgundy {
+            background-color: var(--red-accent);
+            color: #FFF;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-pill-burgundy:hover { opacity: 0.9; }
+
         .about-consultation-banner {
             width: 100%;
             position: relative;
@@ -630,101 +788,11 @@
             letter-spacing: 0.02em;
         }
 
-        .link-arrow-red {
-            color: #FFFFFF;
-            font-size: 0.72rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .link-arrow-red::after {
-            content: '→';
-            color: var(--red-accent);
-            font-size: 1rem;
-        }
-
-        .link-arrow-red:hover { opacity: 0.8; }
-
-        /* Editorial Footer Block */
-        .about-footer-block {
-            width: 100%;
-            background-color: var(--surface-color);
-            padding: 7rem 2rem 6rem 2rem;
-            display: flex;
-            justify-content: center;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .about-footer-container {
-            width: 100%;
-            max-width: 1000px;
-            display: flex;
-            flex-direction: column;
-            gap: 5rem;
-        }
-
-        .footer-nav-col h3 {
-            font-family: var(--font-title);
-            font-size: 2.8rem;
-            letter-spacing: 0.08em;
-            font-weight: 400;
-            color: #FFFFFF;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-
-        .footer-nav-links-grid {
-            display: grid;
-            grid-template-columns: 120px 120px;
-            gap: 1.2rem 3rem;
-        }
-
-        .footer-nav-links-grid a {
-            color: var(--text-secondary);
-            font-size: 0.7rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .footer-nav-links-grid a:hover { color: #FFFFFF; }
-
-        .footer-scale-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .footer-scale-title {
-            font-family: var(--font-script);
-            font-size: 5rem;
-            line-height: 0.9;
-            color: #FFFFFF;
-            font-weight: 400;
-            margin-bottom: 2.5rem;
-            text-transform: none;
-        }
-
-        .footer-scale-stack {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
         /* --- FULL BLEED PORTFOLIO SLOT --- */
         .fullbleed-portfolio-wrapper {
             width: 100%;
             margin-top: 2rem;
-            margin-bottom: 0; /* Updated: removed spacing between visual showcase and footer */
+            margin-bottom: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -749,7 +817,6 @@
             padding-bottom: 0;
         }
 
-        /* Hero Header with Overlay Text */
         .retainers-hero-banner {
             width: 100%;
             height: 380px;
@@ -769,7 +836,6 @@
             text-transform: uppercase;
         }
 
-        /* Partnerships Encapsulating Container Section */
         .partnerships-cards-wrapper {
             width: 100%;
             background-color: var(--surface-color);
@@ -781,7 +847,6 @@
             align-items: center;
         }
 
-        /* Retainer Block Cards */
         .retainer-card-container {
             width: 100%;
             max-width: 1050px;
@@ -851,7 +916,6 @@
             top: 0;
         }
 
-        /* Additional Investments Section */
         .additional-investments-grid {
             width: 100%;
             max-width: 1050px;
@@ -1004,9 +1068,12 @@
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 968px) {
             .nav-tabs { flex-wrap: wrap; gap: 1rem; justify-content: center; }
-            .integrated-agency-split { grid-template-columns: 100%; gap: 2rem; }
-            .testimonial-quote-banner { flex-direction: column; text-align: center; gap: 2rem; }
-            .callout-pill-section { flex-direction: column; gap: 3rem; text-align: center; }
+            .mockup-about-section { grid-template-columns: 100%; gap: 2rem; }
+            .mockup-email-grid { grid-template-columns: repeat(3, 1fr); }
+            .mockup-webdesign-section { grid-template-columns: 100%; gap: 2rem; }
+            .mockup-mobile-grid { grid-template-columns: repeat(2, 1fr); }
+            .mockup-testimonial-banner { flex-direction: column; text-align: center; gap: 2rem; }
+            .mockup-landing-grid { grid-template-columns: repeat(2, 1fr); }
             .promise-split-section { grid-template-columns: 100%; gap: 2rem; padding: 3rem 1.5rem; }
             .about-sustainability-split-new { grid-template-columns: 100%; }
             .partners-cards-grid { grid-template-columns: 100%; }
@@ -1034,129 +1101,140 @@
     <div class="site-wrapper">
         <main>
 
-            <!-- TAB: GET STARTED / HOME -->
+            <!-- TAB: GET STARTED / HOME (NEW MOCKUP LAYOUT) -->
             <div id="tab-home" class="tab-panel active">
                 
-                <!-- 1. HERO HEADER WITH RATING METRICS -->
-                <section class="figma-hero-header">
+                <!-- 1. HERO HEADER WITH STACKED STAR RATINGS -->
+                <section class="mockup-hero-header">
                     <h1>SR STUDIOS</h1>
-                    <div class="hero-rating-block">
-                        <span class="big-quote-mark">“</span>
-                        <div class="rating-items">
-                            <div class="rating-row">
-                                <span class="rating-stars">★★★★★</span>
-                                <span>SPEED</span>
-                            </div>
-                            <div class="rating-row">
-                                <span class="rating-stars">★★★★★</span>
-                                <span>COMMUNICATION</span>
-                            </div>
-                            <div class="rating-row">
-                                <span class="rating-stars">★★★★★</span>
-                                <span>SATISFACTION</span>
-                            </div>
+                    <div class="mockup-rating-block">
+                        <div class="mockup-rating-row">
+                            <span class="mockup-stars">★★★★★</span>
+                            <span>SPEED</span>
+                        </div>
+                        <div class="mockup-rating-row">
+                            <span class="mockup-stars">★★★★★</span>
+                            <span>COMMUNICATION</span>
+                        </div>
+                        <div class="mockup-rating-row">
+                            <span class="mockup-stars">★★★★★</span>
+                            <span>SATISFACTION</span>
                         </div>
                     </div>
                 </section>
 
-                <!-- 2. INTEGRATED GROWTH AGENCY SPLIT -->
-                <section class="integrated-agency-split">
-                    <div class="agency-text-content">
-                        <h2>Integrated Growth <span class="script-accent">Agency</span></h2>
-                        <p style="color: var(--text-secondary); font-weight: 300; line-height: 1.7;">
+                <!-- 2. ABOUT US SPLIT SECTION WITH MINI CARDS -->
+                <section class="mockup-about-section">
+                    <div class="mockup-cards-row">
+                        <div class="mockup-mini-card">
+                            <div>
+                                <h4>INTEGRATED</h4>
+                                <p>Proven growth and marketing experience spanning biotech, DTC, e-commerce, and fitness.</p>
+                            </div>
+                            <a href="#" onclick="switchTab(null, 'tab-about'); return false;">SEE PROJECTS &rarr;</a>
+                        </div>
+                        <div class="mockup-mini-card">
+                            <div>
+                                <h4>STRATEGY</h4>
+                                <p>Tailored brand messaging, retention flows, and data-driven ad strategy.</p>
+                            </div>
+                            <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;">OUR RETAINERS &rarr;</a>
+                        </div>
+                        <div class="mockup-mini-card">
+                            <div>
+                                <h4>EXECUTION</h4>
+                                <p>High-end visual assets, custom design, and full-suite digital growth.</p>
+                            </div>
+                            <a href="#" onclick="switchTab(null, 'tab-contact'); return false;">GET IN TOUCH &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="mockup-about-text">
+                        <h2>About Us</h2>
+                        <p>
                             Proven growth and marketing experience spanning high-tech, consumer, and industrial sectors—including biotech, aerospace, DTC manufacturing, e-commerce, fitness, food & beverage, interior design, entertainment, environmental services, and transportation & logistics.
                         </p>
                     </div>
-                    <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="agency-card-link">
-                        <span class="script-accent script-title">Let's Scale</span>
-                        <span class="link-subtext">LEARN MORE &rarr;</span>
-                    </a>
                 </section>
 
-                <!-- 3. TESTIMONIAL BANNER (RAPTOR SUPPLEMENTS) -->
-                <section class="testimonial-quote-banner">
-                    <div class="side-img-frame">
-                        <img src="rush_product_1.png" alt="Raptor Supplements Rush Ad">
+                <!-- 3. EMAIL MARKETING SHOWCASE (CREAM BG) -->
+                <section class="mockup-script-section">
+                    <div class="mockup-script-title">Email Marketing</div>
+                    <div class="mockup-email-grid">
+                        <div class="mockup-email-card"><img src="email_1.png" alt="Email Visual 1"></div>
+                        <div class="mockup-email-card"><img src="email_2.png" alt="Email Visual 2"></div>
+                        <div class="mockup-email-card"><img src="email_3.png" alt="Email Visual 3"></div>
+                        <div class="mockup-email-card"><img src="email_4.png" alt="Email Visual 4"></div>
+                        <div class="mockup-email-card"><img src="email_5.png" alt="Email Visual 5"></div>
+                        <div class="mockup-email-card"><img src="email_6.png" alt="Email Visual 6"></div>
                     </div>
-                    <div class="center-quote-block">
-                        <span style="font-family: var(--font-serif); font-size: 5rem; opacity: 0.2; line-height: 1; display:block; margin-bottom: 1rem;">“</span>
+                </section>
+
+                <!-- 4. WEB DESIGN DARK SPLIT SECTION -->
+                <section class="mockup-webdesign-section">
+                    <div class="mockup-webdesign-previews">
+                        <img src="skincare_preview_1.png" alt="Web Design Preview 1">
+                        <img src="skincare_preview_2.png" alt="Web Design Preview 2">
+                    </div>
+                    <div class="mockup-webdesign-text">
+                        <h2>Web<br>Design</h2>
+                        <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;">SEE WEB DESIGN &rarr;</a>
+                    </div>
+                </section>
+
+                <!-- 5. MOBILE CREATIVE SHOWCASE GRID (CREAM BG) -->
+                <section class="mockup-mobile-grid-section">
+                    <div class="mockup-mobile-grid">
+                        <div class="mockup-mobile-card"><img src="rush_product_1.png" alt="Mobile Ad 1"></div>
+                        <div class="mockup-mobile-card"><img src="rush_product_2.png" alt="Mobile Ad 2"></div>
+                        <div class="mockup-mobile-card"><img src="cardio_disco_1.png" alt="Mobile Ad 3"></div>
+                        <div class="mockup-mobile-card"><img src="cardio_disco_2.png" alt="Mobile Ad 4"></div>
+                        <div class="mockup-mobile-card"><img src="email_7.png" alt="Mobile Ad 5"></div>
+                    </div>
+                </section>
+
+                <!-- 6. RAPTOR SUPPLEMENTS TESTIMONIAL BANNER (DARK) -->
+                <section class="mockup-testimonial-banner">
+                    <div class="mockup-side-square">
+                        <img src="rush_product_1.png" alt="Raptor Product">
+                    </div>
+                    <div class="mockup-quote-center">
                         <p>“Communication was direct, the work was quick, and results were high quality and exactly what I wanted.”</p>
                         <div class="author">Raptor Supplements</div>
                     </div>
-                    <div class="side-img-frame">
-                        <img src="rush_product_2.png" alt="Raptor Supplements Rush Package">
+                    <div class="mockup-side-square">
+                        <img src="rush_product_2.png" alt="Raptor Product 2">
                     </div>
                 </section>
 
-                <!-- 4. EMAIL MARKETING SCROLLING SHOWCASE (CREAM BACKGROUND) -->
-                <section class="cream-section">
-                    <span class="cream-subtitle">Premium Designs</span>
-                    <h2 class="cream-section-title">EMAIL MARKETING</h2>
-                    
-                    <div class="email-horizontal-scroll">
-                        <div class="email-thumb"><img src="email_1.png" alt="Email Design 1"></div>
-                        <div class="email-thumb"><img src="email_2.png" alt="Email Design 2"></div>
-                        <div class="email-thumb"><img src="email_3.png" alt="Email Design 3"></div>
-                        <div class="email-thumb"><img src="email_4.png" alt="Email Design 4"></div>
-                        <div class="email-thumb"><img src="email_5.png" alt="Email Design 5"></div>
-                        <div class="email-thumb"><img src="email_6.png" alt="Email Design 6"></div>
-                        <div class="email-thumb"><img src="email_7.png" alt="Email Design 7"></div>
-                        <div class="email-thumb"><img src="email_8.png" alt="Email Design 8"></div>
+                <!-- 7. LANDING PAGES SHOWCASE (CREAM BG) -->
+                <section class="mockup-script-section">
+                    <div class="mockup-script-title">Landing Pages</div>
+                    <div class="mockup-landing-grid">
+                        <div class="mockup-landing-card"><img src="email_3.png" alt="Landing Page Preview 1"></div>
+                        <div class="mockup-landing-card"><img src="email_4.png" alt="Landing Page Preview 2"></div>
+                        <div class="mockup-landing-card"><img src="email_5.png" alt="Landing Page Preview 3"></div>
+                        <div class="mockup-landing-card"><img src="email_8.png" alt="Landing Page Preview 4"></div>
                     </div>
                 </section>
 
-                <!-- 5. CARDIO DANCE DISCO TESTIMONIAL BANNER -->
-                <section class="testimonial-quote-banner">
-                    <div class="side-img-frame">
-                        <img src="cardio_disco_1.png" alt="Cardio Dance Disco Poster">
+                <!-- 8. CARDIO DANCE DISCO TESTIMONIAL BANNER (DARK) -->
+                <section class="mockup-testimonial-banner">
+                    <div class="mockup-side-square">
+                        <img src="cardio_disco_1.png" alt="Cardio Disco Visual 1">
                     </div>
-                    <div class="center-quote-block">
-                        <span style="font-family: var(--font-serif); font-size: 5rem; opacity: 0.2; line-height: 1; display:block; margin-bottom: 1rem;">“</span>
+                    <div class="mockup-quote-center">
                         <p>“Staton at SR Studios was amazing! From the moment I met her I could tell she was a go getter.”</p>
                         <div class="author">Cardio Dance Disco</div>
                     </div>
-                    <div class="side-img-frame">
-                        <img src="cardio_disco_2.png" alt="Cardio Dance Disco Visual">
+                    <div class="mockup-side-square">
+                        <img src="cardio_disco_2.png" alt="Cardio Disco Visual 2">
                     </div>
                 </section>
 
-                <!-- 6. CALLOUT BANNER WITH RED PILL BUTTON -->
-                <section class="callout-pill-section">
-                    <div class="side-img-frame" style="width: 180px; height: 260px;">
-                        <img src="skincare_preview_1.png" alt="Skincare Campaign Visual">
-                    </div>
-                    <div style="text-align: center; max-width: 500px;">
-                        <h2 style="font-family: var(--font-serif); font-size: 2.8rem; font-weight: 400; line-height: 1.2; margin-bottom: 2rem;">
-                            YOUR <span class="script-accent" style="color: var(--text-dark);">next</span><br>
-                            CAMPAIGN DESERVES<br>
-                            <span class="script-accent" style="color: var(--text-dark);">high-end visuals </span><br> 
-                        </h2>
-                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-pill-burgundy">
-                            BOOK A CONSULTATION
-                        </a>
-                    </div>
-                    <div class="side-img-frame" style="width: 180px; height: 260px;">
-                        <img src="skincare_preview_2.png" alt="Skincare Campaign Layout">
-                    </div>
-                </section>
-
-                <!-- 7. OUR COMMITMENT DARK BANNER -->
-                <section class="commitment-banner">
-                    <div class="commitment-content">
-                        <h2>Our Commitment <span class="script-accent">Community</span></h2>
-                        <p>
-                            We are proud to support local farms and wildlife conservation efforts in our community.
-                        </p>
-                        <a href="#" onclick="switchTab(null, 'tab-about'); return false;" style="color: #FFF; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;">
-                            LEARN MORE &rarr;
-                        </a>
-                    </div>
-                </section>
-
-                <!-- 8. OUR RETAINER PROMISE SPLIT -->
+                <!-- 9. OUR RETAINER PROMISE (CREAM BG) -->
                 <section class="promise-split-section">
                     <div class="promise-img-box">
-                        <img src="unboxing_box.png" alt="SR Studios Client Package Box">
+                        <img src="unboxing_box.png" alt="SR Studios Client Welcome Box">
                     </div>
                     <div class="promise-text">
                         <h2>Our Retainer Promise</h2>
