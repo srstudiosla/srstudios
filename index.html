@@ -220,70 +220,33 @@
 
         .mockup-stars { color: #FFF; letter-spacing: 0.1em; }
 
-        /* 2. About Us Split Section */
+        /* 2. About Us Centered Section */
         .mockup-about-section {
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            padding: 4rem 3rem;
-            background-color: var(--surface-color);
+            display: flex;
+            justify-content: center;
             align-items: center;
+            padding: 5rem 3rem;
+            background-color: var(--surface-color);
             border-bottom: 1px solid var(--border-color);
         }
 
-        .mockup-cards-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .mockup-mini-card {
-            background-color: #FFFFFF;
-            color: #1A1A1A;
-            padding: 1.5rem 1rem;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 180px;
-        }
-
-        .mockup-mini-card h4 {
-            font-family: var(--font-title);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .mockup-mini-card p {
-            font-size: 0.68rem;
-            line-height: 1.4;
-            color: #444444;
-            margin-bottom: 1rem;
-        }
-
-        .mockup-mini-card a {
-            font-size: 0.6rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #000;
-            text-decoration: none;
-            font-weight: 600;
+        .mockup-about-text {
+            max-width: 800px;
+            text-align: center;
         }
 
         .mockup-about-text h2 {
             font-family: var(--font-title);
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             font-weight: 400;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #FFFFFF;
         }
 
         .mockup-about-text p {
-            font-size: 0.78rem;
-            line-height: 1.7;
+            font-size: 0.85rem;
+            line-height: 1.8;
             color: var(--text-secondary);
             font-weight: 300;
         }
@@ -887,7 +850,6 @@
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 968px) {
             .nav-tabs { flex-wrap: wrap; gap: 1rem; justify-content: center; }
-            .mockup-about-section { grid-template-columns: 100%; gap: 2rem; }
             .promise-split-section { grid-template-columns: 100%; gap: 2rem; padding: 3rem 1.5rem; }
             .about-sustainability-split-new { grid-template-columns: 100%; }
             .partners-cards-grid { grid-template-columns: 100%; }
@@ -937,31 +899,8 @@
                     </div>
                 </section>
 
-                <!-- 2. ABOUT US SPLIT SECTION WITH MINI CARDS -->
+                <!-- 2. ABOUT US CENTERED SECTION -->
                 <section class="mockup-about-section">
-                    <div class="mockup-cards-row">
-                        <div class="mockup-mini-card">
-                            <div>
-                                <h4>INTEGRATED</h4>
-                                <p>Proven growth and marketing experience spanning biotech, DTC, e-commerce, and fitness.</p>
-                            </div>
-                            <a href="#" onclick="switchTab(null, 'tab-about'); return false;">SEE PROJECTS &rarr;</a>
-                        </div>
-                        <div class="mockup-mini-card">
-                            <div>
-                                <h4>STRATEGY</h4>
-                                <p>Tailored brand messaging, retention flows, and data-driven ad strategy.</p>
-                            </div>
-                            <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;">OUR RETAINERS &rarr;</a>
-                        </div>
-                        <div class="mockup-mini-card">
-                            <div>
-                                <h4>EXECUTION</h4>
-                                <p>High-end visual assets, custom design, and full-suite digital growth.</p>
-                            </div>
-                            <a href="#" onclick="switchTab(null, 'tab-contact'); return false;">GET IN TOUCH &rarr;</a>
-                        </div>
-                    </div>
                     <div class="mockup-about-text">
                         <h2>About Us</h2>
                         <p>
