@@ -14,11 +14,11 @@
             --bg-color: #1A1A1A;             /* Dark editorial backdrop */
             --surface-color: #121212;        /* Pure dark surface block */
             --tan-accent: #333333;           /* Darker structural sand/border dividers */
-            --cream-bg: #EAE6DF;             /* Light cream contrast section */
+            --cream-bg: #E8E4DD;             /* Light cream contrast section */
             --text-primary: #FFFFFF;         /* Crisp white text */
             --text-secondary: #CCCCCC;       /* Soft light gray */
             --text-dark: #1A1A1A;            /* Dark text for light cream sections */
-            --text-charcoal: #333333;        /* Charcoal text color */
+            --text-charcoal: #1A1A1A;        /* Charcoal text color */
             --pink-script: #D88CB3;          /* Signature pink accent */
             --red-accent: #800000;           /* Deep burgundy pill button / red accents */
             --border-color: #333333;         /* Subtle dark borders */
@@ -454,7 +454,7 @@
             margin-bottom: 2rem;
         }
 
-        /* --- ABOUT US TOP SECTION (UPDATED FIGMA LAYOUT) --- */
+        /* --- ABOUT US TOP SECTION --- */
         .about-us-hero-new {
             width: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('about_hero_bg.png') center/cover no-repeat;
@@ -479,7 +479,7 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            background-color: var(--surface-color); /* Dark block background per Figma */
+            background-color: var(--surface-color);
             align-items: stretch;
             border-bottom: 1px solid var(--border-color);
         }
@@ -533,7 +533,7 @@
             display: block;
         }
 
-        /* --- OUR PARTNERS SECTION (3-COLUMN CARDS FIGMA LAYOUT) --- */
+        /* --- OUR PARTNERS SECTION --- */
         .about-partners-section-new {
             width: 100%;
             background-color: var(--surface-color);
@@ -599,7 +599,6 @@
         }
 
         /* --- EDITORIAL ABOUT BOTTOM SECTIONS --- */
-        /* Book Consultation Glass/Coffee Hero Banner */
         .about-consultation-banner {
             width: 100%;
             position: relative;
@@ -739,7 +738,7 @@
             display: block;
         }
 
-        /* --- NEW EDITORIAL PARTNERSHIPS / RETAINERS PAGE STYLES --- */
+        /* --- EDITORIAL PARTNERSHIPS / RETAINERS PAGE STYLES --- */
         .retainers-page-wrapper {
             width: 100%;
             display: flex;
@@ -810,10 +809,10 @@
             color: #FFFFFF;
         }
 
+        /* UPDATED: Full-Suite Pro matched to Cream background and Charcoal text */
         .retainer-block.block-fullsuite {
-            background-color: #1A1A1A;
-            color: #FFFFFF;
-            border: 1px solid var(--border-color);
+            background-color: #E8E4DD;
+            color: #1A1A1A;
         }
 
         .retainer-block-title {
@@ -1196,7 +1195,7 @@
 
             </div>
 
-            <!-- TAB: ABOUT US (UPDATED FIGMA MATCH) -->
+            <!-- TAB: ABOUT US -->
             <div id="tab-about" class="tab-panel">
                 
                 <!-- SECTION 1: HERO & SUSTAINABILITY -->
@@ -1213,17 +1212,15 @@
                         </p>
                     </div>
                     <div class="sustainability-right-new">
-                        <!-- Image Slot: Seedling / Soil -->
                         <img src="hands_soil.png" alt="Hands in soil with sprouting seedling">
                     </div>
                 </section>
 
-                <!-- SECTION 2: OUR PARTNERS (UPDATED 3-CARD LAYOUT) -->
+                <!-- SECTION 2: OUR PARTNERS -->
                 <section class="about-partners-section-new">
                     <h2 class="about-partners-title-new">Our Partners</h2>
                     
                     <div class="partners-cards-grid">
-                        <!-- Card 1 -->
                         <div class="partner-card">
                             <div>
                                 <div class="card-stars">★★★★★</div>
@@ -1232,7 +1229,6 @@
                             <div class="card-author">Cardio Dance Disco | <span>Loren</span></div>
                         </div>
 
-                        <!-- Card 2 -->
                         <div class="partner-card">
                             <div>
                                 <div class="card-stars">★★★★★</div>
@@ -1241,7 +1237,6 @@
                             <div class="card-author">Raptor Supplements | <span>Lucas</span></div>
                         </div>
 
-                        <!-- Card 3 -->
                         <div class="partner-card">
                             <div>
                                 <div class="card-stars">★★★★★</div>
@@ -1316,7 +1311,7 @@
                 </section>
             </div>
 
-            <!-- TAB: PARTNERSHIP RETAINERS (REVISED EDITORIAL LAYOUT) -->
+            <!-- TAB: PARTNERSHIP RETAINERS -->
             <div id="tab-retainers" class="tab-panel">
                 <div class="retainers-page-wrapper">
                     
@@ -1325,7 +1320,7 @@
                         <h1>RETAINERS</h1>
                     </div>
 
-                    <!-- 2. Partnerships Cards Wrapper Section (Dark Surface Block Background) -->
+                    <!-- 2. Partnerships Cards Wrapper Section -->
                     <section class="partnerships-cards-wrapper">
                         
                         <div class="retainer-card-container">
@@ -1359,7 +1354,7 @@
                                 </div>
                             </div>
 
-                            <!-- Full-Suite Pro -->
+                            <!-- Full-Suite Pro (UPDATED TO CREAM BACKGROUND / CHARCOAL TEXT) -->
                             <div class="retainer-block block-fullsuite">
                                 <div class="retainer-block-title">Full-Suite Pro</div>
                                 <div class="retainer-block-content">
