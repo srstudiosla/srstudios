@@ -1049,6 +1049,33 @@
         .m-pillar h3{font-size:1.8rem;margin-bottom:.7rem}
         .m-pillar p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);font-weight:300}
         @media(max-width:968px){.m-story,.m-pillars{grid-template-columns:100%}.m-story-text{padding:0}}
+
+        /* ===== FULL-BLEED LAYOUT ===== */
+        .site-wrapper{max-width:none;width:100%;padding:0}
+        .v2-about,.w-section,.v2-plans-section,.v2-services,.m-section,.about-partners-section-new,
+        .partnerships-cards-wrapper,.retainers-page-wrapper>section,.about-consultation-banner,.contact-content{
+            padding-inline:max(1.25rem,calc((100% - 1440px)/2))}
+        .v2-about,.m-story,.m-pillars{max-width:none}
+        .v2-about>*{max-width:900px;margin-inline:auto}
+        .promise-split-section{border-radius:0;margin:0;padding-inline:max(1.25rem,calc((100% - 1440px)/2))}
+        .promise-split-section .promise-img-box{border-radius:28px}
+        .about-sustainability-split-new{padding-inline:0}
+        .sustainability-right-new img{border-radius:0}
+        .about-footer-block{padding-inline:max(1.25rem,calc((100% - 1440px)/2))}
+        .about-footer-container{max-width:none}
+        .retainers-hero-banner,.about-us-hero-new{border-radius:0}
+        .partnerships-cards-wrapper{width:100%}
+        .fullbleed-portfolio-wrapper,.mockup-about-section{width:100%}
+        .m-section{max-width:none}
+        .partners-cards-grid{max-width:none;width:100%}
+        .m-headline{margin-inline:auto}
+        @media(max-width:968px){.about-footer-block{padding-inline:1.5rem}}
+        .retainer-card-container,.additional-investments-grid{max-width:none}
+        .partnerships-cards-wrapper{padding-inline:max(1.25rem,calc((100% - 1440px)/2))}
+        .additional-investments-grid{grid-template-columns:minmax(320px,1fr) 1.4fr}
+        .retainers-page-wrapper{align-items:stretch}
+        @media(max-width:968px){.additional-investments-grid{grid-template-columns:100%}}
+        .footer-container{max-width:none;padding-inline:max(1.25rem,calc((100% - 1440px)/2))}
     </style>
 </head>
 <body>
