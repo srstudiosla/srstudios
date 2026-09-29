@@ -6,7 +6,7 @@
     <title>SR Studios | Premium E-Commerce & Marketing Strategy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Hanken+Grotesk:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     
     <style>
         /* --- BRAND PALETTE & CSS VARIABLES --- */
@@ -856,6 +856,199 @@
             .retainer-block { grid-template-columns: 100%; gap: 1.5rem; padding: 2.5rem 2rem; }
             .additional-investments-grid { grid-template-columns: 100%; }
         }
+
+        /* ===== V2 MODERN HOME BLOCKS ===== */
+        .v2-hero{width:100%;text-align:center;padding:7rem 2rem 6rem;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(18,18,18,.96)),url('hero_bg_dark.png') center/cover no-repeat;border-bottom:1px solid var(--border-color)}
+        .v2-eyebrow{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1.5rem}
+        .v2-hero h1{font-family:var(--font-title);font-weight:400;font-size:clamp(3rem,8vw,6.5rem);line-height:1.02;max-width:14ch;margin:0 auto 1.5rem}
+        .v2-hero h1 .script-accent{font-size:1.15em}
+        .v2-lead{max-width:52ch;margin:0 auto 2.4rem;color:var(--text-secondary);font-weight:300;font-size:1.05rem}
+        .v2-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .v2-btn-ghost{display:inline-block;padding:.95rem 2rem;border:1px solid rgba(255,255,255,.5);border-radius:999px;color:#fff;text-decoration:none;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;transition:background .25s,color .25s}
+        .v2-btn-ghost:hover{background:#fff;color:var(--text-dark)}
+        .v2-marquee{width:100%;overflow:hidden;padding:1.4rem 0;background:var(--surface-color);border-bottom:1px solid var(--border-color)}
+        .v2-track{display:flex;gap:4rem;width:max-content;animation:v2slide 32s linear infinite}
+        .v2-track span{font-family:var(--font-title);font-size:1.4rem;color:var(--text-secondary);white-space:nowrap}
+        .v2-track i{font-style:normal;color:var(--pink-script);letter-spacing:.2em;margin-right:.8rem;font-size:.9rem}
+        @keyframes v2slide{to{transform:translateX(-50%)}}
+        .v2-about{width:100%;max-width:900px;margin:0 auto;text-align:center;padding:6rem 2rem 5rem}
+        .v2-about h2,.v2-plans-section h2,.v2-services h2{font-family:var(--font-title);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;margin-bottom:1.5rem}
+        .v2-about p{color:var(--text-secondary);font-weight:300;font-size:.95rem;line-height:1.9}
+        .v2-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border-color)}
+        .v2-stats b{display:block;font-family:var(--font-title);font-weight:400;font-size:3rem;line-height:1}
+        .v2-stats small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary)}
+        .v2-showcase{width:100%;padding:0 0 5rem}
+        .v2-showcase img{width:100%;height:auto;display:block;border-radius:28px;border:1px solid var(--border-color)}
+        .v2-plans-section{width:100%;text-align:center;padding:5rem 0;display:flex;flex-direction:column;align-items:center;gap:2.5rem}
+        .v2-plans-section h2{margin:0}
+        .v2-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;width:100%;text-align:left}
+        .v2-plan{background:var(--surface-color);border:1px solid var(--border-color);border-radius:28px;padding:2.4rem 2rem;transition:transform .25s,border-color .25s}
+        .v2-plan:hover{transform:translateY(-6px);border-color:var(--pink-script)}
+        .v2-plan-featured{background:var(--red-accent);border-color:var(--red-accent)}
+        .v2-plan h3{font-family:var(--font-title);font-weight:400;font-size:1.9rem;margin-bottom:.6rem}
+        .v2-plan p{font-size:.85rem;color:var(--text-secondary);margin-bottom:1.4rem;font-weight:300}
+        .v2-plan ul{list-style:none;display:grid;gap:.7rem;font-size:.82rem}
+        .v2-plan li{padding-left:1.2rem;position:relative}
+        .v2-plan li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--pink-script)}
+        .v2-services{width:100%;text-align:center;padding:3rem 0 5rem}
+        .v2-services>p{color:var(--text-secondary);font-weight:300;max-width:52ch;margin:0 auto}
+        .v2-services-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+        .v2-services-row div{padding:1.6rem 1rem;border:1px solid var(--border-color);border-radius:20px;font-family:var(--font-title);font-size:1.3rem;transition:background .25s,color .25s}
+        .v2-services-row div:hover{background:var(--cream-bg);color:var(--text-dark)}
+        .v2-quotes .partner-card{border-radius:28px}
+        .v2-promise .promise-img-box{border-radius:28px}
+        @media(max-width:968px){.v2-plans{grid-template-columns:100%}.v2-services-row{grid-template-columns:1fr 1fr}.v2-stats{gap:.5rem}}
+        @media(prefers-reduced-motion:reduce){.v2-track{animation:none}}
+
+        /* ===== WELCOME POPUP ===== */
+        .sr-popup{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1.2rem;background:rgba(0,0,0,.7);backdrop-filter:blur(5px)}
+        .sr-popup.open{display:flex;animation:fadeIn .3s ease}
+        .sr-popup-card{position:relative;background:var(--cream-bg);color:var(--text-dark);border-radius:28px;padding:3.2rem 2.4rem 2.4rem;max-width:460px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+        .sr-popup-card .stars{color:var(--red-accent);letter-spacing:.3em;font-size:.9rem}
+        .sr-popup-card h2{font-family:var(--font-title);font-weight:400;font-size:2.3rem;margin:.6rem 0 .9rem}
+        .sr-popup-card p{color:#555;font-size:.9rem;margin-bottom:1.6rem}
+        .sr-popup-actions{display:grid;gap:.8rem}
+        .sr-popup-actions .btn-pill-burgundy{text-align:center}
+        .sr-popup-actions .v2-btn-ghost{color:var(--text-dark);border-color:var(--text-dark);text-align:center}
+        .sr-popup-actions .v2-btn-ghost:hover{background:var(--text-dark);color:#fff}
+        .sr-popup-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(0,0,0,.2);background:transparent;font-size:1.3rem;line-height:1;cursor:pointer;color:var(--text-dark)}
+        .sr-popup-close:hover{background:rgba(0,0,0,.08)}
+
+        /* ===== V3 THEME: LIGHT, GLASSY, MODERN ===== */
+        :root{
+            --bg-color:#F3F1EA; --surface-color:#FBFAF6; --tan-accent:#E3E6DC; --cream-bg:#E6EDDF;
+            --text-primary:#14201A; --text-secondary:#5A665E; --text-dark:#14201A; --text-charcoal:#14201A;
+            --pink-script:#2F6B4F; --red-accent:#1F3B2D; --border-color:rgba(20,32,26,.10);
+            --font-serif:'Fraunces',Georgia,serif; --font-title:'Fraunces',Georgia,serif;
+            --font-sans:'Hanken Grotesk',-apple-system,sans-serif; --font-script:'Fraunces',Georgia,serif;
+            --glass:rgba(255,255,255,.55); --glass-line:rgba(255,255,255,.7);
+        }
+        body{background:var(--bg-color);position:relative}
+        body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+            background:radial-gradient(600px 400px at 10% 5%,rgba(190,215,180,.55),transparent 70%),
+                       radial-gradient(700px 500px at 95% 30%,rgba(245,214,190,.45),transparent 70%),
+                       radial-gradient(600px 500px at 30% 95%,rgba(200,220,235,.45),transparent 70%)}
+        h1,h2,h3{font-weight:300;letter-spacing:-.02em}
+        .script-accent{font-style:italic;font-weight:300;color:var(--pink-script)}
+        header{background:rgba(251,250,246,.65);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--border-color)}
+        .global-brand-logo{color:var(--text-primary);font-weight:300}
+        .global-brand-logo span{font-size:2rem;font-style:italic;margin-left:.3rem}
+        .tab-btn{color:var(--text-primary);text-transform:none;letter-spacing:.02em;font-size:.9rem;padding:.55rem 1.1rem;border-radius:999px;opacity:.6}
+        .tab-btn:hover{background:rgba(255,255,255,.7)}
+        .tab-btn.active{background:var(--red-accent);color:#fff;opacity:1!important}
+        .tab-btn.active::after{display:none}
+        .btn-pill-burgundy{background:var(--red-accent)!important;color:#fff!important;border-radius:999px;transition:transform .25s,background .25s}
+        .btn-pill-burgundy:hover{transform:translateY(-2px);background:#14201A!important}
+        .v2-hero{background:transparent;border:none;padding:6rem 2rem 4rem}
+        .v2-hero h1{font-size:clamp(3rem,7.5vw,6rem);font-weight:300}
+        .v2-btn-ghost{color:var(--text-primary);border:1px solid rgba(20,32,26,.35);background:var(--glass);backdrop-filter:blur(10px)}
+        .v2-btn-ghost:hover{background:var(--text-primary);color:#fff}
+        .v2-marquee{background:var(--glass);backdrop-filter:blur(12px);border-block:1px solid var(--border-color)}
+        .v2-track i{color:var(--pink-script)}
+        .v2-about{padding-top:6rem}
+        .v2-plan,.v2-services-row div,.partner-card{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(31,59,45,.08);color:var(--text-primary)}
+        .v2-plan-featured{background:var(--red-accent);color:#fff;border-color:transparent}
+        .v2-plan-featured p{color:rgba(255,255,255,.75)}
+        .v2-plan-featured li::before{background:#fff}
+        .v2-services-row div:hover{background:var(--red-accent);color:#fff}
+        .partner-card *{color:inherit}
+        .partner-card .card-quote{color:var(--text-primary)}
+        .partner-card .card-stars{color:var(--pink-script)}
+        .promise-split-section{background:var(--cream-bg);border-radius:36px;margin:0 0 4rem;width:100%}
+        .about-footer-block,.mockup-about-section,.fullbleed-portfolio-wrapper{background:transparent}
+        .footer-nav-col h3,.footer-scale-title{color:var(--text-primary)}
+        .footer-nav-links-grid a,.footer-scale-stack a{color:var(--text-secondary)}
+        footer{background:transparent;border-top:1px solid var(--border-color)}
+        .sr-popup-card{background:rgba(255,255,255,.75);backdrop-filter:blur(24px);border:1px solid var(--glass-line)}
+
+        /* ===== WORK BENTO ===== */
+        .w-section{width:100%;text-align:center;padding:5rem 0;display:flex;flex-direction:column;align-items:center;gap:1.6rem}
+        .w-section h2{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1}
+        .w-bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(240px,auto);gap:1.2rem;width:100%;margin:1rem 0 1.5rem;text-align:left}
+        .w-card{position:relative;overflow:hidden;border-radius:32px;background:var(--cream-bg);border:1px solid var(--glass-line);box-shadow:0 14px 50px rgba(31,59,45,.12);min-height:280px;isolation:isolate;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+        .w-card:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(31,59,45,.22)}
+        .w-feature{grid-column:span 2;grid-row:span 2}
+        .w-card:nth-child(2),.w-card:nth-child(3){grid-column:span 2}
+        .w-wide{grid-column:span 4;min-height:340px}
+        .w-art{position:absolute;inset:0;z-index:-1;display:grid;place-items:center;background:linear-gradient(135deg,#DCE8D2,#F1DFCB)}
+        .w-card:nth-child(2) .w-art{background:linear-gradient(135deg,#CFE0EA,#E4EBDD)}
+        .w-card:nth-child(3) .w-art{background:linear-gradient(135deg,#F1D5DF,#F5E6CF)}
+        .w-art::before{content:attr(data-initials);font-family:var(--font-serif);font-size:7rem;font-weight:300;color:rgba(31,59,45,.18)}
+        .w-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+        .w-card:hover .w-art img{transform:scale(1.06)}
+        .w-portfolio::before{content:none}
+        .w-glass{position:absolute;left:14px;right:14px;bottom:14px;padding:1.2rem 1.4rem;border-radius:22px;background:rgba(255,255,255,.55);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.75);color:var(--text-primary)}
+        .w-glass h3{font-size:1.6rem;margin:.5rem 0 .2rem}
+        .w-glass p{font-size:.85rem;color:var(--text-secondary)}
+        .w-glass blockquote{font-size:.85rem;font-style:italic;color:var(--text-secondary);max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .4s ease,margin .4s;margin:0}
+        .w-glass blockquote cite{font-style:normal;font-weight:600;color:var(--text-primary);margin-left:.3rem}
+        .w-card:hover blockquote,.w-card:focus-within blockquote{max-height:120px;opacity:1;margin-top:.6rem}
+        .w-chip{display:inline-block;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:.3rem .8rem;border-radius:999px;background:var(--red-accent);color:#fff}
+        @media(hover:none){.w-glass blockquote{max-height:120px;opacity:1;margin-top:.6rem}}
+        @media(max-width:968px){.w-bento{grid-template-columns:1fr 1fr}.w-feature,.w-card:nth-child(2),.w-card:nth-child(3),.w-wide{grid-column:span 2}.w-feature{grid-row:auto}}
+        @media(prefers-reduced-motion:reduce){.w-card,.w-art img{transition:none}}
+
+        /* ===== V3 CONTRAST FIXES ===== */
+        .about-partners-title-new,.sustainability-title-new{color:var(--text-primary)}
+        .horizontal-tag-red{color:var(--pink-script)}
+        .sustainability-title-new{font-weight:300}
+        .about-sustainability-split-new{background:transparent;gap:0}
+        .sustainability-right-new img{border-radius:32px}
+        .investments-black-side{background:#14201A}
+        .investments-red-side{background:var(--red-accent)}
+        .link-arrow-red{color:var(--text-primary)}
+        .about-partners-section-new{background:transparent}
+
+        .about-consultation-banner .link-arrow-red,.about-consultation-banner a{color:#fff}
+        .about-consultation-banner .footer-scale-title{color:#fff}
+
+        /* ===== V4: FOREST / SAGE / CREAM + ADVERCASE ===== */
+        @font-face{font-family:'Advercase';src:url('fonts/Advercase-Regular.woff2') format('woff2'),url('fonts/Advercase-Regular.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+        @font-face{font-family:'Advercase';src:url('fonts/Advercase-Italic.woff2') format('woff2'),url('fonts/Advercase-Italic.otf') format('opentype');font-weight:400;font-style:italic;font-display:swap}
+        @font-face{font-family:'Advercase';src:url('fonts/Advercase-Bold.woff2') format('woff2'),url('fonts/Advercase-Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+        :root{
+            --forest:#1F3B2D; --sage:#D3E1C8; --sage-deep:#B9CFAA; --cream:#F5EFDF; --white:#FFFFFF;
+            --bg-color:#F5EFDF; --surface-color:#FAF6EA; --cream-bg:#DCE7D2; --tan-accent:#E6E0CC;
+            --text-primary:#1B2A21; --text-secondary:#5C6759; --text-dark:#1B2A21;
+            --pink-script:#3C7355; --red-accent:#1F3B2D; --border-color:rgba(31,59,45,.12);
+            --glass:rgba(255,253,246,.55); --glass-line:rgba(255,255,255,.75);
+            --font-serif:'Advercase','EB Garamond',Georgia,serif; --font-title:'Advercase','EB Garamond',Georgia,serif; --font-script:'Advercase','EB Garamond',Georgia,serif;
+        }
+        h1,h2,h3,.global-brand-logo{font-weight:400}
+        body::before{background:
+            radial-gradient(700px 480px at 8% 4%,rgba(190,212,178,.7),transparent 70%),
+            radial-gradient(760px 520px at 96% 28%,rgba(252,247,228,.95),transparent 70%),
+            radial-gradient(680px 520px at 28% 96%,rgba(200,219,188,.6),transparent 70%),
+            radial-gradient(500px 400px at 75% 75%,rgba(250,243,220,.8),transparent 70%)}
+        .w-art{background:linear-gradient(135deg,#D3E1C8,#F5EFDF)}
+        .w-card:nth-child(2) .w-art{background:linear-gradient(135deg,#F5EFDF,#C6D9B9)}
+        .w-card:nth-child(3) .w-art{background:linear-gradient(135deg,#E3ECD8,#FAF5E6)}
+        .w-art::before{color:rgba(31,59,45,.16)}
+        .retainer-block.block-foundational,.retainer-block.block-fullsuite{background:var(--sage);color:var(--text-dark)}
+        .promise-split-section{background:var(--sage)}
+        .tab-btn:hover{background:rgba(255,255,255,.75)}
+        header{background:rgba(250,246,234,.65)}
+
+        /* ===== OUR MISSION ===== */
+        .m-section{width:100%;padding:6rem 0 5rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2rem}
+        .m-headline{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.08;max-width:16ch}
+        .m-story{display:grid;grid-template-columns:1.3fr 1fr;gap:2.5rem;width:100%;text-align:left;align-items:stretch;margin-top:1rem}
+        .m-story-text{display:grid;gap:1.2rem;align-content:center;padding:1rem 1rem 1rem 0}
+        .m-story-text p{color:var(--text-secondary);font-size:1rem;line-height:1.85;font-weight:300}
+        .m-glass{display:flex;flex-direction:column;justify-content:center;gap:1rem;padding:2.6rem 2.2rem;border-radius:32px;background:linear-gradient(135deg,rgba(211,225,200,.7),rgba(255,253,246,.6));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--glass-line);box-shadow:0 14px 50px rgba(31,59,45,.12)}
+        .m-quote-mark{font-family:var(--font-serif);font-size:4.5rem;line-height:.6;color:var(--pink-script)}
+        .m-glass p{font-family:var(--font-serif);font-size:1.7rem;line-height:1.25;color:var(--text-primary)}
+        .m-glass small{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary)}
+        .m-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;width:100%;text-align:left;margin:1rem 0 1.5rem}
+        .m-pillar{padding:2.2rem 1.9rem;border-radius:28px;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-line);box-shadow:0 10px 40px rgba(31,59,45,.08);transition:transform .35s,box-shadow .35s}
+        .m-pillar:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(31,59,45,.16)}
+        .m-pillar:nth-child(2){background:var(--forest);color:#fff}
+        .m-pillar:nth-child(2) p{color:rgba(255,255,255,.78)}
+        .m-pillar:nth-child(2) .m-num{color:var(--sage-deep)}
+        .m-num{display:block;font-size:.75rem;letter-spacing:.2em;color:var(--pink-script);font-weight:600;margin-bottom:2.2rem}
+        .m-pillar h3{font-size:1.8rem;margin-bottom:.7rem}
+        .m-pillar p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);font-weight:300}
+        @media(max-width:968px){.m-story,.m-pillars{grid-template-columns:100%}.m-story-text{padding:0}}
     </style>
 </head>
 <body>
@@ -880,44 +1073,113 @@
             <!-- TAB: GET STARTED / HOME -->
             <div id="tab-home" class="tab-panel active">
                 
-                <!-- 1. HERO HEADER WITH STACKED STAR RATINGS -->
-                <section class="mockup-hero-header">
-                    <h1>SR STUDIOS</h1>
-                    <div class="mockup-rating-block">
-                        <div class="mockup-rating-row">
-                            <span class="mockup-stars">★★★★★</span>
-                            <span>SPEED</span>
-                        </div>
-                        <div class="mockup-rating-row">
-                            <span class="mockup-stars">★★★★★</span>
-                            <span>COMMUNICATION</span>
-                        </div>
-                        <div class="mockup-rating-row">
-                            <span class="mockup-stars">★★★★★</span>
-                            <span>SATISFACTION</span>
-                        </div>
+                <!-- 1. HERO -->
+                <section class="v2-hero">
+                    <p class="v2-eyebrow">Los Angeles &amp; Austin &middot; Growth Marketing Agency</p>
+                    <h1>Marketing that <span class="script-accent">scales</span> with you.</h1>
+                    <p class="v2-lead">Paid ads, email, social, and creative for e-commerce and category innovators, run by one execution team.</p>
+                    <div class="v2-cta">
+                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-pill-burgundy">Book a free consultation</a>
+                        <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;" class="v2-btn-ghost">See our projects</a>
                     </div>
                 </section>
 
-                <!-- 2. ABOUT US CENTERED SECTION -->
-                <section class="mockup-about-section">
-                    <div class="mockup-about-text">
-                        <h2>About Us</h2>
-                        <p>
-                            Our mission is to help complex businesses unlock sustainable, measurable expansion. We partner with category innovators across technology, biotech, industrial manufacturing, e-commerce, and beyond. Whether navigating long sales cycles in high-tech B2B or driving customer lifetime value in consumer markets, our integrated methodology transforms growth marketing into a core competitive advantage.
-                        </p>
+                <!-- 2. TRUST MARQUEE -->
+                <section class="v2-marquee" aria-label="Client ratings">
+                    <div class="v2-track">
+                        <span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Speed</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Communication</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Satisfaction</span>
+                        <span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Speed</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Communication</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Satisfaction</span>
+                        <span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Speed</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Communication</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Satisfaction</span>
+                        <span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Speed</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Communication</span><span><i>&#9733;&#9733;&#9733;&#9733;&#9733;</i> Satisfaction</span>
                     </div>
                 </section>
 
-                <!-- 3. FULL-BLEED PORTFOLIO SHOWCASE IMAGE -->
-                <section class="fullbleed-portfolio-wrapper">
-                    <img src="selected_work_portfolio.png" alt="SR Studios Selected Works Portfolio Showcase">
+                <!-- 3. ABOUT -->
+                <section class="v2-about">
+                    <h2>Growth marketing as your <span class="script-accent">competitive advantage</span></h2>
+                    <p>Our mission is to help complex businesses unlock sustainable, measurable expansion. We partner with category innovators across technology, biotech, industrial manufacturing, e-commerce, and beyond. Whether navigating long sales cycles in high-tech B2B or driving customer lifetime value in consumer markets, our integrated methodology transforms growth marketing into a core competitive advantage.</p>
+                    <div class="v2-stats">
+                        <div><b>5.0</b><small>Speed</small></div>
+                        <div><b>5.0</b><small>Communication</small></div>
+                        <div><b>5.0</b><small>Satisfaction</small></div>
+                    </div>
                 </section>
 
-                <!-- 4. OUR PARTNERS / TESTIMONIALS SECTION -->
-                <section class="about-partners-section-new">
+                <!-- 4. SELECTED WORK SHOWCASE -->
+                <section class="w-section">
+                    <p class="v2-eyebrow">Selected Work</p>
+                    <h2>Projects we're <span class="script-accent">proud of</span></h2>
+                    <div class="w-bento ">
+                        <article class="w-card w-feature">
+                            <div class="w-art" data-initials="LG"><img src="work-logistics.png" alt="Logistics 3PL web design" onerror="this.remove()"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">3PL Web Design</span>
+                                <h3>Logistics</h3>
+                                <p>A clean, modern website built for a 3PL brand.</p>
+                            </div>
+                        </article>
+                        <article class="w-card">
+                            <div class="w-art" data-initials="RS"><img src="work-raptor-supplements.png" alt="Raptor Supplements creative" onerror="this.remove()"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">Brand &amp; Creative</span>
+                                <h3>Raptor Supplements</h3>
+                                <blockquote>&ldquo;Communication was direct, the work was quick.&rdquo; <cite>Lucas</cite></blockquote>
+                            </div>
+                        </article>
+                        <article class="w-card">
+                            <div class="w-art" data-initials="CD"><img src="work-cardio-dance-disco.png" alt="Cardio Dance Disco mockups" onerror="this.remove()"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">Creative &amp; Mockups</span>
+                                <h3>Cardio Dance Disco</h3>
+                                <blockquote>&ldquo;I received multiple mockups and was able to make changes.&rdquo; <cite>Loren</cite></blockquote>
+                            </div>
+                        </article>
+                        <article class="w-card w-wide">
+                            <div class="w-art w-portfolio"><img src="selected_work_portfolio.png" alt="SR Studios all projects showcase"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">All Projects</span>
+                                <h3>Every project, in one place</h3>
+                            </div>
+                        </article>
+                    </div>
+                    <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;" class="v2-btn-ghost">View all work &rarr;</a>
+                </section>
+
+                <!-- 5. RETAINER PREVIEW CARDS -->
+                <section class="v2-plans-section">
+                    <h2>Retainers built for <span class="script-accent">your stage</span></h2>
+                    <div class="v2-plans">
+                        <article class="v2-plan">
+                            <h3>Foundational</h3>
+                            <p>Paid ads and email retention, fully managed.</p>
+                            <ul><li>Google, Meta, and Pinterest ads</li><li>1-2 weekly newsletters and flows</li><li>Weekly ROAS reporting</li></ul>
+                        </article>
+                        <article class="v2-plan v2-plan-featured">
+                            <h3>Omnichannel Pro</h3>
+                            <p>Everything in Foundational, plus social and community.</p>
+                            <ul><li>2-3 reels and carousels weekly</li><li>Daily community engagement</li><li>Bi-weekly Loom and email updates</li></ul>
+                        </article>
+                        <article class="v2-plan">
+                            <h3>Full-Suite Pro</h3>
+                            <p>Your whole marketing team, on one retainer.</p>
+                            <ul><li>Premium Asset Studio</li><li>4-5 new ad creatives weekly</li><li>Full web management and audits</li></ul>
+                        </article>
+                    </div>
+                    <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="v2-btn-ghost">Compare all partnerships &rarr;</a>
+                </section>
+
+                <!-- 6. SERVICES A LA CARTE -->
+                <section class="v2-services">
+                    <h2>Don't need a full team?</h2>
+                    <p>Add single-time services or a custom mix. Perfect for getting started or supporting your existing team.</p>
+                    <div class="v2-services-row">
+                        <div>Paid Advertising</div><div>Social Media</div><div>Website Development</div><div>Email Marketing</div>
+                    </div>
+                </section>
+
+                <!-- 7. TESTIMONIALS -->
+                <section class="about-partners-section-new v2-quotes">
                     <h2 class="about-partners-title-new">Our Partners</h2>
-                    
                     <div class="partners-cards-grid">
                         <div class="partner-card">
                             <div>
@@ -943,23 +1205,18 @@
                             <div class="card-author">Cardio Dance Disco | <span>Loren</span></div>
                         </div>
                     </div>
-
                     <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;" class="btn-pill-burgundy">SEE OUR PROJECTS</a>
                 </section>
 
-                <!-- 5. OUR RETAINER PROMISE (CREAM BG) -->
-                <section class="promise-split-section">
+                <!-- 8. RETAINER PROMISE -->
+                <section class="promise-split-section v2-promise">
                     <div class="promise-img-box">
                         <img src="unboxing_box.png" alt="SR Studios Client Welcome Box">
                     </div>
                     <div class="promise-text">
                         <h2>Our Retainer Promise</h2>
-                        <p>
-                            Join our retainer program today and receive a complimentary client welcome box.
-                        </p>
-                        <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" style="color: var(--text-dark); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600;">
-                            LEARN MORE &rarr;
-                        </a>
+                        <p>Join our retainer program today and receive a complimentary client welcome box.</p>
+                        <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" style="color: var(--text-dark); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 600;">LEARN MORE &rarr;</a>
                     </div>
                 </section>
 
@@ -994,6 +1251,41 @@
                 <!-- SECTION 1: HERO & SUSTAINABILITY -->
                 <section class="about-us-hero-new">
                     <h1>ABOUT US</h1>
+                </section>
+
+                <!-- OUR MISSION -->
+                <section class="m-section">
+                    <p class="v2-eyebrow">Our Mission</p>
+                    <h2 class="m-headline">We help brands grow, <span class="script-accent">sustainably</span>.</h2>
+                    <div class="m-story">
+                        <div class="m-story-text">
+                            <p>SR Studios started with a simple belief: great marketing shouldn't feel like guesswork. Too many brands are handed a pile of disconnected tactics and left to sort out what's working. We wanted to build something different, one team that understands your business, your customer, and your numbers.</p>
+                            <p>From our studios in Los Angeles and Austin, we partner with founders and marketing leaders to build growth that lasts. That means clear strategy, creative that earns attention, and reporting you can actually read. We move fast, communicate openly, and treat every brand like it's our own.</p>
+                        </div>
+                        <aside class="m-glass">
+                            <span class="m-quote-mark">&ldquo;</span>
+                            <p>Growth marketing should be a core competitive advantage, not an afterthought.</p>
+                            <small>The SR Studios philosophy</small>
+                        </aside>
+                    </div>
+                    <div class="m-pillars">
+                        <article class="m-pillar">
+                            <span class="m-num">01</span>
+                            <h3>B2B Growth</h3>
+                            <p>Long sales cycles need patient, precise marketing. We build pipeline-focused campaigns and content that earn trust with buyers and support your sales team every step of the way.</p>
+                        </article>
+                        <article class="m-pillar">
+                            <span class="m-num">02</span>
+                            <h3>DTC &amp; E-Commerce</h3>
+                            <p>From first click to repeat purchase, we focus on the metrics that matter: return on ad spend, retention, and customer lifetime value, across paid, email, and social.</p>
+                        </article>
+                        <article class="m-pillar">
+                            <span class="m-num">03</span>
+                            <h3>One Integrated Team</h3>
+                            <p>Strategy, creative, and execution under one roof. Your channels work together, your message stays consistent, and you always know who to call.</p>
+                        </article>
+                    </div>
+                    <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-pill-burgundy">Start a conversation</a>
                 </section>
 
                 <section class="about-sustainability-split-new">
@@ -1076,9 +1368,46 @@
 
             <!-- TAB: SELECTED WORK (FULL BLEED PORTFOLIO SLOT) -->
             <div id="tab-selected-work" class="tab-panel">
-                <div class="fullbleed-portfolio-wrapper">
-                    <img src="selected_work_portfolio.png" alt="SR Studios Selected Works Portfolio">
-                </div>
+                <section class="v2-hero" style="padding-bottom:3rem">
+                    <p class="v2-eyebrow">Selected Work</p>
+                    <h1>Brands we've helped <span class="script-accent">shine</span>.</h1>
+                    <p class="v2-lead">Identity, creative, and marketing for founders who care how it looks and how it performs.</p>
+                </section>
+                <section class="w-section" style="padding-top:2rem">
+                    <div class="w-bento ">
+                        <article class="w-card w-feature">
+                            <div class="w-art" data-initials="LG"><img src="work-logistics.png" alt="Logistics 3PL web design" onerror="this.remove()"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">3PL Web Design</span>
+                                <h3>Logistics</h3>
+                                <p>A clean, modern website built for a 3PL brand.</p>
+                            </div>
+                        </article>
+                        <article class="w-card">
+                            <div class="w-art" data-initials="RS"><img src="work-raptor-supplements.png" alt="Raptor Supplements creative" onerror="this.remove()"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">Brand &amp; Creative</span>
+                                <h3>Raptor Supplements</h3>
+                                <blockquote>&ldquo;Communication was direct, the work was quick.&rdquo; <cite>Lucas</cite></blockquote>
+                            </div>
+                        </article>
+                        <article class="w-card">
+                            <div class="w-art" data-initials="CD"><img src="work-cardio-dance-disco.png" alt="Cardio Dance Disco mockups" onerror="this.remove()"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">Creative &amp; Mockups</span>
+                                <h3>Cardio Dance Disco</h3>
+                                <blockquote>&ldquo;I received multiple mockups and was able to make changes.&rdquo; <cite>Loren</cite></blockquote>
+                            </div>
+                        </article>
+                        <article class="w-card w-wide">
+                            <div class="w-art w-portfolio"><img src="selected_work_portfolio.png" alt="SR Studios all projects showcase"></div>
+                            <div class="w-glass">
+                                <span class="w-chip">All Projects</span>
+                                <h3>Every project, in one place</h3>
+                            </div>
+                        </article>
+                    </div>
+                </section>
 
                 <!-- EDITORIAL FOOTER NAVIGATION -->
                 <section class="about-footer-block">
@@ -1253,9 +1582,35 @@
     <footer>
         <div class="footer-container">
             <div>&copy; 2026 SR Studios. All Rights Reserved.</div>
-            <div>Los Angeles, California</div>
+            <div>Los Angeles &amp; Austin</div>
         </div>
     </footer>
+
+    <!-- WELCOME POPUP -->
+    <div class="sr-popup" id="srPopup" role="dialog" aria-modal="true" aria-labelledby="srPopupTitle">
+        <div class="sr-popup-card">
+            <button class="sr-popup-close" id="srPopupClose" aria-label="Close">&times;</button>
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <h2 id="srPopupTitle">Welcome to <span class="script-accent" style="color:var(--red-accent)">SR Studios</span></h2>
+            <p>Follow our social channels <b>@s_ryan.co</b> on Instagram, and sign up for a free consultation today! &#11088;&#65039;</p>
+            <div class="sr-popup-actions">
+                <a href="mailto:admin@srstudiosla.com?subject=Free%20Consultation%20Request" class="btn-pill-burgundy">Book a free consultation</a>
+                <a href="https://instagram.com/s_ryan.co" target="_blank" rel="noopener" class="v2-btn-ghost">Follow @s_ryan.co</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            var p=document.getElementById('srPopup'),seen=false;
+            try{seen=sessionStorage.getItem('srPopupSeen')==='1'}catch(e){}
+            function close(){p.classList.remove('open');try{sessionStorage.setItem('srPopupSeen','1')}catch(e){}}
+            if(!seen){setTimeout(function(){p.classList.add('open')},1500)}
+            document.getElementById('srPopupClose').addEventListener('click',close);
+            p.addEventListener('click',function(e){if(e.target===p)close()});
+            document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+        })();
+    </script>
 
     <script>
         function switchTab(event, tabId) {
