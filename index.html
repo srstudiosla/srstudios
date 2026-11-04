@@ -893,11 +893,12 @@
         .v2-services{width:100%;text-align:center;padding:3rem 0 5rem}
         .v2-services>p{color:var(--text-secondary);font-weight:300;max-width:52ch;margin:0 auto}
         .v2-services-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+        .v2-services-row{grid-template-columns:repeat(3,1fr)}
         .v2-services-row div{padding:1.6rem 1rem;border:1px solid var(--border-color);border-radius:20px;font-family:var(--font-title);font-size:1.3rem;transition:background .25s,color .25s}
         .v2-services-row div:hover{background:var(--cream-bg);color:var(--text-dark)}
         .v2-quotes .partner-card{border-radius:28px}
         .v2-promise .promise-img-box{border-radius:28px}
-        @media(max-width:968px){.v2-plans{grid-template-columns:100%}.v2-services-row{grid-template-columns:1fr 1fr}.v2-stats{gap:.5rem}}
+        @media(max-width:968px){.v2-plans{grid-template-columns:100%}.v2-services-row{grid-template-columns:1fr}.v2-stats{gap:.5rem}}
         @media(prefers-reduced-motion:reduce){.v2-track{animation:none}}
 
         /* ===== WELCOME POPUP ===== */
@@ -1373,6 +1374,185 @@
         .cs-credit b{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#4A5D3A;color:#fff;font-size:.7rem}
         .cs-credit-note{margin:0 0 .8rem;padding:.55rem .9rem;border-radius:14px;background:rgba(246,176,187,.35);font-size:.76rem;line-height:1.4;color:#2F3A26;text-align:center}
         .cs-feat .cs-credit-note{background:rgba(255,255,255,.14);color:#fff}
+        /* ===== V14: WEB DESIGN LANDING ===== */
+        .wd-frame{border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--glass-line);box-shadow:0 24px 70px rgba(52,64,42,.22);width:100%}
+        .wd-bar{display:flex;align-items:center;gap:6px;height:32px;padding:0 12px;background:#ECE0DA}
+        .wd-bar span{width:9px;height:9px;border-radius:50%;background:#F6B0BB}
+        .wd-bar span:nth-child(2){background:#F1C8C8}.wd-bar span:nth-child(3){background:#CBD6BE}
+        .wd-bar em{flex:1;max-width:320px;margin-left:12px;padding:3px 12px;border-radius:999px;background:rgba(255,255,255,.85);font-style:normal;font-size:.66rem;color:#5A665E;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .wd-screen{position:relative;aspect-ratio:16/10;overflow:hidden;container-type:size;background:#fff}
+        .wd-img{position:absolute;top:0;left:0;width:100%;height:auto;min-height:100%;object-fit:cover;object-position:top;background:#fff;display:block}
+        .wd-scroll{transition:transform 6s ease-in-out}
+        .wd-frame:hover .wd-scroll{transform:translateY(min(0px,calc(-100% + 100cqh)))}
+        /* skeleton fallbacks */
+        .sk{position:absolute;inset:0;padding:3.5cqw 4cqw;display:flex;flex-direction:column;gap:3.5cqw;background:var(--bg)}
+        .sk-beauty{--bg:#FBF3EE;--ink:#3B2E2E;--muted:#D9C6BE;--acc:#F6B0BB;--card:#F1C8C8}
+        .sk-cons{--bg:#F5EFDF;--ink:#2F3A26;--muted:#CFC8B4;--acc:#4A5D3A;--card:#CBD6BE}
+        .sk-logi{--bg:#0F1318;--ink:#fff;--muted:#4A5260;--acc:#5B7CFA;--card:#1B222C}
+        .sk .skn{display:flex;align-items:center;gap:2.2cqw}
+        .sk .skn .lo{width:9cqw;height:2.6cqw;border-radius:99px;background:var(--ink)}
+        .sk .skn .lk{width:5cqw;height:1.3cqw;border-radius:99px;background:var(--muted)}
+        .sk .skn .ic{margin-left:auto;width:2.4cqw;height:2.4cqw;border-radius:50%;border:.3cqw solid var(--ink)}
+        .sk .skn .btn{margin-left:auto;width:9cqw;height:3cqw;border-radius:99px;background:var(--acc)}
+        .sk .skh{display:grid;grid-template-columns:1.1fr 1fr;gap:4cqw;flex:1.5;align-items:center}
+        .sk .skc .a,.sk .skc .b{display:block;height:3.6cqw;border-radius:99px;background:var(--ink);margin-bottom:1.6cqw}
+        .sk .skc .a{width:92%}.sk .skc .b{width:64%}
+        .sk .skc .c{display:block;width:80%;height:1.4cqw;border-radius:99px;background:var(--muted);margin:2.4cqw 0 3cqw}
+        .sk .skc .btn{display:block;width:15cqw;height:3.8cqw;border-radius:99px;background:var(--acc)}
+        .sk .ska{position:relative;height:100%}
+        .sk .ska .orb{position:absolute;right:0;top:50%;width:88%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,var(--card) 70%)}
+        .sk .ska .bottle{position:absolute;left:32%;top:50%;width:18%;height:64%;transform:translateY(-50%);border-radius:1.6cqw;background:var(--ink);box-shadow:0 2cqw 4cqw rgba(0,0,0,.18)}
+        .sk .ska .bottle::before{content:"";position:absolute;left:18%;right:18%;top:-9%;height:12%;border-radius:.8cqw;background:var(--acc)}
+        .sk .ska .tin{position:absolute;left:30%;top:50%;width:26%;height:52%;transform:translateY(-50%);border-radius:1.6cqw;background:linear-gradient(#7E8C69,#4A5D3A);box-shadow:0 2cqw 4cqw rgba(0,0,0,.18)}
+        .sk .ska .tin::before{content:"";position:absolute;left:0;right:0;top:0;height:20%;border-radius:1.6cqw 1.6cqw 0 0;background:rgba(255,255,255,.28)}
+        .sk .ska .panel{position:absolute;left:0;top:6%;width:64%;height:60%;border-radius:1.6cqw;background:var(--card);border:.3cqw solid var(--muted)}
+        .sk .ska .panel.p2{left:30%;top:36%;width:70%;height:60%;background:#232C3A;border-color:var(--acc)}
+        .sk .skg{display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw;flex:1}
+        .sk .skg .bt{display:block;height:68%;border-radius:2cqw;background:var(--card)}
+        .sk .skg .tx{display:block;height:1.2cqw;width:58%;margin-top:1.2cqw;border-radius:99px;background:var(--muted)}
+        .sk-logi .skg>div{padding:2cqw;border-radius:1.6cqw;background:var(--card);border:.2cqw solid var(--muted)}
+        .sk .skg .ln{display:block;height:1.3cqw;border-radius:99px;background:var(--acc);margin-bottom:1.4cqw;width:70%}
+        .sk .skg .ln.s{width:90%;background:var(--muted)}
+        .sk .skb{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;height:9cqw;border-radius:1.4cqw;background:var(--acc);padding:2.4cqw 3cqw}
+        .sk .skb .st{display:block;border-radius:99px;background:rgba(255,255,255,.55);height:2cqw}
+        /* trio */
+        .wd-trio-grid{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:1.4rem;align-items:center;width:100%;text-align:left}
+        .wd-trio-grid .t1{transform:rotate(-2.5deg)}.wd-trio-grid .t3{transform:rotate(2.5deg)}
+        .wd-trio-grid .wd-frame{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+        .wd-trio-grid .wd-frame:hover{transform:translateY(-8px)}
+        /* pains */
+        .wd-pains{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;width:100%;text-align:left}
+        .wd-pain{padding:2rem;border-radius:28px;background:linear-gradient(150deg,rgba(255,255,255,.85),rgba(246,176,187,.28));border:1px solid var(--glass-line);box-shadow:0 12px 40px rgba(74,93,58,.10),inset 0 1px 0 rgba(255,255,255,.9)}
+        .wd-pain .x{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#F6B0BB;color:#2F3A26;font-size:.8rem;margin-bottom:1rem}
+        .wd-pain h3{font-family:var(--font-title);font-weight:400;font-size:1.4rem;margin:0 0 .5rem}
+        .wd-pain p{margin:0;color:var(--text-secondary);font-size:.92rem;line-height:1.6}
+        /* feature builds */
+        .wd-feature{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem;align-items:center;width:100%;text-align:left}
+        .wd-feature--rev{grid-template-columns:1fr 1.5fr}.wd-feature--rev .wd-feature-shot{order:2}
+        .wd-feature-copy{padding:2.2rem;border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.88),rgba(203,214,190,.4));border:1px solid var(--glass-line);box-shadow:0 14px 44px rgba(74,93,58,.12),inset 0 1px 0 rgba(255,255,255,.9)}
+        .wd-feature-copy h3{font-family:var(--font-title);font-weight:400;font-size:1.9rem;line-height:1.15;margin:.5rem 0 .8rem}
+        .wd-feature-copy>p{color:var(--text-secondary);line-height:1.65;font-size:.95rem;margin:0}
+        .wd-list{list-style:none;padding:0;margin:1.2rem 0 1.5rem;display:grid;gap:.65rem;font-size:.9rem;line-height:1.45}
+        .wd-list li{display:flex;gap:.65rem}
+        .wd-list li::before{content:"";flex:0 0 18px;height:18px;margin-top:.1rem;border-radius:50%;background:#CBD6BE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.2l2.6 2.6 5.2-5.4' fill='none' stroke='%234A5D3A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+        .wd-list--row{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.6rem;margin:1.5rem 0 1.6rem}
+        .wd-feature-copy .cs-btn{margin-top:0}
+        /* live concept storefront */
+        .wd-live-wrap{width:100%;max-width:1040px;text-align:left}
+        .wd-live{background:#F5EFDF}
+        .cb{position:relative;background:#F5EFDF;color:#2F3A26;font-family:var(--font-sans);text-align:left}
+        .cb *{box-sizing:border-box}
+        .cb-ann{background:#34402A;color:#fff;text-align:center;font-size:.72rem;letter-spacing:.06em;padding:.55rem}
+        .cb-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.8rem}
+        .cb-logo{font-family:var(--font-title);font-size:1.5rem}
+        .cb-nav nav{display:flex;gap:1.8rem;font-size:.85rem}
+        .cb-cart{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .9rem;border:1px solid #2F3A26;border-radius:999px;font-size:.8rem}
+        .cb-cart b{display:grid;place-items:center;min-width:20px;height:20px;border-radius:50%;background:#2F3A26;color:#fff;font-size:.68rem;font-weight:600}
+        .cb-hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;padding:1.6rem 1.8rem 2.4rem}
+        .cb-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#7E8C69}
+        .cb-copy h3{font-family:var(--font-title);font-weight:400;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.05;margin:.7rem 0 1rem}
+        .cb-copy h3 em{color:#C46A82}
+        .cb-copy p{color:#5A665E;line-height:1.65;max-width:38ch;margin:0 0 1.5rem;font-size:.98rem}
+        .cb-ctas{display:flex;gap:.7rem;flex-wrap:wrap}
+        .cb button{font-family:var(--font-sans);cursor:pointer;border:0;border-radius:999px;background:#2F3A26;color:#fff;padding:.8rem 1.5rem;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:transform .2s,background .2s}
+        .cb button:hover{transform:translateY(-2px);background:#4A5D3A}
+        .cb button:active{transform:scale(.96)}
+        .cb button.ghost{background:transparent;color:#2F3A26;border:1px solid #2F3A26}
+        .cb-art{position:relative;height:340px}
+        .cb-orb{position:absolute;inset:0;margin:auto;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0,#F1C8C8 70%)}
+        .cb-leaf{position:absolute;width:70px;height:110px;border-radius:0 100% 0 100%;background:#CBD6BE}
+        .cb-leaf.l1{left:14%;bottom:8%;transform:rotate(-20deg)}.cb-leaf.l2{right:12%;top:8%;background:#7E8C69;transform:rotate(30deg) scale(.8)}
+        .cb-tin{display:block;position:relative;width:110px;height:140px;border-radius:14px;background:linear-gradient(var(--t1),var(--t2));box-shadow:0 18px 30px rgba(52,64,42,.25)}
+        .cb-tin .lid{position:absolute;left:0;right:0;top:0;height:26px;border-radius:14px 14px 0 0;background:rgba(255,255,255,.26)}
+        .cb-tin .lab{position:absolute;left:18%;right:18%;top:48%;height:38px;border-radius:8px;background:rgba(255,255,255,.88)}
+        .cb-art .cb-tin{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(1.9)}
+        .cb-trust{display:flex;justify-content:center;gap:2.2rem;flex-wrap:wrap;padding:.9rem;background:rgba(255,255,255,.55);font-size:.78rem;color:#5A665E}
+        .cb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:2rem 1.8rem}
+        .cb-card{background:#fff;border-radius:22px;padding:1rem;box-shadow:0 10px 30px rgba(52,64,42,.08);transition:transform .3s,box-shadow .3s}
+        .cb-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(52,64,42,.16)}
+        .cb-pic{display:grid;place-items:center;height:180px;border-radius:16px;background:#E6EDDF;margin-bottom:.9rem}
+        .cb-card h4{font-family:var(--font-title);font-weight:400;font-size:1.25rem;margin:0 0 .2rem}
+        .cb-card p{margin:0 0 .9rem;color:#5A665E;font-size:.85rem}
+        .cb-row{display:flex;justify-content:space-between;align-items:center}
+        .cb-row b{font-family:var(--font-title);font-size:1.3rem;font-weight:400}
+        .cb-row button{padding:.6rem 1rem;font-size:.66rem}
+        .cb-quote{text-align:center;padding:1rem 1.8rem 2.2rem}
+        .cb-quote span{color:#C46A82;letter-spacing:.2em}
+        .cb-quote p{margin:.5rem 0 0;font-family:var(--font-title);font-size:1.3rem}
+        .cb-toast{position:absolute;right:18px;bottom:18px;padding:.6rem 1.1rem;border-radius:999px;background:#2F3A26;color:#fff;font-size:.8rem;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none}
+        .cb-toast.on{opacity:1;transform:none}
+        /* steps */
+        .wd-steps{display:grid;grid-template-columns:280px 1fr;gap:1.4rem;width:100%;text-align:left;align-items:start}
+        .wd-stepnav{display:grid;gap:.6rem}
+        .wd-stepbtn{display:flex;align-items:center;gap:.9rem;width:100%;padding:1rem 1.1rem;border-radius:20px;border:1px solid var(--glass-line);background:var(--glass);cursor:pointer;font-family:var(--font-sans);font-size:.92rem;color:var(--text-primary);text-align:left;transition:background .25s,color .25s,transform .25s;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+        .wd-stepbtn i{font-style:normal;display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:50%;background:#CBD6BE;color:#34402A;font-size:.8rem;font-weight:600}
+        .wd-stepbtn:hover{transform:translateX(4px)}
+        .wd-stepbtn.on{background:linear-gradient(150deg,#4A5D3A,#34402A);color:#fff;border-color:transparent}
+        .wd-stepbtn.on i{background:#F6B0BB;color:#2F3A26}
+        .wd-steppanels{padding:2rem;border-radius:32px;background:linear-gradient(150deg,rgba(255,255,255,.88),rgba(246,176,187,.24));border:1px solid var(--glass-line);box-shadow:0 14px 44px rgba(74,93,58,.12),inset 0 1px 0 rgba(255,255,255,.9);min-height:380px}
+        .wd-step-panel{display:none;grid-template-columns:1fr 1.1fr;gap:2rem;align-items:center}
+        .wd-step-panel.on{display:grid;animation:wdIn .45s ease}
+        @keyframes wdIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+        .wd-step-copy h3{font-family:var(--font-title);font-weight:400;font-size:1.9rem;line-height:1.15;margin:.5rem 0 .8rem}
+        .wd-step-copy p{color:var(--text-secondary);line-height:1.65;font-size:.95rem;margin:0 0 1.2rem}
+        .wd-deliv{display:inline-block;padding:.45rem .9rem;border-radius:999px;background:#CBD6BE;color:#34402A;font-size:.78rem;font-weight:500;margin-bottom:1.2rem}
+        .wd-next{display:block;padding:.75rem 1.4rem;border:1px solid #4A5D3A;border-radius:999px;background:transparent;color:#4A5D3A;font-family:var(--font-sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+        .wd-next:hover{background:#4A5D3A;color:#fff}
+        .wd-ill{min-height:260px;padding:1rem;border-radius:22px;background:rgba(255,255,255,.65);border:1px solid var(--glass-line)}
+        .wd-ill .ln{display:block;height:6px;border-radius:99px;background:#D9CFC7;margin-top:.55rem}.wd-ill .ln.s{width:60%}
+        .ill1{display:flex;flex-wrap:wrap;gap:.7rem;align-content:center}
+        .ill1 .n{flex:1 1 28%;padding:.9rem;border-radius:14px;background:#fff;box-shadow:0 6px 18px rgba(74,93,58,.08)}
+        .ill1 .n b{font-size:.78rem;letter-spacing:.04em}
+        .ill1 .map{flex:1 1 100%;display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem}
+        .ill1 .map span{padding:.35rem .8rem;border-radius:999px;background:#F6B0BB;font-size:.72rem}
+        .ill2{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.1fr 1fr 1fr;gap:.7rem}
+        .ill2>div{display:flex;align-items:center;gap:.6rem;padding:.8rem;border:2px dashed #B9CFAA;border-radius:12px;background:rgba(255,255,255,.7);font-size:.78rem;color:#5A665E}
+        .ill2 .w1{grid-column:1/-1}.ill2 .w4{grid-column:1/-1}
+        .ill2 u{text-decoration:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#4A5D3A;color:#fff;font-size:.68rem}
+        .ill3{display:grid;gap:.8rem;align-content:center}
+        .ill3 .wd-frame{box-shadow:0 12px 30px rgba(52,64,42,.16)}
+        .ill3 .sw{display:flex;gap:.5rem;align-items:center}
+        .ill3 .sw i{width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+        .ill3 .sw b{margin-left:auto;font-family:var(--font-title);font-weight:400;font-size:1.8rem}
+        .ill4{padding:0;background:#1E2A1E;display:grid;align-items:center}
+        .ill4 pre{margin:0;padding:1.4rem;overflow:auto;font:400 .78rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:#CBD6BE}
+        .ill4 i{font-style:normal;color:#F6B0BB}
+        .ill5{display:grid;gap:.6rem;align-content:center}
+        .ill5>div{display:flex;align-items:center;gap:.8rem;padding:.85rem 1rem;border-radius:14px;background:#fff;box-shadow:0 6px 18px rgba(74,93,58,.08);font-size:.88rem}
+        .ill5 b{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#4A5D3A;color:#fff;font-size:.72rem}
+        /* platforms */
+        .wd-plats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;width:100%;text-align:left}
+        .wd-plat{padding:1.8rem;border-radius:28px;background:linear-gradient(150deg,rgba(255,255,255,.85),rgba(203,214,190,.4));border:1px solid var(--glass-line);box-shadow:0 12px 40px rgba(74,93,58,.10),inset 0 1px 0 rgba(255,255,255,.9);transition:transform .3s,box-shadow .3s}
+        .wd-plat:hover{transform:translateY(-6px);box-shadow:0 24px 56px rgba(74,93,58,.18)}
+        .wd-plat .mono{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#4A5D3A;color:#fff;font-family:var(--font-title);font-size:1.05rem;margin-bottom:1rem}
+        .wd-plat h3{font-family:var(--font-title);font-weight:400;font-size:1.45rem;margin:0 0 .5rem}
+        .wd-plat p{margin:0;color:var(--text-secondary);font-size:.9rem;line-height:1.6}
+        /* stack + sticky */
+        .wd-stack{display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem;width:100%;text-align:left}
+        .wd-stack ul{list-style:none;margin:0;padding:2rem;border-radius:32px;display:grid;gap:1rem;align-content:center;background:linear-gradient(150deg,rgba(255,255,255,.88),rgba(246,176,187,.24));border:1px solid var(--glass-line);box-shadow:0 14px 44px rgba(74,93,58,.12);font-size:1rem}
+        .wd-stack li{display:flex;gap:.8rem;align-items:flex-start}
+        .wd-stack li::before{content:"";flex:0 0 22px;height:22px;border-radius:50%;background:#CBD6BE url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M5 9.2l2.6 2.6 5.2-5.4' fill='none' stroke='%234A5D3A' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+        .wd-stack-cta{padding:2.2rem;border-radius:32px;background:linear-gradient(150deg,#4A5D3A,#34402A);color:#fff;display:grid;align-content:center;gap:.8rem}
+        .wd-stack-cta h3{font-family:var(--font-title);font-weight:400;font-size:1.8rem;line-height:1.15;margin:0;color:#fff}
+        .wd-stack-cta p{margin:0 0 .6rem;color:rgba(255,255,255,.82)}
+        .wd-stack-cta .cs-btn{margin-top:0}
+        .wd-alt{color:rgba(255,255,255,.85);font-size:.82rem;text-decoration:underline;text-align:center}
+        .wd-sticky{position:fixed!important;left:50%;bottom:18px;transform:translateX(-50%);z-index:60;margin:0!important;box-shadow:0 14px 40px rgba(52,64,42,.4)}
+        .wd-sticky:hover{transform:translateX(-50%) translateY(-2px)!important}
+        @media(max-width:968px){
+            .wd-trio-grid{grid-template-columns:100%}.wd-trio-grid .t1,.wd-trio-grid .t3{transform:none;display:none}
+            .wd-pains,.wd-plats{grid-template-columns:100%}
+            .wd-feature,.wd-feature--rev{grid-template-columns:100%}.wd-feature--rev .wd-feature-shot{order:0}
+            .wd-steps{grid-template-columns:100%}.wd-stepnav{grid-template-columns:1fr 1fr}
+            .wd-step-panel{grid-template-columns:100%}
+            .wd-stack{grid-template-columns:100%}
+            .cb-hero{grid-template-columns:100%}.cb-art{height:260px}.cb-orb{width:240px;height:240px}.cb-nav nav{display:none}
+            .cb-grid{grid-template-columns:100%}
+        }
+        @media(max-width:560px){.wd-stepnav{grid-template-columns:100%}.wd-steppanels{padding:1.2rem}}
+        @media(prefers-reduced-motion:reduce){.wd-scroll,.wd-plat,.cb-card,.wd-trio-grid .wd-frame{transition:none}.wd-step-panel.on{animation:none}}
+        .wd-sticky{display:none!important}
+        body:has(#tab-webdesign.active) .wd-sticky{display:inline-flex!important}
 </style>
 </head>
 <body>
@@ -1423,7 +1603,7 @@
                 <section class="v2-hero">
                     <p class="v2-eyebrow">Los Angeles &amp; Austin &middot; Growth Marketing Agency</p>
                     <h1>Marketing that <span class="script-accent">scales</span> with you.</h1>
-                    <p class="v2-lead">Paid ads, email, social, and creative for e-commerce and category innovators, run by one execution team.</p>
+                    <p class="v2-lead">Paid ads, email, and landing pages for e-commerce and category innovators, run by one execution team.</p>
                     <div class="v2-cta">
                         <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="btn-pill-burgundy">Book a strategy call</a>
                         <a href="#" onclick="switchTab(null, 'tab-selected-work'); return false;" class="v2-btn-ghost">See our projects</a>
@@ -1554,7 +1734,7 @@
                     <div class="q4">
                         <span class="q4-pill">New &middot; Q1 2027 strategy plans</span>
                         <h2>Book a <span class="script-accent">strategy session</span></h2>
-                        <p>Ad, brand and social strategy built around your business. Sessions start at $49 and are credited toward your first month if you sign.</p>
+                        <p>Paid ads, email and landing page strategy built around your business. Sessions start at $149 and are credited toward your first month if you sign.</p>
                         <div class="q4-cta">
                             <a href="#" onclick="switchTab(null, 'tab-consult'); return false;" class="q4-btn">See the sessions</a>
                         </div>
@@ -1563,26 +1743,26 @@
 
                 <!-- 5. RETAINER PREVIEW CARDS -->
                 <section class="v2-plans-section">
-                    <h2>Retainers built for <span class="script-accent">your stage</span></h2>
+                    <h2>Three ways we <span class="script-accent">own your growth</span></h2>
                     <div class="v2-plans">
-                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-plan">
-                            
-                            <h3>Foundational</h3>
-                            <p>Paid ads and email retention, fully managed.</p>
-                            <ul><li>Google, Meta, and Pinterest ads</li><li>1-2 weekly newsletters and flows</li><li>Weekly ROAS reporting</li></ul>
-                            <span class="v2-plan-cta">Get started <i>&rarr;</i></span>
-                        </a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-plan v2-plan-featured">
-                            <span class="v2-plan-flag">Most popular</span>
-                            <h3>Omnichannel Pro</h3>
-                            <p>Everything in Foundational, plus social and community.</p>
-                            <ul><li>2-3 reels and carousels weekly</li><li>Daily community engagement</li><li>Bi-weekly Loom and email updates</li></ul>
-                            <span class="v2-plan-cta">Get started <i>&rarr;</i></span>
+                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-plan v2-plan-featured">
+                            <span class="v2-plan-flag">Core offer</span>
+                            <h3>Paid Ads &amp; Performance</h3>
+                            <p>Full paid media management, built around revenue.</p>
+                            <ul><li>Google, Meta, Pinterest and Bing ads</li><li>4-5 new ad creatives weekly</li><li>Weekly ROAS reporting</li></ul>
+                            <span class="v2-plan-cta">Book a strategy call <i>&rarr;</i></span>
                         </a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-plan">
                             
-                            <h3>Full-Suite Pro</h3>
-                            <p>Your whole marketing team, on one retainer.</p>
-                            <ul><li>Premium Asset Studio</li><li>4-5 new ad creatives weekly</li><li>Full web management and audits</li></ul>
-                            <span class="v2-plan-cta">Get started <i>&rarr;</i></span>
+                            <h3>Email Marketing</h3>
+                            <p>Campaigns and Klaviyo flows, fully managed.</p>
+                            <ul><li>1-2 weekly newsletters and flows</li><li>Custom audience segmentation</li><li>Revenue attribution reporting</li></ul>
+                            <span class="v2-plan-cta">Book a strategy call <i>&rarr;</i></span>
+                        </a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-plan">
+                            
+                            <h3>Landing Pages &amp; Web</h3>
+                            <p>Pages built to convert your ad traffic.</p>
+                            <ul><li>Shopify and WordPress builds</li><li>Landing pages for every campaign</li><li>Ongoing web management and audits</li></ul>
+                            <span class="v2-plan-cta">Book a strategy call <i>&rarr;</i></span>
                         </a>
                     </div>
                     <a href="#" onclick="switchTab(null, 'tab-retainers'); return false;" class="v2-btn-ghost">Compare all partnerships &rarr;</a>
@@ -1590,10 +1770,10 @@
 
                 <!-- 6. SERVICES A LA CARTE -->
                 <section class="v2-services">
-                    <h2>Don't need a full team?</h2>
-                    <p>Add single-time services or a custom mix. Perfect for getting started or supporting your existing team.</p>
+                    <h2>Need just one piece?</h2>
+                    <p>Start with a single service or a custom mix. Perfect for getting started or supporting your existing team.</p>
                     <div class="v2-services-row">
-                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Paid Advertising</b><span>Meta, Google, Pinterest and Bing</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Social Media</b><span>Reels, carousels and community</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Website Development</b><span>Shopify builds and landing pages</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Email Marketing</b><span>Campaigns and Klaviyo flows</span><i>&rarr;</i></a>
+                        <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Paid Advertising</b><span>Meta, Google, Pinterest and Bing</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Email Marketing</b><span>Campaigns and Klaviyo flows</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Landing Pages &amp; Web</b><span>Shopify and WordPress</span><i>&rarr;</i></a>
                     </div>
                 </section>
 
@@ -1604,7 +1784,7 @@
                     <p class="x-sub">A structured 90-day framework for auditing, executing, and scaling cross-channel growth.</p>
                     <div class="pr-grid">
                         <article class="pr-step"><span class="pr-n">1</span><h3>Audit &amp; Discover</h3><ul><li>Account and channel audits</li><li>Historical ad data and funnel review</li><li>Buyer personas and customer journey</li><li>KPI tracking and attribution baselines</li></ul></article>
-                        <article class="pr-step"><span class="pr-n">2</span><h3>Strategize + Launch</h3><ul><li>Channel strategy and campaign concepts</li><li>A steady content cadence</li><li>First tests go live</li><li>Marketing and sales aligned</li></ul></article>
+                        <article class="pr-step"><span class="pr-n">2</span><h3>Strategize + Launch</h3><ul><li>Channel strategy and campaign concepts</li><li>Ads, email and landing pages in production</li><li>First tests go live</li><li>Marketing and sales aligned</li></ul></article>
                         <article class="pr-step pr-dark"><span class="pr-n">3</span><h3>Optimize + Scale</h3><ul><li>Test results analyzed</li><li>Double down on what wins</li><li>Budget moves toward performance</li><li>Next-quarter roadmap built</li></ul></article>
                         <article class="pr-step"><span class="pr-n">4</span><h3>Sustain + Innovate</h3><ul><li>Quarterly growth roadmaps</li><li>Scale spend while protecting efficiency</li><li>New channels and formats tested</li><li>Lifecycle retention programs</li></ul></article>
                     </div>
@@ -1730,7 +1910,7 @@
                         <article class="m-pillar">
                             <span class="m-num">02</span>
                             <h3>DTC &amp; E-Commerce</h3>
-                            <p>From first click to repeat purchase, we focus on the metrics that matter: return on ad spend, retention, and customer lifetime value, across paid, email, and social.</p>
+                            <p>From first click to repeat purchase, we focus on the metrics that matter: return on ad spend, retention, and customer lifetime value, across paid, email, and your website.</p>
                         </article>
                         <article class="m-pillar">
                             <span class="m-num">03</span>
@@ -1980,50 +2160,50 @@
             <div id="tab-retainers" class="tab-panel">
                 <section class="v2-hero" style="padding-bottom:2rem">
                     <p class="v2-eyebrow">Partnerships</p>
-                    <h1>Retainers built for <span class="script-accent">your stage.</span></h1>
-                    <p class="v2-lead">Choose the level of support that fits where your brand is today. Every retainer starts with a conversation about your goals.</p>
+                    <h1>Full management for <span class="script-accent">your growth engine.</span></h1>
+                    <p class="v2-lead">Three core services, fully managed by one execution partner. Every partnership starts with a conversation about your goals.</p>
                     <a class="cs-btn cs-btn--hero" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Book a strategy call</a>
                 </section>
 
                 <section class="w-section" style="padding-top:2rem">
                     <div class="cs-grid cs-grid--3">
-                        <article class="cs-card rt-card">
-                            
-                            <span class="cs-tag">Paid &amp; Email</span>
-                            <h3>Foundational</h3>
-                            <p class="cs-blurb">Paid ads and email retention, fully managed.</p>
-                            <ul><li>Paid Advertising PPC: full management of Google, Meta, and Pinterest ad platforms with 1-2 new campaigns weekly</li><li>Email Retention: 1-2 weekly newsletters, flows, and custom audience segmentation</li><li>Reporting: weekly ROAS tracking and revenue attribution report</li><li>+1 monthly request list from client</li><li>Hand-curated client box</li></ul>
-                            <a class="cs-btn" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Get started</a>
-                        </article><article class="cs-card rt-card cs-feat">
-                            <span class="cs-flag">Most popular</span>
-                            <span class="cs-tag">Paid, Email &amp; Social</span>
-                            <h3>Omnichannel Pro</h3>
-                            <p class="cs-blurb">Everything in Foundational, plus social and community.</p>
-                            <ul><li>Everything in Foundational included (full paid search and email retention management)</li><li>Social media: asynchronous content scheduling, 2-3 reels weekly, 2-3 carousels weekly (all channels)</li><li>Community engagement: 30 minutes daily interacting with comments, target accounts, and DMs</li><li>Bi-weekly asynchronous updates via Loom and email</li></ul>
-                            <a class="cs-btn" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Get started</a>
+                        <article class="cs-card rt-card cs-feat">
+                            <span class="cs-flag">Core offer</span>
+                            <span class="cs-tag">Paid &amp; Performance</span>
+                            <h3>Paid Ads &amp; Performance Marketing</h3>
+                            <p class="cs-blurb">Full management of your paid media, built around revenue.</p>
+                            <ul><li>Paid advertising: full management of Google, Meta, Pinterest and Bing, with 1-2 new campaigns weekly</li><li>4-5 new ad creative variations weekly</li><li>Reporting: weekly ROAS tracking and revenue attribution report</li><li>Weekly asynchronous updates and meeting blocks</li></ul>
+                            <a class="cs-btn" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Book a strategy call</a>
                         </article><article class="cs-card rt-card">
                             
-                            <span class="cs-tag">Your whole team</span>
-                            <h3>Full-Suite Pro</h3>
-                            <p class="cs-blurb">Your whole marketing team, on one retainer.</p>
-                            <ul><li>Everything in Omnichannel Pro included (paid search, email, social, and daily engagement)</li><li>Premium Asset Studio: in-house generation of custom, high-end AI lifestyle and studio-product shots, tailored with Photoshop</li><li>4-5 new ad creative variations weekly</li><li>Weekly asynchronous updates and meeting blocks</li><li>Full web management and audits</li></ul>
-                            <a class="cs-btn" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Get started</a>
+                            <span class="cs-tag">Email</span>
+                            <h3>Email Marketing Management</h3>
+                            <p class="cs-blurb">Campaigns and lifecycle flows, fully managed.</p>
+                            <ul><li>Email retention: 1-2 weekly newsletters and campaigns</li><li>Klaviyo flows built and optimized</li><li>Custom audience segmentation</li><li>Revenue attribution reporting</li><li>Bi-weekly asynchronous updates via Loom and email</li></ul>
+                            <a class="cs-btn" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Book a strategy call</a>
+                        </article><article class="cs-card rt-card">
+                            
+                            <span class="cs-tag">Landing Pages &amp; Web</span>
+                            <h3>Landing Page &amp; Web Management</h3>
+                            <p class="cs-blurb">Pages built to convert your ad and email traffic.</p>
+                            <ul><li>Landing pages built for each campaign and offer</li><li>Shopify and WordPress builds and ongoing management</li><li>Site audits and conversion improvements</li><li>Pages built to match your ads and email</li></ul>
+                            <a class="cs-btn" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Book a strategy call</a>
                         </article>
                     </div>
                 </section>
 
                 <section class="w-section" style="padding-top:1rem">
-                    <p class="v2-eyebrow">Additional investments</p>
-                    <h2>Need <span class="script-accent">less than a full team?</span></h2>
-                    <p class="x-sub">We are happy to offer single-time services or customized options. Perfect for getting started or supporting your existing team.</p>
-                    <div class="v2-services-row"><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Paid Advertising</b><span>Single or multi-platform</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Social Media Management</b><span>Single or multi-channel</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Website Development</b><span>Partial or full</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Email Marketing</b><span>Campaign series or full management</span><i>&rarr;</i></a></div>
+                    <p class="v2-eyebrow">Run all three</p>
+                    <h2>Want the <span class="script-accent">whole engine?</span></h2>
+                    <p class="x-sub">Paid ads, email and landing pages work best planned together. We can manage all three under one partnership, or start with a single service and add more as you grow.</p>
+                    <div class="v2-services-row"><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Paid Advertising</b><span>Single or multi-platform</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Email Marketing</b><span>Campaigns or full management</span><i>&rarr;</i></a><a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="v2-svc"><b>Landing Pages &amp; Web</b><span>Single pages or ongoing management</span><i>&rarr;</i></a></div>
                 </section>
 
                 <section class="w-section">
                     <div class="q4">
                         <span class="q4-pill">Not ready for a retainer?</span>
                         <h2>Start with a <span class="script-accent">strategy session</span></h2>
-                        <p>Get a clear plan for your ads, email and social. Sessions start at $49, and the fee is credited toward your first month's retainer if you sign.</p>
+                        <p>Get a clear plan for your ads, email and landing pages. Sessions start at $149, and the fee is credited toward your first month's retainer if you sign.</p>
                         <div class="q4-cta">
                             <a href="#" onclick="switchTab(null, 'tab-consult'); return false;" class="q4-btn">See the sessions</a>
                             <a href="#" onclick="switchTab(null, 'tab-contact'); return false;" class="q4-ghost">Ask a question</a>
@@ -2059,12 +2239,12 @@
                 <section class="v2-hero" style="padding-bottom:2rem">
                     <p class="v2-eyebrow">Q1 2027 strategy plans &middot; limited sessions</p>
                     <h1>Get your Q1 marketing plan <span class="script-accent">in 30 days.</span></h1>
-                    <p class="v2-lead">Find what is costing you sales, and leave with the framework, campaign plan and playbook to scale your ads, email and social next quarter. We do the thinking. You get the plan.</p>
+                    <p class="v2-lead">Find what is costing you sales, and leave with the framework, campaign plan and playbook to scale your ads, email and landing pages next quarter. We do the thinking. You get the plan.</p>
                     <div class="cs-cta-row">
                         <a class="cs-btn cs-btn--hero" href="#cs-paid">Choose your session</a>
                         <a class="cs-btn cs-btn--ghost" href="#" onclick="switchTab(null, 'tab-contact'); return false;">Not sure? Ask a question</a>
                     </div>
-                    <ul class="cs-proof"><li>Meta, Google, Pinterest and Bing ads</li><li>Klaviyo email and lifecycle</li><li>Social and brand strategy</li></ul>
+                    <ul class="cs-proof"><li>Meta, Google, Pinterest and Bing ads</li><li>Klaviyo email and lifecycle</li><li>Landing pages on Shopify and WordPress</li></ul>
                     <p class="cs-credit"><b>&#10003;</b> Sign a retainer and your session fee comes off your first month.</p>
                 </section>
 
@@ -2076,7 +2256,7 @@
                             <h3>This is for you if</h3>
                             <ul class="cs-yes">
                                 <li>You spend on ads and are not sure what is working</li>
-                                <li>Your email, social and ads are not working together</li>
+                                <li>Your ads, email and landing pages are not working together</li>
                                 <li>You want a clear plan for the quarter, not another report</li>
                                 <li>You want to implement it yourself or hand it to your team</li>
                             </ul>
@@ -2093,73 +2273,46 @@
                 </section>
 
                 <section class="w-section" id="cs-paid" style="padding-top:2rem">
-                    <p class="v2-eyebrow">Paid ads &amp; omnichannel</p>
+                    <p class="v2-eyebrow">Paid ads, email &amp; web</p>
                     <h2>Choose how far you want <span class="script-accent">us to go</span></h2>
-                    <p class="x-sub">Paid platforms, social and email planned as one system, tailored to your brand. Start small or get the full build.</p>
+                    <p class="x-sub">Paid ads, email and landing pages planned as one system, tailored to your brand. Start small or get the full build.</p>
                     <div class="cs-grid cs-grid--4">
                         <article class="cs-card">
                             
-                            <span class="cs-tag">Paid &amp; Omnichannel</span>
+                            <span class="cs-tag">Paid, Email &amp; Web</span>
                             <h3>Strategy Call</h3>
                             <div class="cs-price"><b>$149</b><span>one 60-min call</span></div>
                             <p class="cs-blurb">A focused session to find what is holding your performance back and what to do about it this quarter.</p>
-                            <ul><li>Review of your ad accounts and channels</li><li>Pain points and priority fixes</li><li>Framework of areas to improve</li><li>Quarterly strategy outline across paid, social and email</li></ul>
+                            <ul><li>Review of your ad accounts and channels</li><li>Pain points and priority fixes</li><li>Framework of areas to improve</li><li>Quarterly strategy outline across paid, email and landing pages</li></ul>
                             <p class="cs-credit-note">Credited toward your first retainer month if you sign</p>
                             <a class="cs-btn" href="mailto:admin@srstudiosla.com?subject=Strategy%20Call%20(149)" data-checkout="Strategy%20Call%20(149)">Book the call</a>
                         </article><article class="cs-card cs-feat">
                             <span class="cs-flag">Most popular</span>
-                            <span class="cs-tag">Paid &amp; Omnichannel</span>
+                            <span class="cs-tag">Paid, Email &amp; Web</span>
                             <h3>Strategy + Playbook</h3>
                             <div class="cs-price"><b>$259</b><span>two meetings over 30 days</span></div>
                             <p class="cs-blurb">Everything you need to scale next quarter, built around your brand and presented in a custom packet.</p>
-                            <ul><li>Meeting 1: brand, offers, goals and a hands-on account review</li><li>Meeting 2: strategy presentation and walkthrough</li><li>Custom framework packet</li><li>Brand guidelines</li><li>Personalized 90-day playbook for ads, email and content</li></ul>
+                            <ul><li>Meeting 1: brand, offers, goals and a hands-on account review</li><li>Meeting 2: strategy presentation and walkthrough</li><li>Custom framework packet</li><li>Brand guidelines</li><li>Personalized 90-day playbook for ads, email and landing pages</li></ul>
                             <p class="cs-credit-note">Credited toward your first retainer month if you sign</p>
                             <a class="cs-btn" href="mailto:admin@srstudiosla.com?subject=Strategy%20%2B%20Playbook%20(259)" data-checkout="Strategy%20%2B%20Playbook%20(259)">Book Strategy + Playbook</a>
                         </article><article class="cs-card">
                             
-                            <span class="cs-tag">Paid &amp; Omnichannel</span>
+                            <span class="cs-tag">Paid, Email &amp; Web</span>
                             <h3>Quarter Plan</h3>
                             <div class="cs-price"><b>$550</b><span>two meetings plus campaign plan</span></div>
                             <p class="cs-blurb">The full strategy, plus the campaign planning your team needs to launch with confidence.</p>
-                            <ul><li>Everything in Strategy + Playbook</li><li>Audience suggestions for your Meta campaigns</li><li>Quarterly campaign schedule</li><li>Creative briefs for your ads</li><li>Email calendar for the quarter</li></ul>
+                            <ul><li>Everything in Strategy + Playbook</li><li>Audience suggestions for your Meta campaigns</li><li>Quarterly campaign schedule</li><li>Creative briefs for your ads</li><li>Email calendar for the quarter</li><li>Landing page priorities</li></ul>
                             <p class="cs-credit-note">Credited toward your first retainer month if you sign</p>
                             <a class="cs-btn" href="mailto:admin@srstudiosla.com?subject=Quarter%20Plan%20(550)" data-checkout="Quarter%20Plan%20(550)">Book the Quarter Plan</a>
                         </article><article class="cs-card">
                             
-                            <span class="cs-tag">Paid &amp; Omnichannel</span>
+                            <span class="cs-tag">Paid, Email &amp; Web</span>
                             <h3>Q1 Launch Build</h3>
                             <div class="cs-price"><b>$2,500</b><span>done-for-you quarter build</span></div>
                             <p class="cs-blurb">We build your quarter with you, so you start Q1 with every channel set up and in sync.</p>
-                            <ul><li>Everything in Quarter Plan</li><li>Your Q1 campaigns built out</li><li>Email blocks and flows built for your brand</li><li>Brand and strategy guidelines for the quarter</li><li>Ads, email and social synced into one system</li></ul>
+                            <ul><li>Everything in Quarter Plan</li><li>Your Q1 ad campaigns built out</li><li>Email blocks and flows built for your brand</li><li>Brand and strategy guidelines for the quarter</li><li>Landing page plan so ads, email and site work as one system</li></ul>
                             <p class="cs-credit-note">Credited toward your first retainer month if you sign</p>
                             <a class="cs-btn" href="mailto:admin@srstudiosla.com?subject=Q1%20Launch%20Build%20(2500)" data-checkout="Q1%20Launch%20Build%20(2500)">Apply for the Launch Build</a>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="w-section" style="padding-top:1rem">
-                    <p class="v2-eyebrow">Social media</p>
-                    <h2>Social media <span class="script-accent">strategy</span></h2>
-                    <p class="x-sub">A plan for what to post, where and why, with a brand guide to keep it consistent.</p>
-                    <div class="cs-grid cs-grid--2">
-                        <article class="cs-card">
-                            
-                            <span class="cs-tag">Social Media</span>
-                            <h3>Social Strategy Session</h3>
-                            <div class="cs-price"><b>$49</b><span>one session</span></div>
-                            <p class="cs-blurb">A quick, practical read on your social presence and where to put your effort.</p>
-                            <ul><li>Review of your profiles and recent content</li><li>Content pillars and posting cadence</li><li>Top opportunities to act on right away</li></ul>
-                            <p class="cs-credit-note">Credited toward your first retainer month if you sign</p>
-                            <a class="cs-btn" href="mailto:admin@srstudiosla.com?subject=Social%20Strategy%20Session%20(49)" data-checkout="Social%20Strategy%20Session%20(49)">Book the session</a>
-                        </article><article class="cs-card cs-feat">
-                            <span class="cs-flag">Most popular</span>
-                            <span class="cs-tag">Social Media</span>
-                            <h3>Strategy + Brand Guide</h3>
-                            <div class="cs-price"><b>$124</b><span>two sessions</span></div>
-                            <p class="cs-blurb">A complete social plan with a brand guide your whole team can follow.</p>
-                            <ul><li>Two sessions: discovery, then strategy presentation</li><li>Personalized brand guide</li><li>Content plan and planning framework</li><li>Platform-by-platform recommendations</li></ul>
-                            <p class="cs-credit-note">Credited toward your first retainer month if you sign</p>
-                            <a class="cs-btn" href="mailto:admin@srstudiosla.com?subject=Social%20Strategy%20%2B%20Brand%20Guide%20(124)" data-checkout="Social%20Strategy%20%2B%20Brand%20Guide%20(124)">Book the full consult</a>
                         </article>
                     </div>
                 </section>
@@ -2169,7 +2322,7 @@
                     <h2>No guesswork. <span class="script-accent">Just next steps.</span></h2>
                     <div class="cs-stack">
                         <div><svg class="px-ic" aria-hidden="true"><use href="#ic-target"/></svg><h3>Clear priorities</h3><p>The few changes that will move performance most, ranked.</p></div>
-                        <div><svg class="px-ic" aria-hidden="true"><use href="#ic-ui"/></svg><h3>One system</h3><p>Ads, email and social planned together instead of in silos.</p></div>
+                        <div><svg class="px-ic" aria-hidden="true"><use href="#ic-ui"/></svg><h3>One system</h3><p>Ads, email and landing pages planned together instead of in silos.</p></div>
                         <div><svg class="px-ic" aria-hidden="true"><use href="#ic-invoice"/></svg><h3>A written plan</h3><p>A framework you can hand to a team and run, not a call you forget.</p></div>
                         <div><svg class="px-ic" aria-hidden="true"><use href="#ic-mail"/></svg><h3>Less effort</h3><p>We do the research, account review and planning so you do not have to.</p></div>
                     </div>
@@ -2184,7 +2337,7 @@
                 <section class="w-section">
                     <p class="v2-eyebrow">Questions</p>
                     <h2>Good to <span class="script-accent">know</span></h2>
-                    <div class="cs-faq"><details><summary>Do I have to hire the agency afterward?</summary><p>No. Every session stands on its own, and you keep everything we build. If you like the strategy and want help running it, you can sign with us for ongoing marketing, and your session fee is deducted from your first month's retainer.</p></details><details><summary>What do I need to bring?</summary><p>Access to your ad accounts, email platform and social profiles (view-only is fine), plus any brand assets you already have.</p></details><details><summary>Is this only for new clients?</summary><p>No. Brands with an existing team, other agencies or in-house marketers use these sessions for a second opinion and a plan for the next quarter.</p></details><details><summary>Which session should I pick?</summary><p>If you want a quick read on where you stand, start with the Strategy Call. If you want a full plan and playbook for the quarter, choose Strategy + Playbook. Not sure? Send us a message and we will recommend one.</p></details><details><summary>When can I start?</summary><p>We are booking Q1 2027 strategy plans now. Reach out and we will schedule your first meeting.</p></details></div>
+                    <div class="cs-faq"><details><summary>Do I have to hire the agency afterward?</summary><p>No. Every session stands on its own, and you keep everything we build. If you like the strategy and want help running it, you can sign with us for ongoing marketing, and your session fee is deducted from your first month's retainer.</p></details><details><summary>What do I need to bring?</summary><p>Access to your ad accounts, email platform and website (view-only is fine), plus any brand assets you already have.</p></details><details><summary>Is this only for new clients?</summary><p>No. Brands with an existing team, other agencies or in-house marketers use these sessions for a second opinion and a plan for the next quarter.</p></details><details><summary>Which session should I pick?</summary><p>If you want a quick read on where you stand, start with the Strategy Call. If you want a full plan and playbook for the quarter, choose Strategy + Playbook. Not sure? Send us a message and we will recommend one.</p></details><details><summary>When can I start?</summary><p>We are booking Q1 2027 strategy plans now. Reach out and we will schedule your first meeting.</p></details></div>
                 </section>
 
                 <section class="w-section">
@@ -2291,7 +2444,7 @@
                     <p class="v2-eyebrow">Q1 2027 strategy plans &middot; limited sessions</p>
                     <h1>Book your <span class="script-accent">strategy session.</span></h1>
                     <p class="v2-lead">Tell us about your brand and what is not working. We will recommend the right session and get your first meeting on the calendar.</p>
-                    <ul class="cs-proof"><li>Los Angeles &amp; Austin</li><li>Ads, email and social, planned as one system</li><li>Sessions from $49</li></ul>
+                    <ul class="cs-proof"><li>Los Angeles &amp; Austin</li><li>Ads, email and landing pages, planned as one system</li><li>Sessions from $149</li></ul>
                 </section>
 
                 <section class="w-section ct-wrap" style="padding-top:1rem">
@@ -2304,10 +2457,10 @@
                         </div>
                         <div class="ct-row">
                             <label>Brand name<input name="brand" type="text" required></label>
-                            <label>Website or Instagram<input name="site" type="text" placeholder="yourbrand.com"></label>
+                            <label>Website<input name="site" type="text" placeholder="yourbrand.com"></label>
                         </div>
                         <div class="ct-row">
-                            <label>Which session?<select name="session"><option>Strategy Call ($149)</option><option>Strategy + Playbook ($259)</option><option>Quarter Plan ($550)</option><option>Q1 Launch Build ($2,500)</option><option>Social Strategy Session ($49)</option><option>Social Strategy + Brand Guide ($124)</option><option>Not sure yet, recommend one</option></select></label>
+                            <label>Which session?<select name="session"><option>Strategy Call ($149)</option><option>Strategy + Playbook ($259)</option><option>Quarter Plan ($550)</option><option>Q1 Launch Build ($2,500)</option><option>Not sure yet, recommend one</option></select></label>
                             <label>Monthly ad spend<select name="spend"><option>Not running ads yet</option><option>Under $5k a month</option><option>$5k to $20k a month</option><option>$20k to $100k a month</option><option>$100k+ a month</option></select></label>
                         </div>
                         <label>What is your biggest marketing challenge right now?<textarea name="challenge" rows="4" required placeholder="For example: ads are expensive, email is not converting, no clear plan for next quarter"></textarea></label>
@@ -2339,7 +2492,7 @@
                     <h2>Before you <span class="script-accent">book</span></h2>
                     <div class="cs-faq">
                         <details><summary>Do I have to hire the agency afterward?</summary><p>No. Every session stands on its own and you keep everything we build. If you like the strategy and want help running it, you can sign with us for ongoing marketing, and your session fee is deducted from your first month's retainer.</p></details>
-                        <details><summary>What do I need to bring?</summary><p>Access to your ad accounts, email platform and social profiles (view-only is fine), plus any brand assets you already have.</p></details>
+                        <details><summary>What do I need to bring?</summary><p>Access to your ad accounts, email platform and website (view-only is fine), plus any brand assets you already have.</p></details>
                         <details><summary>Which session should I pick?</summary><p>For a quick read on where you stand, start with a Strategy Call. For a full plan and playbook, choose Strategy + Playbook. Choose Not sure on the form and we will recommend one.</p></details>
                         <details><summary>Is this only for new clients?</summary><p>No. Brands with a team, another agency or in-house marketers use these sessions for a second opinion and a plan for the next quarter.</p></details>
                     </div>
@@ -2432,7 +2585,7 @@ function submitBooking(e){
     e.preventDefault();
     var f=document.getElementById('bookingForm'),d=new FormData(f);
     var subject='Strategy Session Request: '+d.get('session')+' ('+d.get('brand')+')';
-    var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nBrand: '+d.get('brand')+'\nWebsite/Instagram: '+(d.get('site')||'')+'\nSession: '+d.get('session')+'\nMonthly ad spend: '+d.get('spend')+'\n\nBiggest challenge:\n'+d.get('challenge');
+    var body='Name: '+d.get('name')+'\nEmail: '+d.get('email')+'\nBrand: '+d.get('brand')+'\nWebsite: '+(d.get('site')||'')+'\nSession: '+d.get('session')+'\nMonthly ad spend: '+d.get('spend')+'\n\nBiggest challenge:\n'+d.get('challenge');
     window.location.href='mailto:admin@srstudiosla.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
     return false;
 }
@@ -2442,6 +2595,10 @@ var HASH_TABS={home:'tab-home',about:'tab-about',work:'tab-selected-work',retain
 function goHash(h){var t=HASH_TABS[h];if(!t)return;if(location.hash!=='#'+h){history.pushState(null,'','#'+h);}switchTab(null,t);}
 window.addEventListener('hashchange',function(){var t=HASH_TABS[location.hash.slice(1)];if(t)switchTab(null,t);});
 document.addEventListener('DOMContentLoaded',function(){var t=HASH_TABS[location.hash.slice(1)];if(t)switchTab(null,t);});
+</script>
+<script>
+function wdStep(n){document.querySelectorAll('.wd-stepbtn').forEach(function(b,i){b.classList.toggle('on',i===n)});document.querySelectorAll('.wd-step-panel').forEach(function(p,i){p.classList.toggle('on',i===n)});}
+var cbN=0,cbT;function cbAdd(btn){cbN++;var c=document.getElementById('cbCount');if(c)c.textContent=cbN;var t=document.getElementById('cbToast');if(t){t.classList.add('on');clearTimeout(cbT);cbT=setTimeout(function(){t.classList.remove('on')},1400);}}
 </script>
 </body>
 </html>
