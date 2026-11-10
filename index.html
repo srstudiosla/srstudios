@@ -1222,6 +1222,11 @@
         /* landing page mosaic */
         .px-art--mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;padding:8px;min-height:380px;background:rgba(255,255,255,.35)}
         .px-art--mosaic>div{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(145deg,var(--c1),var(--c2))}
+        .px-12 .px-art--mosaic{grid-template-columns:repeat(4,1fr);grid-template-rows:auto;min-height:0;flex:none}
+        .px-12 .px-art--mosaic>div{aspect-ratio:16/10}
+        .px-4 .px-cap{flex:1}
+        .px-4 .px-art--stats{min-height:0;height:170px;flex:none;grid-template-columns:1fr}
+        @media(max-width:900px){.px-12 .px-art--mosaic{grid-template-columns:1fr 1fr}}
         .px-m1 .px-fill{object-position:center 55%}
         /* stats band */
         .sb{display:grid;grid-template-columns:repeat(4,1fr);width:100%;border-block:1px solid var(--border-color);text-align:left;margin-top:1rem}
@@ -1675,44 +1680,7 @@
                     <p class="v2-eyebrow">More Work</p>
                     <h2>More we've <span class="script-accent">built</span></h2>
                     <div class="px-bento">
-                        <article class="px-card px-7">
-                            <div class="px-art px-art--stats px-art--pink">
-                                <div class="px-bignum"><b>1</b><span>custom Shopify storefront, designed and built</span></div>
-                                <div class="px-bignum"><b>2</b><span>social platforms managed end to end</span></div>
-                                <div class="px-plat"><span>Shopify</span><span>TikTok</span><span>Instagram</span><span>Influencer outreach</span></div>
-                            </div>
-                            <div class="px-cap">
-                                <span class="w-chip">Shopify &middot; Social Media</span>
-                                <h3>Supplement startup</h3>
-                                <p>A custom Shopify storefront plus full social media management across TikTok and Instagram, with affiliate and influencer outreach.</p>
-                                <ul class="px-tags"><li>Shopify build</li><li>TikTok</li><li>Instagram</li><li>Influencer outreach</li></ul>
-                            </div>
-                        </article>
-                        <article class="px-card px-5">
-                            <div class="px-art px-art--stats">
-                                <div class="px-bignum"><b>1&ndash;2</b><span>posts a day, on each platform</span></div>
-                                <div class="px-bignum"><b>5&ndash;10</b><span>creator collabs a month</span></div>
-                                <div class="px-plat"><span>TikTok</span><span>Instagram</span><span>Affiliate</span></div>
-                            </div>
-                            <div class="px-cap">
-                                <span class="w-chip">Social &amp; Affiliate</span>
-                                <h3>Speaker startup</h3>
-                                <p>Full social media management plus influencer and affiliate marketing, run on a steady daily cadence.</p>
-                            </div>
-                        </article>
-                        <article class="px-card px-5">
-                            <div class="px-art px-art--stats px-art--pink">
-                                <div class="px-bignum"><b>100+</b><span>invoice ad banners designed</span></div>
-                                <div class="px-bignum"><b>4</b><span>service lines in one B2B program</span></div>
-                                <div class="px-plat"><span>Web UI/UX</span><span>Product positioning</span><span>Email</span><span>Invoice ads</span></div>
-                            </div>
-                            <div class="px-cap">
-                                <span class="w-chip">B2B Marketing</span>
-                                <h3>Aerospace equipment manufacturer</h3>
-                                <p>Full-funnel digital strategy and technical product positioning for a B2B manufacturer.</p>
-                            </div>
-                        </article>
-                        <article class="px-card px-7">
+                        <article class="px-card px-12">
                             <div class="px-art px-art--mosaic">
                                 <div class="px-m1" style="--c1:#4A5D3A;--c2:#34402A"><img class="px-fill" src="emc-1.png" alt="Landing page design for an emergency management consulting website" loading="lazy" onerror="this.remove()"></div>
                                 <div class="px-m2" style="--c1:#F1C8C8;--c2:#F6B0BB"><img class="px-fill" src="emc-2.png" alt="Services grid layout from the same website" loading="lazy" onerror="this.remove()"></div>
@@ -1724,6 +1692,37 @@
                                 <h3>Emergency management consulting</h3>
                                 <p>A conversion-focused B2B website that turns complex technical services into clear paths to a consultation request.</p>
                                 <ul class="px-tags"><li>Web UI/UX</li><li>B2B web architecture</li><li>Landing pages</li></ul>
+                            </div>
+                        </article>
+                        <article class="px-card px-4">
+                            <div class="px-art px-art--stats px-art--pink">
+                                <div class="px-plat"><span>Web UI/UX</span><span>Product positioning</span><span>Email</span><span>Invoice ads</span></div>
+                            </div>
+                            <div class="px-cap">
+                                <span class="w-chip">B2B Marketing</span>
+                                <h3>Aerospace equipment manufacturer</h3>
+                                <p>Full-funnel digital strategy and technical product positioning for a B2B manufacturer.</p>
+                            </div>
+                        </article>
+                        <article class="px-card px-4">
+                            <div class="px-art px-art--stats px-art--pink">
+                                <div class="px-plat"><span>Shopify</span><span>TikTok</span><span>Instagram</span><span>Influencer outreach</span></div>
+                            </div>
+                            <div class="px-cap">
+                                <span class="w-chip">Shopify &middot; Social Media</span>
+                                <h3>DTC e-commerce brand</h3>
+                                <p>A custom Shopify storefront plus full social media management across TikTok and Instagram, with affiliate and influencer outreach.</p>
+                                <ul class="px-tags"><li>Shopify build</li><li>TikTok</li><li>Instagram</li><li>Influencer outreach</li></ul>
+                            </div>
+                        </article>
+                        <article class="px-card px-4">
+                            <div class="px-art px-art--stats">
+                                <div class="px-plat"><span>TikTok</span><span>Instagram</span><span>Affiliate</span></div>
+                            </div>
+                            <div class="px-cap">
+                                <span class="w-chip">Social &amp; Affiliate</span>
+                                <h3>Creator-economy brand</h3>
+                                <p>Full social media management plus influencer and affiliate marketing, run on a steady daily cadence.</p>
                             </div>
                         </article>
                     </div>
@@ -2046,44 +2045,7 @@
                     <p class="v2-eyebrow">More Work</p>
                     <h2>More we've <span class="script-accent">built</span></h2>
                     <div class="px-bento">
-                        <article class="px-card px-7">
-                            <div class="px-art px-art--stats px-art--pink">
-                                <div class="px-bignum"><b>1</b><span>custom Shopify storefront, designed and built</span></div>
-                                <div class="px-bignum"><b>2</b><span>social platforms managed end to end</span></div>
-                                <div class="px-plat"><span>Shopify</span><span>TikTok</span><span>Instagram</span><span>Influencer outreach</span></div>
-                            </div>
-                            <div class="px-cap">
-                                <span class="w-chip">Shopify &middot; Social Media</span>
-                                <h3>Supplement startup</h3>
-                                <p>A custom Shopify storefront plus full social media management across TikTok and Instagram, with affiliate and influencer outreach.</p>
-                                <ul class="px-tags"><li>Shopify build</li><li>TikTok</li><li>Instagram</li><li>Influencer outreach</li></ul>
-                            </div>
-                        </article>
-                        <article class="px-card px-5">
-                            <div class="px-art px-art--stats">
-                                <div class="px-bignum"><b>1&ndash;2</b><span>posts a day, on each platform</span></div>
-                                <div class="px-bignum"><b>5&ndash;10</b><span>creator collabs a month</span></div>
-                                <div class="px-plat"><span>TikTok</span><span>Instagram</span><span>Affiliate</span></div>
-                            </div>
-                            <div class="px-cap">
-                                <span class="w-chip">Social &amp; Affiliate</span>
-                                <h3>Speaker startup</h3>
-                                <p>Full social media management plus influencer and affiliate marketing, run on a steady daily cadence.</p>
-                            </div>
-                        </article>
-                        <article class="px-card px-5">
-                            <div class="px-art px-art--stats px-art--pink">
-                                <div class="px-bignum"><b>100+</b><span>invoice ad banners designed</span></div>
-                                <div class="px-bignum"><b>4</b><span>service lines in one B2B program</span></div>
-                                <div class="px-plat"><span>Web UI/UX</span><span>Product positioning</span><span>Email</span><span>Invoice ads</span></div>
-                            </div>
-                            <div class="px-cap">
-                                <span class="w-chip">B2B Marketing</span>
-                                <h3>Aerospace equipment manufacturer</h3>
-                                <p>Full-funnel digital strategy and technical product positioning for a B2B manufacturer.</p>
-                            </div>
-                        </article>
-                        <article class="px-card px-7">
+                        <article class="px-card px-12">
                             <div class="px-art px-art--mosaic">
                                 <div class="px-m1" style="--c1:#4A5D3A;--c2:#34402A"><img class="px-fill" src="emc-1.png" alt="Landing page design for an emergency management consulting website" loading="lazy" onerror="this.remove()"></div>
                                 <div class="px-m2" style="--c1:#F1C8C8;--c2:#F6B0BB"><img class="px-fill" src="emc-2.png" alt="Services grid layout from the same website" loading="lazy" onerror="this.remove()"></div>
@@ -2095,6 +2057,37 @@
                                 <h3>Emergency management consulting</h3>
                                 <p>A conversion-focused B2B website that turns complex technical services into clear paths to a consultation request.</p>
                                 <ul class="px-tags"><li>Web UI/UX</li><li>B2B web architecture</li><li>Landing pages</li></ul>
+                            </div>
+                        </article>
+                        <article class="px-card px-4">
+                            <div class="px-art px-art--stats px-art--pink">
+                                <div class="px-plat"><span>Web UI/UX</span><span>Product positioning</span><span>Email</span><span>Invoice ads</span></div>
+                            </div>
+                            <div class="px-cap">
+                                <span class="w-chip">B2B Marketing</span>
+                                <h3>Aerospace equipment manufacturer</h3>
+                                <p>Full-funnel digital strategy and technical product positioning for a B2B manufacturer.</p>
+                            </div>
+                        </article>
+                        <article class="px-card px-4">
+                            <div class="px-art px-art--stats px-art--pink">
+                                <div class="px-plat"><span>Shopify</span><span>TikTok</span><span>Instagram</span><span>Influencer outreach</span></div>
+                            </div>
+                            <div class="px-cap">
+                                <span class="w-chip">Shopify &middot; Social Media</span>
+                                <h3>DTC e-commerce brand</h3>
+                                <p>A custom Shopify storefront plus full social media management across TikTok and Instagram, with affiliate and influencer outreach.</p>
+                                <ul class="px-tags"><li>Shopify build</li><li>TikTok</li><li>Instagram</li><li>Influencer outreach</li></ul>
+                            </div>
+                        </article>
+                        <article class="px-card px-4">
+                            <div class="px-art px-art--stats">
+                                <div class="px-plat"><span>TikTok</span><span>Instagram</span><span>Affiliate</span></div>
+                            </div>
+                            <div class="px-cap">
+                                <span class="w-chip">Social &amp; Affiliate</span>
+                                <h3>Creator-economy brand</h3>
+                                <p>Full social media management plus influencer and affiliate marketing, run on a steady daily cadence.</p>
                             </div>
                         </article>
                     </div>
